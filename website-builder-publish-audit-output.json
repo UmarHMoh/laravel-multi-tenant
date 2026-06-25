@@ -1,0 +1,253 @@
+{
+    "summary": {
+        "PASS": 14,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 14:51:37",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "name": "publish route exists",
+            "status": "PASS",
+            "message": "tenant.website.homepage.publish route should exist.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains publishHomepage",
+            "status": "PASS",
+            "message": "publishHomepage found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains published_config",
+            "status": "PASS",
+            "message": "published_config found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains published_at",
+            "status": "PASS",
+            "message": "published_at found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains Homepage published.",
+            "status": "PASS",
+            "message": "Homepage published. found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/HomepageController.php contains published_config ?:",
+            "status": "PASS",
+            "message": "published_config ?: found in app/Http/Controllers/Tenant/HomepageController.php.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains publishDraft",
+            "status": "PASS",
+            "message": "publishDraft found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains /manage/website/homepage/publish",
+            "status": "PASS",
+            "message": "/manage/website/homepage/publish found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Publish",
+            "status": "PASS",
+            "message": "Publish found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Published:",
+            "status": "PASS",
+            "message": "Published: found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains S43 foundation",
+            "status": "PASS",
+            "message": "S43 foundation found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "tenant awrah publish copies draft to published",
+            "status": "PASS",
+            "message": "Draft copied to published_config.",
+            "data": {
+                "published_config": {
+                    "sections": [
+                        {
+                            "id": "audit_s41_rich_text",
+                            "type": "rich_text",
+                            "blocks": [],
+                            "hidden": false,
+                            "settings": {
+                                "text": "S41 draft body",
+                                "width": "normal",
+                                "heading": "S41 Draft Heading"
+                            }
+                        },
+                        {
+                            "id": "section_hero_default",
+                            "type": "hero",
+                            "blocks": [],
+                            "hidden": false,
+                            "settings": {
+                                "eyebrow": "Tenant Storefront",
+                                "heading": "Welcome to your store",
+                                "alignment": "center",
+                                "subheading": "Use the website builder to customize this homepage.",
+                                "button_link": "/",
+                                "button_label": "Shop now"
+                            }
+                        },
+                        {
+                            "id": "section_featured_products_default",
+                            "type": "featured_products",
+                            "blocks": [],
+                            "hidden": false,
+                            "settings": {
+                                "limit": 4,
+                                "heading": "Featured products"
+                            }
+                        },
+                        {
+                            "id": "section_product_grid_default",
+                            "type": "product_grid",
+                            "blocks": [],
+                            "hidden": false,
+                            "settings": {
+                                "heading": "Shop products",
+                                "per_page": 12,
+                                "show_filters": true
+                            }
+                        }
+                    ]
+                },
+                "published_at": "2026-06-24 14:51:37"
+            }
+        },
+        {
+            "name": "tenant tenant1 publish copies draft to published",
+            "status": "PASS",
+            "message": "Draft copied to published_config.",
+            "data": {
+                "published_config": {
+                    "sections": [
+                        {
+                            "id": "audit_s41_rich_text",
+                            "type": "rich_text",
+                            "blocks": [],
+                            "hidden": false,
+                            "settings": {
+                                "text": "S41 draft body",
+                                "width": "normal",
+                                "heading": "S41 Draft Heading"
+                            }
+                        },
+                        {
+                            "id": "section_hero_default",
+                            "type": "hero",
+                            "blocks": [],
+                            "hidden": false,
+                            "settings": {
+                                "eyebrow": "Tenant Storefront",
+                                "heading": "Welcome to your store",
+                                "alignment": "center",
+                                "subheading": "Use the website builder to customize this homepage.",
+                                "button_link": "/",
+                                "button_label": "Shop now"
+                            }
+                        },
+                        {
+                            "id": "section_featured_products_default",
+                            "type": "featured_products",
+                            "blocks": [],
+                            "hidden": false,
+                            "settings": {
+                                "limit": 4,
+                                "heading": "Featured products"
+                            }
+                        },
+                        {
+                            "id": "section_product_grid_default",
+                            "type": "product_grid",
+                            "blocks": [],
+                            "hidden": false,
+                            "settings": {
+                                "heading": "Shop products",
+                                "per_page": 12,
+                                "show_filters": true
+                            }
+                        }
+                    ]
+                },
+                "published_at": "2026-06-24 14:51:37"
+            }
+        },
+        {
+            "name": "tenant tenant2 publish copies draft to published",
+            "status": "PASS",
+            "message": "Draft copied to published_config.",
+            "data": {
+                "published_config": {
+                    "sections": [
+                        {
+                            "id": "audit_s41_rich_text",
+                            "type": "rich_text",
+                            "blocks": [],
+                            "hidden": false,
+                            "settings": {
+                                "text": "S41 draft body",
+                                "width": "normal",
+                                "heading": "S41 Draft Heading"
+                            }
+                        },
+                        {
+                            "id": "section_hero_default",
+                            "type": "hero",
+                            "blocks": [],
+                            "hidden": false,
+                            "settings": {
+                                "eyebrow": "Tenant Storefront",
+                                "heading": "Welcome to your store",
+                                "alignment": "center",
+                                "subheading": "Use the website builder to customize this homepage.",
+                                "button_link": "/",
+                                "button_label": "Shop now"
+                            }
+                        },
+                        {
+                            "id": "section_featured_products_default",
+                            "type": "featured_products",
+                            "blocks": [],
+                            "hidden": false,
+                            "settings": {
+                                "limit": 4,
+                                "heading": "Featured products"
+                            }
+                        },
+                        {
+                            "id": "section_product_grid_default",
+                            "type": "product_grid",
+                            "blocks": [],
+                            "hidden": false,
+                            "settings": {
+                                "heading": "Shop products",
+                                "per_page": 12,
+                                "show_filters": true
+                            }
+                        }
+                    ]
+                },
+                "published_at": "2026-06-24 14:51:37"
+            }
+        }
+    ]
+}

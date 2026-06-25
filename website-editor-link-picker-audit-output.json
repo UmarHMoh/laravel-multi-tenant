@@ -1,0 +1,115 @@
+{
+    "summary": {
+        "PASS": 16,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 18:52:09",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "name": "tenant.website.homepage.editor route exists",
+            "status": "PASS",
+            "message": "tenant.website.homepage.editor should exist.",
+            "data": []
+        },
+        {
+            "name": "tenant.website.pages.editor route exists",
+            "status": "PASS",
+            "message": "tenant.website.pages.editor should exist.",
+            "data": []
+        },
+        {
+            "name": "controller contains private function linkOptionsForTheme",
+            "status": "PASS",
+            "message": "private function linkOptionsForTheme found.",
+            "data": []
+        },
+        {
+            "name": "controller contains 'linkOptions' => $this->linkOptionsForTheme($theme),",
+            "status": "PASS",
+            "message": "'linkOptions' => $this->linkOptionsForTheme($theme), found.",
+            "data": []
+        },
+        {
+            "name": "controller contains 'value' => $page->type === 'home' ? '/' : \"/pages/{$page->handle}\"",
+            "status": "PASS",
+            "message": "'value' => $page->type === 'home' ? '/' : \"/pages/{$page->handle}\" found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains linkOptions",
+            "status": "PASS",
+            "message": "linkOptions found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains function isLinkSetting",
+            "status": "PASS",
+            "message": "function isLinkSetting found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains function normalisedLinkOptions",
+            "status": "PASS",
+            "message": "function normalisedLinkOptions found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains function updateLinkSetting",
+            "status": "PASS",
+            "message": "function updateLinkSetting found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains function updateBlockLinkSetting",
+            "status": "PASS",
+            "message": "function updateBlockLinkSetting found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains Custom URL...",
+            "status": "PASS",
+            "message": "Custom URL... found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains Pick an internal page or paste a custom URL.",
+            "status": "PASS",
+            "message": "Pick an internal page or paste a custom URL. found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains S46 link picker foundation",
+            "status": "PASS",
+            "message": "S46 link picker foundation found.",
+            "data": []
+        },
+        {
+            "name": "tenant awrah has pages for link picker",
+            "status": "PASS",
+            "message": "Tenant should have at least homepage.",
+            "data": {
+                "pages": 1
+            }
+        },
+        {
+            "name": "tenant tenant1 has pages for link picker",
+            "status": "PASS",
+            "message": "Tenant should have at least homepage.",
+            "data": {
+                "pages": 1
+            }
+        },
+        {
+            "name": "tenant tenant2 has pages for link picker",
+            "status": "PASS",
+            "message": "Tenant should have at least homepage.",
+            "data": {
+                "pages": 1
+            }
+        }
+    ]
+}

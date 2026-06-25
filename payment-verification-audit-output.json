@@ -1,0 +1,88 @@
+{
+    "summary": {
+        "PASS": 6,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 05:31:47",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "tenant_id": "awrah",
+            "name": "webhook marks order paid",
+            "status": "PASS",
+            "message": "Webhook payload marked order as paid and stored provider references.",
+            "data": {
+                "order_id": 59,
+                "payment_status": "paid",
+                "status": "processing",
+                "paid_at": "2026-06-24 05:31:47",
+                "provider_payment_id": "PAY-59",
+                "provider_reference": "REF-59"
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "duplicate webhook is idempotent",
+            "status": "PASS",
+            "message": "Duplicate paid webhook did not create an extra platform transaction.",
+            "data": {
+                "platform_count_before_webhook": 0,
+                "platform_count_after_first_webhook": 1,
+                "platform_count_after_second_webhook": 1
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "webhook marks order paid",
+            "status": "PASS",
+            "message": "Webhook payload marked order as paid and stored provider references.",
+            "data": {
+                "order_id": 73,
+                "payment_status": "paid",
+                "status": "processing",
+                "paid_at": "2026-06-24 05:31:47",
+                "provider_payment_id": "PAY-73",
+                "provider_reference": "REF-73"
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "duplicate webhook is idempotent",
+            "status": "PASS",
+            "message": "Duplicate paid webhook did not create an extra platform transaction.",
+            "data": {
+                "platform_count_before_webhook": 3,
+                "platform_count_after_first_webhook": 4,
+                "platform_count_after_second_webhook": 4
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "webhook marks order paid",
+            "status": "PASS",
+            "message": "Webhook payload marked order as paid and stored provider references.",
+            "data": {
+                "order_id": 59,
+                "payment_status": "paid",
+                "status": "processing",
+                "paid_at": "2026-06-24 05:31:47",
+                "provider_payment_id": "PAY-59",
+                "provider_reference": "REF-59"
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "duplicate webhook is idempotent",
+            "status": "PASS",
+            "message": "Duplicate paid webhook did not create an extra platform transaction.",
+            "data": {
+                "platform_count_before_webhook": 0,
+                "platform_count_after_first_webhook": 1,
+                "platform_count_after_second_webhook": 1
+            }
+        }
+    ]
+}

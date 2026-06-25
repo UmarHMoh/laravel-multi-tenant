@@ -1,4 +1,5 @@
 <script setup>
+import StorefrontHeader from '@/components/tenant/StorefrontHeader.vue'
 import { Head, Link, router } from '@inertiajs/vue3';
 import { ArrowLeft, Minus, Plus, ShoppingBag, Trash2 } from 'lucide-vue-next';
 import { computed } from 'vue';
@@ -79,6 +80,10 @@ function getTenantAssetUrl(path) {
 </script>
 
 <template>
+    <StorefrontHeader :store="$page.props.store || {}" :cart-items="$page.props.cartItems || $page.props.orderItems || []" />
+
+
+
     <Head title="Shopping Cart" />
 
     <div>

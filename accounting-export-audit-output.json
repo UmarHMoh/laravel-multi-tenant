@@ -1,0 +1,252 @@
+{
+    "summary": {
+        "PASS": 13,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 10:00:34",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "name": "route exists: central.accounting.exports.index",
+            "status": "PASS",
+            "message": "Accounting export route exists.",
+            "data": {
+                "route_name": "central.accounting.exports.index",
+                "uri": "central/accounting/exports",
+                "middleware": [
+                    "web",
+                    "auth"
+                ]
+            }
+        },
+        {
+            "name": "route exists: central.accounting.exports.payout-requests",
+            "status": "PASS",
+            "message": "Accounting export route exists.",
+            "data": {
+                "route_name": "central.accounting.exports.payout-requests",
+                "uri": "central/accounting/exports/payout-requests",
+                "middleware": [
+                    "web",
+                    "auth"
+                ]
+            }
+        },
+        {
+            "name": "route protected: central.accounting.exports.payout-requests",
+            "status": "PASS",
+            "message": "CSV export route has auth/central protection.",
+            "data": {
+                "route_name": "central.accounting.exports.payout-requests",
+                "middleware": [
+                    "web",
+                    "auth"
+                ]
+            }
+        },
+        {
+            "name": "route exists: central.accounting.exports.payout-batches",
+            "status": "PASS",
+            "message": "Accounting export route exists.",
+            "data": {
+                "route_name": "central.accounting.exports.payout-batches",
+                "uri": "central/accounting/exports/payout-batches",
+                "middleware": [
+                    "web",
+                    "auth"
+                ]
+            }
+        },
+        {
+            "name": "route protected: central.accounting.exports.payout-batches",
+            "status": "PASS",
+            "message": "CSV export route has auth/central protection.",
+            "data": {
+                "route_name": "central.accounting.exports.payout-batches",
+                "middleware": [
+                    "web",
+                    "auth"
+                ]
+            }
+        },
+        {
+            "name": "route exists: central.accounting.exports.payout-ledger",
+            "status": "PASS",
+            "message": "Accounting export route exists.",
+            "data": {
+                "route_name": "central.accounting.exports.payout-ledger",
+                "uri": "central/accounting/exports/payout-ledger",
+                "middleware": [
+                    "web",
+                    "auth"
+                ]
+            }
+        },
+        {
+            "name": "route protected: central.accounting.exports.payout-ledger",
+            "status": "PASS",
+            "message": "CSV export route has auth/central protection.",
+            "data": {
+                "route_name": "central.accounting.exports.payout-ledger",
+                "middleware": [
+                    "web",
+                    "auth"
+                ]
+            }
+        },
+        {
+            "name": "route exists: central.accounting.exports.platform-transactions",
+            "status": "PASS",
+            "message": "Accounting export route exists.",
+            "data": {
+                "route_name": "central.accounting.exports.platform-transactions",
+                "uri": "central/accounting/exports/platform-transactions",
+                "middleware": [
+                    "web",
+                    "auth"
+                ]
+            }
+        },
+        {
+            "name": "route protected: central.accounting.exports.platform-transactions",
+            "status": "PASS",
+            "message": "CSV export route has auth/central protection.",
+            "data": {
+                "route_name": "central.accounting.exports.platform-transactions",
+                "middleware": [
+                    "web",
+                    "auth"
+                ]
+            }
+        },
+        {
+            "name": "payout requests csv",
+            "status": "PASS",
+            "message": "CSV export returned the expected header row.",
+            "data": {
+                "first_line": "ID,\"Tenant ID\",\"Tenant Name\",Reference,Amount,Currency,Status,\"Requested At\",\"Approved At\",\"Rejected At\",\"Paid At\",\"Tenant Notes\",\"Admin Notes\",\"Rejection Reason\"",
+                "parsed_header": [
+                    "ID",
+                    "Tenant ID",
+                    "Tenant Name",
+                    "Reference",
+                    "Amount",
+                    "Currency",
+                    "Status",
+                    "Requested At",
+                    "Approved At",
+                    "Rejected At",
+                    "Paid At",
+                    "Tenant Notes",
+                    "Admin Notes",
+                    "Rejection Reason"
+                ],
+                "expected_header": [
+                    "ID",
+                    "Tenant ID",
+                    "Tenant Name",
+                    "Reference",
+                    "Amount",
+                    "Currency",
+                    "Status"
+                ]
+            }
+        },
+        {
+            "name": "payout batches csv",
+            "status": "PASS",
+            "message": "CSV export returned the expected header row.",
+            "data": {
+                "first_line": "ID,\"Batch Number\",Status,\"Request Count\",\"Total Amount\",Currency,\"Approved At\",\"Paid At\",Notes,\"Created At\"",
+                "parsed_header": [
+                    "ID",
+                    "Batch Number",
+                    "Status",
+                    "Request Count",
+                    "Total Amount",
+                    "Currency",
+                    "Approved At",
+                    "Paid At",
+                    "Notes",
+                    "Created At"
+                ],
+                "expected_header": [
+                    "ID",
+                    "Batch Number",
+                    "Status",
+                    "Request Count",
+                    "Total Amount",
+                    "Currency"
+                ]
+            }
+        },
+        {
+            "name": "payout ledger csv",
+            "status": "PASS",
+            "message": "CSV export returned the expected header row.",
+            "data": {
+                "first_line": "ID,\"Tenant ID\",\"Platform Transaction ID\",\"Entry Type\",Source,Status,\"Gross Amount\",\"Processor Fee\",\"Platform Fee\",\"Tenant Net Amount\",Currency,Reference,\"Available At\",\"Paid At\",\"Created At\"",
+                "parsed_header": [
+                    "ID",
+                    "Tenant ID",
+                    "Platform Transaction ID",
+                    "Entry Type",
+                    "Source",
+                    "Status",
+                    "Gross Amount",
+                    "Processor Fee",
+                    "Platform Fee",
+                    "Tenant Net Amount",
+                    "Currency",
+                    "Reference",
+                    "Available At",
+                    "Paid At",
+                    "Created At"
+                ],
+                "expected_header": [
+                    "ID",
+                    "Tenant ID",
+                    "Platform Transaction ID",
+                    "Entry Type",
+                    "Source",
+                    "Status"
+                ]
+            }
+        },
+        {
+            "name": "platform transactions csv",
+            "status": "PASS",
+            "message": "CSV export returned the expected header row.",
+            "data": {
+                "first_line": "ID,\"Tenant ID\",\"Gross Amount\",\"Processor Fee Amount\",\"Platform Fee Amount\",\"Tenant Payout Amount\",\"Commission Amount\",Currency,Provider,\"Provider Transaction ID\",\"Idempotency Key\",\"Source Event\",\"Recorded At\",\"Created At\"",
+                "parsed_header": [
+                    "ID",
+                    "Tenant ID",
+                    "Gross Amount",
+                    "Processor Fee Amount",
+                    "Platform Fee Amount",
+                    "Tenant Payout Amount",
+                    "Commission Amount",
+                    "Currency",
+                    "Provider",
+                    "Provider Transaction ID",
+                    "Idempotency Key",
+                    "Source Event",
+                    "Recorded At",
+                    "Created At"
+                ],
+                "expected_header": [
+                    "ID",
+                    "Tenant ID",
+                    "Gross Amount",
+                    "Processor Fee Amount",
+                    "Platform Fee Amount",
+                    "Tenant Payout Amount"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,1044 @@
+{
+    "summary": {
+        "PASS": 49,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 17
+    },
+    "generated_at": "2026-06-24 03:23:45",
+    "route_count": 96,
+    "vue_file_count": 36,
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "file": "resources/js/components/AppHeader.vue",
+            "type": "named_route",
+            "value": "dashboard",
+            "status": "PASS",
+            "message": "Named route exists.",
+            "matches": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "uri": "/dashboard",
+                    "name": "dashboard",
+                    "action": "Closure"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppHeader.vue",
+            "type": "object_href",
+            "value": "/dashboard",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/dashboard",
+                    "name": "dashboard",
+                    "action": "Closure"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppHeader.vue",
+            "type": "object_href",
+            "value": "https://github.com/laravel/vue-starter-kit",
+            "status": "INFO",
+            "message": "External or asset link ignored.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/components/AppHeader.vue",
+            "type": "object_href",
+            "value": "https://laravel.com/docs/starter-kits",
+            "status": "INFO",
+            "message": "External or asset link ignored.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/components/AppHeader.vue",
+            "type": "html_href",
+            "value": "route(",
+            "status": "INFO",
+            "message": "Dynamic expression found. Manual review needed.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/components/AppHeader.vue",
+            "type": "bound_href_raw",
+            "value": "route(",
+            "status": "INFO",
+            "message": "Dynamic expression found. Manual review needed.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "named_route",
+            "value": "dashboard",
+            "status": "PASS",
+            "message": "Named route exists.",
+            "matches": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "uri": "/dashboard",
+                    "name": "dashboard",
+                    "action": "Closure"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "object_href",
+            "value": "/dashboard",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/dashboard",
+                    "name": "dashboard",
+                    "action": "Closure"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "object_href",
+            "value": "/manage/product",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/manage/product",
+                    "name": "product.index",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\ProductController@index"
+                },
+                {
+                    "method": "POST",
+                    "uri": "/manage/product",
+                    "name": "product.store",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\ProductController@store"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "object_href",
+            "value": "/manage/category",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/manage/category",
+                    "name": "category.index",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\CategoryController@index"
+                },
+                {
+                    "method": "POST",
+                    "uri": "/manage/category",
+                    "name": "category.store",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\CategoryController@store"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "object_href",
+            "value": "/manage/order",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/manage/order",
+                    "name": "order.index",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\OrderController@index"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "object_href",
+            "value": "/manage/customer",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/manage/customer",
+                    "name": "customer.index",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\CustomerController@index"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "object_href",
+            "value": "/manage/billing",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/manage/billing",
+                    "name": "manage.billing.index",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\BillingController@index"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "object_href",
+            "value": "/manage/store-settings",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/manage/store-settings",
+                    "name": "manage.store-settings.edit",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\StoreSettingsController@edit"
+                },
+                {
+                    "method": "PUT",
+                    "uri": "/manage/store-settings",
+                    "name": "manage.store-settings.update",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\StoreSettingsController@update"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "object_href",
+            "value": "/manage/domains",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/manage/domains",
+                    "name": "manage.domains.index",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\DomainSettingsController@index"
+                },
+                {
+                    "method": "POST",
+                    "uri": "/manage/domains",
+                    "name": "manage.domains.store",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\DomainSettingsController@store"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "object_href",
+            "value": "/manage/payout-account",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/manage/payout-account",
+                    "name": "manage.payout-account",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\PayoutAccountController@index"
+                },
+                {
+                    "method": "POST",
+                    "uri": "/manage/payout-account",
+                    "name": "manage.payout-account.store",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\PayoutAccountController@store"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "html_href",
+            "value": "route(",
+            "status": "INFO",
+            "message": "Dynamic expression found. Manual review needed.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "bound_href_raw",
+            "value": "route(",
+            "status": "INFO",
+            "message": "Dynamic expression found. Manual review needed.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/components/DeleteUser.vue",
+            "type": "named_route",
+            "value": "profile.destroy",
+            "status": "PASS",
+            "message": "Named route exists.",
+            "matches": [
+                {
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "uri": "/settings/profile",
+                    "name": "profile.destroy",
+                    "action": "App\\Http\\Controllers\\Settings\\ProfileController@destroy"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/OrdersDashboard.vue",
+            "type": "named_route",
+            "value": "order.index",
+            "status": "PASS",
+            "message": "Named route exists.",
+            "matches": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "uri": "/manage/order",
+                    "name": "order.index",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\OrderController@index"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/OrdersDashboard.vue",
+            "type": "named_route",
+            "value": "order.show",
+            "status": "PASS",
+            "message": "Named route exists.",
+            "matches": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "uri": "/manage/order/{order}",
+                    "name": "order.show",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\OrderController@show"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/OrdersDashboard.vue",
+            "type": "html_href",
+            "value": "route(",
+            "status": "INFO",
+            "message": "Dynamic expression found. Manual review needed.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/components/OrdersDashboard.vue",
+            "type": "bound_href_raw",
+            "value": "route(",
+            "status": "INFO",
+            "message": "Dynamic expression found. Manual review needed.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/components/UserMenuContent.vue",
+            "type": "named_route",
+            "value": "profile.edit",
+            "status": "PASS",
+            "message": "Named route exists.",
+            "matches": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "uri": "/settings/profile",
+                    "name": "profile.edit",
+                    "action": "App\\Http\\Controllers\\Settings\\ProfileController@edit"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/UserMenuContent.vue",
+            "type": "named_route",
+            "value": "logout",
+            "status": "PASS",
+            "message": "Named route exists.",
+            "matches": [
+                {
+                    "methods": [
+                        "POST"
+                    ],
+                    "uri": "/logout",
+                    "name": "logout",
+                    "action": "App\\Http\\Controllers\\Auth\\AuthenticatedSessionController@destroy"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/UserMenuContent.vue",
+            "type": "html_href",
+            "value": "route(",
+            "status": "INFO",
+            "message": "Dynamic expression found. Manual review needed.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/components/UserMenuContent.vue",
+            "type": "bound_href_raw",
+            "value": "route(",
+            "status": "INFO",
+            "message": "Dynamic expression found. Manual review needed.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "object_href",
+            "value": "/central",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central",
+                    "name": "central.dashboard",
+                    "action": "App\\Http\\Controllers\\Central\\DashboardController@index"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "object_href",
+            "value": "/central/tenants",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central/tenants",
+                    "name": "central.tenants.index",
+                    "action": "App\\Http\\Controllers\\Central\\TenantController@index"
+                },
+                {
+                    "method": "POST",
+                    "uri": "/central/tenants",
+                    "name": "central.tenants.store",
+                    "action": "App\\Http\\Controllers\\Central\\TenantController@store"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "object_href",
+            "value": "/central/tenants/create",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central/tenants/create",
+                    "name": "central.tenants.create",
+                    "action": "App\\Http\\Controllers\\Central\\TenantController@create"
+                },
+                {
+                    "method": "GET",
+                    "uri": "/central/tenants/{tenant}",
+                    "name": "central.tenants.show",
+                    "action": "App\\Http\\Controllers\\Central\\TenantController@show"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "object_href",
+            "value": "/central/plans",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central/plans",
+                    "name": "central.plans.index",
+                    "action": "App\\Http\\Controllers\\Central\\PlanController@index"
+                },
+                {
+                    "method": "POST",
+                    "uri": "/central/plans",
+                    "name": "central.plans.store",
+                    "action": "App\\Http\\Controllers\\Central\\PlanController@store"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "object_href",
+            "value": "/central/payment-settings",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central/payment-settings",
+                    "name": "central.payment-settings.edit",
+                    "action": "App\\Http\\Controllers\\Central\\PaymentSettingController@edit"
+                },
+                {
+                    "method": "PUT",
+                    "uri": "/central/payment-settings",
+                    "name": "central.payment-settings.update",
+                    "action": "App\\Http\\Controllers\\Central\\PaymentSettingController@update"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "object_href",
+            "value": "/central/transactions",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central/transactions",
+                    "name": "central.transactions.index",
+                    "action": "App\\Http\\Controllers\\Central\\PlatformTransactionController@index"
+                },
+                {
+                    "method": "POST",
+                    "uri": "/central/transactions",
+                    "name": "central.transactions.store",
+                    "action": "App\\Http\\Controllers\\Central\\PlatformTransactionController@store"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "object_href",
+            "value": "/central/payouts",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central/payouts",
+                    "name": "central.payouts.index",
+                    "action": "App\\Http\\Controllers\\Central\\PayoutController@index"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "object_href",
+            "value": "/central/settings",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central/settings",
+                    "name": "central.settings.edit",
+                    "action": "App\\Http\\Controllers\\Central\\PlatformSettingController@edit"
+                },
+                {
+                    "method": "PUT",
+                    "uri": "/central/settings",
+                    "name": "central.settings.update",
+                    "action": "App\\Http\\Controllers\\Central\\PlatformSettingController@update"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "object_href",
+            "value": "/central/bank-options",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central/bank-options",
+                    "name": "central.bank-options.index",
+                    "action": "App\\Http\\Controllers\\Central\\PayoutBankOptionController@index"
+                },
+                {
+                    "method": "POST",
+                    "uri": "/central/bank-options",
+                    "name": "central.bank-options.store",
+                    "action": "App\\Http\\Controllers\\Central\\PayoutBankOptionController@store"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "html_href",
+            "value": "/",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/",
+                    "name": "central.login",
+                    "action": "Closure"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/pages/CentralWelcome.vue",
+            "type": "html_href",
+            "value": "/central",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central",
+                    "name": "central.dashboard",
+                    "action": "App\\Http\\Controllers\\Central\\DashboardController@index"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/pages/CentralWelcome.vue",
+            "type": "html_href",
+            "value": "/central/tenants",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central/tenants",
+                    "name": "central.tenants.index",
+                    "action": "App\\Http\\Controllers\\Central\\TenantController@index"
+                },
+                {
+                    "method": "POST",
+                    "uri": "/central/tenants",
+                    "name": "central.tenants.store",
+                    "action": "App\\Http\\Controllers\\Central\\TenantController@store"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/pages/Dashboard.vue",
+            "type": "object_href",
+            "value": "/dashboard",
+            "status": "PASS",
+            "message": "Static UI path matches Laravel route.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/dashboard",
+                    "name": "dashboard",
+                    "action": "Closure"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/pages/Welcome.vue",
+            "type": "named_route",
+            "value": "dashboard",
+            "status": "PASS",
+            "message": "Named route exists.",
+            "matches": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "uri": "/dashboard",
+                    "name": "dashboard",
+                    "action": "Closure"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/pages/Welcome.vue",
+            "type": "named_route",
+            "value": "login",
+            "status": "PASS",
+            "message": "Named route exists.",
+            "matches": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "uri": "/login",
+                    "name": "login",
+                    "action": "App\\Http\\Controllers\\Auth\\AuthenticatedSessionController@create"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/pages/Welcome.vue",
+            "type": "named_route",
+            "value": "register",
+            "status": "PASS",
+            "message": "Named route exists.",
+            "matches": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "uri": "/register",
+                    "name": "register",
+                    "action": "App\\Http\\Controllers\\Auth\\RegisteredUserController@create"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/pages/Welcome.vue",
+            "type": "html_href",
+            "value": "https://rsms.me/",
+            "status": "INFO",
+            "message": "External or asset link ignored.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/pages/Welcome.vue",
+            "type": "html_href",
+            "value": "https://rsms.me/inter/inter.css",
+            "status": "INFO",
+            "message": "External or asset link ignored.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/pages/Welcome.vue",
+            "type": "html_href",
+            "value": "route(",
+            "status": "INFO",
+            "message": "Dynamic expression found. Manual review needed.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/pages/Welcome.vue",
+            "type": "html_href",
+            "value": "https://laravel.com/docs",
+            "status": "INFO",
+            "message": "External or asset link ignored.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/pages/Welcome.vue",
+            "type": "html_href",
+            "value": "https://laracasts.com",
+            "status": "INFO",
+            "message": "External or asset link ignored.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/pages/Welcome.vue",
+            "type": "html_href",
+            "value": "https://cloud.laravel.com",
+            "status": "INFO",
+            "message": "External or asset link ignored.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/pages/Welcome.vue",
+            "type": "bound_href_raw",
+            "value": "route(",
+            "status": "INFO",
+            "message": "Dynamic expression found. Manual review needed.",
+            "matches": []
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "sidebar_required_link",
+            "value": "/dashboard",
+            "status": "PASS",
+            "message": "Required sidebar link exists.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/dashboard",
+                    "name": "dashboard",
+                    "action": "Closure"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "sidebar_required_link",
+            "value": "/manage/product",
+            "status": "PASS",
+            "message": "Required sidebar link exists.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/manage/product",
+                    "name": "product.index",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\ProductController@index"
+                },
+                {
+                    "method": "POST",
+                    "uri": "/manage/product",
+                    "name": "product.store",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\ProductController@store"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "sidebar_required_link",
+            "value": "/manage/category",
+            "status": "PASS",
+            "message": "Required sidebar link exists.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/manage/category",
+                    "name": "category.index",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\CategoryController@index"
+                },
+                {
+                    "method": "POST",
+                    "uri": "/manage/category",
+                    "name": "category.store",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\CategoryController@store"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "sidebar_required_link",
+            "value": "/manage/order",
+            "status": "PASS",
+            "message": "Required sidebar link exists.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/manage/order",
+                    "name": "order.index",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\OrderController@index"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "sidebar_required_link",
+            "value": "/manage/customer",
+            "status": "PASS",
+            "message": "Required sidebar link exists.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/manage/customer",
+                    "name": "customer.index",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\CustomerController@index"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "sidebar_required_link",
+            "value": "/manage/billing",
+            "status": "PASS",
+            "message": "Required sidebar link exists.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/manage/billing",
+                    "name": "manage.billing.index",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\BillingController@index"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "sidebar_required_link",
+            "value": "/manage/store-settings",
+            "status": "PASS",
+            "message": "Required sidebar link exists.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/manage/store-settings",
+                    "name": "manage.store-settings.edit",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\StoreSettingsController@edit"
+                },
+                {
+                    "method": "PUT",
+                    "uri": "/manage/store-settings",
+                    "name": "manage.store-settings.update",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\StoreSettingsController@update"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "sidebar_required_link",
+            "value": "/manage/domains",
+            "status": "PASS",
+            "message": "Required sidebar link exists.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/manage/domains",
+                    "name": "manage.domains.index",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\DomainSettingsController@index"
+                },
+                {
+                    "method": "POST",
+                    "uri": "/manage/domains",
+                    "name": "manage.domains.store",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\DomainSettingsController@store"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/components/AppSidebar.vue",
+            "type": "sidebar_required_link",
+            "value": "/manage/payout-account",
+            "status": "PASS",
+            "message": "Required sidebar link exists.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/manage/payout-account",
+                    "name": "manage.payout-account",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\PayoutAccountController@index"
+                },
+                {
+                    "method": "POST",
+                    "uri": "/manage/payout-account",
+                    "name": "manage.payout-account.store",
+                    "action": "App\\Http\\Controllers\\Tenant\\Manage\\PayoutAccountController@store"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "sidebar_required_link",
+            "value": "/central",
+            "status": "PASS",
+            "message": "Required sidebar link exists.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central",
+                    "name": "central.dashboard",
+                    "action": "App\\Http\\Controllers\\Central\\DashboardController@index"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "sidebar_required_link",
+            "value": "/central/tenants",
+            "status": "PASS",
+            "message": "Required sidebar link exists.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central/tenants",
+                    "name": "central.tenants.index",
+                    "action": "App\\Http\\Controllers\\Central\\TenantController@index"
+                },
+                {
+                    "method": "POST",
+                    "uri": "/central/tenants",
+                    "name": "central.tenants.store",
+                    "action": "App\\Http\\Controllers\\Central\\TenantController@store"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "sidebar_required_link",
+            "value": "/central/plans",
+            "status": "PASS",
+            "message": "Required sidebar link exists.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central/plans",
+                    "name": "central.plans.index",
+                    "action": "App\\Http\\Controllers\\Central\\PlanController@index"
+                },
+                {
+                    "method": "POST",
+                    "uri": "/central/plans",
+                    "name": "central.plans.store",
+                    "action": "App\\Http\\Controllers\\Central\\PlanController@store"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "sidebar_required_link",
+            "value": "/central/transactions",
+            "status": "PASS",
+            "message": "Required sidebar link exists.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central/transactions",
+                    "name": "central.transactions.index",
+                    "action": "App\\Http\\Controllers\\Central\\PlatformTransactionController@index"
+                },
+                {
+                    "method": "POST",
+                    "uri": "/central/transactions",
+                    "name": "central.transactions.store",
+                    "action": "App\\Http\\Controllers\\Central\\PlatformTransactionController@store"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "sidebar_required_link",
+            "value": "/central/payouts",
+            "status": "PASS",
+            "message": "Required sidebar link exists.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central/payouts",
+                    "name": "central.payouts.index",
+                    "action": "App\\Http\\Controllers\\Central\\PayoutController@index"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "sidebar_required_link",
+            "value": "/central/payment-settings",
+            "status": "PASS",
+            "message": "Required sidebar link exists.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central/payment-settings",
+                    "name": "central.payment-settings.edit",
+                    "action": "App\\Http\\Controllers\\Central\\PaymentSettingController@edit"
+                },
+                {
+                    "method": "PUT",
+                    "uri": "/central/payment-settings",
+                    "name": "central.payment-settings.update",
+                    "action": "App\\Http\\Controllers\\Central\\PaymentSettingController@update"
+                }
+            ]
+        },
+        {
+            "file": "resources/js/layouts/CentralLayout.vue",
+            "type": "sidebar_required_link",
+            "value": "/central/settings",
+            "status": "PASS",
+            "message": "Required sidebar link exists.",
+            "matches": [
+                {
+                    "method": "GET",
+                    "uri": "/central/settings",
+                    "name": "central.settings.edit",
+                    "action": "App\\Http\\Controllers\\Central\\PlatformSettingController@edit"
+                },
+                {
+                    "method": "PUT",
+                    "uri": "/central/settings",
+                    "name": "central.settings.update",
+                    "action": "App\\Http\\Controllers\\Central\\PlatformSettingController@update"
+                }
+            ]
+        }
+    ]
+}

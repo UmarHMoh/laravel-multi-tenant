@@ -1,0 +1,55 @@
+{
+    "summary": {
+        "PASS": 5,
+        "FAIL": 0
+    },
+    "generated_at": "2026-06-24 03:50:48",
+    "failures": [],
+    "all_findings": [
+        {
+            "name": "Unauthenticated central dashboard",
+            "method": "GET",
+            "uri": "/central",
+            "status": "PASS",
+            "http_status": 302,
+            "location": "http://localhost/central/login",
+            "expected": "redirect_to_login"
+        },
+        {
+            "name": "Unauthenticated central tenants",
+            "method": "GET",
+            "uri": "/central/tenants",
+            "status": "PASS",
+            "http_status": 302,
+            "location": "http://localhost/central/login",
+            "expected": "redirect_to_login"
+        },
+        {
+            "name": "Unauthenticated central payment settings",
+            "method": "GET",
+            "uri": "/central/payment-settings",
+            "status": "PASS",
+            "http_status": 302,
+            "location": "http://localhost/central/login",
+            "expected": "redirect_to_login"
+        },
+        {
+            "name": "Unauthenticated central payout account approve",
+            "method": "POST",
+            "uri": "/central/payout-accounts/1/approve",
+            "status": "PASS",
+            "http_status": 419,
+            "location": null,
+            "expected": "blocked"
+        },
+        {
+            "name": "Central login page public",
+            "method": "GET",
+            "uri": "/central/login",
+            "status": "PASS",
+            "http_status": 200,
+            "location": null,
+            "expected": "ok"
+        }
+    ]
+}

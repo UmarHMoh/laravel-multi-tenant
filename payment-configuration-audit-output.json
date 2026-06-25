@@ -1,0 +1,48 @@
+{
+    "summary": {
+        "PASS": 3,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 04:57:50",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "payment_config",
+            "name": "only one active payment configuration",
+            "status": "PASS",
+            "message": "There is no more than one active payment configuration.",
+            "data": {
+                "active_count": 1,
+                "active_id": 1,
+                "active_provider": "wipay"
+            }
+        },
+        {
+            "section": "payment_config",
+            "name": "active configuration has fee rules",
+            "status": "PASS",
+            "message": "Active payment configuration has provider, currency, and fee rules.",
+            "data": {
+                "active_id": 1,
+                "provider": "wipay",
+                "currency": "TTD",
+                "processor_fee_percent": "3.5000",
+                "processor_fee_fixed": "1.70"
+            }
+        },
+        {
+            "section": "payment_config",
+            "name": "activating one configuration disables others",
+            "status": "PASS",
+            "message": "Activating a payment configuration disables all others.",
+            "data": {
+                "new_active_count": 1,
+                "new_active_id": 7,
+                "candidate_id": 7
+            }
+        }
+    ]
+}

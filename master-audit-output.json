@@ -1,0 +1,1681 @@
+{
+    "generated_at": "2026-06-25 17:33:09",
+    "summary": {
+        "PASS": 953,
+        "FAIL": 6,
+        "WARN": 26,
+        "INFO": 42
+    },
+    "scripts": [
+        {
+            "name": "System Audit",
+            "script": "tools/system_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 53,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 1
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "UI Route Audit",
+            "script": "tools/ui_route_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 53,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 17
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Inertia Prop Audit",
+            "script": "tools/inertia_prop_audit.php",
+            "status": "WARN",
+            "summary": {
+                "PASS": 26,
+                "FAIL": 0,
+                "WARN": 8,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [
+                {
+                    "section": "inertia_props",
+                    "status": "WARN",
+                    "message": "Controller sends top-level props not declared by Vue. Usually safe, but review.",
+                    "data": {
+                        "controller_file": "app/Http/Controllers/Auth/AuthenticatedSessionController.php",
+                        "page": "auth/Login",
+                        "vue_file": "resources/js/pages/auth/Login.vue",
+                        "controller_props": [
+                            "canResetPassword",
+                            "status",
+                            "tenant"
+                        ],
+                        "vue_props": [
+                            "status",
+                            "canResetPassword"
+                        ],
+                        "missing_from_controller": [],
+                        "extra_from_controller": [
+                            "tenant"
+                        ]
+                    }
+                },
+                {
+                    "section": "inertia_props",
+                    "status": "WARN",
+                    "message": "Controller sends props but Vue does not declare defineProps. Manual review needed.",
+                    "data": {
+                        "controller_file": "app/Http/Controllers/Auth/NewPasswordController.php",
+                        "page": "auth/ResetPassword",
+                        "vue_file": "resources/js/pages/auth/ResetPassword.vue",
+                        "controller_props": [
+                            "email",
+                            "token"
+                        ],
+                        "vue_props": [],
+                        "extra_from_controller": [
+                            "email",
+                            "token"
+                        ]
+                    }
+                },
+                {
+                    "section": "inertia_props",
+                    "status": "WARN",
+                    "message": "Controller sends top-level props not declared by Vue. Usually safe, but review.",
+                    "data": {
+                        "controller_file": "app/Http/Controllers/Central/PlanController.php",
+                        "page": "central/plans/Index",
+                        "vue_file": "resources/js/pages/central/plans/Index.vue",
+                        "controller_props": [
+                            "plans",
+                            "paymentSetting"
+                        ],
+                        "vue_props": [
+                            "plans"
+                        ],
+                        "missing_from_controller": [],
+                        "extra_from_controller": [
+                            "paymentSetting"
+                        ]
+                    }
+                },
+                {
+                    "section": "inertia_props",
+                    "status": "WARN",
+                    "message": "Controller sends props but Vue does not declare defineProps. Manual review needed.",
+                    "data": {
+                        "controller_file": "app/Http/Controllers/Settings/PasswordController.php",
+                        "page": "settings/Password",
+                        "vue_file": "resources/js/pages/settings/Password.vue",
+                        "controller_props": [
+                            "mustVerifyEmail",
+                            "status"
+                        ],
+                        "vue_props": [],
+                        "extra_from_controller": [
+                            "mustVerifyEmail",
+                            "status"
+                        ]
+                    }
+                },
+                {
+                    "section": "inertia_props",
+                    "status": "WARN",
+                    "message": "Controller sends props but Vue does not declare defineProps. Manual review needed.",
+                    "data": {
+                        "controller_file": "app/Http/Controllers/Settings/ProfileController.php",
+                        "page": "settings/Profile",
+                        "vue_file": "resources/js/pages/settings/Profile.vue",
+                        "controller_props": [
+                            "mustVerifyEmail",
+                            "status"
+                        ],
+                        "vue_props": [],
+                        "extra_from_controller": [
+                            "mustVerifyEmail",
+                            "status"
+                        ]
+                    }
+                },
+                {
+                    "section": "inertia_props",
+                    "status": "WARN",
+                    "message": "Controller sends top-level props not declared by Vue. Usually safe, but review.",
+                    "data": {
+                        "controller_file": "app/Http/Controllers/Tenant/OrderController.php",
+                        "page": "tenant/OrderConfirmation",
+                        "vue_file": "resources/js/pages/tenant/OrderConfirmation.vue",
+                        "controller_props": [
+                            "order",
+                            "orderItems",
+                            "store",
+                            "platformTransaction"
+                        ],
+                        "vue_props": [
+                            "order",
+                            "orderItems",
+                            "store"
+                        ],
+                        "missing_from_controller": [],
+                        "extra_from_controller": [
+                            "platformTransaction"
+                        ]
+                    }
+                },
+                {
+                    "section": "inertia_props",
+                    "status": "WARN",
+                    "message": "Controller sends top-level props not declared by Vue. Usually safe, but review.",
+                    "data": {
+                        "controller_file": "app/Http/Controllers/Tenant/PageController.php",
+                        "page": "tenant/Homepage",
+                        "vue_file": "resources/js/pages/tenant/Homepage.vue",
+                        "controller_props": [
+                            "theme",
+                            "homepage",
+                            "themeSections",
+                            "sectionSchemas",
+                            "featuredProducts",
+                            "products",
+                            "categories",
+                            "isContactPage",
+                            "filters"
+                        ],
+                        "vue_props": [
+                            "theme",
+                            "homepage",
+                            "themeSections",
+                            "sectionSchemas",
+                            "featuredProducts",
+                            "products",
+                            "categories",
+                            "filters"
+                        ],
+                        "missing_from_controller": [],
+                        "extra_from_controller": [
+                            "isContactPage"
+                        ]
+                    }
+                },
+                {
+                    "section": "inertia_props",
+                    "status": "WARN",
+                    "message": "Controller sends top-level props not declared by Vue. Usually safe, but review.",
+                    "data": {
+                        "controller_file": "app/Http/Controllers/Tenant/PageController.php",
+                        "page": "tenant/Contact",
+                        "vue_file": "resources/js/pages/tenant/Contact.vue",
+                        "controller_props": [
+                            "store",
+                            "theme",
+                            "page",
+                            "themeSettings",
+                            "isContactPage"
+                        ],
+                        "vue_props": [
+                            "store"
+                        ],
+                        "missing_from_controller": [],
+                        "extra_from_controller": [
+                            "theme",
+                            "page",
+                            "themeSettings",
+                            "isContactPage"
+                        ]
+                    }
+                }
+            ],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Form Validation Model Audit",
+            "script": "tools/form_validation_model_audit.php",
+            "status": "WARN",
+            "summary": {
+                "PASS": 22,
+                "FAIL": 0,
+                "WARN": 18,
+                "INFO": 16
+            },
+            "failures": [],
+            "warnings": [
+                {
+                    "section": "controllers",
+                    "status": "WARN",
+                    "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+                    "data": {
+                        "file": "app/Http/Controllers/Auth/NewPasswordController.php",
+                        "validated_but_not_directly_written": [
+                            "token",
+                            "email",
+                            "password"
+                        ],
+                        "validation_fields": [
+                            "token",
+                            "email",
+                            "password"
+                        ],
+                        "write_fields": []
+                    }
+                },
+                {
+                    "section": "controllers",
+                    "status": "WARN",
+                    "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+                    "data": {
+                        "file": "app/Http/Controllers/Auth/PasswordResetLinkController.php",
+                        "validated_but_not_directly_written": [
+                            "email"
+                        ],
+                        "validation_fields": [
+                            "email"
+                        ],
+                        "write_fields": []
+                    }
+                },
+                {
+                    "section": "controllers",
+                    "status": "WARN",
+                    "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+                    "data": {
+                        "file": "app/Http/Controllers/Central/PaymentSettingController.php",
+                        "validated_but_not_directly_written": [
+                            "id",
+                            "base_url",
+                            "checkout_endpoint",
+                            "verify_endpoint",
+                            "refund_endpoint",
+                            "payout_endpoint",
+                            "token_endpoint",
+                            "public_key",
+                            "secret_key",
+                            "private_key",
+                            "webhook_secret",
+                            "merchant_id",
+                            "account_id",
+                            "username",
+                            "password",
+                            "bearer_token",
+                            "headers_template",
+                            "request_template",
+                            "response_mapping"
+                        ],
+                        "validation_fields": [
+                            "id",
+                            "name",
+                            "config_type",
+                            "provider",
+                            "environment",
+                            "country_code",
+                            "currency",
+                            "account_number",
+                            "fee_structure",
+                            "auth_type",
+                            "base_url",
+                            "checkout_endpoint",
+                            "verify_endpoint",
+                            "refund_endpoint",
+                            "payout_endpoint",
+                            "token_endpoint",
+                            "api_key",
+                            "public_key",
+                            "secret_key",
+                            "private_key",
+                            "webhook_secret",
+                            "merchant_id",
+                            "account_id",
+                            "username",
+                            "password",
+                            "bearer_token",
+                            "processor_fee_percent",
+                            "processor_fee_fixed",
+                            "headers_template",
+                            "request_template",
+                            "response_mapping",
+                            "metadata",
+                            "is_active"
+                        ],
+                        "write_fields": [
+                            "name",
+                            "config_type",
+                            "provider",
+                            "environment",
+                            "country_code",
+                            "currency",
+                            "account_number",
+                            "api_key",
+                            "fee_structure",
+                            "auth_type",
+                            "processor_fee_percent",
+                            "processor_fee_fixed",
+                            "is_active",
+                            "metadata",
+                            "created_by"
+                        ]
+                    }
+                },
+                {
+                    "section": "controllers",
+                    "status": "WARN",
+                    "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+                    "data": {
+                        "file": "app/Http/Controllers/Central/PayoutBatchController.php",
+                        "validated_but_not_directly_written": [
+                            "payout_request_ids",
+                            "notes",
+                            "admin_notes"
+                        ],
+                        "validation_fields": [
+                            "payout_request_ids",
+                            "notes",
+                            "admin_notes"
+                        ],
+                        "write_fields": []
+                    }
+                },
+                {
+                    "section": "controllers",
+                    "status": "WARN",
+                    "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+                    "data": {
+                        "file": "app/Http/Controllers/Central/PayoutRequestController.php",
+                        "validated_but_not_directly_written": [
+                            "admin_notes",
+                            "rejection_reason"
+                        ],
+                        "validation_fields": [
+                            "admin_notes",
+                            "rejection_reason"
+                        ],
+                        "write_fields": []
+                    }
+                },
+                {
+                    "section": "controllers",
+                    "status": "WARN",
+                    "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+                    "data": {
+                        "file": "app/Http/Controllers/Central/PlanController.php",
+                        "validated_but_not_directly_written": [
+                            "name",
+                            "slug",
+                            "description",
+                            "monthly_price",
+                            "commission_rate",
+                            "transaction_fee_percent",
+                            "transaction_fee_fixed",
+                            "max_products",
+                            "custom_domain_enabled",
+                            "api_payment_enabled",
+                            "allow_multiple_builder_pages",
+                            "is_active"
+                        ],
+                        "validation_fields": [
+                            "name",
+                            "slug",
+                            "description",
+                            "monthly_price",
+                            "commission_rate",
+                            "transaction_fee_percent",
+                            "transaction_fee_fixed",
+                            "max_products",
+                            "custom_domain_enabled",
+                            "api_payment_enabled",
+                            "allow_multiple_builder_pages",
+                            "is_active"
+                        ],
+                        "write_fields": []
+                    }
+                },
+                {
+                    "section": "controllers",
+                    "status": "WARN",
+                    "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+                    "data": {
+                        "file": "app/Http/Controllers/Central/PlatformSettingController.php",
+                        "validated_but_not_directly_written": [
+                            "renewal_grace_days",
+                            "auto_deactivate_overdue_tenants",
+                            "login_heading",
+                            "login_subheading"
+                        ],
+                        "validation_fields": [
+                            "platform_name",
+                            "owner_email",
+                            "subscription_currency",
+                            "renewal_grace_days",
+                            "auto_deactivate_overdue_tenants",
+                            "login_heading",
+                            "login_subheading"
+                        ],
+                        "write_fields": [
+                            "platform_name",
+                            "owner_email",
+                            "subscription_currency"
+                        ]
+                    }
+                },
+                {
+                    "section": "controllers",
+                    "status": "WARN",
+                    "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+                    "data": {
+                        "file": "app/Http/Controllers/Central/PlatformTransactionController.php",
+                        "validated_but_not_directly_written": [
+                            "tenant_id",
+                            "gross_amount",
+                            "provider",
+                            "provider_transaction_id",
+                            "currency"
+                        ],
+                        "validation_fields": [
+                            "tenant_id",
+                            "gross_amount",
+                            "provider",
+                            "provider_transaction_id",
+                            "currency"
+                        ],
+                        "write_fields": []
+                    }
+                },
+                {
+                    "section": "controllers",
+                    "status": "WARN",
+                    "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+                    "data": {
+                        "file": "app/Http/Controllers/Central/TenantController.php",
+                        "validated_but_not_directly_written": [
+                            "store_name",
+                            "store_email",
+                            "subdomain",
+                            "admin_name",
+                            "admin_email",
+                            "admin_password",
+                            "reason"
+                        ],
+                        "validation_fields": [
+                            "tenant_id",
+                            "store_name",
+                            "store_email",
+                            "subdomain",
+                            "admin_name",
+                            "admin_email",
+                            "admin_password",
+                            "plan_id",
+                            "renews_at",
+                            "trial_ends_at",
+                            "reason"
+                        ],
+                        "write_fields": [
+                            "id",
+                            "name",
+                            "email",
+                            "is_active",
+                            "data",
+                            "type",
+                            "description",
+                            "primary_subdomain",
+                            "default_domain",
+                            "custom_domain",
+                            "custom_domain_status",
+                            "email_verified_at",
+                            "password",
+                            "tenant_id",
+                            "plan_id",
+                            "status",
+                            "starts_at",
+                            "renews_at",
+                            "trial_ends_at",
+                            "domain",
+                            "ends_at",
+                            "custom_domain_approved_at",
+                            "custom_domain_rejected_at",
+                            "custom_domain_rejection_reason"
+                        ]
+                    }
+                },
+                {
+                    "section": "controllers",
+                    "status": "WARN",
+                    "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+                    "data": {
+                        "file": "app/Http/Controllers/Central/TenantSubscriptionPaymentController.php",
+                        "validated_but_not_directly_written": [
+                            "paid_at",
+                            "payment_method",
+                            "reference",
+                            "payer_name",
+                            "payer_email",
+                            "card_brand",
+                            "card_last4",
+                            "notes"
+                        ],
+                        "validation_fields": [
+                            "amount",
+                            "currency",
+                            "paid_at",
+                            "months",
+                            "payment_method",
+                            "reference",
+                            "payer_name",
+                            "payer_email",
+                            "card_brand",
+                            "card_last4",
+                            "notes"
+                        ],
+                        "write_fields": [
+                            "tenant_id",
+                            "tenant_subscription_id",
+                            "plan_id",
+                            "amount",
+                            "currency",
+                            "status",
+                            "renews_at",
+                            "ends_at",
+                            "is_active"
+                        ]
+                    }
+                },
+                {
+                    "section": "controllers",
+                    "status": "WARN",
+                    "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+                    "data": {
+                        "file": "app/Http/Controllers/Settings/ProfileController.php",
+                        "validated_but_not_directly_written": [
+                            "password"
+                        ],
+                        "validation_fields": [
+                            "password"
+                        ],
+                        "write_fields": []
+                    }
+                },
+                {
+                    "section": "models",
+                    "status": "WARN",
+                    "message": "Mapped database table does not exist on current connection.",
+                    "data": {
+                        "model": "Cart",
+                        "table": "carts",
+                        "file": "app/Models/Cart.php",
+                        "fillable": [
+                            "user_id",
+                            "session_id"
+                        ]
+                    }
+                },
+                {
+                    "section": "models",
+                    "status": "WARN",
+                    "message": "Mapped database table does not exist on current connection.",
+                    "data": {
+                        "model": "CartItem",
+                        "table": "cart_items",
+                        "file": "app/Models/CartItem.php",
+                        "fillable": [
+                            "cart_id",
+                            "product_id",
+                            "quantity",
+                            "price"
+                        ]
+                    }
+                },
+                {
+                    "section": "models",
+                    "status": "WARN",
+                    "message": "Mapped database table does not exist on current connection.",
+                    "data": {
+                        "model": "Category",
+                        "table": "categories",
+                        "file": "app/Models/Category.php",
+                        "fillable": [
+                            "name",
+                            "slug",
+                            "description",
+                            "is_active"
+                        ]
+                    }
+                },
+                {
+                    "section": "models",
+                    "status": "WARN",
+                    "message": "Mapped database table does not exist on current connection.",
+                    "data": {
+                        "model": "Order",
+                        "table": "orders",
+                        "file": "app/Models/Order.php",
+                        "fillable": [
+                            "order_number",
+                            "user_id",
+                            "total",
+                            "status",
+                            "notes",
+                            "billing_name",
+                            "billing_email",
+                            "billing_phone",
+                            "billing_address",
+                            "billing_city",
+                            "billing_state",
+                            "billing_country",
+                            "billing_zipcode",
+                            "shipping_name",
+                            "shipping_address",
+                            "shipping_city",
+                            "shipping_state",
+                            "shipping_country",
+                            "shipping_zipcode",
+                            "payment_method",
+                            "payment_provider",
+                            "provider_payment_id",
+                            "provider_checkout_url",
+                            "provider_reference",
+                            "payment_status",
+                            "paid_at",
+                            "payment_metadata"
+                        ]
+                    }
+                },
+                {
+                    "section": "models",
+                    "status": "WARN",
+                    "message": "Mapped database table does not exist on current connection.",
+                    "data": {
+                        "model": "OrderItem",
+                        "table": "order_items",
+                        "file": "app/Models/OrderItem.php",
+                        "fillable": [
+                            "order_id",
+                            "product_id",
+                            "product_name",
+                            "quantity",
+                            "price",
+                            "subtotal"
+                        ]
+                    }
+                },
+                {
+                    "section": "models",
+                    "status": "WARN",
+                    "message": "Mapped database table does not exist on current connection.",
+                    "data": {
+                        "model": "Product",
+                        "table": "products",
+                        "file": "app/Models/Product.php",
+                        "fillable": [
+                            "name",
+                            "slug",
+                            "description",
+                            "price",
+                            "stock",
+                            "is_active",
+                            "sku",
+                            "category_id"
+                        ]
+                    }
+                },
+                {
+                    "section": "models",
+                    "status": "WARN",
+                    "message": "Mapped database table does not exist on current connection.",
+                    "data": {
+                        "model": "User",
+                        "table": "users",
+                        "file": "app/Models/User.php",
+                        "fillable": [
+                            "name",
+                            "email",
+                            "password"
+                        ]
+                    }
+                }
+            ],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Tenant Database Audit",
+            "script": "tools/tenant_database_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 48,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 3
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Tenant Feature Action Audit",
+            "script": "tools/tenant_feature_action_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 3,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Full Persona Data Audit",
+            "script": "tools/full_persona_data_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 30,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 3
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Full Controller Persona Audit",
+            "script": "tools/full_controller_persona_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 33,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Page Render Audit",
+            "script": "tools/page_render_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 31,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Controller Action Audit",
+            "script": "tools/controller_action_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 9,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Dropdown Validation Audit",
+            "script": "tools/dropdown_validation_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 4,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 2
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Runtime Security Audit",
+            "script": "tools/runtime_security_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 5,
+                "FAIL": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Security Middleware Audit",
+            "script": "tools/security_middleware_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 180,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Payout Ledger Audit",
+            "script": "tools/payout_ledger_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 3,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Payout Request Audit",
+            "script": "tools/payout_request_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 9,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Payout Batch Audit",
+            "script": "tools/payout_batch_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 6,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Accounting Export Audit",
+            "script": "tools/accounting_export_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 13,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Subscription Feature Gate Audit",
+            "script": "tools/subscription_feature_gate_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 9,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Storefront Filter Audit",
+            "script": "tools/storefront_filter_audit.php",
+            "status": "FAIL",
+            "summary": {
+                "PASS": 6,
+                "FAIL": 3,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [
+                {
+                    "tenant_id": "awrah",
+                    "name": "storefront filter exception",
+                    "status": "FAIL",
+                    "message": "Undefined array key \"name\"",
+                    "data": {
+                        "exception": "ErrorException",
+                        "file": "/Users/umar/Desktop/Multi Tenant Fresh/laravel-multi-tenant/app/Services/Themes/ThemePageRenderer.php",
+                        "line": 26
+                    }
+                },
+                {
+                    "tenant_id": "tenant1",
+                    "name": "storefront filter exception",
+                    "status": "FAIL",
+                    "message": "Undefined array key \"name\"",
+                    "data": {
+                        "exception": "ErrorException",
+                        "file": "/Users/umar/Desktop/Multi Tenant Fresh/laravel-multi-tenant/app/Services/Themes/ThemePageRenderer.php",
+                        "line": 26
+                    }
+                },
+                {
+                    "tenant_id": "tenant2",
+                    "name": "storefront filter exception",
+                    "status": "FAIL",
+                    "message": "Undefined array key \"name\"",
+                    "data": {
+                        "exception": "ErrorException",
+                        "file": "/Users/umar/Desktop/Multi Tenant Fresh/laravel-multi-tenant/app/Services/Themes/ThemePageRenderer.php",
+                        "line": 26
+                    }
+                }
+            ],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Order Management Audit",
+            "script": "tools/order_management_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 15,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Tenant Login Identity Audit",
+            "script": "tools/tenant_login_identity_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 10,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Customer Management Audit",
+            "script": "tools/customer_management_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 18,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Product Inventory Audit",
+            "script": "tools/product_inventory_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 15,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Cart Checkout Stock Audit",
+            "script": "tools/cart_checkout_stock_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 18,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Test Payment Transaction Audit",
+            "script": "tools/test_payment_transaction_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 18,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Customer Order Experience Audit",
+            "script": "tools/customer_order_experience_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 15,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Storefront Navigation Audit",
+            "script": "tools/storefront_navigation_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 51,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Builder Foundation Audit",
+            "script": "tools/website_builder_foundation_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 3,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Theme Section Renderer Audit",
+            "script": "tools/theme_section_renderer_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 3,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Builder Plan Limits Audit",
+            "script": "tools/builder_plan_limits_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 26,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Builder Section Actions Audit",
+            "script": "tools/website_builder_section_actions_audit.php",
+            "status": "FAIL",
+            "summary": {
+                "PASS": 18,
+                "FAIL": 3,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [
+                {
+                    "name": "tenant awrah homepage draft update works",
+                    "status": "FAIL",
+                    "message": "Homepage draft did not save expected structure.",
+                    "data": {
+                        "sections": [
+                            {
+                                "id": "audit_s38_hero",
+                                "type": "hero",
+                                "blocks": [],
+                                "hidden": false,
+                                "settings": {
+                                    "heading": "S38 Audit Hero"
+                                },
+                                "sort_order": 0
+                            },
+                            {
+                                "id": "audit_s38_rich_text",
+                                "type": "rich_text",
+                                "blocks": [],
+                                "hidden": true,
+                                "settings": {
+                                    "text": "Share information about your brand, products, or mission.",
+                                    "width": "normal",
+                                    "heading": "S38 Audit Rich Text"
+                                },
+                                "sort_order": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "tenant tenant1 homepage draft update works",
+                    "status": "FAIL",
+                    "message": "Homepage draft did not save expected structure.",
+                    "data": {
+                        "sections": [
+                            {
+                                "id": "audit_s38_hero",
+                                "type": "hero",
+                                "blocks": [],
+                                "hidden": false,
+                                "settings": {
+                                    "heading": "S38 Audit Hero"
+                                },
+                                "sort_order": 0
+                            },
+                            {
+                                "id": "audit_s38_rich_text",
+                                "type": "rich_text",
+                                "blocks": [],
+                                "hidden": true,
+                                "settings": {
+                                    "text": "Share information about your brand, products, or mission.",
+                                    "width": "normal",
+                                    "heading": "S38 Audit Rich Text"
+                                },
+                                "sort_order": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "tenant tenant2 homepage draft update works",
+                    "status": "FAIL",
+                    "message": "Homepage draft did not save expected structure.",
+                    "data": {
+                        "sections": [
+                            {
+                                "id": "audit_s38_hero",
+                                "type": "hero",
+                                "blocks": [],
+                                "hidden": false,
+                                "settings": {
+                                    "heading": "S38 Audit Hero"
+                                },
+                                "sort_order": 0
+                            },
+                            {
+                                "id": "audit_s38_rich_text",
+                                "type": "rich_text",
+                                "blocks": [],
+                                "hidden": true,
+                                "settings": {
+                                    "text": "Share information about your brand, products, or mission.",
+                                    "width": "normal",
+                                    "heading": "S38 Audit Rich Text"
+                                },
+                                "sort_order": 1
+                            }
+                        ]
+                    }
+                }
+            ],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Builder Section Settings Audit",
+            "script": "tools/website_builder_section_settings_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 3,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Builder Blocks Audit",
+            "script": "tools/website_builder_blocks_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 3,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Builder Publish Audit",
+            "script": "tools/website_builder_publish_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 14,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Pages Dashboard Audit",
+            "script": "tools/website_pages_dashboard_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 30,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Editor Shell Audit",
+            "script": "tools/website_editor_shell_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 21,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Editor Selection Audit",
+            "script": "tools/website_editor_selection_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 16,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Editor Preview Rendering Audit",
+            "script": "tools/website_editor_preview_rendering_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 15,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Editor Link Picker Audit",
+            "script": "tools/website_editor_link_picker_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 16,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Editor Image Picker Audit",
+            "script": "tools/website_editor_image_picker_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 12,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Editor Reset Audit",
+            "script": "tools/website_editor_reset_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 13,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Editor Dirty State Audit",
+            "script": "tools/website_editor_dirty_state_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 2,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Editor Remove Safety Audit",
+            "script": "tools/website_editor_remove_safety_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 4,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Editor Duplicate Audit",
+            "script": "tools/website_editor_duplicate_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 5,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Editor Section Search Audit",
+            "script": "tools/website_editor_section_search_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 2,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Editor Section Categories Audit",
+            "script": "tools/website_editor_section_categories_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 13,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Editor Section Favorites Audit",
+            "script": "tools/website_editor_section_favorites_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 2,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Editor Section Presets Audit",
+            "script": "tools/website_editor_section_presets_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 2,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Editor Rendering Parity Audit",
+            "script": "tools/website_editor_rendering_parity_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 3,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Editor Media Upload Audit",
+            "script": "tools/website_editor_media_upload_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 11,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Storefront Editor Parity Audit",
+            "script": "tools/website_storefront_editor_parity_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 7,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Storefront Visual Parity Audit",
+            "script": "tools/website_storefront_visual_parity_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 2,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Storefront Product Card Polish Audit",
+            "script": "tools/website_storefront_product_card_polish_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 2,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        },
+        {
+            "name": "Website Storefront Product Image Data Audit",
+            "script": "tools/website_storefront_product_image_data_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 2,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+        }
+    ]
+}

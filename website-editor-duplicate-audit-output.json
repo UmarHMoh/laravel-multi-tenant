@@ -1,0 +1,97 @@
+{
+    "summary": {
+        "PASS": 12,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 23:25:39",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "website_editor_duplicate",
+            "name": "editor id helper exists",
+            "status": "PASS",
+            "message": "editor id helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_duplicate",
+            "name": "duplicate section id helper exists",
+            "status": "PASS",
+            "message": "duplicate section id helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_duplicate",
+            "name": "duplicate block id helper exists",
+            "status": "PASS",
+            "message": "duplicate block id helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_duplicate",
+            "name": "duplicate section action exists",
+            "status": "PASS",
+            "message": "duplicate section action exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_duplicate",
+            "name": "duplicate block action exists",
+            "status": "PASS",
+            "message": "duplicate block action exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_duplicate",
+            "name": "duplicate section button exists",
+            "status": "PASS",
+            "message": "duplicate section button exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_duplicate",
+            "name": "duplicate block button exists",
+            "status": "PASS",
+            "message": "duplicate block button exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_duplicate",
+            "name": "duplicated section selected",
+            "status": "PASS",
+            "message": "duplicated section selected found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_duplicate",
+            "name": "duplicated block selected",
+            "status": "PASS",
+            "message": "duplicated block selected found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_duplicate",
+            "name": "duplicated section unhides copy",
+            "status": "PASS",
+            "message": "duplicated section unhides copy found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_duplicate",
+            "name": "duplicated blocks get new ids",
+            "status": "PASS",
+            "message": "duplicated blocks get new ids found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_duplicate",
+            "name": "stage marker exists",
+            "status": "PASS",
+            "message": "stage marker exists found.",
+            "data": []
+        }
+    ]
+}

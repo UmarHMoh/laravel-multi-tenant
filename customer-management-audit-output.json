@@ -1,0 +1,223 @@
+{
+    "summary": {
+        "PASS": 18,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 10:58:56",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "tenant_id": "awrah",
+            "name": "customer index route exists",
+            "status": "PASS",
+            "message": "Tenant customer index route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "customer show route exists",
+            "status": "PASS",
+            "message": "Tenant customer show route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "customer index returns management props",
+            "status": "PASS",
+            "message": "Customer index returns customers, stats, and selected filters.",
+            "data": {
+                "props": [
+                    "customers",
+                    "stats",
+                    "filters"
+                ],
+                "filters": {
+                    "search": "audit-customer-e7963b16@example.com"
+                }
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "customer search returns expected customer",
+            "status": "PASS",
+            "message": "Customer search returned the expected customer.",
+            "data": {
+                "customer_email": "audit-customer-e7963b16@example.com",
+                "result_count": 1
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "customer show returns profile props",
+            "status": "PASS",
+            "message": "Customer show returns customer, orders, and stats.",
+            "data": {
+                "props": [
+                    "customer",
+                    "orders",
+                    "stats"
+                ],
+                "customer_email": "audit-customer-e7963b16@example.com",
+                "stats": {
+                    "order_count": 1,
+                    "paid_order_count": 1,
+                    "total_spent": 125.5,
+                    "latest_order_at": "2026-06-24T10:58:56.000000Z"
+                }
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "customer profile shows order history",
+            "status": "PASS",
+            "message": "Customer profile includes the expected order history.",
+            "data": {
+                "order_id": 169,
+                "result_count": 1
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "customer index route exists",
+            "status": "PASS",
+            "message": "Tenant customer index route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "customer show route exists",
+            "status": "PASS",
+            "message": "Tenant customer show route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "customer index returns management props",
+            "status": "PASS",
+            "message": "Customer index returns customers, stats, and selected filters.",
+            "data": {
+                "props": [
+                    "customers",
+                    "stats",
+                    "filters"
+                ],
+                "filters": {
+                    "search": "audit-customer-b27ac639@example.com"
+                }
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "customer search returns expected customer",
+            "status": "PASS",
+            "message": "Customer search returned the expected customer.",
+            "data": {
+                "customer_email": "audit-customer-b27ac639@example.com",
+                "result_count": 1
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "customer show returns profile props",
+            "status": "PASS",
+            "message": "Customer show returns customer, orders, and stats.",
+            "data": {
+                "props": [
+                    "customer",
+                    "orders",
+                    "stats"
+                ],
+                "customer_email": "audit-customer-b27ac639@example.com",
+                "stats": {
+                    "order_count": 1,
+                    "paid_order_count": 1,
+                    "total_spent": 125.5,
+                    "latest_order_at": "2026-06-24T10:58:56.000000Z"
+                }
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "customer profile shows order history",
+            "status": "PASS",
+            "message": "Customer profile includes the expected order history.",
+            "data": {
+                "order_id": 198,
+                "result_count": 1
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "customer index route exists",
+            "status": "PASS",
+            "message": "Tenant customer index route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "customer show route exists",
+            "status": "PASS",
+            "message": "Tenant customer show route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "customer index returns management props",
+            "status": "PASS",
+            "message": "Customer index returns customers, stats, and selected filters.",
+            "data": {
+                "props": [
+                    "customers",
+                    "stats",
+                    "filters"
+                ],
+                "filters": {
+                    "search": "audit-customer-0872bc0b@example.com"
+                }
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "customer search returns expected customer",
+            "status": "PASS",
+            "message": "Customer search returned the expected customer.",
+            "data": {
+                "customer_email": "audit-customer-0872bc0b@example.com",
+                "result_count": 1
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "customer show returns profile props",
+            "status": "PASS",
+            "message": "Customer show returns customer, orders, and stats.",
+            "data": {
+                "props": [
+                    "customer",
+                    "orders",
+                    "stats"
+                ],
+                "customer_email": "audit-customer-0872bc0b@example.com",
+                "stats": {
+                    "order_count": 1,
+                    "paid_order_count": 1,
+                    "total_spent": 125.5,
+                    "latest_order_at": "2026-06-24T10:58:56.000000Z"
+                }
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "customer profile shows order history",
+            "status": "PASS",
+            "message": "Customer profile includes the expected order history.",
+            "data": {
+                "order_id": 169,
+                "result_count": 1
+            }
+        }
+    ]
+}

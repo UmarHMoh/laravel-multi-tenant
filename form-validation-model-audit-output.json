@@ -1,0 +1,1754 @@
+{
+    "summary": {
+        "PASS": 23,
+        "FAIL": 0,
+        "WARN": 15,
+        "INFO": 10
+    },
+    "generated_at": "2026-06-24 03:28:44",
+    "vue_forms_detected": 9,
+    "controllers_with_validation_or_writes": 18,
+    "failures": [],
+    "warnings": [
+        {
+            "section": "controllers",
+            "status": "WARN",
+            "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+            "data": {
+                "file": "app/Http/Controllers/Auth/NewPasswordController.php",
+                "validated_but_not_directly_written": [
+                    "token",
+                    "email",
+                    "password"
+                ],
+                "validation_fields": [
+                    "token",
+                    "email",
+                    "password"
+                ],
+                "write_fields": []
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "WARN",
+            "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+            "data": {
+                "file": "app/Http/Controllers/Auth/PasswordResetLinkController.php",
+                "validated_but_not_directly_written": [
+                    "email"
+                ],
+                "validation_fields": [
+                    "email"
+                ],
+                "write_fields": []
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "WARN",
+            "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+            "data": {
+                "file": "app/Http/Controllers/Central/PlanController.php",
+                "validated_but_not_directly_written": [
+                    "name",
+                    "slug",
+                    "description",
+                    "monthly_price",
+                    "commission_rate",
+                    "transaction_fee_percent",
+                    "transaction_fee_fixed",
+                    "max_products",
+                    "custom_domain_enabled",
+                    "api_payment_enabled",
+                    "is_active"
+                ],
+                "validation_fields": [
+                    "name",
+                    "slug",
+                    "description",
+                    "monthly_price",
+                    "commission_rate",
+                    "transaction_fee_percent",
+                    "transaction_fee_fixed",
+                    "max_products",
+                    "custom_domain_enabled",
+                    "api_payment_enabled",
+                    "is_active"
+                ],
+                "write_fields": []
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "WARN",
+            "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+            "data": {
+                "file": "app/Http/Controllers/Central/PlatformSettingController.php",
+                "validated_but_not_directly_written": [
+                    "renewal_grace_days",
+                    "auto_deactivate_overdue_tenants",
+                    "login_heading",
+                    "login_subheading"
+                ],
+                "validation_fields": [
+                    "platform_name",
+                    "owner_email",
+                    "subscription_currency",
+                    "renewal_grace_days",
+                    "auto_deactivate_overdue_tenants",
+                    "login_heading",
+                    "login_subheading"
+                ],
+                "write_fields": [
+                    "platform_name",
+                    "owner_email",
+                    "subscription_currency"
+                ]
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "WARN",
+            "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+            "data": {
+                "file": "app/Http/Controllers/Central/PlatformTransactionController.php",
+                "validated_but_not_directly_written": [
+                    "tenant_id",
+                    "gross_amount",
+                    "provider",
+                    "provider_transaction_id",
+                    "currency"
+                ],
+                "validation_fields": [
+                    "tenant_id",
+                    "gross_amount",
+                    "provider",
+                    "provider_transaction_id",
+                    "currency"
+                ],
+                "write_fields": []
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "WARN",
+            "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+            "data": {
+                "file": "app/Http/Controllers/Central/TenantController.php",
+                "validated_but_not_directly_written": [
+                    "store_name",
+                    "store_email",
+                    "subdomain",
+                    "admin_name",
+                    "admin_email",
+                    "admin_password",
+                    "reason"
+                ],
+                "validation_fields": [
+                    "tenant_id",
+                    "store_name",
+                    "store_email",
+                    "subdomain",
+                    "admin_name",
+                    "admin_email",
+                    "admin_password",
+                    "plan_id",
+                    "renews_at",
+                    "trial_ends_at",
+                    "reason"
+                ],
+                "write_fields": [
+                    "id",
+                    "name",
+                    "email",
+                    "is_active",
+                    "data",
+                    "type",
+                    "description",
+                    "primary_subdomain",
+                    "default_domain",
+                    "custom_domain",
+                    "custom_domain_status",
+                    "email_verified_at",
+                    "password",
+                    "tenant_id",
+                    "plan_id",
+                    "status",
+                    "starts_at",
+                    "renews_at",
+                    "trial_ends_at",
+                    "domain",
+                    "ends_at",
+                    "custom_domain_approved_at",
+                    "custom_domain_rejected_at",
+                    "custom_domain_rejection_reason"
+                ]
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "WARN",
+            "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+            "data": {
+                "file": "app/Http/Controllers/Central/TenantSubscriptionPaymentController.php",
+                "validated_but_not_directly_written": [
+                    "paid_at",
+                    "payment_method",
+                    "reference",
+                    "payer_name",
+                    "payer_email",
+                    "card_brand",
+                    "card_last4",
+                    "notes"
+                ],
+                "validation_fields": [
+                    "amount",
+                    "currency",
+                    "paid_at",
+                    "months",
+                    "payment_method",
+                    "reference",
+                    "payer_name",
+                    "payer_email",
+                    "card_brand",
+                    "card_last4",
+                    "notes"
+                ],
+                "write_fields": [
+                    "tenant_id",
+                    "tenant_subscription_id",
+                    "plan_id",
+                    "amount",
+                    "currency",
+                    "status",
+                    "renews_at",
+                    "ends_at",
+                    "is_active"
+                ]
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "WARN",
+            "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+            "data": {
+                "file": "app/Http/Controllers/Settings/ProfileController.php",
+                "validated_but_not_directly_written": [
+                    "password"
+                ],
+                "validation_fields": [
+                    "password"
+                ],
+                "write_fields": []
+            }
+        },
+        {
+            "section": "models",
+            "status": "WARN",
+            "message": "Mapped database table does not exist on current connection.",
+            "data": {
+                "model": "Cart",
+                "table": "carts",
+                "file": "app/Models/Cart.php",
+                "fillable": [
+                    "user_id",
+                    "session_id"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "WARN",
+            "message": "Mapped database table does not exist on current connection.",
+            "data": {
+                "model": "CartItem",
+                "table": "cart_items",
+                "file": "app/Models/CartItem.php",
+                "fillable": [
+                    "cart_id",
+                    "product_id",
+                    "quantity",
+                    "price"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "WARN",
+            "message": "Mapped database table does not exist on current connection.",
+            "data": {
+                "model": "Category",
+                "table": "categories",
+                "file": "app/Models/Category.php",
+                "fillable": [
+                    "name",
+                    "slug",
+                    "description",
+                    "is_active"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "WARN",
+            "message": "Mapped database table does not exist on current connection.",
+            "data": {
+                "model": "Order",
+                "table": "orders",
+                "file": "app/Models/Order.php",
+                "fillable": [
+                    "order_number",
+                    "user_id",
+                    "total",
+                    "status",
+                    "notes",
+                    "billing_name",
+                    "billing_email",
+                    "billing_phone",
+                    "billing_address",
+                    "billing_city",
+                    "billing_state",
+                    "billing_country",
+                    "billing_zipcode",
+                    "shipping_name",
+                    "shipping_address",
+                    "shipping_city",
+                    "shipping_state",
+                    "shipping_country",
+                    "shipping_zipcode",
+                    "payment_method",
+                    "payment_status",
+                    "paid_at"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "WARN",
+            "message": "Mapped database table does not exist on current connection.",
+            "data": {
+                "model": "OrderItem",
+                "table": "order_items",
+                "file": "app/Models/OrderItem.php",
+                "fillable": [
+                    "order_id",
+                    "product_id",
+                    "product_name",
+                    "quantity",
+                    "price",
+                    "subtotal"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "WARN",
+            "message": "Mapped database table does not exist on current connection.",
+            "data": {
+                "model": "Product",
+                "table": "products",
+                "file": "app/Models/Product.php",
+                "fillable": [
+                    "name",
+                    "slug",
+                    "description",
+                    "price",
+                    "stock",
+                    "is_active",
+                    "sku",
+                    "category_id"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "WARN",
+            "message": "Mapped database table does not exist on current connection.",
+            "data": {
+                "model": "User",
+                "table": "users",
+                "file": "app/Models/User.php",
+                "fillable": [
+                    "name",
+                    "email",
+                    "password"
+                ]
+            }
+        }
+    ],
+    "all_findings": [
+        {
+            "section": "vue_forms",
+            "status": "INFO",
+            "message": "Vue form/action detected.",
+            "data": {
+                "file": "resources/js/pages/auth/ConfirmPassword.vue",
+                "useForm_fields": [
+                    "password"
+                ],
+                "v_model_fields": [
+                    "password"
+                ],
+                "actions": []
+            }
+        },
+        {
+            "section": "vue_forms",
+            "status": "INFO",
+            "message": "Vue form/action detected.",
+            "data": {
+                "file": "resources/js/pages/auth/ForgotPassword.vue",
+                "useForm_fields": [
+                    "email"
+                ],
+                "v_model_fields": [
+                    "email"
+                ],
+                "actions": []
+            }
+        },
+        {
+            "section": "vue_forms",
+            "status": "INFO",
+            "message": "Vue form/action detected.",
+            "data": {
+                "file": "resources/js/pages/auth/Login.vue",
+                "useForm_fields": [
+                    "email",
+                    "password",
+                    "remember"
+                ],
+                "v_model_fields": [
+                    "email",
+                    "password",
+                    "remember"
+                ],
+                "actions": []
+            }
+        },
+        {
+            "section": "vue_forms",
+            "status": "INFO",
+            "message": "Vue form/action detected.",
+            "data": {
+                "file": "resources/js/pages/auth/Register.vue",
+                "useForm_fields": [
+                    "name",
+                    "email",
+                    "password",
+                    "password_confirmation"
+                ],
+                "v_model_fields": [
+                    "name",
+                    "email",
+                    "password",
+                    "password_confirmation"
+                ],
+                "actions": []
+            }
+        },
+        {
+            "section": "vue_forms",
+            "status": "INFO",
+            "message": "Vue form/action detected.",
+            "data": {
+                "file": "resources/js/pages/auth/ResetPassword.vue",
+                "useForm_fields": [
+                    "token",
+                    "email",
+                    "password",
+                    "password_confirmation"
+                ],
+                "v_model_fields": [
+                    "email",
+                    "password",
+                    "password_confirmation"
+                ],
+                "actions": []
+            }
+        },
+        {
+            "section": "vue_forms",
+            "status": "INFO",
+            "message": "Vue form/action detected.",
+            "data": {
+                "file": "resources/js/pages/settings/Password.vue",
+                "useForm_fields": [
+                    "current_password",
+                    "password",
+                    "password_confirmation"
+                ],
+                "v_model_fields": [
+                    "current_password",
+                    "password",
+                    "password_confirmation"
+                ],
+                "actions": []
+            }
+        },
+        {
+            "section": "vue_forms",
+            "status": "INFO",
+            "message": "Vue form/action detected.",
+            "data": {
+                "file": "resources/js/pages/settings/Profile.vue",
+                "useForm_fields": [
+                    "name",
+                    "email"
+                ],
+                "v_model_fields": [
+                    "name",
+                    "email"
+                ],
+                "actions": []
+            }
+        },
+        {
+            "section": "vue_forms",
+            "status": "INFO",
+            "message": "Vue form/action detected.",
+            "data": {
+                "file": "resources/js/pages/tenant/Homepage.vue",
+                "useForm_fields": [],
+                "v_model_fields": [
+                    "search"
+                ],
+                "actions": []
+            }
+        },
+        {
+            "section": "vue_forms",
+            "status": "INFO",
+            "message": "Vue form/action detected.",
+            "data": {
+                "file": "resources/js/pages/tenant/Payment.vue",
+                "useForm_fields": [],
+                "v_model_fields": [
+                    "billing_name",
+                    "billing_email",
+                    "billing_phone",
+                    "billing_address",
+                    "billing_city",
+                    "billing_state",
+                    "billing_zipcode",
+                    "billing_country",
+                    "shippingSameAsBilling",
+                    "shipping_name",
+                    "shipping_address",
+                    "shipping_city",
+                    "shipping_state",
+                    "shipping_zipcode",
+                    "shipping_country",
+                    "paymentMethod",
+                    "notes"
+                ],
+                "actions": []
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "WARN",
+            "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+            "data": {
+                "file": "app/Http/Controllers/Auth/NewPasswordController.php",
+                "validated_but_not_directly_written": [
+                    "token",
+                    "email",
+                    "password"
+                ],
+                "validation_fields": [
+                    "token",
+                    "email",
+                    "password"
+                ],
+                "write_fields": []
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "WARN",
+            "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+            "data": {
+                "file": "app/Http/Controllers/Auth/PasswordResetLinkController.php",
+                "validated_but_not_directly_written": [
+                    "email"
+                ],
+                "validation_fields": [
+                    "email"
+                ],
+                "write_fields": []
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "PASS",
+            "message": "Controller validation/write fields look coordinated.",
+            "data": {
+                "file": "app/Http/Controllers/Auth/RegisteredUserController.php",
+                "validation_fields": [
+                    "name",
+                    "email",
+                    "password"
+                ],
+                "write_fields": [
+                    "name",
+                    "email",
+                    "password"
+                ]
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "PASS",
+            "message": "Controller validation/write fields look coordinated.",
+            "data": {
+                "file": "app/Http/Controllers/Central/PaymentSettingController.php",
+                "validation_fields": [
+                    "provider",
+                    "environment",
+                    "country_code",
+                    "currency",
+                    "account_number",
+                    "api_key",
+                    "fee_structure",
+                    "processor_fee_percent",
+                    "processor_fee_fixed",
+                    "is_active"
+                ],
+                "write_fields": [
+                    "provider",
+                    "environment",
+                    "country_code",
+                    "currency",
+                    "account_number",
+                    "api_key",
+                    "fee_structure",
+                    "processor_fee_percent",
+                    "processor_fee_fixed",
+                    "is_active"
+                ]
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "PASS",
+            "message": "Controller validation/write fields look coordinated.",
+            "data": {
+                "file": "app/Http/Controllers/Central/PayoutAccountReviewController.php",
+                "validation_fields": [
+                    "review_notes"
+                ],
+                "write_fields": [
+                    "status",
+                    "review_notes",
+                    "reviewed_at",
+                    "reviewed_by"
+                ]
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "PASS",
+            "message": "Controller validation/write fields look coordinated.",
+            "data": {
+                "file": "app/Http/Controllers/Central/PayoutBankOptionController.php",
+                "validation_fields": [
+                    "name",
+                    "is_active"
+                ],
+                "write_fields": [
+                    "name",
+                    "is_active"
+                ]
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "PASS",
+            "message": "Controller validation/write fields look coordinated.",
+            "data": {
+                "file": "app/Http/Controllers/Central/PayoutController.php",
+                "validation_fields": [
+                    "reference",
+                    "notes"
+                ],
+                "write_fields": [
+                    "tenant_id",
+                    "tenant_payout_account_id",
+                    "currency",
+                    "total_gross",
+                    "total_processor_fees",
+                    "total_net",
+                    "total_commission",
+                    "total_payout",
+                    "status",
+                    "reference",
+                    "notes",
+                    "paid_at",
+                    "payout_status",
+                    "payout_marked_at"
+                ]
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "WARN",
+            "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+            "data": {
+                "file": "app/Http/Controllers/Central/PlanController.php",
+                "validated_but_not_directly_written": [
+                    "name",
+                    "slug",
+                    "description",
+                    "monthly_price",
+                    "commission_rate",
+                    "transaction_fee_percent",
+                    "transaction_fee_fixed",
+                    "max_products",
+                    "custom_domain_enabled",
+                    "api_payment_enabled",
+                    "is_active"
+                ],
+                "validation_fields": [
+                    "name",
+                    "slug",
+                    "description",
+                    "monthly_price",
+                    "commission_rate",
+                    "transaction_fee_percent",
+                    "transaction_fee_fixed",
+                    "max_products",
+                    "custom_domain_enabled",
+                    "api_payment_enabled",
+                    "is_active"
+                ],
+                "write_fields": []
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "WARN",
+            "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+            "data": {
+                "file": "app/Http/Controllers/Central/PlatformSettingController.php",
+                "validated_but_not_directly_written": [
+                    "renewal_grace_days",
+                    "auto_deactivate_overdue_tenants",
+                    "login_heading",
+                    "login_subheading"
+                ],
+                "validation_fields": [
+                    "platform_name",
+                    "owner_email",
+                    "subscription_currency",
+                    "renewal_grace_days",
+                    "auto_deactivate_overdue_tenants",
+                    "login_heading",
+                    "login_subheading"
+                ],
+                "write_fields": [
+                    "platform_name",
+                    "owner_email",
+                    "subscription_currency"
+                ]
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "WARN",
+            "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+            "data": {
+                "file": "app/Http/Controllers/Central/PlatformTransactionController.php",
+                "validated_but_not_directly_written": [
+                    "tenant_id",
+                    "gross_amount",
+                    "provider",
+                    "provider_transaction_id",
+                    "currency"
+                ],
+                "validation_fields": [
+                    "tenant_id",
+                    "gross_amount",
+                    "provider",
+                    "provider_transaction_id",
+                    "currency"
+                ],
+                "write_fields": []
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "WARN",
+            "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+            "data": {
+                "file": "app/Http/Controllers/Central/TenantController.php",
+                "validated_but_not_directly_written": [
+                    "store_name",
+                    "store_email",
+                    "subdomain",
+                    "admin_name",
+                    "admin_email",
+                    "admin_password",
+                    "reason"
+                ],
+                "validation_fields": [
+                    "tenant_id",
+                    "store_name",
+                    "store_email",
+                    "subdomain",
+                    "admin_name",
+                    "admin_email",
+                    "admin_password",
+                    "plan_id",
+                    "renews_at",
+                    "trial_ends_at",
+                    "reason"
+                ],
+                "write_fields": [
+                    "id",
+                    "name",
+                    "email",
+                    "is_active",
+                    "data",
+                    "type",
+                    "description",
+                    "primary_subdomain",
+                    "default_domain",
+                    "custom_domain",
+                    "custom_domain_status",
+                    "email_verified_at",
+                    "password",
+                    "tenant_id",
+                    "plan_id",
+                    "status",
+                    "starts_at",
+                    "renews_at",
+                    "trial_ends_at",
+                    "domain",
+                    "ends_at",
+                    "custom_domain_approved_at",
+                    "custom_domain_rejected_at",
+                    "custom_domain_rejection_reason"
+                ]
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "WARN",
+            "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+            "data": {
+                "file": "app/Http/Controllers/Central/TenantSubscriptionPaymentController.php",
+                "validated_but_not_directly_written": [
+                    "paid_at",
+                    "payment_method",
+                    "reference",
+                    "payer_name",
+                    "payer_email",
+                    "card_brand",
+                    "card_last4",
+                    "notes"
+                ],
+                "validation_fields": [
+                    "amount",
+                    "currency",
+                    "paid_at",
+                    "months",
+                    "payment_method",
+                    "reference",
+                    "payer_name",
+                    "payer_email",
+                    "card_brand",
+                    "card_last4",
+                    "notes"
+                ],
+                "write_fields": [
+                    "tenant_id",
+                    "tenant_subscription_id",
+                    "plan_id",
+                    "amount",
+                    "currency",
+                    "status",
+                    "renews_at",
+                    "ends_at",
+                    "is_active"
+                ]
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "PASS",
+            "message": "Controller validation/write fields look coordinated.",
+            "data": {
+                "file": "app/Http/Controllers/Settings/PasswordController.php",
+                "validation_fields": [
+                    "current_password",
+                    "password"
+                ],
+                "write_fields": [
+                    "password"
+                ]
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "WARN",
+            "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+            "data": {
+                "file": "app/Http/Controllers/Settings/ProfileController.php",
+                "validated_but_not_directly_written": [
+                    "password"
+                ],
+                "validation_fields": [
+                    "password"
+                ],
+                "write_fields": []
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "PASS",
+            "message": "Controller validation/write fields look coordinated.",
+            "data": {
+                "file": "app/Http/Controllers/Tenant/CartController.php",
+                "validation_fields": [
+                    "product_id",
+                    "quantity"
+                ],
+                "write_fields": [
+                    "cart_id",
+                    "product_id",
+                    "quantity",
+                    "price",
+                    "user_id",
+                    "session_id"
+                ]
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "PASS",
+            "message": "Controller validation/write fields look coordinated.",
+            "data": {
+                "file": "app/Http/Controllers/Tenant/HomepageController.php",
+                "validation_fields": [],
+                "write_fields": [
+                    "user_id",
+                    "session_id"
+                ]
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "PASS",
+            "message": "Controller validation/write fields look coordinated.",
+            "data": {
+                "file": "app/Http/Controllers/Tenant/OrderController.php",
+                "validation_fields": [
+                    "billing_name",
+                    "billing_email",
+                    "billing_phone",
+                    "billing_address",
+                    "billing_city",
+                    "billing_state",
+                    "billing_country",
+                    "billing_zipcode",
+                    "shipping_name",
+                    "shipping_address",
+                    "shipping_city",
+                    "shipping_state",
+                    "shipping_country",
+                    "shipping_zipcode",
+                    "payment_method",
+                    "notes"
+                ],
+                "write_fields": [
+                    "order_number",
+                    "user_id",
+                    "total",
+                    "status",
+                    "notes",
+                    "billing_name",
+                    "billing_email",
+                    "billing_phone",
+                    "billing_address",
+                    "billing_city",
+                    "billing_state",
+                    "billing_country",
+                    "billing_zipcode",
+                    "shipping_name",
+                    "shipping_address",
+                    "shipping_city",
+                    "shipping_state",
+                    "shipping_country",
+                    "shipping_zipcode",
+                    "payment_method",
+                    "payment_status",
+                    "paid_at",
+                    "order_id",
+                    "product_id",
+                    "product_name",
+                    "quantity",
+                    "price",
+                    "subtotal",
+                    "session_id"
+                ]
+            }
+        },
+        {
+            "section": "controllers",
+            "status": "PASS",
+            "message": "Controller validation/write fields look coordinated.",
+            "data": {
+                "file": "app/Http/Controllers/Tenant/ProductController.php",
+                "validation_fields": [],
+                "write_fields": [
+                    "user_id",
+                    "session_id"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "WARN",
+            "message": "Mapped database table does not exist on current connection.",
+            "data": {
+                "model": "Cart",
+                "table": "carts",
+                "file": "app/Models/Cart.php",
+                "fillable": [
+                    "user_id",
+                    "session_id"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "WARN",
+            "message": "Mapped database table does not exist on current connection.",
+            "data": {
+                "model": "CartItem",
+                "table": "cart_items",
+                "file": "app/Models/CartItem.php",
+                "fillable": [
+                    "cart_id",
+                    "product_id",
+                    "quantity",
+                    "price"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "WARN",
+            "message": "Mapped database table does not exist on current connection.",
+            "data": {
+                "model": "Category",
+                "table": "categories",
+                "file": "app/Models/Category.php",
+                "fillable": [
+                    "name",
+                    "slug",
+                    "description",
+                    "is_active"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "WARN",
+            "message": "Mapped database table does not exist on current connection.",
+            "data": {
+                "model": "Order",
+                "table": "orders",
+                "file": "app/Models/Order.php",
+                "fillable": [
+                    "order_number",
+                    "user_id",
+                    "total",
+                    "status",
+                    "notes",
+                    "billing_name",
+                    "billing_email",
+                    "billing_phone",
+                    "billing_address",
+                    "billing_city",
+                    "billing_state",
+                    "billing_country",
+                    "billing_zipcode",
+                    "shipping_name",
+                    "shipping_address",
+                    "shipping_city",
+                    "shipping_state",
+                    "shipping_country",
+                    "shipping_zipcode",
+                    "payment_method",
+                    "payment_status",
+                    "paid_at"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "WARN",
+            "message": "Mapped database table does not exist on current connection.",
+            "data": {
+                "model": "OrderItem",
+                "table": "order_items",
+                "file": "app/Models/OrderItem.php",
+                "fillable": [
+                    "order_id",
+                    "product_id",
+                    "product_name",
+                    "quantity",
+                    "price",
+                    "subtotal"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "PASS",
+            "message": "Model fillable fields exist in database table.",
+            "data": {
+                "model": "PaymentSetting",
+                "table": "payment_settings",
+                "file": "app/Models/PaymentSetting.php",
+                "fillable": [
+                    "provider",
+                    "environment",
+                    "country_code",
+                    "currency",
+                    "account_number",
+                    "api_key",
+                    "fee_structure",
+                    "processor_fee_percent",
+                    "processor_fee_fixed",
+                    "is_active",
+                    "metadata"
+                ],
+                "columns": [
+                    "id",
+                    "provider",
+                    "environment",
+                    "country_code",
+                    "currency",
+                    "account_number",
+                    "api_key",
+                    "fee_structure",
+                    "processor_fee_percent",
+                    "processor_fee_fixed",
+                    "is_active",
+                    "metadata",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "PASS",
+            "message": "Model fillable fields exist in database table.",
+            "data": {
+                "model": "PayoutBankOption",
+                "table": "payout_bank_options",
+                "file": "app/Models/PayoutBankOption.php",
+                "fillable": [
+                    "name",
+                    "is_active"
+                ],
+                "columns": [
+                    "id",
+                    "name",
+                    "is_active",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "PASS",
+            "message": "Model fillable fields exist in database table.",
+            "data": {
+                "model": "Plan",
+                "table": "plans",
+                "file": "app/Models/Plan.php",
+                "fillable": [
+                    "name",
+                    "slug",
+                    "description",
+                    "monthly_price",
+                    "commission_rate",
+                    "transaction_fee_percent",
+                    "transaction_fee_fixed",
+                    "max_products",
+                    "custom_domain_enabled",
+                    "api_payment_enabled",
+                    "is_active"
+                ],
+                "columns": [
+                    "id",
+                    "name",
+                    "slug",
+                    "description",
+                    "monthly_price",
+                    "commission_rate",
+                    "transaction_fee_percent",
+                    "transaction_fee_fixed",
+                    "max_products",
+                    "custom_domain_enabled",
+                    "api_payment_enabled",
+                    "is_active",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "PASS",
+            "message": "Model fillable fields exist in database table.",
+            "data": {
+                "model": "PlatformSetting",
+                "table": "platform_settings",
+                "file": "app/Models/PlatformSetting.php",
+                "fillable": [
+                    "platform_name",
+                    "owner_email",
+                    "subscription_currency",
+                    "renewal_grace_days",
+                    "auto_deactivate_overdue_tenants",
+                    "login_heading",
+                    "login_subheading",
+                    "metadata"
+                ],
+                "columns": [
+                    "id",
+                    "platform_name",
+                    "owner_email",
+                    "subscription_currency",
+                    "renewal_grace_days",
+                    "auto_deactivate_overdue_tenants",
+                    "login_heading",
+                    "login_subheading",
+                    "metadata",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "PASS",
+            "message": "Model fillable fields exist in database table.",
+            "data": {
+                "model": "PlatformTransaction",
+                "table": "platform_transactions",
+                "file": "app/Models/PlatformTransaction.php",
+                "fillable": [
+                    "tenant_id",
+                    "tenant_order_id",
+                    "provider",
+                    "provider_transaction_id",
+                    "currency",
+                    "gross_amount",
+                    "processor_fee",
+                    "platform_fee_amount",
+                    "platform_fee_fixed",
+                    "platform_fee_percent",
+                    "total_tenant_fee_amount",
+                    "tenant_transaction_fee_fixed",
+                    "tenant_transaction_fee_percent",
+                    "processor_fee_fixed",
+                    "processor_fee_percent",
+                    "net_amount",
+                    "commission_rate",
+                    "commission_amount",
+                    "tenant_payout_amount",
+                    "payment_status",
+                    "payout_status",
+                    "paid_at",
+                    "payout_marked_at",
+                    "metadata"
+                ],
+                "columns": [
+                    "id",
+                    "tenant_id",
+                    "tenant_order_id",
+                    "provider",
+                    "provider_transaction_id",
+                    "currency",
+                    "gross_amount",
+                    "processor_fee",
+                    "processor_fee_percent",
+                    "processor_fee_fixed",
+                    "net_amount",
+                    "commission_rate",
+                    "commission_amount",
+                    "tenant_transaction_fee_percent",
+                    "tenant_transaction_fee_fixed",
+                    "total_tenant_fee_amount",
+                    "platform_fee_percent",
+                    "platform_fee_fixed",
+                    "platform_fee_amount",
+                    "tenant_payout_amount",
+                    "payment_status",
+                    "payout_status",
+                    "paid_at",
+                    "payout_marked_at",
+                    "metadata",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "WARN",
+            "message": "Mapped database table does not exist on current connection.",
+            "data": {
+                "model": "Product",
+                "table": "products",
+                "file": "app/Models/Product.php",
+                "fillable": [
+                    "name",
+                    "slug",
+                    "description",
+                    "price",
+                    "stock",
+                    "is_active",
+                    "sku",
+                    "category_id"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "INFO",
+            "message": "No table mapping configured for model.",
+            "data": {
+                "model": "ProductImage",
+                "file": "app/Models/ProductImage.php",
+                "fillable": [
+                    "product_id",
+                    "image_path",
+                    "is_primary",
+                    "sort_order"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "PASS",
+            "message": "Model fillable fields exist in database table.",
+            "data": {
+                "model": "Tenant",
+                "table": "tenants",
+                "file": "app/Models/Tenant.php",
+                "fillable": [
+                    "id",
+                    "name",
+                    "email",
+                    "is_active",
+                    "data"
+                ],
+                "columns": [
+                    "id",
+                    "name",
+                    "email",
+                    "is_active",
+                    "created_at",
+                    "updated_at",
+                    "data"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "PASS",
+            "message": "Model fillable fields exist in database table.",
+            "data": {
+                "model": "TenantPayout",
+                "table": "tenant_payouts",
+                "file": "app/Models/TenantPayout.php",
+                "fillable": [
+                    "tenant_id",
+                    "tenant_payout_account_id",
+                    "currency",
+                    "total_gross",
+                    "total_processor_fees",
+                    "total_net",
+                    "total_commission",
+                    "total_payout",
+                    "status",
+                    "reference",
+                    "notes",
+                    "paid_at"
+                ],
+                "columns": [
+                    "id",
+                    "tenant_id",
+                    "tenant_payout_account_id",
+                    "currency",
+                    "total_gross",
+                    "total_processor_fees",
+                    "total_net",
+                    "total_commission",
+                    "total_payout",
+                    "status",
+                    "reference",
+                    "notes",
+                    "paid_at",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "PASS",
+            "message": "Model fillable fields exist in database table.",
+            "data": {
+                "model": "TenantPayoutAccount",
+                "table": "tenant_payout_accounts",
+                "file": "app/Models/TenantPayoutAccount.php",
+                "fillable": [
+                    "tenant_id",
+                    "type",
+                    "account_holder_name",
+                    "bank_name",
+                    "bank_account_number",
+                    "branch_transit_number",
+                    "bank_account_type",
+                    "wipay_account_email",
+                    "status",
+                    "notes",
+                    "review_notes",
+                    "reviewed_at",
+                    "reviewed_by"
+                ],
+                "columns": [
+                    "id",
+                    "tenant_id",
+                    "type",
+                    "account_holder_name",
+                    "bank_name",
+                    "bank_account_number",
+                    "branch_transit_number",
+                    "bank_account_type",
+                    "wipay_account_email",
+                    "status",
+                    "notes",
+                    "review_notes",
+                    "reviewed_at",
+                    "reviewed_by",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "PASS",
+            "message": "Model fillable fields exist in database table.",
+            "data": {
+                "model": "TenantSubscription",
+                "table": "tenant_subscriptions",
+                "file": "app/Models/TenantSubscription.php",
+                "fillable": [
+                    "tenant_id",
+                    "plan_id",
+                    "status",
+                    "starts_at",
+                    "renews_at",
+                    "trial_ends_at",
+                    "ends_at"
+                ],
+                "columns": [
+                    "id",
+                    "tenant_id",
+                    "plan_id",
+                    "status",
+                    "starts_at",
+                    "renews_at",
+                    "trial_ends_at",
+                    "ends_at",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "PASS",
+            "message": "Model fillable fields exist in database table.",
+            "data": {
+                "model": "TenantSubscriptionPayment",
+                "table": "tenant_subscription_payments",
+                "file": "app/Models/TenantSubscriptionPayment.php",
+                "fillable": [
+                    "tenant_id",
+                    "tenant_subscription_id",
+                    "plan_id",
+                    "amount",
+                    "currency",
+                    "status",
+                    "source",
+                    "paid_at",
+                    "previous_renews_at",
+                    "new_renews_at",
+                    "payment_method",
+                    "provider",
+                    "provider_transaction_id",
+                    "payer_name",
+                    "payer_email",
+                    "card_brand",
+                    "card_last4",
+                    "receipt_url",
+                    "recorded_by",
+                    "reference",
+                    "notes",
+                    "metadata"
+                ],
+                "columns": [
+                    "id",
+                    "tenant_id",
+                    "tenant_subscription_id",
+                    "plan_id",
+                    "amount",
+                    "currency",
+                    "status",
+                    "source",
+                    "paid_at",
+                    "previous_renews_at",
+                    "new_renews_at",
+                    "payment_method",
+                    "provider",
+                    "provider_transaction_id",
+                    "payer_name",
+                    "payer_email",
+                    "card_brand",
+                    "card_last4",
+                    "receipt_url",
+                    "recorded_by",
+                    "reference",
+                    "notes",
+                    "metadata",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "models",
+            "status": "WARN",
+            "message": "Mapped database table does not exist on current connection.",
+            "data": {
+                "model": "User",
+                "table": "users",
+                "file": "app/Models/User.php",
+                "fillable": [
+                    "name",
+                    "email",
+                    "password"
+                ]
+            }
+        },
+        {
+            "section": "critical_contracts",
+            "status": "PASS",
+            "message": "Critical feature contract fields are coordinated.",
+            "data": {
+                "name": "Tenant payout account fields",
+                "model": "TenantPayoutAccount",
+                "table": "tenant_payout_accounts",
+                "required_fields": [
+                    "tenant_id",
+                    "type",
+                    "account_holder_name",
+                    "bank_name",
+                    "bank_account_number",
+                    "branch_transit_number",
+                    "bank_account_type",
+                    "wipay_account_email",
+                    "status",
+                    "notes",
+                    "review_notes",
+                    "reviewed_at",
+                    "reviewed_by"
+                ],
+                "fillable": [
+                    "tenant_id",
+                    "type",
+                    "account_holder_name",
+                    "bank_name",
+                    "bank_account_number",
+                    "branch_transit_number",
+                    "bank_account_type",
+                    "wipay_account_email",
+                    "status",
+                    "notes",
+                    "review_notes",
+                    "reviewed_at",
+                    "reviewed_by"
+                ],
+                "columns": [
+                    "id",
+                    "tenant_id",
+                    "type",
+                    "account_holder_name",
+                    "bank_name",
+                    "bank_account_number",
+                    "branch_transit_number",
+                    "bank_account_type",
+                    "wipay_account_email",
+                    "status",
+                    "notes",
+                    "review_notes",
+                    "reviewed_at",
+                    "reviewed_by",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "critical_contracts",
+            "status": "PASS",
+            "message": "Critical feature contract fields are coordinated.",
+            "data": {
+                "name": "Tenant subscription payment fields",
+                "model": "TenantSubscriptionPayment",
+                "table": "tenant_subscription_payments",
+                "required_fields": [
+                    "tenant_id",
+                    "tenant_subscription_id",
+                    "plan_id",
+                    "amount",
+                    "currency",
+                    "status",
+                    "source",
+                    "paid_at",
+                    "previous_renews_at",
+                    "new_renews_at",
+                    "payment_method",
+                    "provider",
+                    "provider_transaction_id",
+                    "payer_name",
+                    "payer_email",
+                    "card_brand",
+                    "card_last4",
+                    "receipt_url",
+                    "recorded_by",
+                    "reference",
+                    "notes",
+                    "metadata"
+                ],
+                "fillable": [
+                    "tenant_id",
+                    "tenant_subscription_id",
+                    "plan_id",
+                    "amount",
+                    "currency",
+                    "status",
+                    "source",
+                    "paid_at",
+                    "previous_renews_at",
+                    "new_renews_at",
+                    "payment_method",
+                    "provider",
+                    "provider_transaction_id",
+                    "payer_name",
+                    "payer_email",
+                    "card_brand",
+                    "card_last4",
+                    "receipt_url",
+                    "recorded_by",
+                    "reference",
+                    "notes",
+                    "metadata"
+                ],
+                "columns": [
+                    "id",
+                    "tenant_id",
+                    "tenant_subscription_id",
+                    "plan_id",
+                    "amount",
+                    "currency",
+                    "status",
+                    "source",
+                    "paid_at",
+                    "previous_renews_at",
+                    "new_renews_at",
+                    "payment_method",
+                    "provider",
+                    "provider_transaction_id",
+                    "payer_name",
+                    "payer_email",
+                    "card_brand",
+                    "card_last4",
+                    "receipt_url",
+                    "recorded_by",
+                    "reference",
+                    "notes",
+                    "metadata",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "critical_contracts",
+            "status": "PASS",
+            "message": "Critical feature contract fields are coordinated.",
+            "data": {
+                "name": "Payment settings fields",
+                "model": "PaymentSetting",
+                "table": "payment_settings",
+                "required_fields": [
+                    "provider",
+                    "environment",
+                    "country_code",
+                    "currency",
+                    "account_number",
+                    "api_key",
+                    "fee_structure",
+                    "processor_fee_percent",
+                    "processor_fee_fixed",
+                    "is_active",
+                    "metadata"
+                ],
+                "fillable": [
+                    "provider",
+                    "environment",
+                    "country_code",
+                    "currency",
+                    "account_number",
+                    "api_key",
+                    "fee_structure",
+                    "processor_fee_percent",
+                    "processor_fee_fixed",
+                    "is_active",
+                    "metadata"
+                ],
+                "columns": [
+                    "id",
+                    "provider",
+                    "environment",
+                    "country_code",
+                    "currency",
+                    "account_number",
+                    "api_key",
+                    "fee_structure",
+                    "processor_fee_percent",
+                    "processor_fee_fixed",
+                    "is_active",
+                    "metadata",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        }
+    ]
+}

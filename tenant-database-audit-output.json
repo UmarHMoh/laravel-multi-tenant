@@ -1,0 +1,1322 @@
+{
+    "summary": {
+        "PASS": 48,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 3
+    },
+    "generated_at": "2026-06-24 05:25:12",
+    "tenant_count": 3,
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "tenant_id": "awrah",
+            "section": "tenant",
+            "name": "initialize",
+            "status": "PASS",
+            "message": "Tenant initialized successfully.",
+            "data": {
+                "tenant_name": "Awrah Store",
+                "tenant_email": "support@awrah.com",
+                "database": "tenant_awrah"
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "section": "tables",
+            "name": "users",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "name",
+                    "email",
+                    "email_verified_at",
+                    "password",
+                    "role",
+                    "remember_token",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "section": "tables",
+            "name": "categories",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "name",
+                    "slug",
+                    "description",
+                    "is_active",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "section": "tables",
+            "name": "products",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "name",
+                    "slug",
+                    "description",
+                    "price",
+                    "stock",
+                    "is_active",
+                    "sku",
+                    "category_id",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "section": "tables",
+            "name": "carts",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "user_id",
+                    "session_id",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "section": "tables",
+            "name": "cart_items",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "cart_id",
+                    "product_id",
+                    "quantity",
+                    "price",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "section": "tables",
+            "name": "orders",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "order_number",
+                    "user_id",
+                    "total",
+                    "status",
+                    "notes",
+                    "billing_name",
+                    "billing_email",
+                    "billing_phone",
+                    "billing_address",
+                    "billing_city",
+                    "billing_state",
+                    "billing_country",
+                    "billing_zipcode",
+                    "shipping_name",
+                    "shipping_address",
+                    "shipping_city",
+                    "shipping_state",
+                    "shipping_country",
+                    "shipping_zipcode",
+                    "payment_method",
+                    "payment_provider",
+                    "provider_payment_id",
+                    "provider_checkout_url",
+                    "provider_reference",
+                    "payment_metadata",
+                    "payment_status",
+                    "paid_at",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "section": "tables",
+            "name": "order_items",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "order_id",
+                    "product_id",
+                    "product_name",
+                    "quantity",
+                    "price",
+                    "subtotal",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "section": "models",
+            "name": "User",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "users",
+                "fillable": [
+                    "name",
+                    "email",
+                    "password",
+                    "role"
+                ],
+                "columns": [
+                    "id",
+                    "name",
+                    "email",
+                    "email_verified_at",
+                    "password",
+                    "role",
+                    "remember_token",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "section": "models",
+            "name": "Category",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "categories",
+                "fillable": [
+                    "name",
+                    "slug",
+                    "description",
+                    "is_active"
+                ],
+                "columns": [
+                    "id",
+                    "name",
+                    "slug",
+                    "description",
+                    "is_active",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "section": "models",
+            "name": "Product",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "products",
+                "fillable": [
+                    "name",
+                    "slug",
+                    "description",
+                    "price",
+                    "stock",
+                    "is_active",
+                    "sku",
+                    "category_id"
+                ],
+                "columns": [
+                    "id",
+                    "name",
+                    "slug",
+                    "description",
+                    "price",
+                    "stock",
+                    "is_active",
+                    "sku",
+                    "category_id",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "section": "models",
+            "name": "Cart",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "carts",
+                "fillable": [
+                    "user_id",
+                    "session_id"
+                ],
+                "columns": [
+                    "id",
+                    "user_id",
+                    "session_id",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "section": "models",
+            "name": "CartItem",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "cart_items",
+                "fillable": [
+                    "cart_id",
+                    "product_id",
+                    "quantity",
+                    "price"
+                ],
+                "columns": [
+                    "id",
+                    "cart_id",
+                    "product_id",
+                    "quantity",
+                    "price",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "section": "models",
+            "name": "Order",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "orders",
+                "fillable": [
+                    "order_number",
+                    "user_id",
+                    "total",
+                    "status",
+                    "notes",
+                    "billing_name",
+                    "billing_email",
+                    "billing_phone",
+                    "billing_address",
+                    "billing_city",
+                    "billing_state",
+                    "billing_country",
+                    "billing_zipcode",
+                    "shipping_name",
+                    "shipping_address",
+                    "shipping_city",
+                    "shipping_state",
+                    "shipping_country",
+                    "shipping_zipcode",
+                    "payment_method",
+                    "payment_provider",
+                    "provider_payment_id",
+                    "provider_checkout_url",
+                    "provider_reference",
+                    "payment_status",
+                    "paid_at",
+                    "payment_metadata"
+                ],
+                "columns": [
+                    "id",
+                    "order_number",
+                    "user_id",
+                    "total",
+                    "status",
+                    "notes",
+                    "billing_name",
+                    "billing_email",
+                    "billing_phone",
+                    "billing_address",
+                    "billing_city",
+                    "billing_state",
+                    "billing_country",
+                    "billing_zipcode",
+                    "shipping_name",
+                    "shipping_address",
+                    "shipping_city",
+                    "shipping_state",
+                    "shipping_country",
+                    "shipping_zipcode",
+                    "payment_method",
+                    "payment_provider",
+                    "provider_payment_id",
+                    "provider_checkout_url",
+                    "provider_reference",
+                    "payment_metadata",
+                    "payment_status",
+                    "paid_at",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "section": "models",
+            "name": "OrderItem",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "order_items",
+                "fillable": [
+                    "order_id",
+                    "product_id",
+                    "product_name",
+                    "quantity",
+                    "price",
+                    "subtotal"
+                ],
+                "columns": [
+                    "id",
+                    "order_id",
+                    "product_id",
+                    "product_name",
+                    "quantity",
+                    "price",
+                    "subtotal",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "section": "data",
+            "name": "login_users",
+            "status": "PASS",
+            "message": "Tenant has login users.",
+            "data": {
+                "count": 1,
+                "users": [
+                    {
+                        "id": 1,
+                        "name": "Umar",
+                        "email": "admin@awrah.com",
+                        "created_at": "2026-06-23 15:56:12"
+                    }
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "section": "data",
+            "name": "table_counts",
+            "status": "INFO",
+            "message": "Tenant table counts collected.",
+            "data": {
+                "users": 1,
+                "categories": 0,
+                "products": 0,
+                "carts": 2,
+                "cart_items": 0,
+                "orders": 0,
+                "order_items": 0
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "tenant",
+            "name": "initialize",
+            "status": "PASS",
+            "message": "Tenant initialized successfully.",
+            "data": {
+                "tenant_name": "Aromaniac",
+                "tenant_email": "aromaniac@gmail.com",
+                "database": "tenant_tenant1"
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "tables",
+            "name": "users",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "name",
+                    "email",
+                    "email_verified_at",
+                    "password",
+                    "role",
+                    "remember_token",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "tables",
+            "name": "categories",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "name",
+                    "slug",
+                    "description",
+                    "is_active",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "tables",
+            "name": "products",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "name",
+                    "slug",
+                    "description",
+                    "price",
+                    "stock",
+                    "is_active",
+                    "sku",
+                    "category_id",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "tables",
+            "name": "carts",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "user_id",
+                    "session_id",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "tables",
+            "name": "cart_items",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "cart_id",
+                    "product_id",
+                    "quantity",
+                    "price",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "tables",
+            "name": "orders",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "order_number",
+                    "user_id",
+                    "total",
+                    "status",
+                    "notes",
+                    "billing_name",
+                    "billing_email",
+                    "billing_phone",
+                    "billing_address",
+                    "billing_city",
+                    "billing_state",
+                    "billing_country",
+                    "billing_zipcode",
+                    "shipping_name",
+                    "shipping_address",
+                    "shipping_city",
+                    "shipping_state",
+                    "shipping_country",
+                    "shipping_zipcode",
+                    "payment_method",
+                    "payment_provider",
+                    "provider_payment_id",
+                    "provider_checkout_url",
+                    "provider_reference",
+                    "payment_metadata",
+                    "payment_status",
+                    "paid_at",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "tables",
+            "name": "order_items",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "order_id",
+                    "product_id",
+                    "product_name",
+                    "quantity",
+                    "price",
+                    "subtotal",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "models",
+            "name": "User",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "users",
+                "fillable": [
+                    "name",
+                    "email",
+                    "password",
+                    "role"
+                ],
+                "columns": [
+                    "id",
+                    "name",
+                    "email",
+                    "email_verified_at",
+                    "password",
+                    "role",
+                    "remember_token",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "models",
+            "name": "Category",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "categories",
+                "fillable": [
+                    "name",
+                    "slug",
+                    "description",
+                    "is_active"
+                ],
+                "columns": [
+                    "id",
+                    "name",
+                    "slug",
+                    "description",
+                    "is_active",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "models",
+            "name": "Product",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "products",
+                "fillable": [
+                    "name",
+                    "slug",
+                    "description",
+                    "price",
+                    "stock",
+                    "is_active",
+                    "sku",
+                    "category_id"
+                ],
+                "columns": [
+                    "id",
+                    "name",
+                    "slug",
+                    "description",
+                    "price",
+                    "stock",
+                    "is_active",
+                    "sku",
+                    "category_id",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "models",
+            "name": "Cart",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "carts",
+                "fillable": [
+                    "user_id",
+                    "session_id"
+                ],
+                "columns": [
+                    "id",
+                    "user_id",
+                    "session_id",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "models",
+            "name": "CartItem",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "cart_items",
+                "fillable": [
+                    "cart_id",
+                    "product_id",
+                    "quantity",
+                    "price"
+                ],
+                "columns": [
+                    "id",
+                    "cart_id",
+                    "product_id",
+                    "quantity",
+                    "price",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "models",
+            "name": "Order",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "orders",
+                "fillable": [
+                    "order_number",
+                    "user_id",
+                    "total",
+                    "status",
+                    "notes",
+                    "billing_name",
+                    "billing_email",
+                    "billing_phone",
+                    "billing_address",
+                    "billing_city",
+                    "billing_state",
+                    "billing_country",
+                    "billing_zipcode",
+                    "shipping_name",
+                    "shipping_address",
+                    "shipping_city",
+                    "shipping_state",
+                    "shipping_country",
+                    "shipping_zipcode",
+                    "payment_method",
+                    "payment_provider",
+                    "provider_payment_id",
+                    "provider_checkout_url",
+                    "provider_reference",
+                    "payment_status",
+                    "paid_at",
+                    "payment_metadata"
+                ],
+                "columns": [
+                    "id",
+                    "order_number",
+                    "user_id",
+                    "total",
+                    "status",
+                    "notes",
+                    "billing_name",
+                    "billing_email",
+                    "billing_phone",
+                    "billing_address",
+                    "billing_city",
+                    "billing_state",
+                    "billing_country",
+                    "billing_zipcode",
+                    "shipping_name",
+                    "shipping_address",
+                    "shipping_city",
+                    "shipping_state",
+                    "shipping_country",
+                    "shipping_zipcode",
+                    "payment_method",
+                    "payment_provider",
+                    "provider_payment_id",
+                    "provider_checkout_url",
+                    "provider_reference",
+                    "payment_metadata",
+                    "payment_status",
+                    "paid_at",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "models",
+            "name": "OrderItem",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "order_items",
+                "fillable": [
+                    "order_id",
+                    "product_id",
+                    "product_name",
+                    "quantity",
+                    "price",
+                    "subtotal"
+                ],
+                "columns": [
+                    "id",
+                    "order_id",
+                    "product_id",
+                    "product_name",
+                    "quantity",
+                    "price",
+                    "subtotal",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "data",
+            "name": "login_users",
+            "status": "PASS",
+            "message": "Tenant has login users.",
+            "data": {
+                "count": 2,
+                "users": [
+                    {
+                        "id": 1,
+                        "name": "Admin User",
+                        "email": "admin@example.com",
+                        "created_at": "2026-06-23 15:35:01"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Demo Customer",
+                        "email": "customer@example.com",
+                        "created_at": "2026-06-23 15:35:01"
+                    }
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "data",
+            "name": "table_counts",
+            "status": "INFO",
+            "message": "Tenant table counts collected.",
+            "data": {
+                "users": 2,
+                "categories": 3,
+                "products": 6,
+                "carts": 38,
+                "cart_items": 0,
+                "orders": 3,
+                "order_items": 4
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "tenant",
+            "name": "initialize",
+            "status": "PASS",
+            "message": "Tenant initialized successfully.",
+            "data": {
+                "tenant_name": "Food Store",
+                "tenant_email": "admin@tenant2.com",
+                "database": "tenant_tenant2"
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "tables",
+            "name": "users",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "name",
+                    "email",
+                    "email_verified_at",
+                    "password",
+                    "role",
+                    "remember_token",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "tables",
+            "name": "categories",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "name",
+                    "slug",
+                    "description",
+                    "is_active",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "tables",
+            "name": "products",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "name",
+                    "slug",
+                    "description",
+                    "price",
+                    "stock",
+                    "is_active",
+                    "sku",
+                    "category_id",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "tables",
+            "name": "carts",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "user_id",
+                    "session_id",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "tables",
+            "name": "cart_items",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "cart_id",
+                    "product_id",
+                    "quantity",
+                    "price",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "tables",
+            "name": "orders",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "order_number",
+                    "user_id",
+                    "total",
+                    "status",
+                    "notes",
+                    "billing_name",
+                    "billing_email",
+                    "billing_phone",
+                    "billing_address",
+                    "billing_city",
+                    "billing_state",
+                    "billing_country",
+                    "billing_zipcode",
+                    "shipping_name",
+                    "shipping_address",
+                    "shipping_city",
+                    "shipping_state",
+                    "shipping_country",
+                    "shipping_zipcode",
+                    "payment_method",
+                    "payment_provider",
+                    "provider_payment_id",
+                    "provider_checkout_url",
+                    "provider_reference",
+                    "payment_metadata",
+                    "payment_status",
+                    "paid_at",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "tables",
+            "name": "order_items",
+            "status": "PASS",
+            "message": "Tenant table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "order_id",
+                    "product_id",
+                    "product_name",
+                    "quantity",
+                    "price",
+                    "subtotal",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "models",
+            "name": "User",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "users",
+                "fillable": [
+                    "name",
+                    "email",
+                    "password",
+                    "role"
+                ],
+                "columns": [
+                    "id",
+                    "name",
+                    "email",
+                    "email_verified_at",
+                    "password",
+                    "role",
+                    "remember_token",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "models",
+            "name": "Category",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "categories",
+                "fillable": [
+                    "name",
+                    "slug",
+                    "description",
+                    "is_active"
+                ],
+                "columns": [
+                    "id",
+                    "name",
+                    "slug",
+                    "description",
+                    "is_active",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "models",
+            "name": "Product",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "products",
+                "fillable": [
+                    "name",
+                    "slug",
+                    "description",
+                    "price",
+                    "stock",
+                    "is_active",
+                    "sku",
+                    "category_id"
+                ],
+                "columns": [
+                    "id",
+                    "name",
+                    "slug",
+                    "description",
+                    "price",
+                    "stock",
+                    "is_active",
+                    "sku",
+                    "category_id",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "models",
+            "name": "Cart",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "carts",
+                "fillable": [
+                    "user_id",
+                    "session_id"
+                ],
+                "columns": [
+                    "id",
+                    "user_id",
+                    "session_id",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "models",
+            "name": "CartItem",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "cart_items",
+                "fillable": [
+                    "cart_id",
+                    "product_id",
+                    "quantity",
+                    "price"
+                ],
+                "columns": [
+                    "id",
+                    "cart_id",
+                    "product_id",
+                    "quantity",
+                    "price",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "models",
+            "name": "Order",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "orders",
+                "fillable": [
+                    "order_number",
+                    "user_id",
+                    "total",
+                    "status",
+                    "notes",
+                    "billing_name",
+                    "billing_email",
+                    "billing_phone",
+                    "billing_address",
+                    "billing_city",
+                    "billing_state",
+                    "billing_country",
+                    "billing_zipcode",
+                    "shipping_name",
+                    "shipping_address",
+                    "shipping_city",
+                    "shipping_state",
+                    "shipping_country",
+                    "shipping_zipcode",
+                    "payment_method",
+                    "payment_provider",
+                    "provider_payment_id",
+                    "provider_checkout_url",
+                    "provider_reference",
+                    "payment_status",
+                    "paid_at",
+                    "payment_metadata"
+                ],
+                "columns": [
+                    "id",
+                    "order_number",
+                    "user_id",
+                    "total",
+                    "status",
+                    "notes",
+                    "billing_name",
+                    "billing_email",
+                    "billing_phone",
+                    "billing_address",
+                    "billing_city",
+                    "billing_state",
+                    "billing_country",
+                    "billing_zipcode",
+                    "shipping_name",
+                    "shipping_address",
+                    "shipping_city",
+                    "shipping_state",
+                    "shipping_country",
+                    "shipping_zipcode",
+                    "payment_method",
+                    "payment_provider",
+                    "provider_payment_id",
+                    "provider_checkout_url",
+                    "provider_reference",
+                    "payment_metadata",
+                    "payment_status",
+                    "paid_at",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "models",
+            "name": "OrderItem",
+            "status": "PASS",
+            "message": "Model fillable fields match tenant table columns.",
+            "data": {
+                "table": "order_items",
+                "fillable": [
+                    "order_id",
+                    "product_id",
+                    "product_name",
+                    "quantity",
+                    "price",
+                    "subtotal"
+                ],
+                "columns": [
+                    "id",
+                    "order_id",
+                    "product_id",
+                    "product_name",
+                    "quantity",
+                    "price",
+                    "subtotal",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "data",
+            "name": "login_users",
+            "status": "PASS",
+            "message": "Tenant has login users.",
+            "data": {
+                "count": 2,
+                "users": [
+                    {
+                        "id": 1,
+                        "name": "Admin User",
+                        "email": "admin@example.com",
+                        "created_at": "2026-06-23 15:35:01"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Demo Customer",
+                        "email": "customer@example.com",
+                        "created_at": "2026-06-23 15:35:01"
+                    }
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "data",
+            "name": "table_counts",
+            "status": "INFO",
+            "message": "Tenant table counts collected.",
+            "data": {
+                "users": 2,
+                "categories": 5,
+                "products": 10,
+                "carts": 0,
+                "cart_items": 0,
+                "orders": 0,
+                "order_items": 0
+            }
+        }
+    ]
+}

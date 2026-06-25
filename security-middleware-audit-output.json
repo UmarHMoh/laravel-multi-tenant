@@ -1,0 +1,2784 @@
+{
+    "summary": {
+        "PASS": 149,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 05:51:27",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "central_auth",
+            "name": "/central/login",
+            "status": "PASS",
+            "message": "Central login route is present.",
+            "data": {
+                "uri": "/central/login",
+                "name": "central.login",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "Closure"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/login",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/login",
+                "name": "central.login.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "Closure"
+            }
+        },
+        {
+            "section": "central_auth",
+            "name": "/central/login",
+            "status": "PASS",
+            "message": "Central login route is present.",
+            "data": {
+                "uri": "/central/login",
+                "name": "central.login.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "Closure"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/logout",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/logout",
+                "name": "central.logout",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "Closure"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central",
+                "name": "central.dashboard",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\DashboardController@index"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/tenants",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/tenants",
+                "name": "central.tenants.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@index"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/tenants/create",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/tenants/create",
+                "name": "central.tenants.create",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@create"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/tenants",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/tenants",
+                "name": "central.tenants.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@store"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/tenants",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/tenants",
+                "name": "central.tenants.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@store"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/tenants/{tenant}",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/tenants/{tenant}",
+                "name": "central.tenants.show",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@show"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/tenants/{tenant}/plan",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/tenants/{tenant}/plan",
+                "name": "central.tenants.assign-plan",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@assignPlan"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/tenants/{tenant}/plan",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/tenants/{tenant}/plan",
+                "name": "central.tenants.assign-plan",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@assignPlan"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/tenants/{tenant}/activate",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/tenants/{tenant}/activate",
+                "name": "central.tenants.activate",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@activate"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/tenants/{tenant}/activate",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/tenants/{tenant}/activate",
+                "name": "central.tenants.activate",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@activate"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/tenants/{tenant}/deactivate",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/tenants/{tenant}/deactivate",
+                "name": "central.tenants.deactivate",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@deactivate"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/tenants/{tenant}/deactivate",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/tenants/{tenant}/deactivate",
+                "name": "central.tenants.deactivate",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@deactivate"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/tenants/{tenant}/custom-domain/approve",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/tenants/{tenant}/custom-domain/approve",
+                "name": "central.tenants.custom-domain.approve",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@approveCustomDomain"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/tenants/{tenant}/custom-domain/approve",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/tenants/{tenant}/custom-domain/approve",
+                "name": "central.tenants.custom-domain.approve",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@approveCustomDomain"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/tenants/{tenant}/custom-domain/reject",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/tenants/{tenant}/custom-domain/reject",
+                "name": "central.tenants.custom-domain.reject",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@rejectCustomDomain"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/tenants/{tenant}/custom-domain/reject",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/tenants/{tenant}/custom-domain/reject",
+                "name": "central.tenants.custom-domain.reject",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@rejectCustomDomain"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/payment-settings",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/payment-settings",
+                "name": "central.payment-settings.edit",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PaymentSettingController@edit"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/payment-settings",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/payment-settings",
+                "name": "central.payment-settings.update",
+                "methods": [
+                    "PUT"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PaymentSettingController@update"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/payment-settings",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/payment-settings",
+                "name": "central.payment-settings.update",
+                "methods": [
+                    "PUT"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PaymentSettingController@update"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/plans",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/plans",
+                "name": "central.plans.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlanController@index"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/plans/create",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/plans/create",
+                "name": "central.plans.create",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlanController@create"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/plans",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/plans",
+                "name": "central.plans.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlanController@store"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/plans",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/plans",
+                "name": "central.plans.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlanController@store"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/plans/{plan}/edit",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/plans/{plan}/edit",
+                "name": "central.plans.edit",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlanController@edit"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/plans/{plan}",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/plans/{plan}",
+                "name": "central.plans.update",
+                "methods": [
+                    "PUT"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlanController@update"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/plans/{plan}",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/plans/{plan}",
+                "name": "central.plans.update",
+                "methods": [
+                    "PUT"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlanController@update"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/transactions",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/transactions",
+                "name": "central.transactions.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlatformTransactionController@index"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/transactions/create",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/transactions/create",
+                "name": "central.transactions.create",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlatformTransactionController@create"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/transactions/{transaction}",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/transactions/{transaction}",
+                "name": "central.transactions.show",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlatformTransactionController@show"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/transactions",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/transactions",
+                "name": "central.transactions.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlatformTransactionController@store"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/transactions",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/transactions",
+                "name": "central.transactions.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlatformTransactionController@store"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/payouts",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/payouts",
+                "name": "central.payouts.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutController@index"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/payouts/{tenant}",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/payouts/{tenant}",
+                "name": "central.payouts.show",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutController@show"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/payouts/{tenant}/mark-paid",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/payouts/{tenant}/mark-paid",
+                "name": "central.payouts.mark-paid",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutController@markPaid"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/payouts/{tenant}/mark-paid",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/payouts/{tenant}/mark-paid",
+                "name": "central.payouts.mark-paid",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutController@markPaid"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/payout-batches/{payout}",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/payout-batches/{payout}",
+                "name": "central.payouts.batch-show",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutController@batchShow"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/tenants/{tenant}/subscription-payment",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/tenants/{tenant}/subscription-payment",
+                "name": "central.tenants.subscription-payment.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantSubscriptionPaymentController@store"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/tenants/{tenant}/subscription-payment",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/tenants/{tenant}/subscription-payment",
+                "name": "central.tenants.subscription-payment.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantSubscriptionPaymentController@store"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/settings",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/settings",
+                "name": "central.settings.edit",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlatformSettingController@edit"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/settings",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/settings",
+                "name": "central.settings.update",
+                "methods": [
+                    "PUT"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlatformSettingController@update"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/settings",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/settings",
+                "name": "central.settings.update",
+                "methods": [
+                    "PUT"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlatformSettingController@update"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/payout-accounts/{account}/approve",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/payout-accounts/{account}/approve",
+                "name": "central.payout-accounts.approve",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutAccountReviewController@approve"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/payout-accounts/{account}/approve",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/payout-accounts/{account}/approve",
+                "name": "central.payout-accounts.approve",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutAccountReviewController@approve"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/payout-accounts/{account}/reject",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/payout-accounts/{account}/reject",
+                "name": "central.payout-accounts.reject",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutAccountReviewController@reject"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/payout-accounts/{account}/reject",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/payout-accounts/{account}/reject",
+                "name": "central.payout-accounts.reject",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutAccountReviewController@reject"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/payout-accounts/{account}/pending",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/payout-accounts/{account}/pending",
+                "name": "central.payout-accounts.pending",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutAccountReviewController@markPending"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/payout-accounts/{account}/pending",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/payout-accounts/{account}/pending",
+                "name": "central.payout-accounts.pending",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutAccountReviewController@markPending"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/bank-options",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/bank-options",
+                "name": "central.bank-options.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutBankOptionController@index"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/bank-options",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/bank-options",
+                "name": "central.bank-options.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutBankOptionController@store"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/bank-options",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/bank-options",
+                "name": "central.bank-options.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutBankOptionController@store"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/bank-options/{bank}",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/bank-options/{bank}",
+                "name": "central.bank-options.update",
+                "methods": [
+                    "PUT"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutBankOptionController@update"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/bank-options/{bank}",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/bank-options/{bank}",
+                "name": "central.bank-options.update",
+                "methods": [
+                    "PUT"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutBankOptionController@update"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/payouts",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/payouts",
+                "name": "tenant.payouts.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "auth"
+                ],
+                "action": "TenantPayoutRequestController@index"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/payouts",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/payouts",
+                "name": "tenant.payouts.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "auth"
+                ],
+                "action": "TenantPayoutRequestController@store"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/manage/payouts",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/manage/payouts",
+                "name": "tenant.payouts.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "auth"
+                ],
+                "action": "TenantPayoutRequestController@store"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/payout-requests",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/payout-requests",
+                "name": "central.payout-requests.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutRequestController@index"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/payout-requests/{payoutRequest}/approve",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/payout-requests/{payoutRequest}/approve",
+                "name": "central.payout-requests.approve",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutRequestController@approve"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/payout-requests/{payoutRequest}/approve",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/payout-requests/{payoutRequest}/approve",
+                "name": "central.payout-requests.approve",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutRequestController@approve"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/payout-requests/{payoutRequest}/reject",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/payout-requests/{payoutRequest}/reject",
+                "name": "central.payout-requests.reject",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutRequestController@reject"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/payout-requests/{payoutRequest}/reject",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/payout-requests/{payoutRequest}/reject",
+                "name": "central.payout-requests.reject",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutRequestController@reject"
+            }
+        },
+        {
+            "section": "central_routes",
+            "name": "/central/payout-requests/{payoutRequest}/mark-paid",
+            "status": "PASS",
+            "message": "Central route protected by global central admin middleware.",
+            "data": {
+                "uri": "/central/payout-requests/{payoutRequest}/mark-paid",
+                "name": "central.payout-requests.mark-paid",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutRequestController@markPaid"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/central/payout-requests/{payoutRequest}/mark-paid",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/central/payout-requests/{payoutRequest}/mark-paid",
+                "name": "central.payout-requests.mark-paid",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutRequestController@markPaid"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/cart/add",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/cart/add",
+                "name": "cart.add",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "App\\Http\\Middleware\\EnsureTenantIsActive"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\CartController@addItem"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/cart/{cartItem}",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/cart/{cartItem}",
+                "name": "cart.update",
+                "methods": [
+                    "PATCH"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "App\\Http\\Middleware\\EnsureTenantIsActive"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\CartController@updateItem"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/cart/{cartItem}",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/cart/{cartItem}",
+                "name": "cart.remove",
+                "methods": [
+                    "DELETE"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "App\\Http\\Middleware\\EnsureTenantIsActive"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\CartController@removeItem"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/cart/clear/{cart}",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/cart/clear/{cart}",
+                "name": "cart.clear",
+                "methods": [
+                    "DELETE"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "App\\Http\\Middleware\\EnsureTenantIsActive"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\CartController@clearCart"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/orders",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/orders",
+                "name": "orders.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "App\\Http\\Middleware\\EnsureTenantIsActive"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\OrderController@store"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/register",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/register",
+                "name": null,
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "guest"
+                ],
+                "action": "App\\Http\\Controllers\\Auth\\RegisteredUserController@store"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/login",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/login",
+                "name": null,
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "guest"
+                ],
+                "action": "App\\Http\\Controllers\\Auth\\AuthenticatedSessionController@store"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/forgot-password",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/forgot-password",
+                "name": "password.email",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "guest"
+                ],
+                "action": "App\\Http\\Controllers\\Auth\\PasswordResetLinkController@store"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/reset-password",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/reset-password",
+                "name": "password.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "guest"
+                ],
+                "action": "App\\Http\\Controllers\\Auth\\NewPasswordController@store"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/logout",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/logout",
+                "name": "logout",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Auth\\AuthenticatedSessionController@destroy"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/settings",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/settings",
+                "name": null,
+                "methods": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE",
+                    "OPTIONS"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "\\Illuminate\\Routing\\RedirectController"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/settings",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/settings",
+                "name": null,
+                "methods": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE",
+                    "OPTIONS"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "\\Illuminate\\Routing\\RedirectController"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/settings/profile",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/settings/profile",
+                "name": "profile.edit",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Settings\\ProfileController@edit"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/settings/profile",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/settings/profile",
+                "name": "profile.update",
+                "methods": [
+                    "PATCH"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Settings\\ProfileController@update"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/settings/profile",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/settings/profile",
+                "name": "profile.update",
+                "methods": [
+                    "PATCH"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Settings\\ProfileController@update"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/settings/profile",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/settings/profile",
+                "name": "profile.destroy",
+                "methods": [
+                    "DELETE"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Settings\\ProfileController@destroy"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/settings/profile",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/settings/profile",
+                "name": "profile.destroy",
+                "methods": [
+                    "DELETE"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Settings\\ProfileController@destroy"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/settings/password",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/settings/password",
+                "name": "password.edit",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Settings\\PasswordController@edit"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/settings/password",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/settings/password",
+                "name": "password.update",
+                "methods": [
+                    "PUT"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Settings\\PasswordController@update"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/settings/password",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/settings/password",
+                "name": "password.update",
+                "methods": [
+                    "PUT"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Settings\\PasswordController@update"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/settings/appearance",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/settings/appearance",
+                "name": "appearance",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "Closure"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/dashboard",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/dashboard",
+                "name": "dashboard",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "Closure"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/product",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/product",
+                "name": "product.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\ProductController@index"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/product/create",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/product/create",
+                "name": "product.create",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\ProductController@create"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/product",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/product",
+                "name": "product.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\ProductController@store"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/manage/product",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/manage/product",
+                "name": "product.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\ProductController@store"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/product/{product}",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/product/{product}",
+                "name": "product.show",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\ProductController@show"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/product/{product}/edit",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/product/{product}/edit",
+                "name": "product.edit",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\ProductController@edit"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/product/{product}/edit",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/product/{product}/edit",
+                "name": "product.update",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\ProductController@update"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/manage/product/{product}/edit",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/manage/product/{product}/edit",
+                "name": "product.update",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\ProductController@update"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/product/{product}",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/product/{product}",
+                "name": "product.destroy",
+                "methods": [
+                    "DELETE"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\ProductController@destroy"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/manage/product/{product}",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/manage/product/{product}",
+                "name": "product.destroy",
+                "methods": [
+                    "DELETE"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\ProductController@destroy"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/category",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/category",
+                "name": "category.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\CategoryController@index"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/category/create",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/category/create",
+                "name": "category.create",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\CategoryController@create"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/category",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/category",
+                "name": "category.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\CategoryController@store"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/manage/category",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/manage/category",
+                "name": "category.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\CategoryController@store"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/category/{category}",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/category/{category}",
+                "name": "category.show",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\CategoryController@show"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/category/{category}/edit",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/category/{category}/edit",
+                "name": "category.edit",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\CategoryController@edit"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/category/{category}/edit",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/category/{category}/edit",
+                "name": "category.update",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\CategoryController@update"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/manage/category/{category}/edit",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/manage/category/{category}/edit",
+                "name": "category.update",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\CategoryController@update"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/category/{category}",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/category/{category}",
+                "name": "category.destroy",
+                "methods": [
+                    "DELETE"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\CategoryController@destroy"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/manage/category/{category}",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/manage/category/{category}",
+                "name": "category.destroy",
+                "methods": [
+                    "DELETE"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\CategoryController@destroy"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/order/dashboard-stats",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/order/dashboard-stats",
+                "name": "order.dashboard-stats",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\OrderController@getDashboardStats"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/order",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/order",
+                "name": "order.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\OrderController@index"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/order/{order}",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/order/{order}",
+                "name": "order.show",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\OrderController@show"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/order/{order}/status",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/order/{order}/status",
+                "name": "order.update-status",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\OrderController@updateStatus"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/manage/order/{order}/status",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/manage/order/{order}/status",
+                "name": "order.update-status",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\OrderController@updateStatus"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/order/{order}/payment-status",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/order/{order}/payment-status",
+                "name": "order.update-payment-status",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\OrderController@updatePaymentStatus"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/manage/order/{order}/payment-status",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/manage/order/{order}/payment-status",
+                "name": "order.update-payment-status",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\OrderController@updatePaymentStatus"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/customer",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/customer",
+                "name": "customer.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\CustomerController@index"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/customer/{customer}",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/customer/{customer}",
+                "name": "customer.show",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\CustomerController@show"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/payout-account",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/payout-account",
+                "name": "manage.payout-account",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\PayoutAccountController@index"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/payout-account",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/payout-account",
+                "name": "manage.payout-account.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\PayoutAccountController@store"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/manage/payout-account",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/manage/payout-account",
+                "name": "manage.payout-account.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\PayoutAccountController@store"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/store-settings",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/store-settings",
+                "name": "manage.store-settings.edit",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\StoreSettingsController@edit"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/store-settings",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/store-settings",
+                "name": "manage.store-settings.update",
+                "methods": [
+                    "PUT"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\StoreSettingsController@update"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/manage/store-settings",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/manage/store-settings",
+                "name": "manage.store-settings.update",
+                "methods": [
+                    "PUT"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\StoreSettingsController@update"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/domains",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/domains",
+                "name": "manage.domains.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\DomainSettingsController@index"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/domains",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/domains",
+                "name": "manage.domains.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\DomainSettingsController@store"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/manage/domains",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/manage/domains",
+                "name": "manage.domains.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\DomainSettingsController@store"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/billing",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/billing",
+                "name": "manage.billing.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\BillingController@index"
+            }
+        },
+        {
+            "section": "tenant_routes",
+            "name": "/manage/billing/test-payment",
+            "status": "PASS",
+            "message": "Tenant management/settings route appears protected.",
+            "data": {
+                "uri": "/manage/billing/test-payment",
+                "name": "manage.billing.test-payment",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\BillingController@payTest"
+            }
+        },
+        {
+            "section": "dangerous_routes",
+            "name": "/manage/billing/test-payment",
+            "status": "PASS",
+            "message": "Dangerous method route appears acceptable/protected.",
+            "data": {
+                "uri": "/manage/billing/test-payment",
+                "name": "manage.billing.test-payment",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\BillingController@payTest"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/central",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/central",
+                "name": "central.dashboard",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\DashboardController@index"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/central/tenants",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/central/tenants",
+                "name": "central.tenants.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@index"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/central/tenants",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/central/tenants",
+                "name": "central.tenants.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\TenantController@store"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/central/payouts",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/central/payouts",
+                "name": "central.payouts.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PayoutController@index"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/central/payment-settings",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/central/payment-settings",
+                "name": "central.payment-settings.edit",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PaymentSettingController@edit"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/central/payment-settings",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/central/payment-settings",
+                "name": "central.payment-settings.update",
+                "methods": [
+                    "PUT"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PaymentSettingController@update"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/central/settings",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/central/settings",
+                "name": "central.settings.edit",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlatformSettingController@edit"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/central/settings",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/central/settings",
+                "name": "central.settings.update",
+                "methods": [
+                    "PUT"
+                ],
+                "middleware": [
+                    "web"
+                ],
+                "action": "App\\Http\\Controllers\\Central\\PlatformSettingController@update"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/dashboard",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/dashboard",
+                "name": "dashboard",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "Closure"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/manage/billing",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/manage/billing",
+                "name": "manage.billing.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\BillingController@index"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/manage/payout-account",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/manage/payout-account",
+                "name": "manage.payout-account",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\PayoutAccountController@index"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/manage/payout-account",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/manage/payout-account",
+                "name": "manage.payout-account.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\PayoutAccountController@store"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/manage/store-settings",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/manage/store-settings",
+                "name": "manage.store-settings.edit",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\StoreSettingsController@edit"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/manage/store-settings",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/manage/store-settings",
+                "name": "manage.store-settings.update",
+                "methods": [
+                    "PUT"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\StoreSettingsController@update"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/manage/product",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/manage/product",
+                "name": "product.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\ProductController@index"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/manage/product",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/manage/product",
+                "name": "product.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\ProductController@store"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/manage/category",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/manage/category",
+                "name": "category.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\CategoryController@index"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/manage/category",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/manage/category",
+                "name": "category.store",
+                "methods": [
+                    "POST"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\CategoryController@store"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/manage/order",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/manage/order",
+                "name": "order.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\OrderController@index"
+            }
+        },
+        {
+            "section": "required_contracts",
+            "name": "/manage/customer",
+            "status": "PASS",
+            "message": "Required route has auth protection.",
+            "data": {
+                "uri": "/manage/customer",
+                "name": "customer.index",
+                "methods": [
+                    "GET"
+                ],
+                "middleware": [
+                    "web",
+                    "Stancl\\Tenancy\\Middleware\\InitializeTenancyByDomain",
+                    "Stancl\\Tenancy\\Middleware\\PreventAccessFromCentralDomains",
+                    "auth"
+                ],
+                "action": "App\\Http\\Controllers\\Tenant\\Manage\\CustomerController@index"
+            }
+        }
+    ]
+}

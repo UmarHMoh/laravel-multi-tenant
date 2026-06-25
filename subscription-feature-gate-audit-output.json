@@ -1,0 +1,97 @@
+{
+    "summary": {
+        "PASS": 9,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 10:13:51",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "tenant_id": "awrah",
+            "name": "max product limit enforced",
+            "status": "PASS",
+            "message": "Tenant at max product count is blocked by the feature gate.",
+            "data": {
+                "product_count": 0,
+                "max_products": 0
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "api payment feature locked",
+            "status": "PASS",
+            "message": "API payment feature is locked for the restricted plan.",
+            "data": {
+                "api_payment_enabled": false
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "custom domain feature locked",
+            "status": "PASS",
+            "message": "Custom domain feature is locked for the restricted plan.",
+            "data": {
+                "custom_domain_enabled": false
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "max product limit enforced",
+            "status": "PASS",
+            "message": "Tenant at max product count is blocked by the feature gate.",
+            "data": {
+                "product_count": 6,
+                "max_products": 6
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "api payment feature locked",
+            "status": "PASS",
+            "message": "API payment feature is locked for the restricted plan.",
+            "data": {
+                "api_payment_enabled": false
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "custom domain feature locked",
+            "status": "PASS",
+            "message": "Custom domain feature is locked for the restricted plan.",
+            "data": {
+                "custom_domain_enabled": false
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "max product limit enforced",
+            "status": "PASS",
+            "message": "Tenant at max product count is blocked by the feature gate.",
+            "data": {
+                "product_count": 10,
+                "max_products": 10
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "api payment feature locked",
+            "status": "PASS",
+            "message": "API payment feature is locked for the restricted plan.",
+            "data": {
+                "api_payment_enabled": false
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "custom domain feature locked",
+            "status": "PASS",
+            "message": "Custom domain feature is locked for the restricted plan.",
+            "data": {
+                "custom_domain_enabled": false
+            }
+        }
+    ]
+}

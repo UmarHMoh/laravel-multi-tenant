@@ -1,4 +1,5 @@
 <script setup>
+import StorefrontHeader from '@/components/tenant/StorefrontHeader.vue'
 import { ref, computed } from 'vue';
 import { Head, Link, router, usePage } from '@inertiajs/vue3';
 import { ShoppingCart, ChevronLeft, Plus, Minus, Heart, Share2, Star, Truck } from 'lucide-vue-next';
@@ -102,6 +103,10 @@ function formatCurrency(value) {
 </script>
 
 <template>
+    <StorefrontHeader :store="$page.props.store || {}" :cart-items="$page.props.cartItems || $page.props.orderItems || []" />
+
+
+
     <Head :title="product.name" />
 
     <div>

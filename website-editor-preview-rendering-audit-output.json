@@ -1,0 +1,103 @@
+{
+    "summary": {
+        "PASS": 15,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 18:47:25",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "name": "homepage editor route exists",
+            "status": "PASS",
+            "message": "Homepage editor route should exist.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains visiblePreviewSections",
+            "status": "PASS",
+            "message": "visiblePreviewSections found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains heroPanelClass",
+            "status": "PASS",
+            "message": "heroPanelClass found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains heroTitleClass",
+            "status": "PASS",
+            "message": "heroTitleClass found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains previewCardClass",
+            "status": "PASS",
+            "message": "previewCardClass found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains previewImageClass",
+            "status": "PASS",
+            "message": "previewImageClass found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains previewSelectedLabel",
+            "status": "PASS",
+            "message": "previewSelectedLabel found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains previewBlockSelectedLabel",
+            "status": "PASS",
+            "message": "previewBlockSelectedLabel found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains No visible sections in this draft",
+            "status": "PASS",
+            "message": "No visible sections in this draft found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Rich text preview label S45",
+            "status": "PASS",
+            "message": "Rich text preview label S45 found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains featuredPreviewGridClass",
+            "status": "PASS",
+            "message": "featuredPreviewGridClass found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains productPreviewGridClass",
+            "status": "PASS",
+            "message": "productPreviewGridClass found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains richTextFeatureGridClass",
+            "status": "PASS",
+            "message": "richTextFeatureGridClass found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains previewPaddingClass",
+            "status": "PASS",
+            "message": "previewPaddingClass found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains S45 preview rendering polish",
+            "status": "PASS",
+            "message": "S45 preview rendering polish found.",
+            "data": []
+        }
+    ]
+}

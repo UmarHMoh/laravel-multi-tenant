@@ -1,0 +1,104 @@
+{
+    "summary": {
+        "PASS": 13,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 21:27:03",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "website_editor_section_categories",
+            "name": "active category state exists",
+            "status": "PASS",
+            "message": "active category state exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_categories",
+            "name": "category options computed exists",
+            "status": "PASS",
+            "message": "category options computed exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_categories",
+            "name": "visible section schemas computed exists",
+            "status": "PASS",
+            "message": "visible section schemas computed exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_categories",
+            "name": "category label helper exists",
+            "status": "PASS",
+            "message": "category label helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_categories",
+            "name": "category count helper exists",
+            "status": "PASS",
+            "message": "category count helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_categories",
+            "name": "category filter UI exists",
+            "status": "PASS",
+            "message": "category filter UI exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_categories",
+            "name": "category heading exists",
+            "status": "PASS",
+            "message": "category heading exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_categories",
+            "name": "category button loop exists",
+            "status": "PASS",
+            "message": "category button loop exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_categories",
+            "name": "active category class exists",
+            "status": "PASS",
+            "message": "active category class exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_categories",
+            "name": "category click action exists",
+            "status": "PASS",
+            "message": "category click action exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_categories",
+            "name": "section list uses visible schemas",
+            "status": "PASS",
+            "message": "section list uses visible schemas found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_categories",
+            "name": "empty state uses category or search",
+            "status": "PASS",
+            "message": "empty state uses category or search found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_categories",
+            "name": "stage marker exists",
+            "status": "PASS",
+            "message": "stage marker exists found.",
+            "data": []
+        }
+    ]
+}

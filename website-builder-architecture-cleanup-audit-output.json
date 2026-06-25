@@ -1,0 +1,97 @@
+{
+    "summary": {
+        "PASS": 12,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-25 10:23:37",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "website_builder_architecture_cleanup",
+            "name": "stage marker exists",
+            "status": "PASS",
+            "message": "S63 markers found.",
+            "data": []
+        },
+        {
+            "section": "website_builder_architecture_cleanup",
+            "name": "homepage default sections blank",
+            "status": "PASS",
+            "message": "Default homepage sections are blank.",
+            "data": []
+        },
+        {
+            "section": "website_builder_architecture_cleanup",
+            "name": "publish does not force homepage sections",
+            "status": "PASS",
+            "message": "Publish does not force hero/product sections.",
+            "data": []
+        },
+        {
+            "section": "website_builder_architecture_cleanup",
+            "name": "reset homepage creates blank draft",
+            "status": "PASS",
+            "message": "Homepage reset creates blank page.",
+            "data": []
+        },
+        {
+            "section": "website_builder_architecture_cleanup",
+            "name": "theme settings contain header footer",
+            "status": "PASS",
+            "message": "Header/footer stored in theme settings.",
+            "data": []
+        },
+        {
+            "section": "website_builder_architecture_cleanup",
+            "name": "contact page ensured",
+            "status": "PASS",
+            "message": "Contact page ensured.",
+            "data": []
+        },
+        {
+            "section": "website_builder_architecture_cleanup",
+            "name": "featured products use product card blocks",
+            "status": "PASS",
+            "message": "Featured products use product-card blocks.",
+            "data": []
+        },
+        {
+            "section": "website_builder_architecture_cleanup",
+            "name": "reviews comments section exists",
+            "status": "PASS",
+            "message": "Reviews/comments placeholder section exists.",
+            "data": []
+        },
+        {
+            "section": "website_builder_architecture_cleanup",
+            "name": "homepage renderer driven",
+            "status": "PASS",
+            "message": "Homepage renders real theme sections.",
+            "data": []
+        },
+        {
+            "section": "website_builder_architecture_cleanup",
+            "name": "homepage keeps permanent header footer",
+            "status": "PASS",
+            "message": "Header and footer are always rendered.",
+            "data": []
+        },
+        {
+            "section": "website_builder_architecture_cleanup",
+            "name": "editor right sidebar stays in grid",
+            "status": "PASS",
+            "message": "Editor right sidebar restored.",
+            "data": []
+        },
+        {
+            "section": "website_builder_architecture_cleanup",
+            "name": "tenant isolation preserved in builder data",
+            "status": "PASS",
+            "message": "Builder controller/renderer do not query central tenant data.",
+            "data": []
+        }
+    ]
+}

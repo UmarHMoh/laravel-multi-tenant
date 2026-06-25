@@ -1,0 +1,175 @@
+{
+    "summary": {
+        "PASS": 26,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 14:23:26",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "name": "plans allow_multiple_builder_pages column exists",
+            "status": "PASS",
+            "message": "plans.allow_multiple_builder_pages should exist.",
+            "data": []
+        },
+        {
+            "name": "plan model exposes allow_multiple_builder_pages",
+            "status": "PASS",
+            "message": "Plan model can read allow_multiple_builder_pages.",
+            "data": []
+        },
+        {
+            "name": "PlanFeatureGate has allowsMultipleBuilderPages",
+            "status": "PASS",
+            "message": "PlanFeatureGate should expose allowsMultipleBuilderPages.",
+            "data": []
+        },
+        {
+            "name": "PlanFeatureGate has maxBuilderPages",
+            "status": "PASS",
+            "message": "PlanFeatureGate should expose maxBuilderPages.",
+            "data": []
+        },
+        {
+            "name": "PlanFeatureGate has builderPageLimitMessage",
+            "status": "PASS",
+            "message": "PlanFeatureGate should expose builderPageLimitMessage.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Central/PlanController.php contains allow_multiple_builder_pages",
+            "status": "PASS",
+            "message": "allow_multiple_builder_pages found in app/Http/Controllers/Central/PlanController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Models/Plan.php contains allow_multiple_builder_pages",
+            "status": "PASS",
+            "message": "allow_multiple_builder_pages found in app/Models/Plan.php.",
+            "data": []
+        },
+        {
+            "name": "app/Services/Plans/PlanFeatureGate.php contains allowsMultipleBuilderPages",
+            "status": "PASS",
+            "message": "allowsMultipleBuilderPages found in app/Services/Plans/PlanFeatureGate.php.",
+            "data": []
+        },
+        {
+            "name": "app/Services/Plans/PlanFeatureGate.php contains maxBuilderPages",
+            "status": "PASS",
+            "message": "maxBuilderPages found in app/Services/Plans/PlanFeatureGate.php.",
+            "data": []
+        },
+        {
+            "name": "app/Services/Plans/PlanFeatureGate.php contains builderPageLimitMessage",
+            "status": "PASS",
+            "message": "builderPageLimitMessage found in app/Services/Plans/PlanFeatureGate.php.",
+            "data": []
+        },
+        {
+            "name": "app/Services/Plans/PlanFeatureGate.php contains allow_multiple_builder_pages",
+            "status": "PASS",
+            "message": "allow_multiple_builder_pages found in app/Services/Plans/PlanFeatureGate.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains builderLimits",
+            "status": "PASS",
+            "message": "builderLimits found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains allowsMultipleBuilderPages",
+            "status": "PASS",
+            "message": "allowsMultipleBuilderPages found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains maxBuilderPages",
+            "status": "PASS",
+            "message": "maxBuilderPages found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/central/plans/Create.vue contains allow_multiple_builder_pages",
+            "status": "PASS",
+            "message": "allow_multiple_builder_pages found in resources/js/pages/central/plans/Create.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/central/plans/Create.vue contains Allow multiple website builder pages",
+            "status": "PASS",
+            "message": "Allow multiple website builder pages found in resources/js/pages/central/plans/Create.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/central/plans/Edit.vue contains allow_multiple_builder_pages",
+            "status": "PASS",
+            "message": "allow_multiple_builder_pages found in resources/js/pages/central/plans/Edit.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/central/plans/Edit.vue contains Allow multiple website builder pages",
+            "status": "PASS",
+            "message": "Allow multiple website builder pages found in resources/js/pages/central/plans/Edit.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/central/plans/Index.vue contains Multiple Pages",
+            "status": "PASS",
+            "message": "Multiple Pages found in resources/js/pages/central/plans/Index.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/central/plans/Index.vue contains allow_multiple_builder_pages",
+            "status": "PASS",
+            "message": "allow_multiple_builder_pages found in resources/js/pages/central/plans/Index.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Index.vue contains builderLimits",
+            "status": "PASS",
+            "message": "builderLimits found in resources/js/pages/tenant/website/Index.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Index.vue contains Page limit",
+            "status": "PASS",
+            "message": "Page limit found in resources/js/pages/tenant/website/Index.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Index.vue contains builderLimits.max_builder_pages",
+            "status": "PASS",
+            "message": "builderLimits.max_builder_pages found in resources/js/pages/tenant/website/Index.vue.",
+            "data": []
+        },
+        {
+            "name": "tenant awrah builder page max resolves",
+            "status": "PASS",
+            "message": "Builder page max resolves for awrah.",
+            "data": {
+                "max_builder_pages": 999999
+            }
+        },
+        {
+            "name": "tenant tenant1 builder page max resolves",
+            "status": "PASS",
+            "message": "Builder page max resolves for tenant1.",
+            "data": {
+                "max_builder_pages": 999999
+            }
+        },
+        {
+            "name": "tenant tenant2 builder page max resolves",
+            "status": "PASS",
+            "message": "Builder page max resolves for tenant2.",
+            "data": {
+                "max_builder_pages": 999999
+            }
+        }
+    ]
+}

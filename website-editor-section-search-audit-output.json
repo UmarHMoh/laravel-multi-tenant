@@ -1,0 +1,111 @@
+{
+    "summary": {
+        "PASS": 14,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 21:15:11",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "website_editor_section_search",
+            "name": "search query state exists",
+            "status": "PASS",
+            "message": "search query state exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_search",
+            "name": "search normaliser exists",
+            "status": "PASS",
+            "message": "search normaliser exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_search",
+            "name": "apostrophe handling exists",
+            "status": "PASS",
+            "message": "apostrophe handling exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_search",
+            "name": "plural handling exists",
+            "status": "PASS",
+            "message": "plural handling exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_search",
+            "name": "levenshtein helper exists",
+            "status": "PASS",
+            "message": "levenshtein helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_search",
+            "name": "near match helper exists",
+            "status": "PASS",
+            "message": "near match helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_search",
+            "name": "haystack helper exists",
+            "status": "PASS",
+            "message": "haystack helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_search",
+            "name": "section match helper exists",
+            "status": "PASS",
+            "message": "section match helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_search",
+            "name": "filtered schemas computed exists",
+            "status": "PASS",
+            "message": "filtered schemas computed exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_search",
+            "name": "section list uses filtered schemas",
+            "status": "PASS",
+            "message": "section list uses filtered schemas found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_search",
+            "name": "search input is bound",
+            "status": "PASS",
+            "message": "search input is bound found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_search",
+            "name": "smart search help text exists",
+            "status": "PASS",
+            "message": "smart search help text exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_search",
+            "name": "empty state exists",
+            "status": "PASS",
+            "message": "empty state exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_search",
+            "name": "stage marker exists",
+            "status": "PASS",
+            "message": "stage marker exists found.",
+            "data": []
+        }
+    ]
+}

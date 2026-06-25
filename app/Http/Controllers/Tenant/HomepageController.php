@@ -5,98 +5,75 @@ namespace App\Http\Controllers\Tenant;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
-use App\Models\Cart;
+use App\Services\Themes\SectionRegistry;
+use App\Services\Themes\ThemeBootstrapper;
+use App\Services\Themes\ThemePageRenderer;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class HomepageController extends Controller
 {
-    /**
-     * Display the homepage with products, categories, and cart information
-     */
-    public function index(Request $request)
-    {
-        // Get all active categories
-        $categories = Category::where('is_active', true)
-            ->orderBy('name')
-            ->get();
+    public function index(
+        Request $request,
+        ThemeBootstrapper $bootstrapper,
+        ThemePageRenderer $renderer,
+        SectionRegistry $sectionRegistry
+    ) {
+        $theme = $bootstrapper->ensureDefaultTheme();
+        $homepage = $theme->homepage()->first();
 
-        // Build product query
-        $query = Product::with(['category', 'images'])
+        $pageConfig = $homepage?->published_config ?: ['sections' => []];
+        $sections = $renderer->renderableSections($pageConfig);
+        $homepageData = $renderer->homepageData($sections);
+
+        $search = trim((string) $request->query('search', ''));
+        $category = $request->query('category');
+        $sort = $request->query('sort', 'latest');
+
+        $productsQuery = Product::query()
+            ->with(['category', 'images'])
             ->where('is_active', true);
 
-        // Apply category filter if provided
-        if ($request->has('category') && $request->category) {
-            $query->where('category_id', $request->category);
-        }
-
-        // Apply search filter if provided
-        if ($request->has('search') && $request->search) {
-            $search = $request->search;
-            $query->where(function($q) use ($search) {
-                $q->where('name', 'like', "%{$search}%")
-                  ->orWhere('description', 'like', "%{$search}%");
+        if ($search !== '') {
+            $productsQuery->where(function ($query) use ($search) {
+                $query->where('name', 'like', "%{$search}%")
+                    ->orWhere('description', 'like', "%{$search}%")
+                    ->orWhere('sku', 'like', "%{$search}%");
             });
         }
 
-        // Get paginated products
-        $products = $query->orderBy('created_at', 'desc')
-            ->paginate(12)
-            ->withQueryString();
-
-        // Get user's cart if authenticated
-        $cart = null;
-        $cartItemCount = 0;
-
-        if (Auth::check()) {
-            $cart = Cart::with(['items.product.images'])
-                ->where('user_id', Auth::id())
-                ->first();
-
-            if ($cart) {
-                $cartItemCount = $cart->items->sum('quantity');
-            } else {
-                // Create a new cart if user doesn't have one
-                $cart = Cart::create([
-                    'user_id' => Auth::id()
-                ]);
-            }
-        } else if ($request->session()->has('session_id')) {
-            // For guest users, retrieve cart by session_id
-            $sessionId = $request->session()->get('session_id');
-            $cart = Cart::with(['items.product.images'])
-                ->where('session_id', $sessionId)
-                ->first();
-
-            if ($cart) {
-                $cartItemCount = $cart->items->sum('quantity');
-            }
-        } else {
-            // Create a new session ID for guest users
-            $sessionId = uniqid('session_', true);
-            $request->session()->put('session_id', $sessionId);
-
-            // Create a new cart for the session
-            $cart = Cart::create([
-                'session_id' => $sessionId
-            ]);
+        if ($category) {
+            $productsQuery->whereHas('category', function ($query) use ($category) {
+                $query->where('id', $category)
+                    ->orWhere('slug', $category);
+            });
         }
 
-        // Featured products for banner
-        $featuredProducts = Product::with(['images'])
+        match ($sort) {
+            'price_low' => $productsQuery->orderBy('price'),
+            'price_high' => $productsQuery->orderByDesc('price'),
+            'name' => $productsQuery->orderBy('name'),
+            default => $productsQuery->latest(),
+        };
+
+        $categories = Category::query()
             ->where('is_active', true)
-            ->orderBy('created_at', 'desc')
-            ->take(3)
-            ->get();
+            ->orderBy('name')
+            ->get(['id', 'name', 'slug']);
 
         return Inertia::render('tenant/Homepage', [
+            'theme' => $theme,
+            'homepage' => $homepage,
+            'themeSections' => $sections,
+            'sectionSchemas' => array_values($sectionRegistry->all()),
+            'featuredProducts' => $homepageData['featuredProducts'],
+            'products' => $productsQuery->paginate(12)->withQueryString(),
             'categories' => $categories,
-            'products' => $products,
-            'cartItemCount' => $cartItemCount,
-            'cartId' => $cart ? $cart->id : null,
-            'featuredProducts' => $featuredProducts,
-            'filters' => $request->only(['search', 'category'])
+            'filters' => [
+                'search' => $search,
+                'category' => $category,
+                'sort' => $sort,
+            ],
         ]);
     }
 }

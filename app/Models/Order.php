@@ -29,12 +29,18 @@ class Order extends Model
         'shipping_country',
         'shipping_zipcode',
         'payment_method',
+        'payment_provider',
+        'provider_payment_id',
+        'provider_checkout_url',
+        'provider_reference',
         'payment_status',
         'paid_at',
+        'payment_metadata',
     ];
 
     protected $casts = [
         'paid_at' => 'datetime',
+        'payment_metadata' => 'array',
     ];
 
     public function user()

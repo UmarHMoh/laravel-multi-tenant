@@ -1,0 +1,440 @@
+{
+    "summary": {
+        "PASS": 33,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 05:25:22",
+    "tenant_count": 3,
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "tenant_id": "awrah",
+            "persona": "store_owner",
+            "action": "login simulation",
+            "status": "PASS",
+            "message": "Admin user authenticated in terminal persona audit.",
+            "data": {
+                "admin_id": 1,
+                "email": "admin@awrah.com"
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "persona": "store_owner",
+            "action": "controller create category",
+            "status": "PASS",
+            "message": "Category controller created category.",
+            "data": {
+                "category_id": 58,
+                "expected_slug": "controller-category-vwxodgku"
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "persona": "store_owner",
+            "action": "controller update category",
+            "status": "PASS",
+            "message": "Category controller updated category.",
+            "data": {
+                "category_id": 58,
+                "name": "Updated Controller Category SDydUL"
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "persona": "store_owner",
+            "action": "controller create product",
+            "status": "PASS",
+            "message": "Product controller created product.",
+            "data": {
+                "product_id": 57,
+                "expected_slug": "controller-product-mmmutzen",
+                "sku": "CON-146189"
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "persona": "store_owner",
+            "action": "controller update product",
+            "status": "PASS",
+            "message": "Product controller updated product.",
+            "data": {
+                "product_id": 57,
+                "name": "Updated Controller Product OpX14J",
+                "price": "225.50",
+                "stock": 10,
+                "category_id": 58
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "persona": "customer",
+            "action": "controller add cart item",
+            "status": "PASS",
+            "message": "Cart controller added product to cart.",
+            "data": {
+                "customer_id": 42,
+                "cart_id": 59,
+                "cart_item_id": 57,
+                "product_id": 57,
+                "quantity": 2
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "persona": "customer",
+            "action": "controller update cart item",
+            "status": "PASS",
+            "message": "Cart controller updated item quantity.",
+            "data": {
+                "cart_item_id": 57,
+                "quantity": 3
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "persona": "customer",
+            "action": "controller place order",
+            "status": "PASS",
+            "message": "Order controller placed order, deducted stock, and cleared cart.",
+            "data": {
+                "order_id": 46,
+                "order_number": "INV-20260624-6a3b6a41b94bf",
+                "order_total": "676.50",
+                "order_items_count": 1,
+                "stock_before": 10,
+                "stock_after": 7,
+                "cart_items_after": 0,
+                "payment_method": "Bank Transfer",
+                "payment_status": "pending",
+                "response_class": "Illuminate\\Http\\RedirectResponse",
+                "response_target": "http://localhost/orders/confirmation/46",
+                "session_error": null,
+                "session_success": "Your order has been placed successfully!",
+                "auth_id": 42,
+                "request_user_id": 42,
+                "cart_before_id": 59,
+                "cart_before_user_id": 42,
+                "cart_before_items": 0
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "persona": "store_owner",
+            "action": "controller update order status",
+            "status": "PASS",
+            "message": "Manage order controller updated order status.",
+            "data": {
+                "order_id": 46,
+                "status": "processing"
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "persona": "store_owner",
+            "action": "controller update payment status",
+            "status": "PASS",
+            "message": "Manage order controller updated payment status.",
+            "data": {
+                "order_id": 46,
+                "payment_status_on_model": "paid",
+                "paid_at_on_model": "2026-06-24 05:25:21"
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "persona": "system",
+            "action": "rollback",
+            "status": "PASS",
+            "message": "Controller persona audit data rolled back successfully.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "persona": "store_owner",
+            "action": "login simulation",
+            "status": "PASS",
+            "message": "Admin user authenticated in terminal persona audit.",
+            "data": {
+                "admin_id": 1,
+                "email": "admin@example.com"
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "persona": "store_owner",
+            "action": "controller create category",
+            "status": "PASS",
+            "message": "Category controller created category.",
+            "data": {
+                "category_id": 74,
+                "expected_slug": "controller-category-0uzrxqf7"
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "persona": "store_owner",
+            "action": "controller update category",
+            "status": "PASS",
+            "message": "Category controller updated category.",
+            "data": {
+                "category_id": 74,
+                "name": "Updated Controller Category ApDkit"
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "persona": "store_owner",
+            "action": "controller create product",
+            "status": "PASS",
+            "message": "Product controller created product.",
+            "data": {
+                "product_id": 75,
+                "expected_slug": "controller-product-qqnig4fs",
+                "sku": "CON-922764"
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "persona": "store_owner",
+            "action": "controller update product",
+            "status": "PASS",
+            "message": "Product controller updated product.",
+            "data": {
+                "product_id": 75,
+                "name": "Updated Controller Product h2RGzd",
+                "price": "225.50",
+                "stock": 10,
+                "category_id": 74
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "persona": "customer",
+            "action": "controller add cart item",
+            "status": "PASS",
+            "message": "Cart controller added product to cart.",
+            "data": {
+                "customer_id": 43,
+                "cart_id": 95,
+                "cart_item_id": 72,
+                "product_id": 75,
+                "quantity": 2
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "persona": "customer",
+            "action": "controller update cart item",
+            "status": "PASS",
+            "message": "Cart controller updated item quantity.",
+            "data": {
+                "cart_item_id": 72,
+                "quantity": 3
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "persona": "customer",
+            "action": "controller place order",
+            "status": "PASS",
+            "message": "Order controller placed order, deducted stock, and cleared cart.",
+            "data": {
+                "order_id": 57,
+                "order_number": "INV-20260624-6a3b6a41f1b51",
+                "order_total": "676.50",
+                "order_items_count": 1,
+                "stock_before": 10,
+                "stock_after": 7,
+                "cart_items_after": 0,
+                "payment_method": "Bank Transfer",
+                "payment_status": "pending",
+                "response_class": "Illuminate\\Http\\RedirectResponse",
+                "response_target": "http://localhost/orders/confirmation/57",
+                "session_error": null,
+                "session_success": "Your order has been placed successfully!",
+                "auth_id": 43,
+                "request_user_id": 43,
+                "cart_before_id": 95,
+                "cart_before_user_id": 43,
+                "cart_before_items": 0
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "persona": "store_owner",
+            "action": "controller update order status",
+            "status": "PASS",
+            "message": "Manage order controller updated order status.",
+            "data": {
+                "order_id": 57,
+                "status": "processing"
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "persona": "store_owner",
+            "action": "controller update payment status",
+            "status": "PASS",
+            "message": "Manage order controller updated payment status.",
+            "data": {
+                "order_id": 57,
+                "payment_status_on_model": "paid",
+                "paid_at_on_model": "2026-06-24 05:25:21"
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "persona": "system",
+            "action": "rollback",
+            "status": "PASS",
+            "message": "Controller persona audit data rolled back successfully.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "persona": "store_owner",
+            "action": "login simulation",
+            "status": "PASS",
+            "message": "Admin user authenticated in terminal persona audit.",
+            "data": {
+                "admin_id": 1,
+                "email": "admin@example.com"
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "persona": "store_owner",
+            "action": "controller create category",
+            "status": "PASS",
+            "message": "Category controller created category.",
+            "data": {
+                "category_id": 63,
+                "expected_slug": "controller-category-s4wiwoqg"
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "persona": "store_owner",
+            "action": "controller update category",
+            "status": "PASS",
+            "message": "Category controller updated category.",
+            "data": {
+                "category_id": 63,
+                "name": "Updated Controller Category rKnyM5"
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "persona": "store_owner",
+            "action": "controller create product",
+            "status": "PASS",
+            "message": "Product controller created product.",
+            "data": {
+                "product_id": 67,
+                "expected_slug": "controller-product-rb2qgivq",
+                "sku": "CON-141836"
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "persona": "store_owner",
+            "action": "controller update product",
+            "status": "PASS",
+            "message": "Product controller updated product.",
+            "data": {
+                "product_id": 67,
+                "name": "Updated Controller Product tJ64s2",
+                "price": "225.50",
+                "stock": 10,
+                "category_id": 63
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "persona": "customer",
+            "action": "controller add cart item",
+            "status": "PASS",
+            "message": "Cart controller added product to cart.",
+            "data": {
+                "customer_id": 43,
+                "cart_id": 57,
+                "cart_item_id": 57,
+                "product_id": 67,
+                "quantity": 2
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "persona": "customer",
+            "action": "controller update cart item",
+            "status": "PASS",
+            "message": "Cart controller updated item quantity.",
+            "data": {
+                "cart_item_id": 57,
+                "quantity": 3
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "persona": "customer",
+            "action": "controller place order",
+            "status": "PASS",
+            "message": "Order controller placed order, deducted stock, and cleared cart.",
+            "data": {
+                "order_id": 46,
+                "order_number": "INV-20260624-6a3b6a423529e",
+                "order_total": "676.50",
+                "order_items_count": 1,
+                "stock_before": 10,
+                "stock_after": 7,
+                "cart_items_after": 0,
+                "payment_method": "Bank Transfer",
+                "payment_status": "pending",
+                "response_class": "Illuminate\\Http\\RedirectResponse",
+                "response_target": "http://localhost/orders/confirmation/46",
+                "session_error": null,
+                "session_success": "Your order has been placed successfully!",
+                "auth_id": 43,
+                "request_user_id": 43,
+                "cart_before_id": 57,
+                "cart_before_user_id": 43,
+                "cart_before_items": 0
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "persona": "store_owner",
+            "action": "controller update order status",
+            "status": "PASS",
+            "message": "Manage order controller updated order status.",
+            "data": {
+                "order_id": 46,
+                "status": "processing"
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "persona": "store_owner",
+            "action": "controller update payment status",
+            "status": "PASS",
+            "message": "Manage order controller updated payment status.",
+            "data": {
+                "order_id": 46,
+                "payment_status_on_model": "paid",
+                "paid_at_on_model": "2026-06-24 05:25:22"
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "persona": "system",
+            "action": "rollback",
+            "status": "PASS",
+            "message": "Controller persona audit data rolled back successfully.",
+            "data": []
+        }
+    ]
+}

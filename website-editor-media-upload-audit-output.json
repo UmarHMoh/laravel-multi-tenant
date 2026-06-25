@@ -1,0 +1,90 @@
+{
+    "summary": {
+        "PASS": 11,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 23:38:55",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "website_editor_media_upload",
+            "name": "controller upload method exists",
+            "status": "PASS",
+            "message": "uploadMedia controller method found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_media_upload",
+            "name": "controller validates image upload",
+            "status": "PASS",
+            "message": "image validation found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_media_upload",
+            "name": "controller stores image on public disk",
+            "status": "PASS",
+            "message": "public disk storage found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_media_upload",
+            "name": "controller returns storage url",
+            "status": "PASS",
+            "message": "Storage::url return found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_media_upload",
+            "name": "media upload route exists",
+            "status": "PASS",
+            "message": "media upload route found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_media_upload",
+            "name": "editor upload helper exists",
+            "status": "PASS",
+            "message": "uploadEditorImage helper found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_media_upload",
+            "name": "editor csrf helper exists",
+            "status": "PASS",
+            "message": "CSRF helper found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_media_upload",
+            "name": "editor file input exists",
+            "status": "PASS",
+            "message": "file input found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_media_upload",
+            "name": "editor file accept types exists",
+            "status": "PASS",
+            "message": "image accept types found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_media_upload",
+            "name": "editor upload UI label exists",
+            "status": "PASS",
+            "message": "upload UI label found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_media_upload",
+            "name": "stage marker exists",
+            "status": "PASS",
+            "message": "stage marker found.",
+            "data": []
+        }
+    ]
+}

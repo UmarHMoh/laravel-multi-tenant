@@ -1,0 +1,83 @@
+{
+    "summary": {
+        "PASS": 3,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 03:33:04",
+    "tenant_count": 3,
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "tenant_id": "awrah",
+            "section": "tenant_actions",
+            "name": "create_shop_flow",
+            "status": "PASS",
+            "message": "Tenant shop action flow works inside rollback.",
+            "data": {
+                "checks": {
+                    "user_created_or_found": true,
+                    "category_created": true,
+                    "product_created": true,
+                    "cart_created": true,
+                    "cart_item_created": true,
+                    "order_created": true,
+                    "order_item_created": true,
+                    "product_category_relation": true,
+                    "cart_items_relation": true,
+                    "cart_item_product_relation": true,
+                    "order_items_relation": true,
+                    "order_item_product_relation": true
+                }
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "section": "tenant_actions",
+            "name": "create_shop_flow",
+            "status": "PASS",
+            "message": "Tenant shop action flow works inside rollback.",
+            "data": {
+                "checks": {
+                    "user_created_or_found": true,
+                    "category_created": true,
+                    "product_created": true,
+                    "cart_created": true,
+                    "cart_item_created": true,
+                    "order_created": true,
+                    "order_item_created": true,
+                    "product_category_relation": true,
+                    "cart_items_relation": true,
+                    "cart_item_product_relation": true,
+                    "order_items_relation": true,
+                    "order_item_product_relation": true
+                }
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "section": "tenant_actions",
+            "name": "create_shop_flow",
+            "status": "PASS",
+            "message": "Tenant shop action flow works inside rollback.",
+            "data": {
+                "checks": {
+                    "user_created_or_found": true,
+                    "category_created": true,
+                    "product_created": true,
+                    "cart_created": true,
+                    "cart_item_created": true,
+                    "order_created": true,
+                    "order_item_created": true,
+                    "product_category_relation": true,
+                    "cart_items_relation": true,
+                    "cart_item_product_relation": true,
+                    "order_items_relation": true,
+                    "order_item_product_relation": true
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,208 @@
+{
+    "summary": {
+        "PASS": 30,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 14:18:23",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "name": "tenant.website.index route exists",
+            "status": "PASS",
+            "message": "tenant.website.index should exist.",
+            "data": []
+        },
+        {
+            "name": "tenant.website.pages.store route exists",
+            "status": "PASS",
+            "message": "tenant.website.pages.store should exist.",
+            "data": []
+        },
+        {
+            "name": "tenant.website.homepage.editor route exists",
+            "status": "PASS",
+            "message": "tenant.website.homepage.editor should exist.",
+            "data": []
+        },
+        {
+            "name": "tenant.website.pages.editor route exists",
+            "status": "PASS",
+            "message": "tenant.website.pages.editor should exist.",
+            "data": []
+        },
+        {
+            "name": "tenant.website.pages.update route exists",
+            "status": "PASS",
+            "message": "tenant.website.pages.update should exist.",
+            "data": []
+        },
+        {
+            "name": "tenant.website.pages.publish route exists",
+            "status": "PASS",
+            "message": "tenant.website.pages.publish should exist.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains storePage",
+            "status": "PASS",
+            "message": "storePage found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains homepageEditor",
+            "status": "PASS",
+            "message": "homepageEditor found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains pageEditor",
+            "status": "PASS",
+            "message": "pageEditor found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains updatePage",
+            "status": "PASS",
+            "message": "updatePage found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains publishPage",
+            "status": "PASS",
+            "message": "publishPage found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains pageStats",
+            "status": "PASS",
+            "message": "pageStats found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains can_create_page",
+            "status": "PASS",
+            "message": "can_create_page found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains editor_url",
+            "status": "PASS",
+            "message": "editor_url found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Index.vue contains Website pages",
+            "status": "PASS",
+            "message": "Website pages found in resources/js/pages/tenant/website/Index.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Index.vue contains Create page",
+            "status": "PASS",
+            "message": "Create page found in resources/js/pages/tenant/website/Index.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Index.vue contains Open Editor",
+            "status": "PASS",
+            "message": "Open Editor found in resources/js/pages/tenant/website/Index.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Index.vue contains Open homepage editor",
+            "status": "PASS",
+            "message": "Open homepage editor found in resources/js/pages/tenant/website/Index.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Index.vue contains Draft + published workflow",
+            "status": "PASS",
+            "message": "Draft + published workflow found in resources/js/pages/tenant/website/Index.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Index.vue contains canCreatePage",
+            "status": "PASS",
+            "message": "canCreatePage found in resources/js/pages/tenant/website/Index.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Index.vue contains /manage/website/pages",
+            "status": "PASS",
+            "message": "/manage/website/pages found in resources/js/pages/tenant/website/Index.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Index.vue contains S42 foundation",
+            "status": "PASS",
+            "message": "S42 foundation found in resources/js/pages/tenant/website/Index.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Website Editor",
+            "status": "PASS",
+            "message": "Website Editor found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Back to pages",
+            "status": "PASS",
+            "message": "Back to pages found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains saveUrl",
+            "status": "PASS",
+            "message": "saveUrl found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains publishUrl",
+            "status": "PASS",
+            "message": "publishUrl found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains page: { type: Object",
+            "status": "PASS",
+            "message": "page: { type: Object found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "tenant awrah dashboard has homepage and custom page",
+            "status": "PASS",
+            "message": "Theme pages exist for dashboard.",
+            "data": {
+                "page_count": 2,
+                "homepage_id": 1,
+                "audit_page_id": 2,
+                "response_class": "Inertia\\Response"
+            }
+        },
+        {
+            "name": "tenant tenant1 dashboard has homepage and custom page",
+            "status": "PASS",
+            "message": "Theme pages exist for dashboard.",
+            "data": {
+                "page_count": 2,
+                "homepage_id": 1,
+                "audit_page_id": 2,
+                "response_class": "Inertia\\Response"
+            }
+        },
+        {
+            "name": "tenant tenant2 dashboard has homepage and custom page",
+            "status": "PASS",
+            "message": "Theme pages exist for dashboard.",
+            "data": {
+                "page_count": 2,
+                "homepage_id": 1,
+                "audit_page_id": 2,
+                "response_class": "Inertia\\Response"
+            }
+        }
+    ]
+}

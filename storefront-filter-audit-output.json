@@ -1,0 +1,130 @@
+{
+    "summary": {
+        "PASS": 12,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 12:56:27",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "tenant_id": "awrah",
+            "name": "home route exists",
+            "status": "PASS",
+            "message": "Storefront home route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "product detail route exists",
+            "status": "PASS",
+            "message": "Product detail route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "home returns storefront props",
+            "status": "PASS",
+            "message": "Storefront home returns products, categories, and selected filters.",
+            "data": {
+                "has_products": true,
+                "has_categories": true,
+                "filters": {
+                    "search": "Audit Search Product",
+                    "category": "audit-filter-category",
+                    "sort": "price_low"
+                }
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "search and category filter returns product",
+            "status": "PASS",
+            "message": "Search and category filtering returned the expected product.",
+            "data": {
+                "product_id": 219,
+                "result_count": 1
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "home route exists",
+            "status": "PASS",
+            "message": "Storefront home route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "product detail route exists",
+            "status": "PASS",
+            "message": "Product detail route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "home returns storefront props",
+            "status": "PASS",
+            "message": "Storefront home returns products, categories, and selected filters.",
+            "data": {
+                "has_products": true,
+                "has_categories": true,
+                "filters": {
+                    "search": "Audit Search Product",
+                    "category": "audit-filter-category",
+                    "sort": "price_low"
+                }
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "search and category filter returns product",
+            "status": "PASS",
+            "message": "Search and category filtering returned the expected product.",
+            "data": {
+                "product_id": 272,
+                "result_count": 1
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "home route exists",
+            "status": "PASS",
+            "message": "Storefront home route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "product detail route exists",
+            "status": "PASS",
+            "message": "Product detail route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "home returns storefront props",
+            "status": "PASS",
+            "message": "Storefront home returns products, categories, and selected filters.",
+            "data": {
+                "has_products": true,
+                "has_categories": true,
+                "filters": {
+                    "search": "Audit Search Product",
+                    "category": "audit-filter-category",
+                    "sort": "price_low"
+                }
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "search and category filter returns product",
+            "status": "PASS",
+            "message": "Search and category filtering returned the expected product.",
+            "data": {
+                "product_id": 229,
+                "result_count": 1
+            }
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "summary": {
+        "PASS": 11,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 19:46:55",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "website_editor_dirty_state",
+            "name": "imports lifecycle hooks",
+            "status": "PASS",
+            "message": "imports lifecycle hooks found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_dirty_state",
+            "name": "tracks clean snapshot",
+            "status": "PASS",
+            "message": "tracks clean snapshot found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_dirty_state",
+            "name": "computes unsaved state",
+            "status": "PASS",
+            "message": "computes unsaved state found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_dirty_state",
+            "name": "can mark editor clean",
+            "status": "PASS",
+            "message": "can mark editor clean found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_dirty_state",
+            "name": "warns before unload",
+            "status": "PASS",
+            "message": "warns before unload found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_dirty_state",
+            "name": "registers beforeunload listener",
+            "status": "PASS",
+            "message": "registers beforeunload listener found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_dirty_state",
+            "name": "removes beforeunload listener",
+            "status": "PASS",
+            "message": "removes beforeunload listener found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_dirty_state",
+            "name": "shows unsaved badge",
+            "status": "PASS",
+            "message": "shows unsaved badge found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_dirty_state",
+            "name": "shows saved badge",
+            "status": "PASS",
+            "message": "shows saved badge found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_dirty_state",
+            "name": "save clears dirty state",
+            "status": "PASS",
+            "message": "save clears dirty state found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_dirty_state",
+            "name": "stage marker exists",
+            "status": "PASS",
+            "message": "stage marker exists found.",
+            "data": []
+        }
+    ]
+}

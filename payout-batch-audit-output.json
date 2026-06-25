@@ -1,0 +1,124 @@
+{
+    "summary": {
+        "PASS": 6,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 06:00:34",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "tenant_id": "awrah",
+            "name": "central can create payout batch",
+            "status": "PASS",
+            "message": "Approved payout requests were grouped into a payout batch.",
+            "data": {
+                "batch_id": 4,
+                "batch_number": "PB-20260624-26901348",
+                "request_count": 2,
+                "total_amount": "71.10"
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "paid batch pays requests and reduces balance",
+            "status": "PASS",
+            "message": "Marking payout batch paid paid all requests and reduced tenant balance.",
+            "data": {
+                "before_balance": {
+                    "available_balance": 189.6,
+                    "pending_balance": 0,
+                    "lifetime_earned": 189.6,
+                    "currency": "TTD"
+                },
+                "after_balance": {
+                    "available_balance": 118.5,
+                    "pending_balance": 0,
+                    "lifetime_earned": 189.6,
+                    "currency": "TTD"
+                },
+                "batch_total": "71.10",
+                "before_debit_count": 0,
+                "after_debit_count": 2,
+                "requests_paid": 2,
+                "batch_status": "paid"
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "central can create payout batch",
+            "status": "PASS",
+            "message": "Approved payout requests were grouped into a payout batch.",
+            "data": {
+                "batch_id": 5,
+                "batch_number": "PB-20260624-E7BB6D5F",
+                "request_count": 2,
+                "total_amount": "67.43"
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "paid batch pays requests and reduces balance",
+            "status": "PASS",
+            "message": "Marking payout batch paid paid all requests and reduced tenant balance.",
+            "data": {
+                "before_balance": {
+                    "available_balance": 179.8,
+                    "pending_balance": 0,
+                    "lifetime_earned": 179.8,
+                    "currency": "TTD"
+                },
+                "after_balance": {
+                    "available_balance": 112.37,
+                    "pending_balance": 0,
+                    "lifetime_earned": 179.8,
+                    "currency": "TTD"
+                },
+                "batch_total": "67.43",
+                "before_debit_count": 0,
+                "after_debit_count": 2,
+                "requests_paid": 2,
+                "batch_status": "paid"
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "central can create payout batch",
+            "status": "PASS",
+            "message": "Approved payout requests were grouped into a payout batch.",
+            "data": {
+                "batch_id": 6,
+                "batch_number": "PB-20260624-8C33C310",
+                "request_count": 2,
+                "total_amount": "71.10"
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "paid batch pays requests and reduces balance",
+            "status": "PASS",
+            "message": "Marking payout batch paid paid all requests and reduced tenant balance.",
+            "data": {
+                "before_balance": {
+                    "available_balance": 189.6,
+                    "pending_balance": 0,
+                    "lifetime_earned": 189.6,
+                    "currency": "TTD"
+                },
+                "after_balance": {
+                    "available_balance": 118.5,
+                    "pending_balance": 0,
+                    "lifetime_earned": 189.6,
+                    "currency": "TTD"
+                },
+                "batch_total": "71.10",
+                "before_debit_count": 0,
+                "after_debit_count": 2,
+                "requests_paid": 2,
+                "batch_status": "paid"
+            }
+        }
+    ]
+}

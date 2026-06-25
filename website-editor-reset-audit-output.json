@@ -1,0 +1,91 @@
+{
+    "summary": {
+        "PASS": 13,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 19:43:35",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "name": "tenant.website.homepage.reset route exists",
+            "status": "PASS",
+            "message": "tenant.website.homepage.reset should exist.",
+            "data": []
+        },
+        {
+            "name": "tenant.website.pages.reset route exists",
+            "status": "PASS",
+            "message": "tenant.website.pages.reset should exist.",
+            "data": []
+        },
+        {
+            "name": "controller contains public function resetHomepageDraft",
+            "status": "PASS",
+            "message": "public function resetHomepageDraft found.",
+            "data": []
+        },
+        {
+            "name": "controller contains public function resetPageDraft",
+            "status": "PASS",
+            "message": "public function resetPageDraft found.",
+            "data": []
+        },
+        {
+            "name": "controller contains private function defaultStaticPageSections",
+            "status": "PASS",
+            "message": "private function defaultStaticPageSections found.",
+            "data": []
+        },
+        {
+            "name": "controller contains Homepage draft reset to default sections.",
+            "status": "PASS",
+            "message": "Homepage draft reset to default sections. found.",
+            "data": []
+        },
+        {
+            "name": "controller contains Page draft reset to default sections.",
+            "status": "PASS",
+            "message": "Page draft reset to default sections. found.",
+            "data": []
+        },
+        {
+            "name": "routes contain /manage/website/homepage/reset",
+            "status": "PASS",
+            "message": "/manage/website/homepage/reset found.",
+            "data": []
+        },
+        {
+            "name": "routes contain /manage/website/pages/{themePage}/reset",
+            "status": "PASS",
+            "message": "/manage/website/pages/{themePage}/reset found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains const resetUrl = computed",
+            "status": "PASS",
+            "message": "const resetUrl = computed found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains router.post(resetUrl.value",
+            "status": "PASS",
+            "message": "router.post(resetUrl.value found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains Reset this draft to default sections?",
+            "status": "PASS",
+            "message": "Reset this draft to default sections? found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains S48 reset draft foundation",
+            "status": "PASS",
+            "message": "S48 reset draft foundation found.",
+            "data": []
+        }
+    ]
+}

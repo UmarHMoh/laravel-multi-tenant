@@ -1,0 +1,416 @@
+{
+    "summary": {
+        "PASS": 31,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 03:34:12",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "central_pages",
+            "name": "Central dashboard",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/central",
+                "tenant_id": null,
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "central_pages",
+            "name": "Central tenants",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/central/tenants",
+                "tenant_id": null,
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "central_pages",
+            "name": "Central tenant1 profile",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/central/tenants/tenant1",
+                "tenant_id": null,
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "central_pages",
+            "name": "Central tenant1 payouts",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/central/payouts/tenant1",
+                "tenant_id": null,
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "central_pages",
+            "name": "Central payouts index",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/central/payouts",
+                "tenant_id": null,
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "central_pages",
+            "name": "Central payment settings",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/central/payment-settings",
+                "tenant_id": null,
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "central_pages",
+            "name": "Central platform settings",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/central/settings",
+                "tenant_id": null,
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "tenant1 Tenant dashboard",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/dashboard",
+                "tenant_id": "tenant1",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "tenant1 Tenant billing",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/billing",
+                "tenant_id": "tenant1",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "tenant1 Tenant payout account",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/payout-account",
+                "tenant_id": "tenant1",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "tenant1 Tenant store settings",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/store-settings",
+                "tenant_id": "tenant1",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "tenant1 Tenant products",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/product",
+                "tenant_id": "tenant1",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "tenant1 Tenant categories",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/category",
+                "tenant_id": "tenant1",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "tenant1 Tenant orders",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/order",
+                "tenant_id": "tenant1",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "tenant1 Tenant customers",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/customer",
+                "tenant_id": "tenant1",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "tenant2 Tenant dashboard",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/dashboard",
+                "tenant_id": "tenant2",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "tenant2 Tenant billing",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/billing",
+                "tenant_id": "tenant2",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "tenant2 Tenant payout account",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/payout-account",
+                "tenant_id": "tenant2",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "tenant2 Tenant store settings",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/store-settings",
+                "tenant_id": "tenant2",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "tenant2 Tenant products",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/product",
+                "tenant_id": "tenant2",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "tenant2 Tenant categories",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/category",
+                "tenant_id": "tenant2",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "tenant2 Tenant orders",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/order",
+                "tenant_id": "tenant2",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "tenant2 Tenant customers",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/customer",
+                "tenant_id": "tenant2",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "awrah Tenant dashboard",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/dashboard",
+                "tenant_id": "awrah",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "awrah Tenant billing",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/billing",
+                "tenant_id": "awrah",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "awrah Tenant payout account",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/payout-account",
+                "tenant_id": "awrah",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "awrah Tenant store settings",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/store-settings",
+                "tenant_id": "awrah",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "awrah Tenant products",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/product",
+                "tenant_id": "awrah",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "awrah Tenant categories",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/category",
+                "tenant_id": "awrah",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "awrah Tenant orders",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/order",
+                "tenant_id": "awrah",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        },
+        {
+            "section": "tenant_pages",
+            "name": "awrah Tenant customers",
+            "status": "PASS",
+            "message": "Page route rendered without server error.",
+            "data": {
+                "method": "GET",
+                "uri": "/manage/customer",
+                "tenant_id": "awrah",
+                "status_code": 200,
+                "content_preview": ""
+            }
+        }
+    ]
+}

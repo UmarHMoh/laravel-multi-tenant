@@ -1,0 +1,111 @@
+{
+    "summary": {
+        "PASS": 14,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 21:44:02",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "website_editor_section_favorites",
+            "name": "favorite state exists",
+            "status": "PASS",
+            "message": "favorite state exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_favorites",
+            "name": "load favorites helper exists",
+            "status": "PASS",
+            "message": "load favorites helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_favorites",
+            "name": "save favorites helper exists",
+            "status": "PASS",
+            "message": "save favorites helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_favorites",
+            "name": "favorite lookup helper exists",
+            "status": "PASS",
+            "message": "favorite lookup helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_favorites",
+            "name": "favorite toggle helper exists",
+            "status": "PASS",
+            "message": "favorite toggle helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_favorites",
+            "name": "local storage key exists",
+            "status": "PASS",
+            "message": "local storage key exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_favorites",
+            "name": "favorites watcher exists",
+            "status": "PASS",
+            "message": "favorites watcher exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_favorites",
+            "name": "favorite schemas computed exists",
+            "status": "PASS",
+            "message": "favorite schemas computed exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_favorites",
+            "name": "favorites panel exists",
+            "status": "PASS",
+            "message": "favorites panel exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_favorites",
+            "name": "favorites heading exists",
+            "status": "PASS",
+            "message": "favorites heading exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_favorites",
+            "name": "empty favorites helper text exists",
+            "status": "PASS",
+            "message": "empty favorites helper text exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_favorites",
+            "name": "pin button exists",
+            "status": "PASS",
+            "message": "pin button exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_favorites",
+            "name": "pinned add button exists",
+            "status": "PASS",
+            "message": "pinned add button exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_favorites",
+            "name": "stage marker exists",
+            "status": "PASS",
+            "message": "stage marker exists found.",
+            "data": []
+        }
+    ]
+}

@@ -1,0 +1,353 @@
+
+
+
+
+
+
+
+
+{
+    "summary": {
+        "PASS": 38,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-25 01:08:56",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "tenant_id": "awrah",
+            "name": "section schema registered: hero",
+            "status": "PASS",
+            "message": "hero schema is registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "section schema registered: rich_text",
+            "status": "PASS",
+            "message": "rich_text schema is registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "section schema registered: featured_products",
+            "status": "PASS",
+            "message": "featured_products schema is registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "section schema registered: product_grid",
+            "status": "PASS",
+            "message": "product_grid schema is registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "homepage active config exists",
+            "status": "PASS",
+            "message": "Homepage active config contains sections.",
+            "data": {
+                "section_count": 3
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "homepage renders hero",
+            "status": "PASS",
+            "message": "Homepage renders hero.",
+            "data": {
+                "rendered_types": [
+                    "hero",
+                    "featured_products",
+                    "product_grid"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "homepage renders featured_products",
+            "status": "PASS",
+            "message": "Homepage renders featured_products.",
+            "data": {
+                "rendered_types": [
+                    "hero",
+                    "featured_products",
+                    "product_grid"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "homepage renders product_grid",
+            "status": "PASS",
+            "message": "Homepage renders product_grid.",
+            "data": {
+                "rendered_types": [
+                    "hero",
+                    "featured_products",
+                    "product_grid"
+                ]
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "homepage data has featured products key",
+            "status": "PASS",
+            "message": "Renderer returns featuredProducts data key.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "section schema registered: hero",
+            "status": "PASS",
+            "message": "hero schema is registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "section schema registered: rich_text",
+            "status": "PASS",
+            "message": "rich_text schema is registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "section schema registered: featured_products",
+            "status": "PASS",
+            "message": "featured_products schema is registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "section schema registered: product_grid",
+            "status": "PASS",
+            "message": "product_grid schema is registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "homepage active config exists",
+            "status": "PASS",
+            "message": "Homepage active config contains sections.",
+            "data": {
+                "section_count": 5
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "homepage renders hero",
+            "status": "PASS",
+            "message": "Homepage renders hero.",
+            "data": {
+                "rendered_types": [
+                    "hero",
+                    "featured_products",
+                    "product_grid",
+                    "rich_text",
+                    "rich_text"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "homepage renders featured_products",
+            "status": "PASS",
+            "message": "Homepage renders featured_products.",
+            "data": {
+                "rendered_types": [
+                    "hero",
+                    "featured_products",
+                    "product_grid",
+                    "rich_text",
+                    "rich_text"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "homepage renders product_grid",
+            "status": "PASS",
+            "message": "Homepage renders product_grid.",
+            "data": {
+                "rendered_types": [
+                    "hero",
+                    "featured_products",
+                    "product_grid",
+                    "rich_text",
+                    "rich_text"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "homepage data has featured products key",
+            "status": "PASS",
+            "message": "Renderer returns featuredProducts data key.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "section schema registered: hero",
+            "status": "PASS",
+            "message": "hero schema is registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "section schema registered: rich_text",
+            "status": "PASS",
+            "message": "rich_text schema is registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "section schema registered: featured_products",
+            "status": "PASS",
+            "message": "featured_products schema is registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "section schema registered: product_grid",
+            "status": "PASS",
+            "message": "product_grid schema is registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "homepage active config exists",
+            "status": "PASS",
+            "message": "Homepage active config contains sections.",
+            "data": {
+                "section_count": 3
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "homepage renders hero",
+            "status": "PASS",
+            "message": "Homepage renders hero.",
+            "data": {
+                "rendered_types": [
+                    "hero",
+                    "featured_products",
+                    "product_grid"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "homepage renders featured_products",
+            "status": "PASS",
+            "message": "Homepage renders featured_products.",
+            "data": {
+                "rendered_types": [
+                    "hero",
+                    "featured_products",
+                    "product_grid"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "homepage renders product_grid",
+            "status": "PASS",
+            "message": "Homepage renders product_grid.",
+            "data": {
+                "rendered_types": [
+                    "hero",
+                    "featured_products",
+                    "product_grid"
+                ]
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "homepage data has featured products key",
+            "status": "PASS",
+            "message": "Renderer returns featuredProducts data key.",
+            "data": []
+        },
+        {
+            "tenant_id": "static",
+            "name": "app/Services/Themes/ThemePageRenderer.php contains renderableSections",
+            "status": "PASS",
+            "message": "renderableSections found in app/Services/Themes/ThemePageRenderer.php.",
+            "data": []
+        },
+        {
+            "tenant_id": "static",
+            "name": "app/Services/Themes/ThemePageRenderer.php contains homepageData",
+            "status": "PASS",
+            "message": "homepageData found in app/Services/Themes/ThemePageRenderer.php.",
+            "data": []
+        },
+        {
+            "tenant_id": "static",
+            "name": "app/Services/Themes/ThemePageRenderer.php contains settingsWithDefaults",
+            "status": "PASS",
+            "message": "settingsWithDefaults found in app/Services/Themes/ThemePageRenderer.php.",
+            "data": []
+        },
+        {
+            "tenant_id": "static",
+            "name": "resources/js/pages/tenant/Homepage.vue contains section.type === 'hero'",
+            "status": "PASS",
+            "message": "section.type === 'hero' found in resources/js/pages/tenant/Homepage.vue.",
+            "data": []
+        },
+        {
+            "tenant_id": "static",
+            "name": "resources/js/pages/tenant/Homepage.vue contains section.type === 'rich_text'",
+            "status": "PASS",
+            "message": "section.type === 'rich_text' found in resources/js/pages/tenant/Homepage.vue.",
+            "data": []
+        },
+        {
+            "tenant_id": "static",
+            "name": "resources/js/pages/tenant/Homepage.vue contains section.type === 'featured_products'",
+            "status": "PASS",
+            "message": "section.type === 'featured_products' found in resources/js/pages/tenant/Homepage.vue.",
+            "data": []
+        },
+        {
+            "tenant_id": "static",
+            "name": "resources/js/pages/tenant/Homepage.vue contains section.type === 'product_grid'",
+            "status": "PASS",
+            "message": "section.type === 'product_grid' found in resources/js/pages/tenant/Homepage.vue.",
+            "data": []
+        },
+        {
+            "tenant_id": "static",
+            "name": "resources/js/pages/tenant/Homepage.vue contains sm:grid-cols-2",
+            "status": "PASS",
+            "message": "sm:grid-cols-2 found in resources/js/pages/tenant/Homepage.vue.",
+            "data": []
+        },
+        {
+            "tenant_id": "static",
+            "name": "resources/js/pages/tenant/Homepage.vue contains lg:grid-cols-3",
+            "status": "PASS",
+            "message": "lg:grid-cols-3 found in resources/js/pages/tenant/Homepage.vue.",
+            "data": []
+        },
+        {
+            "tenant_id": "static",
+            "name": "resources/js/pages/tenant/Homepage.vue contains xl:grid-cols-4",
+            "status": "PASS",
+            "message": "xl:grid-cols-4 found in resources/js/pages/tenant/Homepage.vue.",
+            "data": []
+        },
+        {
+            "tenant_id": "static",
+            "name": "resources/js/pages/tenant/Homepage.vue contains min-h-11",
+            "status": "PASS",
+            "message": "min-h-11 found in resources/js/pages/tenant/Homepage.vue.",
+            "data": []
+        }
+    ]
+}

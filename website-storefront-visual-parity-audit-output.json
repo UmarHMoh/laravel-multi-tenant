@@ -1,0 +1,76 @@
+{
+    "summary": {
+        "PASS": 9,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 23:47:00",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "website_storefront_visual_parity",
+            "name": "stage marker exists on storefront",
+            "status": "PASS",
+            "message": "S59 storefront marker found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_visual_parity",
+            "name": "stage marker exists on editor",
+            "status": "PASS",
+            "message": "S59 editor marker found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_visual_parity",
+            "name": "storefront visual parity stylesheet exists",
+            "status": "PASS",
+            "message": "visual parity stylesheet found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_visual_parity",
+            "name": "builder homepage style hook exists",
+            "status": "PASS",
+            "message": "builder homepage style hook found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_visual_parity",
+            "name": "hero visual parity styles exist",
+            "status": "PASS",
+            "message": "hero visual parity styles found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_visual_parity",
+            "name": "product card visual parity styles exist",
+            "status": "PASS",
+            "message": "product card styles found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_visual_parity",
+            "name": "rich text visual parity styles exist",
+            "status": "PASS",
+            "message": "rich text styles found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_visual_parity",
+            "name": "visible parity card exists",
+            "status": "PASS",
+            "message": "visible parity card found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_visual_parity",
+            "name": "homepage still renders template",
+            "status": "PASS",
+            "message": "Homepage Vue template found.",
+            "data": []
+        }
+    ]
+}

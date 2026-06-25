@@ -1,0 +1,85 @@
+{
+    "summary": {
+        "PASS": 12,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 19:05:19",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "name": "homepage editor route exists",
+            "status": "PASS",
+            "message": "Homepage editor route should exist.",
+            "data": []
+        },
+        {
+            "name": "SectionRegistry contains ['type' => 'image', 'id' => 'image_url', 'label' => 'Hero image'",
+            "status": "PASS",
+            "message": "['type' => 'image', 'id' => 'image_url', 'label' => 'Hero image' found.",
+            "data": []
+        },
+        {
+            "name": "SectionRegistry contains 'image_url' => ''",
+            "status": "PASS",
+            "message": "'image_url' => '' found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains function isImageSetting",
+            "status": "PASS",
+            "message": "function isImageSetting found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains function updateImageSetting",
+            "status": "PASS",
+            "message": "function updateImageSetting found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains function updateBlockImageSetting",
+            "status": "PASS",
+            "message": "function updateBlockImageSetting found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains Hero image preview placeholder",
+            "status": "PASS",
+            "message": "Hero image preview placeholder found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains Image picker foundation",
+            "status": "PASS",
+            "message": "Image picker foundation found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains Block image picker foundation",
+            "status": "PASS",
+            "message": "Block image picker foundation found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains Paste image URL for now",
+            "status": "PASS",
+            "message": "Paste image URL for now found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains Clear image",
+            "status": "PASS",
+            "message": "Clear image found.",
+            "data": []
+        },
+        {
+            "name": "Editor.vue contains S47 image picker foundation",
+            "status": "PASS",
+            "message": "S47 image picker foundation found.",
+            "data": []
+        }
+    ]
+}

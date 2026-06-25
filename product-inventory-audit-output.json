@@ -1,0 +1,169 @@
+{
+    "summary": {
+        "PASS": 15,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 11:03:35",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "tenant_id": "awrah",
+            "name": "product index route exists",
+            "status": "PASS",
+            "message": "Tenant product index route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "product create route exists",
+            "status": "PASS",
+            "message": "Tenant product create route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "product index returns inventory props",
+            "status": "PASS",
+            "message": "Product index returns products, stats, filters, and stock status options.",
+            "data": {
+                "props": [
+                    "products",
+                    "stats",
+                    "filters",
+                    "stockStatusOptions"
+                ],
+                "filters": {
+                    "search": "Inventory",
+                    "stock_status": "low"
+                }
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "low stock filter returns low-stock product",
+            "status": "PASS",
+            "message": "Low stock filter returned the expected product.",
+            "data": {
+                "low_stock_product_id": 125,
+                "result_count": 1
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "low stock filter excludes out-of-stock product",
+            "status": "PASS",
+            "message": "Low stock filter excluded the out-of-stock product.",
+            "data": {
+                "out_stock_product_id": 126,
+                "result_count": 1
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "product index route exists",
+            "status": "PASS",
+            "message": "Tenant product index route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "product create route exists",
+            "status": "PASS",
+            "message": "Tenant product create route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "product index returns inventory props",
+            "status": "PASS",
+            "message": "Product index returns products, stats, filters, and stock status options.",
+            "data": {
+                "props": [
+                    "products",
+                    "stats",
+                    "filters",
+                    "stockStatusOptions"
+                ],
+                "filters": {
+                    "search": "Inventory",
+                    "stock_status": "low"
+                }
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "low stock filter returns low-stock product",
+            "status": "PASS",
+            "message": "Low stock filter returned the expected product.",
+            "data": {
+                "low_stock_product_id": 162,
+                "result_count": 1
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "low stock filter excludes out-of-stock product",
+            "status": "PASS",
+            "message": "Low stock filter excluded the out-of-stock product.",
+            "data": {
+                "out_stock_product_id": 163,
+                "result_count": 1
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "product index route exists",
+            "status": "PASS",
+            "message": "Tenant product index route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "product create route exists",
+            "status": "PASS",
+            "message": "Tenant product create route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "product index returns inventory props",
+            "status": "PASS",
+            "message": "Product index returns products, stats, filters, and stock status options.",
+            "data": {
+                "props": [
+                    "products",
+                    "stats",
+                    "filters",
+                    "stockStatusOptions"
+                ],
+                "filters": {
+                    "search": "Inventory",
+                    "stock_status": "low"
+                }
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "low stock filter returns low-stock product",
+            "status": "PASS",
+            "message": "Low stock filter returned the expected product.",
+            "data": {
+                "low_stock_product_id": 135,
+                "result_count": 1
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "low stock filter excludes out-of-stock product",
+            "status": "PASS",
+            "message": "Low stock filter excluded the out-of-stock product.",
+            "data": {
+                "out_stock_product_id": 136,
+                "result_count": 1
+            }
+        }
+    ]
+}

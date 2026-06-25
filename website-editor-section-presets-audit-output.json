@@ -1,0 +1,118 @@
+{
+    "summary": {
+        "PASS": 15,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 21:50:52",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "website_editor_section_presets",
+            "name": "preset options computed exists",
+            "status": "PASS",
+            "message": "preset options computed exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_presets",
+            "name": "hero cta preset exists",
+            "status": "PASS",
+            "message": "hero cta preset exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_presets",
+            "name": "hero minimal preset exists",
+            "status": "PASS",
+            "message": "hero minimal preset exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_presets",
+            "name": "product feature preset exists",
+            "status": "PASS",
+            "message": "product feature preset exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_presets",
+            "name": "text block preset exists",
+            "status": "PASS",
+            "message": "text block preset exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_presets",
+            "name": "schema for preset helper exists",
+            "status": "PASS",
+            "message": "schema for preset helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_presets",
+            "name": "add preset helper exists",
+            "status": "PASS",
+            "message": "add preset helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_presets",
+            "name": "preset uses add section",
+            "status": "PASS",
+            "message": "preset uses add section found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_presets",
+            "name": "preset merges settings",
+            "status": "PASS",
+            "message": "preset merges settings found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_presets",
+            "name": "presets panel exists",
+            "status": "PASS",
+            "message": "presets panel exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_presets",
+            "name": "presets heading exists",
+            "status": "PASS",
+            "message": "presets heading exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_presets",
+            "name": "presets help text exists",
+            "status": "PASS",
+            "message": "presets help text exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_presets",
+            "name": "preset button exists",
+            "status": "PASS",
+            "message": "preset button exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_presets",
+            "name": "preset click exists",
+            "status": "PASS",
+            "message": "preset click exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_section_presets",
+            "name": "stage marker exists",
+            "status": "PASS",
+            "message": "stage marker exists found.",
+            "data": []
+        }
+    ]
+}

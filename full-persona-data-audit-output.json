@@ -1,0 +1,407 @@
+{
+    "summary": {
+        "PASS": 30,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 3
+    },
+    "generated_at": "2026-06-24 03:58:38",
+    "tenant_count": 3,
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "persona": "store_owner",
+            "tenant_id": "awrah",
+            "action": "find or create store owner",
+            "status": "PASS",
+            "message": "Store owner account exists.",
+            "data": {
+                "user_id": 1,
+                "email": "admin@awrah.com"
+            }
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "awrah",
+            "action": "create category",
+            "status": "PASS",
+            "message": "Store owner created category.",
+            "data": {
+                "category_id": 3,
+                "name": "Persona Category KkMGz",
+                "slug": "persona-category-JDx8RqRz"
+            }
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "awrah",
+            "action": "create product",
+            "status": "PASS",
+            "message": "Store owner created product.",
+            "data": {
+                "product_id": 3,
+                "name": "Persona Product KbEQQ",
+                "price": 150,
+                "stock": 20,
+                "category_id": 3
+            }
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "awrah",
+            "action": "product category relation",
+            "status": "PASS",
+            "message": "Product loads its category correctly.",
+            "data": {
+                "product_id": 3,
+                "expected_category_id": 3,
+                "actual_category_id": 3
+            }
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "awrah",
+            "action": "edit product and category",
+            "status": "PASS",
+            "message": "Store owner can update product/category data.",
+            "data": {
+                "product_name": "Updated Persona Product",
+                "product_price": "175.50",
+                "product_stock": 15,
+                "category_name": "Updated Persona Category"
+            }
+        },
+        {
+            "persona": "customer",
+            "tenant_id": "awrah",
+            "action": "add product to cart",
+            "status": "PASS",
+            "message": "Customer can add product to cart and relation loads.",
+            "data": {
+                "customer_id": 2,
+                "cart_id": 5,
+                "cart_item_id": 3,
+                "product_id": 3,
+                "quantity": 2
+            }
+        },
+        {
+            "persona": "customer",
+            "tenant_id": "awrah",
+            "action": "update cart quantity",
+            "status": "PASS",
+            "message": "Customer cart quantity updates correctly.",
+            "data": {
+                "cart_item_id": 3,
+                "quantity": 3
+            }
+        },
+        {
+            "persona": "customer",
+            "tenant_id": "awrah",
+            "action": "place order",
+            "status": "PASS",
+            "message": "Customer order and order item save correctly.",
+            "data": {
+                "order_id": 3,
+                "order_number": "PERSONA-HEPHKWUTUN",
+                "total": 526.5,
+                "order_item_id": 3,
+                "payment_method": "Cash on Delivery"
+            }
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "awrah",
+            "action": "update order status",
+            "status": "PASS",
+            "message": "Store owner can update order status.",
+            "data": {
+                "order_id": 3,
+                "status": "processing"
+            }
+        },
+        {
+            "persona": "system",
+            "tenant_id": "awrah",
+            "action": "stock behavior observation",
+            "status": "INFO",
+            "message": "Model-only order creation does not automatically deduct stock. Controller checkout may handle this separately if implemented.",
+            "data": {
+                "product_id": 3,
+                "stock_after_model_order": 15
+            }
+        },
+        {
+            "persona": "system",
+            "tenant_id": "awrah",
+            "action": "rollback",
+            "status": "PASS",
+            "message": "Persona sample data rolled back successfully.",
+            "data": []
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "tenant1",
+            "action": "find or create store owner",
+            "status": "PASS",
+            "message": "Store owner account exists.",
+            "data": {
+                "user_id": 1,
+                "email": "admin@example.com"
+            }
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "tenant1",
+            "action": "create category",
+            "status": "PASS",
+            "message": "Store owner created category.",
+            "data": {
+                "category_id": 6,
+                "name": "Persona Category 3AUSG",
+                "slug": "persona-category-XwaFo9NR"
+            }
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "tenant1",
+            "action": "create product",
+            "status": "PASS",
+            "message": "Store owner created product.",
+            "data": {
+                "product_id": 9,
+                "name": "Persona Product hZbgF",
+                "price": 150,
+                "stock": 20,
+                "category_id": 6
+            }
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "tenant1",
+            "action": "product category relation",
+            "status": "PASS",
+            "message": "Product loads its category correctly.",
+            "data": {
+                "product_id": 9,
+                "expected_category_id": 6,
+                "actual_category_id": 6
+            }
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "tenant1",
+            "action": "edit product and category",
+            "status": "PASS",
+            "message": "Store owner can update product/category data.",
+            "data": {
+                "product_name": "Updated Persona Product",
+                "product_price": "175.50",
+                "product_stock": 15,
+                "category_name": "Updated Persona Category"
+            }
+        },
+        {
+            "persona": "customer",
+            "tenant_id": "tenant1",
+            "action": "add product to cart",
+            "status": "PASS",
+            "message": "Customer can add product to cart and relation loads.",
+            "data": {
+                "customer_id": 3,
+                "cart_id": 5,
+                "cart_item_id": 7,
+                "product_id": 9,
+                "quantity": 2
+            }
+        },
+        {
+            "persona": "customer",
+            "tenant_id": "tenant1",
+            "action": "update cart quantity",
+            "status": "PASS",
+            "message": "Customer cart quantity updates correctly.",
+            "data": {
+                "cart_item_id": 7,
+                "quantity": 3
+            }
+        },
+        {
+            "persona": "customer",
+            "tenant_id": "tenant1",
+            "action": "place order",
+            "status": "PASS",
+            "message": "Customer order and order item save correctly.",
+            "data": {
+                "order_id": 6,
+                "order_number": "PERSONA-IXTURZMF85",
+                "total": 526.5,
+                "order_item_id": 7,
+                "payment_method": "Cash on Delivery"
+            }
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "tenant1",
+            "action": "update order status",
+            "status": "PASS",
+            "message": "Store owner can update order status.",
+            "data": {
+                "order_id": 6,
+                "status": "processing"
+            }
+        },
+        {
+            "persona": "system",
+            "tenant_id": "tenant1",
+            "action": "stock behavior observation",
+            "status": "INFO",
+            "message": "Model-only order creation does not automatically deduct stock. Controller checkout may handle this separately if implemented.",
+            "data": {
+                "product_id": 9,
+                "stock_after_model_order": 15
+            }
+        },
+        {
+            "persona": "system",
+            "tenant_id": "tenant1",
+            "action": "rollback",
+            "status": "PASS",
+            "message": "Persona sample data rolled back successfully.",
+            "data": []
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "tenant2",
+            "action": "find or create store owner",
+            "status": "PASS",
+            "message": "Store owner account exists.",
+            "data": {
+                "user_id": 1,
+                "email": "admin@example.com"
+            }
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "tenant2",
+            "action": "create category",
+            "status": "PASS",
+            "message": "Store owner created category.",
+            "data": {
+                "category_id": 8,
+                "name": "Persona Category 8Apxn",
+                "slug": "persona-category-ytvGUX1P"
+            }
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "tenant2",
+            "action": "create product",
+            "status": "PASS",
+            "message": "Store owner created product.",
+            "data": {
+                "product_id": 13,
+                "name": "Persona Product xmnpy",
+                "price": 150,
+                "stock": 20,
+                "category_id": 8
+            }
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "tenant2",
+            "action": "product category relation",
+            "status": "PASS",
+            "message": "Product loads its category correctly.",
+            "data": {
+                "product_id": 13,
+                "expected_category_id": 8,
+                "actual_category_id": 8
+            }
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "tenant2",
+            "action": "edit product and category",
+            "status": "PASS",
+            "message": "Store owner can update product/category data.",
+            "data": {
+                "product_name": "Updated Persona Product",
+                "product_price": "175.50",
+                "product_stock": 15,
+                "category_name": "Updated Persona Category"
+            }
+        },
+        {
+            "persona": "customer",
+            "tenant_id": "tenant2",
+            "action": "add product to cart",
+            "status": "PASS",
+            "message": "Customer can add product to cart and relation loads.",
+            "data": {
+                "customer_id": 3,
+                "cart_id": 3,
+                "cart_item_id": 3,
+                "product_id": 13,
+                "quantity": 2
+            }
+        },
+        {
+            "persona": "customer",
+            "tenant_id": "tenant2",
+            "action": "update cart quantity",
+            "status": "PASS",
+            "message": "Customer cart quantity updates correctly.",
+            "data": {
+                "cart_item_id": 3,
+                "quantity": 3
+            }
+        },
+        {
+            "persona": "customer",
+            "tenant_id": "tenant2",
+            "action": "place order",
+            "status": "PASS",
+            "message": "Customer order and order item save correctly.",
+            "data": {
+                "order_id": 3,
+                "order_number": "PERSONA-TUBYEDRRPA",
+                "total": 526.5,
+                "order_item_id": 3,
+                "payment_method": "Cash on Delivery"
+            }
+        },
+        {
+            "persona": "store_owner",
+            "tenant_id": "tenant2",
+            "action": "update order status",
+            "status": "PASS",
+            "message": "Store owner can update order status.",
+            "data": {
+                "order_id": 3,
+                "status": "processing"
+            }
+        },
+        {
+            "persona": "system",
+            "tenant_id": "tenant2",
+            "action": "stock behavior observation",
+            "status": "INFO",
+            "message": "Model-only order creation does not automatically deduct stock. Controller checkout may handle this separately if implemented.",
+            "data": {
+                "product_id": 13,
+                "stock_after_model_order": 15
+            }
+        },
+        {
+            "persona": "system",
+            "tenant_id": "tenant2",
+            "action": "rollback",
+            "status": "PASS",
+            "message": "Persona sample data rolled back successfully.",
+            "data": []
+        }
+    ]
+}

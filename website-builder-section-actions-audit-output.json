@@ -1,0 +1,229 @@
+{
+    "summary": {
+        "PASS": 21,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 14:51:37",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "name": "website builder update route exists",
+            "status": "PASS",
+            "message": "tenant.website.homepage.update route should exist.",
+            "data": []
+        },
+        {
+            "name": "WebsiteBuilderController has updateHomepage",
+            "status": "PASS",
+            "message": "WebsiteBuilderController should expose updateHomepage.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains updateHomepage",
+            "status": "PASS",
+            "message": "updateHomepage found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains settingsWithDefaults",
+            "status": "PASS",
+            "message": "settingsWithDefaults found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains draft_config",
+            "status": "PASS",
+            "message": "draft_config found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains Str::uuid",
+            "status": "PASS",
+            "message": "Str::uuid found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Save draft",
+            "status": "PASS",
+            "message": "Save draft found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Add {{ section.name }}",
+            "status": "PASS",
+            "message": "Add {{ section.name }} found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Hide section",
+            "status": "PASS",
+            "message": "Hide section found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Show section",
+            "status": "PASS",
+            "message": "Show section found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Move up",
+            "status": "PASS",
+            "message": "Move up found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Move down",
+            "status": "PASS",
+            "message": "Move down found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Remove",
+            "status": "PASS",
+            "message": "Remove found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains form.put",
+            "status": "PASS",
+            "message": "form.put found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains /manage/website/homepage",
+            "status": "PASS",
+            "message": "/manage/website/homepage found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains min-h-11",
+            "status": "PASS",
+            "message": "min-h-11 found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains sm:grid-cols-2",
+            "status": "PASS",
+            "message": "sm:grid-cols-2 found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains editorGridClass",
+            "status": "PASS",
+            "message": "editorGridClass found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "tenant awrah homepage draft update works",
+            "status": "PASS",
+            "message": "Homepage draft saved valid section structure.",
+            "data": {
+                "sections": [
+                    {
+                        "id": "audit_s38_hero",
+                        "type": "hero",
+                        "blocks": [],
+                        "hidden": false,
+                        "settings": {
+                            "eyebrow": "New collection",
+                            "heading": "S38 Audit Hero",
+                            "alignment": "center",
+                            "subheading": "Discover products selected for you.",
+                            "button_link": "/",
+                            "button_label": "Shop now"
+                        },
+                        "sort_order": 0
+                    },
+                    {
+                        "id": "audit_s38_rich_text",
+                        "type": "rich_text",
+                        "blocks": [],
+                        "hidden": true,
+                        "settings": {
+                            "text": "Share information about your brand, products, or mission.",
+                            "width": "normal",
+                            "heading": "S38 Audit Rich Text"
+                        },
+                        "sort_order": 1
+                    }
+                ]
+            }
+        },
+        {
+            "name": "tenant tenant1 homepage draft update works",
+            "status": "PASS",
+            "message": "Homepage draft saved valid section structure.",
+            "data": {
+                "sections": [
+                    {
+                        "id": "audit_s38_hero",
+                        "type": "hero",
+                        "blocks": [],
+                        "hidden": false,
+                        "settings": {
+                            "eyebrow": "New collection",
+                            "heading": "S38 Audit Hero",
+                            "alignment": "center",
+                            "subheading": "Discover products selected for you.",
+                            "button_link": "/",
+                            "button_label": "Shop now"
+                        },
+                        "sort_order": 0
+                    },
+                    {
+                        "id": "audit_s38_rich_text",
+                        "type": "rich_text",
+                        "blocks": [],
+                        "hidden": true,
+                        "settings": {
+                            "text": "Share information about your brand, products, or mission.",
+                            "width": "normal",
+                            "heading": "S38 Audit Rich Text"
+                        },
+                        "sort_order": 1
+                    }
+                ]
+            }
+        },
+        {
+            "name": "tenant tenant2 homepage draft update works",
+            "status": "PASS",
+            "message": "Homepage draft saved valid section structure.",
+            "data": {
+                "sections": [
+                    {
+                        "id": "audit_s38_hero",
+                        "type": "hero",
+                        "blocks": [],
+                        "hidden": false,
+                        "settings": {
+                            "eyebrow": "New collection",
+                            "heading": "S38 Audit Hero",
+                            "alignment": "center",
+                            "subheading": "Discover products selected for you.",
+                            "button_link": "/",
+                            "button_label": "Shop now"
+                        },
+                        "sort_order": 0
+                    },
+                    {
+                        "id": "audit_s38_rich_text",
+                        "type": "rich_text",
+                        "blocks": [],
+                        "hidden": true,
+                        "settings": {
+                            "text": "Share information about your brand, products, or mission.",
+                            "width": "normal",
+                            "heading": "S38 Audit Rich Text"
+                        },
+                        "sort_order": 1
+                    }
+                ]
+            }
+        }
+    ]
+}

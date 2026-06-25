@@ -1,0 +1,109 @@
+{
+    "summary": {
+        "PASS": 16,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 18:38:40",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "name": "homepage editor route exists",
+            "status": "PASS",
+            "message": "Homepage editor route should exist.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains selectedItemType",
+            "status": "PASS",
+            "message": "selectedItemType found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains inspectorTitle",
+            "status": "PASS",
+            "message": "inspectorTitle found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains selectionBreadcrumb",
+            "status": "PASS",
+            "message": "selectionBreadcrumb found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains function selectPage",
+            "status": "PASS",
+            "message": "function selectPage found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains function selectPreviewSection",
+            "status": "PASS",
+            "message": "function selectPreviewSection found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains function selectPreviewBlock",
+            "status": "PASS",
+            "message": "function selectPreviewBlock found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains previewSectionClass",
+            "status": "PASS",
+            "message": "previewSectionClass found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains previewBlockClass",
+            "status": "PASS",
+            "message": "previewBlockClass found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Select page",
+            "status": "PASS",
+            "message": "Select page found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Selected: {{ selectionBreadcrumb }}",
+            "status": "PASS",
+            "message": "Selected: {{ selectionBreadcrumb }} found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Page settings",
+            "status": "PASS",
+            "message": "Page settings found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains @click.stop=\"selectPreviewSection(section)\"",
+            "status": "PASS",
+            "message": "@click.stop=\"selectPreviewSection(section)\" found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains @click.stop=\"selectPreviewBlock(section, block)\"",
+            "status": "PASS",
+            "message": "@click.stop=\"selectPreviewBlock(section, block)\" found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains @click.prevent.stop=\"selectPreviewBlock(section, block)\"",
+            "status": "PASS",
+            "message": "@click.prevent.stop=\"selectPreviewBlock(section, block)\" found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains S44 selection model",
+            "status": "PASS",
+            "message": "S44 selection model found.",
+            "data": []
+        }
+    ]
+}

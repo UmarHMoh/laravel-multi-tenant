@@ -1,0 +1,370 @@
+{
+    "summary": {
+        "PASS": 51,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 12:17:59",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "name": "route home",
+            "status": "PASS",
+            "message": "Storefront home route exists.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "route cart.index",
+            "status": "PASS",
+            "message": "Cart route exists.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "route orders.customer.index",
+            "status": "PASS",
+            "message": "Customer order history route exists.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "route orders.confirmation",
+            "status": "PASS",
+            "message": "Order confirmation route exists.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "route login",
+            "status": "PASS",
+            "message": "Login route exists.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "route logout",
+            "status": "PASS",
+            "message": "Logout route exists.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "file resources/js/components/tenant/StorefrontHeader.vue",
+            "status": "PASS",
+            "message": "Shared storefront header exists.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "file resources/js/pages/tenant/Homepage.vue",
+            "status": "PASS",
+            "message": "Homepage exists.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "file resources/js/pages/tenant/ProductDetail.vue",
+            "status": "PASS",
+            "message": "Product detail page exists.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "file resources/js/pages/tenant/ShoppingCartList.vue",
+            "status": "PASS",
+            "message": "Cart page exists.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "file resources/js/pages/tenant/Payment.vue",
+            "status": "PASS",
+            "message": "Checkout/payment page exists.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "file resources/js/pages/tenant/OrderConfirmation.vue",
+            "status": "PASS",
+            "message": "Order confirmation page exists.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "file resources/js/pages/tenant/orders/CustomerIndex.vue",
+            "status": "PASS",
+            "message": "Customer order history page exists.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "header contains Cart",
+            "status": "PASS",
+            "message": "Header contains Cart.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "header contains My Orders",
+            "status": "PASS",
+            "message": "Header contains My Orders.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "header contains Login",
+            "status": "PASS",
+            "message": "Header contains Login.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "header contains Logout",
+            "status": "PASS",
+            "message": "Header contains Logout.",
+            "data": [],
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "route home",
+            "status": "PASS",
+            "message": "Storefront home route exists.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "route cart.index",
+            "status": "PASS",
+            "message": "Cart route exists.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "route orders.customer.index",
+            "status": "PASS",
+            "message": "Customer order history route exists.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "route orders.confirmation",
+            "status": "PASS",
+            "message": "Order confirmation route exists.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "route login",
+            "status": "PASS",
+            "message": "Login route exists.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "route logout",
+            "status": "PASS",
+            "message": "Logout route exists.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "file resources/js/components/tenant/StorefrontHeader.vue",
+            "status": "PASS",
+            "message": "Shared storefront header exists.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "file resources/js/pages/tenant/Homepage.vue",
+            "status": "PASS",
+            "message": "Homepage exists.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "file resources/js/pages/tenant/ProductDetail.vue",
+            "status": "PASS",
+            "message": "Product detail page exists.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "file resources/js/pages/tenant/ShoppingCartList.vue",
+            "status": "PASS",
+            "message": "Cart page exists.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "file resources/js/pages/tenant/Payment.vue",
+            "status": "PASS",
+            "message": "Checkout/payment page exists.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "file resources/js/pages/tenant/OrderConfirmation.vue",
+            "status": "PASS",
+            "message": "Order confirmation page exists.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "file resources/js/pages/tenant/orders/CustomerIndex.vue",
+            "status": "PASS",
+            "message": "Customer order history page exists.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "header contains Cart",
+            "status": "PASS",
+            "message": "Header contains Cart.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "header contains My Orders",
+            "status": "PASS",
+            "message": "Header contains My Orders.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "header contains Login",
+            "status": "PASS",
+            "message": "Header contains Login.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "header contains Logout",
+            "status": "PASS",
+            "message": "Header contains Logout.",
+            "data": [],
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "route home",
+            "status": "PASS",
+            "message": "Storefront home route exists.",
+            "data": [],
+            "tenant_id": "tenant2"
+        },
+        {
+            "name": "route cart.index",
+            "status": "PASS",
+            "message": "Cart route exists.",
+            "data": [],
+            "tenant_id": "tenant2"
+        },
+        {
+            "name": "route orders.customer.index",
+            "status": "PASS",
+            "message": "Customer order history route exists.",
+            "data": [],
+            "tenant_id": "tenant2"
+        },
+        {
+            "name": "route orders.confirmation",
+            "status": "PASS",
+            "message": "Order confirmation route exists.",
+            "data": [],
+            "tenant_id": "tenant2"
+        },
+        {
+            "name": "route login",
+            "status": "PASS",
+            "message": "Login route exists.",
+            "data": [],
+            "tenant_id": "tenant2"
+        },
+        {
+            "name": "route logout",
+            "status": "PASS",
+            "message": "Logout route exists.",
+            "data": [],
+            "tenant_id": "tenant2"
+        },
+        {
+            "name": "file resources/js/components/tenant/StorefrontHeader.vue",
+            "status": "PASS",
+            "message": "Shared storefront header exists.",
+            "data": [],
+            "tenant_id": "tenant2"
+        },
+        {
+            "name": "file resources/js/pages/tenant/Homepage.vue",
+            "status": "PASS",
+            "message": "Homepage exists.",
+            "data": [],
+            "tenant_id": "tenant2"
+        },
+        {
+            "name": "file resources/js/pages/tenant/ProductDetail.vue",
+            "status": "PASS",
+            "message": "Product detail page exists.",
+            "data": [],
+            "tenant_id": "tenant2"
+        },
+        {
+            "name": "file resources/js/pages/tenant/ShoppingCartList.vue",
+            "status": "PASS",
+            "message": "Cart page exists.",
+            "data": [],
+            "tenant_id": "tenant2"
+        },
+        {
+            "name": "file resources/js/pages/tenant/Payment.vue",
+            "status": "PASS",
+            "message": "Checkout/payment page exists.",
+            "data": [],
+            "tenant_id": "tenant2"
+        },
+        {
+            "name": "file resources/js/pages/tenant/OrderConfirmation.vue",
+            "status": "PASS",
+            "message": "Order confirmation page exists.",
+            "data": [],
+            "tenant_id": "tenant2"
+        },
+        {
+            "name": "file resources/js/pages/tenant/orders/CustomerIndex.vue",
+            "status": "PASS",
+            "message": "Customer order history page exists.",
+            "data": [],
+            "tenant_id": "tenant2"
+        },
+        {
+            "name": "header contains Cart",
+            "status": "PASS",
+            "message": "Header contains Cart.",
+            "data": [],
+            "tenant_id": "tenant2"
+        },
+        {
+            "name": "header contains My Orders",
+            "status": "PASS",
+            "message": "Header contains My Orders.",
+            "data": [],
+            "tenant_id": "tenant2"
+        },
+        {
+            "name": "header contains Login",
+            "status": "PASS",
+            "message": "Header contains Login.",
+            "data": [],
+            "tenant_id": "tenant2"
+        },
+        {
+            "name": "header contains Logout",
+            "status": "PASS",
+            "message": "Header contains Logout.",
+            "data": [],
+            "tenant_id": "tenant2"
+        }
+    ]
+}

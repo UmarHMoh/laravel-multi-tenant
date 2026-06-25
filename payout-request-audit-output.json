@@ -1,0 +1,160 @@
+{
+    "summary": {
+        "PASS": 9,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 05:50:15",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "tenant_id": "awrah",
+            "name": "tenant can create payout request within balance",
+            "status": "PASS",
+            "message": "Payout request was created within available balance.",
+            "data": {
+                "available_balance": {
+                    "available_balance": 94.8,
+                    "pending_balance": 0,
+                    "lifetime_earned": 94.8,
+                    "currency": "TTD"
+                },
+                "request_amount": 47.4,
+                "payout_request_id": 4,
+                "status": "requested"
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "payout request cannot exceed available balance",
+            "status": "PASS",
+            "message": "Excess payout request was blocked.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "paid payout creates debit and reduces balance",
+            "status": "PASS",
+            "message": "Marking payout paid created a debit and reduced available balance.",
+            "data": {
+                "before_paid_balance": {
+                    "available_balance": 94.8,
+                    "pending_balance": 0,
+                    "lifetime_earned": 94.8,
+                    "currency": "TTD"
+                },
+                "after_paid_balance": {
+                    "available_balance": 47.4,
+                    "pending_balance": 0,
+                    "lifetime_earned": 94.8,
+                    "currency": "TTD"
+                },
+                "request_amount": 47.4,
+                "before_ledger_count": 1,
+                "after_ledger_count": 2,
+                "payout_request_status": "paid",
+                "tenant_payout_ledger_entry_id": 23
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "tenant can create payout request within balance",
+            "status": "PASS",
+            "message": "Payout request was created within available balance.",
+            "data": {
+                "available_balance": {
+                    "available_balance": 89.9,
+                    "pending_balance": 0,
+                    "lifetime_earned": 89.9,
+                    "currency": "TTD"
+                },
+                "request_amount": 44.95,
+                "payout_request_id": 5,
+                "status": "requested"
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "payout request cannot exceed available balance",
+            "status": "PASS",
+            "message": "Excess payout request was blocked.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "paid payout creates debit and reduces balance",
+            "status": "PASS",
+            "message": "Marking payout paid created a debit and reduced available balance.",
+            "data": {
+                "before_paid_balance": {
+                    "available_balance": 89.9,
+                    "pending_balance": 0,
+                    "lifetime_earned": 89.9,
+                    "currency": "TTD"
+                },
+                "after_paid_balance": {
+                    "available_balance": 44.95,
+                    "pending_balance": 0,
+                    "lifetime_earned": 89.9,
+                    "currency": "TTD"
+                },
+                "request_amount": 44.95,
+                "before_ledger_count": 1,
+                "after_ledger_count": 2,
+                "payout_request_status": "paid",
+                "tenant_payout_ledger_entry_id": 25
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "tenant can create payout request within balance",
+            "status": "PASS",
+            "message": "Payout request was created within available balance.",
+            "data": {
+                "available_balance": {
+                    "available_balance": 94.8,
+                    "pending_balance": 0,
+                    "lifetime_earned": 94.8,
+                    "currency": "TTD"
+                },
+                "request_amount": 47.4,
+                "payout_request_id": 6,
+                "status": "requested"
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "payout request cannot exceed available balance",
+            "status": "PASS",
+            "message": "Excess payout request was blocked.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "paid payout creates debit and reduces balance",
+            "status": "PASS",
+            "message": "Marking payout paid created a debit and reduced available balance.",
+            "data": {
+                "before_paid_balance": {
+                    "available_balance": 94.8,
+                    "pending_balance": 0,
+                    "lifetime_earned": 94.8,
+                    "currency": "TTD"
+                },
+                "after_paid_balance": {
+                    "available_balance": 47.4,
+                    "pending_balance": 0,
+                    "lifetime_earned": 94.8,
+                    "currency": "TTD"
+                },
+                "request_amount": 47.4,
+                "before_ledger_count": 1,
+                "after_ledger_count": 2,
+                "payout_request_status": "paid",
+                "tenant_payout_ledger_entry_id": 27
+            }
+        }
+    ]
+}

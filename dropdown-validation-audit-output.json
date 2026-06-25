@@ -1,0 +1,152 @@
+{
+    "summary": {
+        "PASS": 4,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 3
+    },
+    "generated_at": "2026-06-24 03:39:01",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "backend_rules",
+            "name": "app/Http/Controllers/Central/PaymentSettingController.php",
+            "status": "INFO",
+            "message": "Backend in: validation values detected.",
+            "data": {
+                "rules": {
+                    "provider": [
+                        "wipay"
+                    ],
+                    "environment": [
+                        "sandbox",
+                        "live"
+                    ],
+                    "country_code": [
+                        "TT",
+                        "JM",
+                        "BB",
+                        "GY"
+                    ],
+                    "fee_structure": [
+                        "customer_pay",
+                        "merchant_absorb",
+                        "split"
+                    ]
+                }
+            }
+        },
+        {
+            "section": "backend_rules",
+            "name": "app/Http/Controllers/Tenant/CartController.php",
+            "status": "INFO",
+            "message": "Backend in: validation values detected.",
+            "data": {
+                "rules": {
+                    "quantity": [
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "section": "backend_rules",
+            "name": "app/Http/Controllers/Tenant/OrderController.php",
+            "status": "INFO",
+            "message": "Backend in: validation values detected.",
+            "data": {
+                "rules": {
+                    "payment_method": [
+                        "Test Payment",
+                        "Bank Transfer",
+                        "Cash on Delivery",
+                        "paypal"
+                    ]
+                }
+            }
+        },
+        {
+            "section": "critical_dropdown_contracts",
+            "name": "Payment settings environment",
+            "status": "PASS",
+            "message": "Frontend dropdown values match backend validation.",
+            "data": {
+                "name": "Payment settings environment",
+                "controller": "app/Http/Controllers/Central/PaymentSettingController.php",
+                "vue": "resources/js/pages/central/payment-settings/Edit.vue",
+                "field": "environment",
+                "backend_values": [
+                    "sandbox",
+                    "live"
+                ],
+                "frontend_values": [
+                    "sandbox",
+                    "live"
+                ]
+            }
+        },
+        {
+            "section": "critical_dropdown_contracts",
+            "name": "Payment settings fee structure",
+            "status": "PASS",
+            "message": "Frontend dropdown values match backend validation.",
+            "data": {
+                "name": "Payment settings fee structure",
+                "controller": "app/Http/Controllers/Central/PaymentSettingController.php",
+                "vue": "resources/js/pages/central/payment-settings/Edit.vue",
+                "field": "fee_structure",
+                "backend_values": [
+                    "customer_pay",
+                    "merchant_absorb",
+                    "split"
+                ],
+                "frontend_values": [
+                    "customer_pay",
+                    "merchant_absorb",
+                    "split"
+                ]
+            }
+        },
+        {
+            "section": "critical_dropdown_contracts",
+            "name": "Payout account type",
+            "status": "PASS",
+            "message": "Frontend dropdown values match backend validation.",
+            "data": {
+                "name": "Payout account type",
+                "controller": "app/Http/Controllers/Tenant/Manage/PayoutAccountController.php",
+                "vue": "resources/js/pages/tenant/payouts/Account.vue",
+                "field": "type",
+                "backend_values": [
+                    "bank",
+                    "wipay"
+                ],
+                "frontend_values": [
+                    "bank",
+                    "wipay"
+                ]
+            }
+        },
+        {
+            "section": "critical_dropdown_contracts",
+            "name": "Payout bank account type",
+            "status": "PASS",
+            "message": "Frontend dropdown values match backend validation.",
+            "data": {
+                "name": "Payout bank account type",
+                "controller": "app/Http/Controllers/Tenant/Manage/PayoutAccountController.php",
+                "vue": "resources/js/pages/tenant/payouts/Account.vue",
+                "field": "bank_account_type",
+                "backend_values": [
+                    "savings",
+                    "checking"
+                ],
+                "frontend_values": [
+                    "savings",
+                    "checking"
+                ]
+            }
+        }
+    ]
+}

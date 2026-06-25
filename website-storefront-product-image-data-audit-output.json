@@ -1,0 +1,90 @@
+{
+    "summary": {
+        "PASS": 11,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-25 01:08:56",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "website_storefront_product_image_data",
+            "name": "stage marker exists on storefront",
+            "status": "PASS",
+            "message": "S61 storefront marker found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_image_data",
+            "name": "stage marker exists on editor",
+            "status": "PASS",
+            "message": "S61 editor marker found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_image_data",
+            "name": "product image helper exists",
+            "status": "PASS",
+            "message": "product image helper found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_image_data",
+            "name": "product url helper exists",
+            "status": "PASS",
+            "message": "product url helper found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_image_data",
+            "name": "real product image section exists",
+            "status": "PASS",
+            "message": "real product image section found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_image_data",
+            "name": "real product image card exists",
+            "status": "PASS",
+            "message": "real product image card found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_image_data",
+            "name": "real image binding exists",
+            "status": "PASS",
+            "message": "real image binding found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_image_data",
+            "name": "placeholder fallback exists",
+            "status": "PASS",
+            "message": "placeholder fallback found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_image_data",
+            "name": "category and price bindings exist",
+            "status": "PASS",
+            "message": "category and price bindings found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_image_data",
+            "name": "S61 stylesheet exists",
+            "status": "PASS",
+            "message": "S61 stylesheet found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_image_data",
+            "name": "homepage still renders template",
+            "status": "PASS",
+            "message": "Homepage Vue template found.",
+            "data": []
+        }
+    ]
+}

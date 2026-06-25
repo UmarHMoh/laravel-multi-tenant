@@ -1,0 +1,139 @@
+{
+    "summary": {
+        "PASS": 21,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 14:48:37",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "name": "tenant.website.homepage.editor route exists",
+            "status": "PASS",
+            "message": "tenant.website.homepage.editor should exist.",
+            "data": []
+        },
+        {
+            "name": "tenant.website.pages.editor route exists",
+            "status": "PASS",
+            "message": "tenant.website.pages.editor should exist.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Website Editor",
+            "status": "PASS",
+            "message": "Website Editor found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Left sidebar",
+            "status": "PASS",
+            "message": "Left sidebar found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Live preview",
+            "status": "PASS",
+            "message": "Live preview found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Right sidebar",
+            "status": "PASS",
+            "message": "Right sidebar found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains viewportMode",
+            "status": "PASS",
+            "message": "viewportMode found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Desktop",
+            "status": "PASS",
+            "message": "Desktop found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Tablet",
+            "status": "PASS",
+            "message": "Tablet found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Mobile",
+            "status": "PASS",
+            "message": "Mobile found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains leftSidebarOpen",
+            "status": "PASS",
+            "message": "leftSidebarOpen found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains rightSidebarOpen",
+            "status": "PASS",
+            "message": "rightSidebarOpen found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Hide left",
+            "status": "PASS",
+            "message": "Hide left found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Hide right",
+            "status": "PASS",
+            "message": "Hide right found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains editorGridClass",
+            "status": "PASS",
+            "message": "editorGridClass found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains previewWidthClass",
+            "status": "PASS",
+            "message": "previewWidthClass found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains featuredPreviewGridClass",
+            "status": "PASS",
+            "message": "featuredPreviewGridClass found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains productPreviewGridClass",
+            "status": "PASS",
+            "message": "productPreviewGridClass found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains richTextFeatureGridClass",
+            "status": "PASS",
+            "message": "richTextFeatureGridClass found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains previewPaddingClass",
+            "status": "PASS",
+            "message": "previewPaddingClass found.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains S43 foundation",
+            "status": "PASS",
+            "message": "S43 foundation found.",
+            "data": []
+        }
+    ]
+}

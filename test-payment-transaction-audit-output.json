@@ -1,0 +1,181 @@
+{
+    "summary": {
+        "PASS": 18,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 11:41:25",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "tenant_id": "awrah",
+            "name": "order store route exists",
+            "status": "PASS",
+            "message": "Order store route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "test payment cart created",
+            "status": "PASS",
+            "message": "Cart item was created for test payment checkout.",
+            "data": {
+                "cart_id": 152,
+                "cart_quantity": "2"
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "test payment creates paid order",
+            "status": "PASS",
+            "message": "Test payment checkout created a paid order.",
+            "data": {
+                "order_id": 212,
+                "payment_status": "paid"
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "test payment deducts stock",
+            "status": "PASS",
+            "message": "Test payment deducted stock.",
+            "data": {
+                "remaining_stock": 3
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "test payment creates platform transaction",
+            "status": "PASS",
+            "message": "Test payment created one platform transaction.",
+            "data": {
+                "before": 16,
+                "after": 17
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "test payment creates payout ledger credit",
+            "status": "PASS",
+            "message": "Test payment created one payout ledger credit.",
+            "data": {
+                "before": 0,
+                "after": 1
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "order store route exists",
+            "status": "PASS",
+            "message": "Order store route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "test payment cart created",
+            "status": "PASS",
+            "message": "Cart item was created for test payment checkout.",
+            "data": {
+                "cart_id": 253,
+                "cart_quantity": "2"
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "test payment creates paid order",
+            "status": "PASS",
+            "message": "Test payment checkout created a paid order.",
+            "data": {
+                "order_id": 244,
+                "payment_status": "paid"
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "test payment deducts stock",
+            "status": "PASS",
+            "message": "Test payment deducted stock.",
+            "data": {
+                "remaining_stock": 3
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "test payment creates platform transaction",
+            "status": "PASS",
+            "message": "Test payment created one platform transaction.",
+            "data": {
+                "before": 19,
+                "after": 20
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "test payment creates payout ledger credit",
+            "status": "PASS",
+            "message": "Test payment created one payout ledger credit.",
+            "data": {
+                "before": 0,
+                "after": 1
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "order store route exists",
+            "status": "PASS",
+            "message": "Order store route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "test payment cart created",
+            "status": "PASS",
+            "message": "Cart item was created for test payment checkout.",
+            "data": {
+                "cart_id": 150,
+                "cart_quantity": "2"
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "test payment creates paid order",
+            "status": "PASS",
+            "message": "Test payment checkout created a paid order.",
+            "data": {
+                "order_id": 212,
+                "payment_status": "paid"
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "test payment deducts stock",
+            "status": "PASS",
+            "message": "Test payment deducted stock.",
+            "data": {
+                "remaining_stock": 3
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "test payment creates platform transaction",
+            "status": "PASS",
+            "message": "Test payment created one platform transaction.",
+            "data": {
+                "before": 16,
+                "after": 17
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "test payment creates payout ledger credit",
+            "status": "PASS",
+            "message": "Test payment created one payout ledger credit.",
+            "data": {
+                "before": 0,
+                "after": 1
+            }
+        }
+    ]
+}

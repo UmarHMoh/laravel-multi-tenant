@@ -1,0 +1,716 @@
+{
+    "summary": {
+        "PASS": 53,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 1
+    },
+    "generated_at": "2026-06-23 23:46:11",
+    "report": [
+        {
+            "section": "environment",
+            "name": "app",
+            "status": "INFO",
+            "message": "Application environment loaded.",
+            "data": {
+                "app_name": "Multi Tenant Ecommerce",
+                "app_env": "local",
+                "app_url": "http://localhost:8000",
+                "default_db_connection": "mysql",
+                "central_connection": "mysql"
+            }
+        },
+        {
+            "section": "routes",
+            "name": "central.login",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.dashboard",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.tenants.index",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.tenants.show",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.tenants.store",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.tenants.assign-plan",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.tenants.subscription-payment.store",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.payouts.index",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.payouts.show",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.payouts.mark-paid",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.payouts.batch-show",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.payment-settings.edit",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.payment-settings.update",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.settings.edit",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.settings.update",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "manage.billing.index",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "manage.billing.test-payment",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "manage.payout-account",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "manage.payout-account.store",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "manage.store-settings.edit",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "manage.store-settings.update",
+            "status": "PASS",
+            "message": "Route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.payout-accounts.approve",
+            "status": "PASS",
+            "message": "Optional improved route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.payout-accounts.reject",
+            "status": "PASS",
+            "message": "Optional improved route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.payout-accounts.pending",
+            "status": "PASS",
+            "message": "Optional improved route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.bank-options.index",
+            "status": "PASS",
+            "message": "Optional improved route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.bank-options.store",
+            "status": "PASS",
+            "message": "Optional improved route exists.",
+            "data": []
+        },
+        {
+            "section": "routes",
+            "name": "central.bank-options.update",
+            "status": "PASS",
+            "message": "Optional improved route exists.",
+            "data": []
+        },
+        {
+            "section": "database",
+            "name": "tenants",
+            "status": "PASS",
+            "message": "Table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "name",
+                    "email",
+                    "is_active",
+                    "created_at",
+                    "updated_at",
+                    "data"
+                ]
+            }
+        },
+        {
+            "section": "database",
+            "name": "tenant_subscriptions",
+            "status": "PASS",
+            "message": "Table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "tenant_id",
+                    "plan_id",
+                    "status",
+                    "starts_at",
+                    "renews_at",
+                    "trial_ends_at",
+                    "ends_at",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "database",
+            "name": "tenant_subscription_payments",
+            "status": "PASS",
+            "message": "Table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "tenant_id",
+                    "tenant_subscription_id",
+                    "plan_id",
+                    "amount",
+                    "currency",
+                    "status",
+                    "source",
+                    "paid_at",
+                    "previous_renews_at",
+                    "new_renews_at",
+                    "payment_method",
+                    "provider",
+                    "provider_transaction_id",
+                    "payer_name",
+                    "payer_email",
+                    "card_brand",
+                    "card_last4",
+                    "receipt_url",
+                    "recorded_by",
+                    "reference",
+                    "notes",
+                    "metadata",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "database",
+            "name": "tenant_payout_accounts",
+            "status": "PASS",
+            "message": "Table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "tenant_id",
+                    "type",
+                    "account_holder_name",
+                    "bank_name",
+                    "bank_account_number",
+                    "branch_transit_number",
+                    "bank_account_type",
+                    "wipay_account_email",
+                    "status",
+                    "notes",
+                    "review_notes",
+                    "reviewed_at",
+                    "reviewed_by",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "database",
+            "name": "platform_settings",
+            "status": "PASS",
+            "message": "Table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "platform_name",
+                    "owner_email",
+                    "subscription_currency",
+                    "renewal_grace_days",
+                    "auto_deactivate_overdue_tenants",
+                    "login_heading",
+                    "login_subheading",
+                    "metadata",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "database",
+            "name": "payment_settings",
+            "status": "PASS",
+            "message": "Table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "provider",
+                    "environment",
+                    "country_code",
+                    "currency",
+                    "account_number",
+                    "api_key",
+                    "fee_structure",
+                    "processor_fee_percent",
+                    "processor_fee_fixed",
+                    "is_active",
+                    "metadata",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "database",
+            "name": "payout_bank_options",
+            "status": "PASS",
+            "message": "Table exists with required columns.",
+            "data": {
+                "columns": [
+                    "id",
+                    "name",
+                    "is_active",
+                    "created_at",
+                    "updated_at"
+                ]
+            }
+        },
+        {
+            "section": "files",
+            "name": "app/Http/Controllers/Central/TenantController.php",
+            "status": "PASS",
+            "message": "File exists and contains expected feature markers.",
+            "data": []
+        },
+        {
+            "section": "files",
+            "name": "app/Http/Controllers/Central/TenantSubscriptionPaymentController.php",
+            "status": "PASS",
+            "message": "File exists and contains expected feature markers.",
+            "data": []
+        },
+        {
+            "section": "files",
+            "name": "app/Http/Controllers/Central/PayoutController.php",
+            "status": "PASS",
+            "message": "File exists and contains expected feature markers.",
+            "data": []
+        },
+        {
+            "section": "files",
+            "name": "app/Http/Controllers/Central/PayoutAccountReviewController.php",
+            "status": "PASS",
+            "message": "File exists and contains expected feature markers.",
+            "data": []
+        },
+        {
+            "section": "files",
+            "name": "app/Http/Controllers/Tenant/Manage/PayoutAccountController.php",
+            "status": "PASS",
+            "message": "File exists and contains expected feature markers.",
+            "data": []
+        },
+        {
+            "section": "files",
+            "name": "app/Http/Controllers/Tenant/Manage/StoreSettingsController.php",
+            "status": "PASS",
+            "message": "File exists and contains expected feature markers.",
+            "data": []
+        },
+        {
+            "section": "files",
+            "name": "resources/js/pages/central/tenants/Show.vue",
+            "status": "PASS",
+            "message": "File exists and contains expected feature markers.",
+            "data": []
+        },
+        {
+            "section": "files",
+            "name": "resources/js/pages/tenant/payouts/Account.vue",
+            "status": "PASS",
+            "message": "File exists and contains expected feature markers.",
+            "data": []
+        },
+        {
+            "section": "files",
+            "name": "resources/js/pages/central/payouts/Show.vue",
+            "status": "PASS",
+            "message": "File exists and contains expected feature markers.",
+            "data": []
+        },
+        {
+            "section": "files",
+            "name": "resources/js/pages/tenant/settings/Store.vue",
+            "status": "PASS",
+            "message": "File exists and contains expected feature markers.",
+            "data": []
+        },
+        {
+            "section": "files",
+            "name": "resources/js/components/FlashMessages.vue",
+            "status": "PASS",
+            "message": "File exists and contains expected feature markers.",
+            "data": []
+        },
+        {
+            "section": "data",
+            "name": "tenants loaded",
+            "status": "PASS",
+            "message": "Tenants loaded successfully.",
+            "data": {
+                "count": 3,
+                "tenants": [
+                    {
+                        "id": "awrah",
+                        "name": "Awrah Store",
+                        "email": "support@awrah.com",
+                        "is_active": true,
+                        "domains": [
+                            "awrah.localhost"
+                        ],
+                        "current_subscription": null,
+                        "subscription_payments_count": 0,
+                        "payout_accounts": []
+                    },
+                    {
+                        "id": "tenant1",
+                        "name": "Aromaniac",
+                        "email": "aromaniac@gmail.com",
+                        "is_active": true,
+                        "domains": [
+                            "tenant1.localhost",
+                            "tenant1store.work.gd"
+                        ],
+                        "current_subscription": {
+                            "id": 4,
+                            "status": "active",
+                            "plan": "Pro",
+                            "renews_at": "2026-10-23 17:45:48",
+                            "ends_at": null
+                        },
+                        "subscription_payments_count": 3,
+                        "payout_accounts": [
+                            {
+                                "id": 1,
+                                "type": "bank",
+                                "status": "verified",
+                                "holder": "Tenant One Ltd",
+                                "bank": "Scotiabank Trinidad and Tobago",
+                                "account_type": "savings",
+                                "has_account_number": true,
+                                "has_branch_transit": true,
+                                "notes": null,
+                                "review_notes": null,
+                                "reviewed_at": "2026-06-23 21:57:31",
+                                "reviewed_by": "central_admin"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "tenant2",
+                        "name": "Food Store",
+                        "email": "admin@tenant2.com",
+                        "is_active": true,
+                        "domains": [
+                            "tenant2.localhost"
+                        ],
+                        "current_subscription": null,
+                        "subscription_payments_count": 0,
+                        "payout_accounts": []
+                    }
+                ]
+            }
+        },
+        {
+            "section": "data",
+            "name": "latest subscription payments",
+            "status": "PASS",
+            "message": "Latest subscription payments loaded.",
+            "data": {
+                "count": 3,
+                "payments": [
+                    {
+                        "id": 3,
+                        "tenant_id": "tenant1",
+                        "tenant": "Aromaniac",
+                        "plan": "Pro",
+                        "amount": "250.00",
+                        "currency": "TTD",
+                        "status": "paid",
+                        "source": "manual_admin",
+                        "paid_at": "2026-06-23",
+                        "previous_renews_at": "2026-09-23",
+                        "new_renews_at": "2026-10-23",
+                        "method": "manual",
+                        "payer": "Aromaniac",
+                        "payer_email": "aromaniac@gmail.com",
+                        "card": "",
+                        "reference": "DIRECT-TEST-001",
+                        "notes": "Direct backend test payment."
+                    },
+                    {
+                        "id": 2,
+                        "tenant_id": "tenant1",
+                        "tenant": "Aromaniac",
+                        "plan": "Pro",
+                        "amount": "250.00",
+                        "currency": "TTD",
+                        "status": "paid",
+                        "source": "manual_admin",
+                        "paid_at": "2026-06-23",
+                        "previous_renews_at": "2026-08-23",
+                        "new_renews_at": "2026-09-23",
+                        "method": "manual",
+                        "payer": "Tenant One Fashion Store",
+                        "payer_email": "admin@tenant1.com",
+                        "card": "",
+                        "reference": null,
+                        "notes": null
+                    },
+                    {
+                        "id": 1,
+                        "tenant_id": "tenant1",
+                        "tenant": "Aromaniac",
+                        "plan": "Pro",
+                        "amount": "250.00",
+                        "currency": "TTD",
+                        "status": "paid",
+                        "source": "manual_admin",
+                        "paid_at": "2026-06-23",
+                        "previous_renews_at": "2026-07-23",
+                        "new_renews_at": "2026-08-23",
+                        "method": "tenant_test_payment",
+                        "payer": "Tenant One Fashion Store",
+                        "payer_email": "admin@tenant1.com",
+                        "card": "",
+                        "reference": "TENANT-TEST-20260623205205",
+                        "notes": "Tenant test subscription payment from billing page."
+                    }
+                ]
+            }
+        },
+        {
+            "section": "data",
+            "name": "bank options",
+            "status": "PASS",
+            "message": "Bank options loaded.",
+            "data": {
+                "count": 8,
+                "banks": [
+                    {
+                        "id": 1,
+                        "name": "ANSA Bank",
+                        "is_active": true
+                    },
+                    {
+                        "id": 2,
+                        "name": "CIBC Caribbean",
+                        "is_active": true
+                    },
+                    {
+                        "id": 3,
+                        "name": "Citibank Trinidad & Tobago",
+                        "is_active": true
+                    },
+                    {
+                        "id": 4,
+                        "name": "First Citizens Bank",
+                        "is_active": true
+                    },
+                    {
+                        "id": 5,
+                        "name": "JMMB Bank",
+                        "is_active": true
+                    },
+                    {
+                        "id": 6,
+                        "name": "RBC Royal Bank",
+                        "is_active": true
+                    },
+                    {
+                        "id": 7,
+                        "name": "Republic Bank",
+                        "is_active": true
+                    },
+                    {
+                        "id": 8,
+                        "name": "Scotiabank Trinidad and Tobago",
+                        "is_active": true
+                    }
+                ]
+            }
+        },
+        {
+            "section": "actions",
+            "name": "manual subscription payment",
+            "status": "PASS",
+            "message": "Controller created payment and updated renewal date. Rolled back after test.",
+            "data": {
+                "before_count": 3,
+                "after_count_inside_transaction": 4,
+                "before_renewal": "2026-10-23 17:45:48",
+                "after_renewal_inside_transaction": "2026-11-23 17:45:48",
+                "created_payment_id_inside_transaction": 6,
+                "response_class": "Illuminate\\Http\\RedirectResponse"
+            }
+        },
+        {
+            "section": "actions",
+            "name": "payout account review",
+            "status": "PASS",
+            "message": "Approve, reject, and mark pending actions work. Rolled back after test.",
+            "data": {
+                "account_id_inside_transaction": 4,
+                "approved_result": true,
+                "rejected_result": true,
+                "pending_result": true
+            }
+        },
+        {
+            "section": "actions",
+            "name": "tenant payout account submit/update",
+            "status": "PASS",
+            "message": "Tenant payout account submit/update works. Rolled back after test.",
+            "data": {
+                "before_count": 1,
+                "latest_account_id_inside_transaction": 1,
+                "status_inside_transaction": "pending",
+                "bank_inside_transaction": "ANSA Bank",
+                "account_type_inside_transaction": "checking",
+                "decrypted_account_number_inside_transaction": "9876543210",
+                "decrypted_branch_transit_inside_transaction": "00987"
+            }
+        },
+        {
+            "section": "actions",
+            "name": "tenant store settings update",
+            "status": "PASS",
+            "message": "Tenant store settings update works. Rolled back after test.",
+            "data": {
+                "tenant_name_inside_transaction": "Audit Store Name",
+                "raw_data_inside_transaction": "{\"created_at\": \"2026-06-23 15:35:00\", \"store_name\": \"Audit Store Name\", \"tiktok_url\": \"\", \"updated_at\": \"2026-06-23 15:35:00\", \"store_email\": \"audit@example.com\", \"store_phone\": \"868-000-0000\", \"delivery_fee\": 25, \"facebook_url\": \"\", \"instagram_url\": \"https://instagram.com/audit\", \"store_currency\": \"TTD\", \"tenancy_db_name\": \"tenant_tenant1\", \"whatsapp_number\": \"8680000000\", \"business_address\": \"Rollback audit address.\", \"store_description\": \"Rollback audit description.\", \"cash_on_delivery_enabled\": true}",
+                "settings_inside_transaction": {
+                    "created_at": "2026-06-23 15:35:00",
+                    "store_name": "Audit Store Name",
+                    "tiktok_url": "",
+                    "updated_at": "2026-06-23 15:35:00",
+                    "store_email": "audit@example.com",
+                    "store_phone": "868-000-0000",
+                    "delivery_fee": 25,
+                    "facebook_url": "",
+                    "instagram_url": "https://instagram.com/audit",
+                    "store_currency": "TTD",
+                    "tenancy_db_name": "tenant_tenant1",
+                    "whatsapp_number": "8680000000",
+                    "business_address": "Rollback audit address.",
+                    "store_description": "Rollback audit description.",
+                    "cash_on_delivery_enabled": true
+                }
+            }
+        },
+        {
+            "section": "actions",
+            "name": "payout mark-paid guard",
+            "status": "PASS",
+            "message": "Pending/unverified payout account prevented payout from being marked paid. Rolled back after test.",
+            "data": {
+                "account_original_status": "verified",
+                "account_test_status": "pending",
+                "transaction_payout_status_after_attempt": "pending",
+                "response_class": "Illuminate\\Http\\RedirectResponse"
+            }
+        }
+    ]
+}

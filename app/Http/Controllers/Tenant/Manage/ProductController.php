@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Tenant\Manage;
 
 use App\Http\Controllers\Controller;
+use App\Services\Plans\PlanFeatureGate;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImage;
@@ -19,17 +20,49 @@ class ProductController extends Controller
      *
      * @return \Inertia\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::with(['category', 'images'])
-            ->orderBy('created_at', 'desc')
-            ->paginate(10);
+        $search = trim((string) $request->query('search', ''));
+        $stockStatus = $request->query('stock_status');
 
-        $categories = Category::where('is_active', true)->get();
+        $productsQuery = \App\Models\Product::query()
+            ->with('category')
+            ->latest();
+
+        if ($search !== '') {
+            $productsQuery->where(function ($query) use ($search) {
+                $query->where('name', 'like', "%{$search}%")
+                    ->orWhere('sku', 'like', "%{$search}%")
+                    ->orWhere('description', 'like', "%{$search}%");
+            });
+        }
+
+        if ($stockStatus === 'out') {
+            $productsQuery->where('stock', '<=', 0);
+        } elseif ($stockStatus === 'low') {
+            $productsQuery->where('stock', '>', 0)->where('stock', '<=', 5);
+        } elseif ($stockStatus === 'available') {
+            $productsQuery->where('stock', '>', 5);
+        }
 
         return Inertia::render('tenant/products/Index', [
-            'products' => $products,
-            'categories' => $categories,
+            'products' => $productsQuery->paginate(15)->withQueryString(),
+            'stats' => [
+                'total_products' => \App\Models\Product::count(),
+                'active_products' => \App\Models\Product::where('is_active', true)->count(),
+                'out_of_stock' => \App\Models\Product::where('stock', '<=', 0)->count(),
+                'low_stock' => \App\Models\Product::where('stock', '>', 0)->where('stock', '<=', 5)->count(),
+                'inventory_units' => (int) \App\Models\Product::sum('stock'),
+            ],
+            'filters' => [
+                'search' => $search,
+                'stock_status' => $stockStatus,
+            ],
+            'stockStatusOptions' => [
+                ['value' => 'available', 'label' => 'Available'],
+                ['value' => 'low', 'label' => 'Low Stock'],
+                ['value' => 'out', 'label' => 'Out of Stock'],
+            ],
         ]);
     }
 
@@ -55,6 +88,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $planGate = app(PlanFeatureGate::class);
+
+        if ($planGate->productLimitReached()) {
+            return back()
+                ->with('error', $planGate->productLimitMessage())
+                ->withInput();
+        }
+
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',

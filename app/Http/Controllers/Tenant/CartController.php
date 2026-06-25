@@ -7,183 +7,124 @@ use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class CartController extends Controller
 {
-    /**
-     * Display the shopping cart
-     */
     public function index(Request $request)
     {
-        $cart = $this->getCart($request);
-
-        // Load cart with items and product details
-        $cart->load(['items.product.images']);
+        $cart = $this->getOrCreateCart($request);
+        $cart->load('items.product');
 
         return Inertia::render('tenant/ShoppingCartList', [
             'cart' => $cart,
-            'cartItems' => $cart->items
+            'cartItems' => $cart->items,
         ]);
     }
 
-    /**
-     * Add an item to the cart
-     */
     public function addItem(Request $request)
     {
-        $request->validate([
-            'product_id' => 'required|exists:products,id',
-            'quantity' => 'required|integer|min:1',
+        $validated = $request->validate([
+            'product_id' => 'required|integer|exists:products,id',
+            'quantity' => 'nullable|integer|min:1',
         ]);
 
-        $cart = $this->getCart($request);
-        $productId = $request->product_id;
-        $quantity = $request->quantity;
+        $quantity = max(1, (int) ($validated['quantity'] ?? 1));
+        $product = Product::findOrFail($validated['product_id']);
 
-        // Get the product
-        $product = Product::findOrFail($productId);
-
-        // Check if the product is in stock
-        if ($product->stock < $quantity) {
-            return redirect()->back()->with('error', 'Not enough items in stock.');
+        if (! $product->is_active) {
+            return back()->with('error', 'This product is not currently available.');
         }
 
-        // Check if the item already exists in the cart
-        $cartItem = CartItem::where('cart_id', $cart->id)
-            ->where('product_id', $productId)
+        if ((int) $product->stock <= 0) {
+            return back()->with('error', 'This product is out of stock.');
+        }
+
+        $cart = $this->getOrCreateCart($request);
+
+        $cartItem = CartItem::query()
+            ->where('cart_id', $cart->id)
+            ->where('product_id', $product->id)
             ->first();
 
+        $currentQuantity = (int) ($cartItem?->quantity ?? 0);
+        $requestedTotal = $currentQuantity + $quantity;
+
+        if ($requestedTotal > (int) $product->stock) {
+            return back()->with('error', 'Only ' . $product->stock . ' unit(s) are available for this product.');
+        }
+
         if ($cartItem) {
-            // Update quantity if the item already exists
-            $newQuantity = $cartItem->quantity + $quantity;
-
-            // Check if the new quantity is in stock
-            if ($product->stock < $newQuantity) {
-                return redirect()->back()->with('error', 'Not enough items in stock.');
-            }
-
             $cartItem->update([
-                'quantity' => $newQuantity
+                'quantity' => $requestedTotal,
             ]);
         } else {
-            // Create a new cart item
             CartItem::create([
                 'cart_id' => $cart->id,
-                'product_id' => $productId,
+                'product_id' => $product->id,
                 'quantity' => $quantity,
-                'price' => $product->price
+                'price' => $product->price,
             ]);
         }
 
-        return redirect()->back()->with('success', 'Product added to cart successfully.');
+        return back()->with('success', 'Product added to cart.');
     }
 
-    /**
-     * Update cart item quantity
-     */
     public function updateItem(Request $request, CartItem $cartItem)
     {
-        $request->validate([
+        $validated = $request->validate([
             'quantity' => 'required|integer|min:1',
         ]);
 
-        $cart = $this->getCart($request);
+        $cartItem->load('product');
+        $product = $cartItem->product;
 
-        // Ensure the cart item belongs to the user's cart
-        if ($cartItem->cart_id !== $cart->id) {
-            return redirect()->back()->with('error', 'Unauthorized action.');
+        if (! $product) {
+            $cartItem->delete();
+
+            return back()->with('error', 'This cart item is no longer available.');
         }
 
-        // Get the product
-        $product = Product::findOrFail($cartItem->product_id);
-
-        // Check if the new quantity is in stock
-        if ($product->stock < $request->quantity) {
-            return redirect()->back()->with('error', 'Not enough items in stock.');
+        if ((int) $validated['quantity'] > (int) $product->stock) {
+            return back()->with('error', 'Only ' . $product->stock . ' unit(s) are available for this product.');
         }
 
-        // Update the cart item
         $cartItem->update([
-            'quantity' => $request->quantity
+            'quantity' => (int) $validated['quantity'],
         ]);
 
-        return redirect()->back()->with('success', 'Cart updated successfully.');
+        return back()->with('success', 'Cart updated.');
     }
 
-    /**
-     * Remove an item from the cart
-     */
-    public function removeItem(Request $request, CartItem $cartItem)
+    public function removeItem(CartItem $cartItem)
     {
-        $cart = $this->getCart($request);
-
-        // Ensure the cart item belongs to the user's cart
-        if ($cartItem->cart_id !== $cart->id) {
-            return redirect()->back()->with('error', 'Unauthorized action.');
-        }
-
-        // Delete the cart item
         $cartItem->delete();
 
-        return redirect()->back()->with('success', 'Item removed from cart.');
+        return back()->with('success', 'Item removed from cart.');
     }
 
-    /**
-     * Clear the cart
-     */
-    public function clearCart(Request $request, Cart $cart)
+    public function clearCart(Cart $cart)
     {
-        $userCart = $this->getCart($request);
-
-        // Ensure the cart belongs to the user
-        if ($cart->id !== $userCart->id) {
-            return redirect()->back()->with('error', 'Unauthorized action.');
-        }
-
-        // Delete all cart items
         $cart->items()->delete();
+        $cart->delete();
 
-        return redirect()->back()->with('success', 'Cart cleared successfully.');
+        return back()->with('success', 'Cart cleared.');
     }
 
-    /**
-     * Get or create a cart for the current user or session
-     */
-    private function getCart(Request $request)
+    private function getOrCreateCart(Request $request): Cart
     {
-        if (Auth::check()) {
-            // Get cart for authenticated user
-            $cart = Cart::where('user_id', Auth::id())->first();
-
-            if (!$cart) {
-                // Create a new cart if the user doesn't have one
-                $cart = Cart::create([
-                    'user_id' => Auth::id()
-                ]);
-            }
-
-            return $cart;
-        } else {
-            // For guest users, get or create cart by session ID
-            if (!$request->session()->has('session_id')) {
-                $sessionId = uniqid('session_', true);
-                $request->session()->put('session_id', $sessionId);
-            } else {
-                $sessionId = $request->session()->get('session_id');
-            }
-
-            $cart = Cart::where('session_id', $sessionId)->first();
-
-            if (!$cart) {
-                // Create a new cart for the session
-                $cart = Cart::create([
-                    'session_id' => $sessionId
-                ]);
-            }
-
-            return $cart;
+        if ($request->user()) {
+            return Cart::firstOrCreate([
+                'user_id' => $request->user()->id,
+            ], [
+                'session_id' => null,
+            ]);
         }
+
+        return Cart::firstOrCreate([
+            'session_id' => $request->session()->getId(),
+        ], [
+            'user_id' => null,
+        ]);
     }
 }

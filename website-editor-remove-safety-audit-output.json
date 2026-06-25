@@ -1,0 +1,83 @@
+{
+    "summary": {
+        "PASS": 10,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 19:51:12",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "website_editor_remove_safety",
+            "name": "required homepage section list exists",
+            "status": "PASS",
+            "message": "required homepage section list exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_remove_safety",
+            "name": "required homepage section helper exists",
+            "status": "PASS",
+            "message": "required homepage section helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_remove_safety",
+            "name": "required homepage label helper exists",
+            "status": "PASS",
+            "message": "required homepage label helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_remove_safety",
+            "name": "required removal alert exists",
+            "status": "PASS",
+            "message": "required removal alert exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_remove_safety",
+            "name": "required badge exists",
+            "status": "PASS",
+            "message": "required badge exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_remove_safety",
+            "name": "protected button text exists",
+            "status": "PASS",
+            "message": "protected button text exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_remove_safety",
+            "name": "remove button disabled for required sections",
+            "status": "PASS",
+            "message": "remove button disabled for required sections found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_remove_safety",
+            "name": "section removal has stronger confirmation",
+            "status": "PASS",
+            "message": "section removal has stronger confirmation found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_remove_safety",
+            "name": "block removal has stronger confirmation",
+            "status": "PASS",
+            "message": "block removal has stronger confirmation found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_remove_safety",
+            "name": "stage marker exists",
+            "status": "PASS",
+            "message": "stage marker exists found.",
+            "data": []
+        }
+    ]
+}

@@ -1,0 +1,342 @@
+
+
+
+
+
+
+
+
+{
+    "summary": {
+        "PASS": 29,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-25 01:08:56",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "name": "hero supports button block",
+            "status": "PASS",
+            "message": "hero should register button block.",
+            "data": []
+        },
+        {
+            "name": "rich_text supports feature_card block",
+            "status": "PASS",
+            "message": "rich_text should register feature_card block.",
+            "data": []
+        },
+        {
+            "name": "product_grid supports info_note block",
+            "status": "PASS",
+            "message": "product_grid should register info_note block.",
+            "data": []
+        },
+        {
+            "name": "app/Services/Themes/SectionRegistry.php contains feature_card",
+            "status": "PASS",
+            "message": "feature_card found in app/Services/Themes/SectionRegistry.php.",
+            "data": []
+        },
+        {
+            "name": "app/Services/Themes/SectionRegistry.php contains info_note",
+            "status": "PASS",
+            "message": "info_note found in app/Services/Themes/SectionRegistry.php.",
+            "data": []
+        },
+        {
+            "name": "app/Services/Themes/SectionRegistry.php contains max_blocks",
+            "status": "PASS",
+            "message": "max_blocks found in app/Services/Themes/SectionRegistry.php.",
+            "data": []
+        },
+        {
+            "name": "app/Services/Themes/SectionRegistry.php contains public function block",
+            "status": "PASS",
+            "message": "public function block found in app/Services/Themes/SectionRegistry.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains normalizeBlocks",
+            "status": "PASS",
+            "message": "normalizeBlocks found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains sections.*.blocks.*.type",
+            "status": "PASS",
+            "message": "sections.*.blocks.*.type found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains take($maxBlocks)",
+            "status": "PASS",
+            "message": "take($maxBlocks) found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php contains settingsWithDefaults($blockSchema",
+            "status": "PASS",
+            "message": "settingsWithDefaults($blockSchema found in app/Http/Controllers/Tenant/Manage/WebsiteBuilderController.php.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Blocks inside section",
+            "status": "PASS",
+            "message": "Blocks inside section found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Block settings",
+            "status": "PASS",
+            "message": "Block settings found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains addBlock",
+            "status": "PASS",
+            "message": "addBlock found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains selectedBlock",
+            "status": "PASS",
+            "message": "selectedBlock found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains selectedBlockSchema",
+            "status": "PASS",
+            "message": "selectedBlockSchema found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains updateBlockSetting",
+            "status": "PASS",
+            "message": "updateBlockSetting found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains data-block-setting-id",
+            "status": "PASS",
+            "message": "data-block-setting-id found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Move block up",
+            "status": "PASS",
+            "message": "Move block up found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Move block down",
+            "status": "PASS",
+            "message": "Move block down found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Hide block",
+            "status": "PASS",
+            "message": "Hide block found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/website/Editor.vue contains Remove block",
+            "status": "PASS",
+            "message": "Remove block found in resources/js/pages/tenant/website/Editor.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/Homepage.vue contains visibleBlocks",
+            "status": "PASS",
+            "message": "visibleBlocks found in resources/js/pages/tenant/Homepage.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/Homepage.vue contains item.type === 'button'",
+            "status": "PASS",
+            "message": "item.type === 'button' found in resources/js/pages/tenant/Homepage.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/Homepage.vue contains item.type === 'feature_card'",
+            "status": "PASS",
+            "message": "item.type === 'feature_card' found in resources/js/pages/tenant/Homepage.vue.",
+            "data": []
+        },
+        {
+            "name": "resources/js/pages/tenant/Homepage.vue contains item.type === 'info_note'",
+            "status": "PASS",
+            "message": "item.type === 'info_note' found in resources/js/pages/tenant/Homepage.vue.",
+            "data": []
+        },
+        {
+            "name": "tenant awrah block save works",
+            "status": "PASS",
+            "message": "Nested blocks saved correctly.",
+            "data": {
+                "sections": [
+                    {
+                        "id": "audit_s40_rich_text",
+                        "type": "rich_text",
+                        "blocks": [
+                            {
+                                "id": "audit_s40_feature_card",
+                                "type": "feature_card",
+                                "hidden": false,
+                                "settings": {
+                                    "text": "S40 block text saved.",
+                                    "heading": "S40 Feature Card"
+                                },
+                                "sort_order": 0
+                            }
+                        ],
+                        "hidden": false,
+                        "settings": {
+                            "text": "Share information about your brand, products, or mission.",
+                            "width": "normal",
+                            "heading": "S40 Audit Rich Text"
+                        },
+                        "sort_order": 0
+                    },
+                    {
+                        "id": "audit_s40_product_grid",
+                        "type": "product_grid",
+                        "blocks": [
+                            {
+                                "id": "audit_s40_info_note",
+                                "type": "info_note",
+                                "hidden": false,
+                                "settings": {
+                                    "text": "S40 info note saved.",
+                                    "heading": "S40 Info Note"
+                                },
+                                "sort_order": 0
+                            }
+                        ],
+                        "hidden": false,
+                        "settings": {
+                            "heading": "S40 Product Grid",
+                            "per_page": 12,
+                            "show_filters": true
+                        },
+                        "sort_order": 1
+                    }
+                ]
+            }
+        },
+        {
+            "name": "tenant tenant1 block save works",
+            "status": "PASS",
+            "message": "Nested blocks saved correctly.",
+            "data": {
+                "sections": [
+                    {
+                        "id": "audit_s40_rich_text",
+                        "type": "rich_text",
+                        "blocks": [
+                            {
+                                "id": "audit_s40_feature_card",
+                                "type": "feature_card",
+                                "hidden": false,
+                                "settings": {
+                                    "text": "S40 block text saved.",
+                                    "heading": "S40 Feature Card"
+                                },
+                                "sort_order": 0
+                            }
+                        ],
+                        "hidden": false,
+                        "settings": {
+                            "text": "Share information about your brand, products, or mission.",
+                            "width": "normal",
+                            "heading": "S40 Audit Rich Text"
+                        },
+                        "sort_order": 0
+                    },
+                    {
+                        "id": "audit_s40_product_grid",
+                        "type": "product_grid",
+                        "blocks": [
+                            {
+                                "id": "audit_s40_info_note",
+                                "type": "info_note",
+                                "hidden": false,
+                                "settings": {
+                                    "text": "S40 info note saved.",
+                                    "heading": "S40 Info Note"
+                                },
+                                "sort_order": 0
+                            }
+                        ],
+                        "hidden": false,
+                        "settings": {
+                            "heading": "S40 Product Grid",
+                            "per_page": 12,
+                            "show_filters": true
+                        },
+                        "sort_order": 1
+                    }
+                ]
+            }
+        },
+        {
+            "name": "tenant tenant2 block save works",
+            "status": "PASS",
+            "message": "Nested blocks saved correctly.",
+            "data": {
+                "sections": [
+                    {
+                        "id": "audit_s40_rich_text",
+                        "type": "rich_text",
+                        "blocks": [
+                            {
+                                "id": "audit_s40_feature_card",
+                                "type": "feature_card",
+                                "hidden": false,
+                                "settings": {
+                                    "text": "S40 block text saved.",
+                                    "heading": "S40 Feature Card"
+                                },
+                                "sort_order": 0
+                            }
+                        ],
+                        "hidden": false,
+                        "settings": {
+                            "text": "Share information about your brand, products, or mission.",
+                            "width": "normal",
+                            "heading": "S40 Audit Rich Text"
+                        },
+                        "sort_order": 0
+                    },
+                    {
+                        "id": "audit_s40_product_grid",
+                        "type": "product_grid",
+                        "blocks": [
+                            {
+                                "id": "audit_s40_info_note",
+                                "type": "info_note",
+                                "hidden": false,
+                                "settings": {
+                                    "text": "S40 info note saved.",
+                                    "heading": "S40 Info Note"
+                                },
+                                "sort_order": 0
+                            }
+                        ],
+                        "hidden": false,
+                        "settings": {
+                            "heading": "S40 Product Grid",
+                            "per_page": 12,
+                            "show_filters": true
+                        },
+                        "sort_order": 1
+                    }
+                ]
+            }
+        }
+    ]
+}

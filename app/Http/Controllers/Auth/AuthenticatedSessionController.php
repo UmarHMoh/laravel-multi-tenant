@@ -39,19 +39,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        // Check if user belongs to the current tenant
-        $user = Auth::user();
-        $tenantId = tenant('id');
-
-        if ($tenantId && $user->tenant_id !== $tenantId && !$user->isAdmin()) {
-            Auth::logout();
-            $request->session()->invalidate();
-            $request->session()->regenerateToken();
-
-            return redirect()->route('login')
-                ->withErrors(['email' => 'You do not have access to this store.']);
-        }
-
         return redirect()->intended(route('dashboard', absolute: false));
     }
 

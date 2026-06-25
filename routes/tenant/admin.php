@@ -50,3 +50,16 @@ Route::middleware('auth')->group(function () {
         });
     });
 });
+
+Route::get('/manage/payout-account', [\App\Http\Controllers\Tenant\Manage\PayoutAccountController::class, 'index'])->name('manage.payout-account');
+Route::post('/manage/payout-account', [\App\Http\Controllers\Tenant\Manage\PayoutAccountController::class, 'store'])->name('manage.payout-account.store');
+
+Route::get('/manage/store-settings', [\App\Http\Controllers\Tenant\Manage\StoreSettingsController::class, 'edit'])->name('manage.store-settings.edit');
+Route::put('/manage/store-settings', [\App\Http\Controllers\Tenant\Manage\StoreSettingsController::class, 'update'])->name('manage.store-settings.update');
+
+Route::get('/manage/domains', [\App\Http\Controllers\Tenant\Manage\DomainSettingsController::class, 'index'])->name('manage.domains.index');
+Route::post('/manage/domains', [\App\Http\Controllers\Tenant\Manage\DomainSettingsController::class, 'store'])->name('manage.domains.store');
+
+
+Route::get('/manage/billing', [\App\Http\Controllers\Tenant\Manage\BillingController::class, 'index'])->name('manage.billing.index');
+Route::post('/manage/billing/test-payment', [\App\Http\Controllers\Tenant\Manage\BillingController::class, 'payTest'])->name('manage.billing.test-payment');

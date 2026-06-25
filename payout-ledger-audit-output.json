@@ -1,0 +1,91 @@
+{
+    "summary": {
+        "PASS": 3,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 05:45:00",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "name": "paid order credits payout ledger",
+            "status": "PASS",
+            "message": "Paid order created one platform transaction and one payout ledger credit.",
+            "data": {
+                "before_balance": {
+                    "available_balance": 0,
+                    "pending_balance": 0,
+                    "lifetime_earned": 0,
+                    "currency": "TTD"
+                },
+                "after_balance": {
+                    "available_balance": 94.8,
+                    "pending_balance": 0,
+                    "lifetime_earned": 94.8,
+                    "currency": "TTD"
+                },
+                "before_ledger_count": 0,
+                "after_ledger_count": 1,
+                "before_transaction_count": 0,
+                "after_transaction_count": 1,
+                "ledger_entry_id": 7,
+                "tenant_net_amount": "94.80"
+            },
+            "tenant_id": "awrah"
+        },
+        {
+            "name": "paid order credits payout ledger",
+            "status": "PASS",
+            "message": "Paid order created one platform transaction and one payout ledger credit.",
+            "data": {
+                "before_balance": {
+                    "available_balance": 0,
+                    "pending_balance": 0,
+                    "lifetime_earned": 0,
+                    "currency": "TTD"
+                },
+                "after_balance": {
+                    "available_balance": 89.9,
+                    "pending_balance": 0,
+                    "lifetime_earned": 89.9,
+                    "currency": "TTD"
+                },
+                "before_ledger_count": 0,
+                "after_ledger_count": 1,
+                "before_transaction_count": 3,
+                "after_transaction_count": 4,
+                "ledger_entry_id": 8,
+                "tenant_net_amount": "89.90"
+            },
+            "tenant_id": "tenant1"
+        },
+        {
+            "name": "paid order credits payout ledger",
+            "status": "PASS",
+            "message": "Paid order created one platform transaction and one payout ledger credit.",
+            "data": {
+                "before_balance": {
+                    "available_balance": 0,
+                    "pending_balance": 0,
+                    "lifetime_earned": 0,
+                    "currency": "TTD"
+                },
+                "after_balance": {
+                    "available_balance": 94.8,
+                    "pending_balance": 0,
+                    "lifetime_earned": 94.8,
+                    "currency": "TTD"
+                },
+                "before_ledger_count": 0,
+                "after_ledger_count": 1,
+                "before_transaction_count": 0,
+                "after_transaction_count": 1,
+                "ledger_entry_id": 9,
+                "tenant_net_amount": "94.80"
+            },
+            "tenant_id": "tenant2"
+        }
+    ]
+}

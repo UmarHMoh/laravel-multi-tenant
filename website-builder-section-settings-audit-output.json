@@ -1,0 +1,205 @@
+{
+    "summary": {
+        "PASS": 17,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 18:54:06",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "name": "builder Vue contains Section settings",
+            "status": "PASS",
+            "message": "Section settings found.",
+            "data": []
+        },
+        {
+            "name": "builder Vue contains selectedSection",
+            "status": "PASS",
+            "message": "selectedSection found.",
+            "data": []
+        },
+        {
+            "name": "builder Vue contains selectedSchema",
+            "status": "PASS",
+            "message": "selectedSchema found.",
+            "data": []
+        },
+        {
+            "name": "builder Vue contains updateSetting",
+            "status": "PASS",
+            "message": "updateSetting found.",
+            "data": []
+        },
+        {
+            "name": "builder Vue contains settingValue",
+            "status": "PASS",
+            "message": "settingValue found.",
+            "data": []
+        },
+        {
+            "name": "builder Vue contains setting.type === 'textarea'",
+            "status": "PASS",
+            "message": "setting.type === 'textarea' found.",
+            "data": []
+        },
+        {
+            "name": "builder Vue contains setting.type === 'number'",
+            "status": "PASS",
+            "message": "setting.type === 'number' found.",
+            "data": []
+        },
+        {
+            "name": "builder Vue contains setting.type === 'select'",
+            "status": "PASS",
+            "message": "setting.type === 'select' found.",
+            "data": []
+        },
+        {
+            "name": "builder Vue contains setting.type === 'checkbox'",
+            "status": "PASS",
+            "message": "setting.type === 'checkbox' found.",
+            "data": []
+        },
+        {
+            "name": "builder Vue contains isLinkSetting(setting)",
+            "status": "PASS",
+            "message": "isLinkSetting(setting) found.",
+            "data": []
+        },
+        {
+            "name": "builder Vue contains data-setting-id",
+            "status": "PASS",
+            "message": "data-setting-id found.",
+            "data": []
+        },
+        {
+            "name": "builder Vue contains Heading: {{ section.settings.heading }}",
+            "status": "PASS",
+            "message": "Heading: {{ section.settings.heading }} found.",
+            "data": []
+        },
+        {
+            "name": "builder Vue contains min-h-11",
+            "status": "PASS",
+            "message": "min-h-11 found.",
+            "data": []
+        },
+        {
+            "name": "builder Vue contains editorGridClass",
+            "status": "PASS",
+            "message": "editorGridClass found.",
+            "data": []
+        },
+        {
+            "name": "tenant awrah edited settings persist",
+            "status": "PASS",
+            "message": "Edited section settings saved correctly.",
+            "data": {
+                "sections": [
+                    {
+                        "id": "audit_s39_hero",
+                        "type": "hero",
+                        "blocks": [],
+                        "hidden": false,
+                        "settings": {
+                            "eyebrow": "Audit Eyebrow",
+                            "heading": "S39 Edited Audit Heading",
+                            "alignment": "left",
+                            "subheading": "Audit subheading",
+                            "button_link": "/audit",
+                            "button_label": "Audit CTA"
+                        },
+                        "sort_order": 0
+                    },
+                    {
+                        "id": "audit_s39_product_grid",
+                        "type": "product_grid",
+                        "blocks": [],
+                        "hidden": false,
+                        "settings": {
+                            "heading": "Audit Product Grid",
+                            "per_page": 6,
+                            "show_filters": false
+                        },
+                        "sort_order": 1
+                    }
+                ]
+            }
+        },
+        {
+            "name": "tenant tenant1 edited settings persist",
+            "status": "PASS",
+            "message": "Edited section settings saved correctly.",
+            "data": {
+                "sections": [
+                    {
+                        "id": "audit_s39_hero",
+                        "type": "hero",
+                        "blocks": [],
+                        "hidden": false,
+                        "settings": {
+                            "eyebrow": "Audit Eyebrow",
+                            "heading": "S39 Edited Audit Heading",
+                            "alignment": "left",
+                            "subheading": "Audit subheading",
+                            "button_link": "/audit",
+                            "button_label": "Audit CTA"
+                        },
+                        "sort_order": 0
+                    },
+                    {
+                        "id": "audit_s39_product_grid",
+                        "type": "product_grid",
+                        "blocks": [],
+                        "hidden": false,
+                        "settings": {
+                            "heading": "Audit Product Grid",
+                            "per_page": 6,
+                            "show_filters": false
+                        },
+                        "sort_order": 1
+                    }
+                ]
+            }
+        },
+        {
+            "name": "tenant tenant2 edited settings persist",
+            "status": "PASS",
+            "message": "Edited section settings saved correctly.",
+            "data": {
+                "sections": [
+                    {
+                        "id": "audit_s39_hero",
+                        "type": "hero",
+                        "blocks": [],
+                        "hidden": false,
+                        "settings": {
+                            "eyebrow": "Audit Eyebrow",
+                            "heading": "S39 Edited Audit Heading",
+                            "alignment": "left",
+                            "subheading": "Audit subheading",
+                            "button_link": "/audit",
+                            "button_label": "Audit CTA"
+                        },
+                        "sort_order": 0
+                    },
+                    {
+                        "id": "audit_s39_product_grid",
+                        "type": "product_grid",
+                        "blocks": [],
+                        "hidden": false,
+                        "settings": {
+                            "heading": "Audit Product Grid",
+                            "per_page": 6,
+                            "show_filters": false
+                        },
+                        "sort_order": 1
+                    }
+                ]
+            }
+        }
+    ]
+}

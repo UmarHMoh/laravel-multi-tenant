@@ -1,0 +1,97 @@
+{
+    "summary": {
+        "PASS": 12,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-25 01:08:56",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "website_storefront_real_product_grid",
+            "name": "stage marker exists on storefront",
+            "status": "PASS",
+            "message": "S62 storefront marker found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_real_product_grid",
+            "name": "stage marker exists on editor",
+            "status": "PASS",
+            "message": "S62 editor marker found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_real_product_grid",
+            "name": "real product grid section exists",
+            "status": "PASS",
+            "message": "real product grid section found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_real_product_grid",
+            "name": "real product grid cards exist",
+            "status": "PASS",
+            "message": "real product grid cards found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_real_product_grid",
+            "name": "product card link marker exists",
+            "status": "PASS",
+            "message": "product card link marker found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_real_product_grid",
+            "name": "real product image binding exists",
+            "status": "PASS",
+            "message": "real product image binding found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_real_product_grid",
+            "name": "product placeholder exists",
+            "status": "PASS",
+            "message": "product placeholder found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_real_product_grid",
+            "name": "category and price bindings exist",
+            "status": "PASS",
+            "message": "category and price bindings found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_real_product_grid",
+            "name": "responsive grid classes exist",
+            "status": "PASS",
+            "message": "responsive grid classes found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_real_product_grid",
+            "name": "shop products visible text exists",
+            "status": "PASS",
+            "message": "shop products text found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_real_product_grid",
+            "name": "S62 stylesheet exists",
+            "status": "PASS",
+            "message": "S62 stylesheet found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_real_product_grid",
+            "name": "homepage still renders template",
+            "status": "PASS",
+            "message": "Homepage Vue template found.",
+            "data": []
+        }
+    ]
+}

@@ -1,0 +1,229 @@
+{
+    "summary": {
+        "PASS": 30,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 12:37:44",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "tenant_id": "awrah",
+            "name": "themes table exists",
+            "status": "PASS",
+            "message": "themes table exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "theme_pages table exists",
+            "status": "PASS",
+            "message": "theme_pages table exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "active theme exists",
+            "status": "PASS",
+            "message": "Active theme exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "homepage exists",
+            "status": "PASS",
+            "message": "Homepage exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "homepage has sections",
+            "status": "PASS",
+            "message": "Homepage draft config contains sections.",
+            "data": {
+                "section_count": 2
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "section registry has hero",
+            "status": "PASS",
+            "message": "Hero schema registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "section registry has rich text",
+            "status": "PASS",
+            "message": "Rich text schema registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "section registry has featured products",
+            "status": "PASS",
+            "message": "Featured products schema registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "website builder route exists",
+            "status": "PASS",
+            "message": "Website builder route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "website builder page exists",
+            "status": "PASS",
+            "message": "Website builder Vue page exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "themes table exists",
+            "status": "PASS",
+            "message": "themes table exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "theme_pages table exists",
+            "status": "PASS",
+            "message": "theme_pages table exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "active theme exists",
+            "status": "PASS",
+            "message": "Active theme exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "homepage exists",
+            "status": "PASS",
+            "message": "Homepage exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "homepage has sections",
+            "status": "PASS",
+            "message": "Homepage draft config contains sections.",
+            "data": {
+                "section_count": 2
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "section registry has hero",
+            "status": "PASS",
+            "message": "Hero schema registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "section registry has rich text",
+            "status": "PASS",
+            "message": "Rich text schema registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "section registry has featured products",
+            "status": "PASS",
+            "message": "Featured products schema registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "website builder route exists",
+            "status": "PASS",
+            "message": "Website builder route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "website builder page exists",
+            "status": "PASS",
+            "message": "Website builder Vue page exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "themes table exists",
+            "status": "PASS",
+            "message": "themes table exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "theme_pages table exists",
+            "status": "PASS",
+            "message": "theme_pages table exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "active theme exists",
+            "status": "PASS",
+            "message": "Active theme exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "homepage exists",
+            "status": "PASS",
+            "message": "Homepage exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "homepage has sections",
+            "status": "PASS",
+            "message": "Homepage draft config contains sections.",
+            "data": {
+                "section_count": 2
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "section registry has hero",
+            "status": "PASS",
+            "message": "Hero schema registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "section registry has rich text",
+            "status": "PASS",
+            "message": "Rich text schema registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "section registry has featured products",
+            "status": "PASS",
+            "message": "Featured products schema registered.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "website builder route exists",
+            "status": "PASS",
+            "message": "Website builder route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "website builder page exists",
+            "status": "PASS",
+            "message": "Website builder Vue page exists.",
+            "data": []
+        }
+    ]
+}

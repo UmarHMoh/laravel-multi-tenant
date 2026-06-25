@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Tenant\Manage;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\PlatformTransaction;
+use App\Models\Tenant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
+use App\Services\Payments\PlatformTransactionService;
 
 class OrderController extends Controller
 {
@@ -18,67 +21,49 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Order::with(['user', 'items.product']);
+        $status = $request->query('status');
+        $paymentStatus = $request->query('payment_status');
+        $search = trim((string) $request->query('search', ''));
 
-        // Apply search if provided
-        if ($request->has('search') && !empty($request->search)) {
-            $searchTerm = $request->search;
-            $query->where(function ($q) use ($searchTerm) {
-                $q->where('order_number', 'like', "%{$searchTerm}%")
-                  ->orWhere('billing_name', 'like', "%{$searchTerm}%")
-                  ->orWhere('billing_email', 'like', "%{$searchTerm}%")
-                  ->orWhere('billing_phone', 'like', "%{$searchTerm}%");
+        $ordersQuery = \App\Models\Order::query()
+            ->with('items')
+            ->latest();
+
+        if ($status) {
+            $ordersQuery->where('status', $status);
+        }
+
+        if ($paymentStatus) {
+            $ordersQuery->where('payment_status', $paymentStatus);
+        }
+
+        if ($search !== '') {
+            $ordersQuery->where(function ($query) use ($search) {
+                $query->where('order_number', 'like', "%{$search}%")
+                    ->orWhere('billing_name', 'like', "%{$search}%")
+                    ->orWhere('billing_email', 'like', "%{$search}%")
+                    ->orWhere('billing_phone', 'like', "%{$search}%");
             });
         }
 
-        // Apply status filter if provided
-        if ($request->has('status') && !empty($request->status)) {
-            $query->where('status', $request->status);
-        }
-
-        // Apply payment status filter if provided
-        if ($request->has('payment_status') && !empty($request->payment_status)) {
-            $query->where('payment_status', $request->payment_status);
-        }
-
-        // Apply date range filter if provided
-        if ($request->has('date_from') && !empty($request->date_from)) {
-            $query->whereDate('created_at', '>=', $request->date_from);
-        }
-
-        if ($request->has('date_to') && !empty($request->date_to)) {
-            $query->whereDate('created_at', '<=', $request->date_to);
-        }
-
-        // Apply sorting
-        $sortColumn = $request->input('sort', 'created_at');
-        $sortDirection = $request->input('direction', 'desc');
-
-        // Validate sort column to prevent SQL injection
-        $allowedSortColumns = ['order_number', 'total', 'status', 'created_at', 'payment_status'];
-        if (!in_array($sortColumn, $allowedSortColumns)) {
-            $sortColumn = 'created_at';
-        }
-
-        $query->orderBy($sortColumn, $sortDirection);
-
-        // Execute query with pagination
-        $orders = $query->paginate(10)
-            ->withQueryString();
-
         return Inertia::render('tenant/orders/Index', [
-            'orders' => $orders,
-            'filters' => [
-                'search' => $request->search,
-                'status' => $request->status,
-                'payment_status' => $request->payment_status,
-                'date_from' => $request->date_from,
-                'date_to' => $request->date_to,
-                'sort' => $sortColumn,
-                'direction' => $sortDirection,
+            'orders' => $ordersQuery->paginate(15)->withQueryString(),
+            'stats' => [
+                'total_orders' => \App\Models\Order::count(),
+                'pending_orders' => \App\Models\Order::where('status', 'pending')->count(),
+                'processing_orders' => \App\Models\Order::where('status', 'processing')->count(),
+                'completed_orders' => \App\Models\Order::where('status', 'completed')->count(),
+                'paid_orders' => \App\Models\Order::where('payment_status', 'paid')->count(),
+                'unpaid_orders' => \App\Models\Order::whereIn('payment_status', ['pending', 'unpaid'])->count(),
+                'revenue' => (float) \App\Models\Order::where('payment_status', 'paid')->sum('total'),
             ],
-            'statusOptions' => $this->getStatusOptions(),
-            'paymentStatusOptions' => $this->getPaymentStatusOptions(),
+            'filters' => [
+                'status' => $status,
+                'payment_status' => $paymentStatus,
+                'search' => $search,
+            ],
+            'statusOptions' => ['pending', 'processing', 'completed', 'cancelled'],
+            'paymentStatusOptions' => ['pending', 'paid', 'failed', 'refunded'],
         ]);
     }
 
@@ -88,14 +73,14 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Inertia\Response
      */
-    public function show(Order $order)
+    public function show(\App\Models\Order $order)
     {
-        $order->load(['user', 'items.product']);
+        $order->load(['items.product']);
 
         return Inertia::render('tenant/orders/Show', [
             'order' => $order,
-            'statusOptions' => $this->getStatusOptions(),
-            'paymentStatusOptions' => $this->getPaymentStatusOptions(),
+            'statusOptions' => ['pending', 'processing', 'completed', 'cancelled'],
+            'paymentStatusOptions' => ['pending', 'paid', 'failed', 'refunded'],
         ]);
     }
 
@@ -133,14 +118,46 @@ class OrderController extends Controller
             'payment_status' => 'required|string|in:pending,paid,failed,refunded',
         ]);
 
+        $wasAlreadyPaid = $order->payment_status === 'paid';
+
         $order->update([
             'payment_status' => $request->payment_status,
-            'paid_at' => $request->payment_status === 'paid' ? now() : $order->paid_at,
+            'paid_at' => $request->payment_status === 'paid' ? ($order->paid_at ?? now()) : $order->paid_at,
         ]);
+
+        if ($request->payment_status === 'paid' && ! $wasAlreadyPaid) {
+            $this->createPlatformTransactionForPaidOrder($order, 'manual_paid_status');
+        }
 
         return redirect()->back()
             ->with('success', 'Payment status updated successfully');
     }
+
+    private function createPlatformTransactionForPaidOrder(Order $order, string $provider): void
+
+    {
+
+        $tenantId = tenant('id');
+
+        tenancy()->central(function () use ($tenantId, $order, $provider) {
+
+            $tenant = Tenant::with('currentSubscription.plan')->findOrFail($tenantId);
+
+            app(PlatformTransactionService::class)->recordPaidOrder(
+
+                tenant: $tenant,
+
+                order: $order,
+
+                provider: $provider
+
+            );
+
+        });
+
+    }
+
+
 
     /**
      * Get the available order status options.

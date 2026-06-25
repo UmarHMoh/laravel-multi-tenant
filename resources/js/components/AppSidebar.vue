@@ -2,10 +2,30 @@
 import NavFooter from '@/components/NavFooter.vue';
 import NavMain from '@/components/NavMain.vue';
 import NavUser from '@/components/NavUser.vue';
-import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
+import {
+    Sidebar,
+    SidebarContent,
+    SidebarFooter,
+    SidebarHeader,
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem,
+} from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, Folder, LayoutGrid, SquareChartGantt, Tag, ShoppingCart, UsersIcon} from 'lucide-vue-next';
+import {
+    CreditCard,
+    Globe,
+    LayoutGrid,
+    ReceiptText,
+    Settings,
+    ShoppingCart,
+    SquareChartGantt,
+    Tag,
+    UsersIcon,
+    Wallet,
+    LayoutTemplate,
+} from 'lucide-vue-next';
 import AppLogo from './AppLogo.vue';
 
 const mainNavItems: NavItem[] = [
@@ -34,20 +54,39 @@ const mainNavItems: NavItem[] = [
         href: '/manage/customer',
         icon: UsersIcon,
     },
+    {
+        title: 'Billing',
+        href: '/manage/billing',
+        icon: ReceiptText,
+    },
+    {
+        title: 'Payouts',
+        href: '/manage/payouts',
+        icon: Wallet,
+    },
+    {
+        title: 'Website Builder',
+        href: '/manage/website',
+        icon: LayoutTemplate,
+    },
+    {
+        title: 'Store Settings',
+        href: '/manage/store-settings',
+        icon: Settings,
+    },
+    {
+        title: 'Domains',
+        href: '/manage/domains',
+        icon: Globe,
+    },
+    {
+        title: 'Payout Account',
+        href: '/manage/payout-account',
+        icon: CreditCard,
+    },
 ];
 
-const footerNavItems: NavItem[] = [
-    // {
-    //     title: 'Github Repo',
-    //     href: 'https://github.com/laravel/vue-starter-kit',
-    //     icon: Folder,
-    // },
-    // {
-    //     title: 'Documentation',
-    //     href: 'https://laravel.com/docs/starter-kits',
-    //     icon: BookOpen,
-    // },
-];
+const footerNavItems: NavItem[] = [];
 </script>
 
 <template>
@@ -73,5 +112,6 @@ const footerNavItems: NavItem[] = [
             <NavUser />
         </SidebarFooter>
     </Sidebar>
+
     <slot />
 </template>

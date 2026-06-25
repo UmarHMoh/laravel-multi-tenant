@@ -1,0 +1,95 @@
+<?php
+
+namespace App\Http\Controllers\Tenant;
+
+use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\Theme;
+use App\Models\ThemePage;
+use App\Services\Themes\ThemeBootstrapper;
+use App\Services\Themes\ThemePageRenderer;
+use Illuminate\Http\Request;
+use Inertia\Inertia;
+
+class PageController extends Controller
+{
+    public function __construct(
+        private readonly ThemeBootstrapper $themeBootstrapper,
+        private readonly ThemePageRenderer $renderer,
+    ) {
+    }
+
+    public function show(Request $request, string $handle)
+    {
+        $theme = $this->themeBootstrapper->ensureDefaultTheme();
+
+        $page = ThemePage::query()
+            ->where('theme_id', $theme->id)
+            ->where('handle', $handle)
+            ->whereIn('type', ['static', 'contact'])
+            ->firstOrFail();
+
+        $rendered = $this->renderer->render($page, published: true);
+
+        return Inertia::render('tenant/Homepage', [
+            'theme' => [
+                'id' => $theme->id,
+                'name' => $theme->name,
+                'settings' => $theme->settings ?: [],
+            ],
+            'homepage' => [
+                'id' => $page->id,
+                'title' => $page->title,
+                'handle' => $page->handle,
+                'type' => $page->type,
+                'draft_config' => $page->draft_config ?: ['sections' => []],
+                'published_config' => $page->published_config ?: $page->draft_config ?: ['sections' => []],
+            ],
+            'themeSections' => $rendered['sections'] ?? [],
+            'sectionSchemas' => [],
+            'featuredProducts' => Product::query()
+                ->where('is_active', true)
+                ->with(['category', 'images'])
+                ->latest()
+                ->limit(8)
+                ->get(),
+            'products' => Product::query()
+                ->where('is_active', true)
+                ->with(['category', 'images'])
+                ->latest()
+                ->limit(12)
+                ->get(),
+            'categories' => Category::query()
+                ->where('is_active', true)
+                ->orderBy('name')
+                ->get(),
+            'filters' => [
+                'category' => null,
+                'sort' => null,
+                'search' => null,
+            ],
+        ]);
+    }
+
+    public function contact(Request $request)
+    {
+        $theme = $this->themeBootstrapper->ensureDefaultTheme();
+
+        $page = ThemePage::query()
+            ->where('theme_id', $theme->id)
+            ->where('handle', 'contact')
+            ->first();
+
+        if (! $page) {
+            $this->themeBootstrapper->ensureContactPage($theme);
+
+            $page = ThemePage::query()
+                ->where('theme_id', $theme->id)
+                ->where('handle', 'contact')
+                ->firstOrFail();
+        }
+
+        return $this->show($request, 'contact');
+    }
+}

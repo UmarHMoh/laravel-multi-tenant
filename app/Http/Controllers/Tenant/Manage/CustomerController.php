@@ -3,133 +3,133 @@
 namespace App\Http\Controllers\Tenant\Manage;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use App\Models\Order;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
 use Inertia\Inertia;
 
 class CustomerController extends Controller
 {
-    /**
-     * Display a listing of the customers.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Inertia\Response
-     */
     public function index(Request $request)
     {
-        $query = User::where('role', '!=', 'admin')
-                     ->withCount('orders');
+        $search = trim((string) $request->query('search', ''));
 
-        // Apply search if provided
-        if ($request->has('search') && !empty($request->search)) {
-            $searchTerm = $request->search;
-            $query->where(function ($q) use ($searchTerm) {
-                $q->where('name', 'like', "%{$searchTerm}%")
-                  ->orWhere('email', 'like', "%{$searchTerm}%");
-            });
+        $orders = Order::query()
+            ->latest()
+            ->get();
+
+        $customers = $this->buildCustomersFromOrders($orders);
+
+        if ($search !== '') {
+            $customers = $customers->filter(function ($customer) use ($search) {
+                $haystack = strtolower(implode(' ', [
+                    $customer['name'] ?? '',
+                    $customer['email'] ?? '',
+                    $customer['phone'] ?? '',
+                ]));
+
+                return str_contains($haystack, strtolower($search));
+            })->values();
         }
 
-        // Apply date filter if provided
-        if ($request->has('date_from') && !empty($request->date_from)) {
-            $query->whereDate('created_at', '>=', $request->date_from);
-        }
-
-        if ($request->has('date_to') && !empty($request->date_to)) {
-            $query->whereDate('created_at', '<=', $request->date_to);
-        }
-
-        // Apply sorting
-        $sortColumn = $request->input('sort', 'created_at');
-        $sortDirection = $request->input('direction', 'desc');
-
-        // Validate sort column to prevent SQL injection
-        $allowedSortColumns = ['name', 'email', 'created_at', 'orders_count'];
-        if (!in_array($sortColumn, $allowedSortColumns)) {
-            $sortColumn = 'created_at';
-        }
-
-        $query->orderBy($sortColumn, $sortDirection);
-
-        // Execute query with pagination
-        $customers = $query->paginate(10)
-            ->withQueryString();
+        $paginatedCustomers = $this->paginateCollection(
+            $customers,
+            perPage: 15,
+            page: (int) $request->query('page', 1),
+            path: '/manage/customer',
+            query: $request->query()
+        );
 
         return Inertia::render('tenant/customers/Index', [
-            'customers' => $customers,
+            'customers' => $paginatedCustomers,
+            'stats' => [
+                'total_customers' => $this->buildCustomersFromOrders($orders)->count(),
+                'customers_with_orders' => $this->buildCustomersFromOrders($orders)->filter(fn ($customer) => ($customer['order_count'] ?? 0) > 0)->count(),
+                'total_customer_revenue' => (float) Order::where('payment_status', 'paid')->sum('total'),
+                'total_orders' => Order::count(),
+            ],
             'filters' => [
-                'search' => $request->search,
-                'date_from' => $request->date_from,
-                'date_to' => $request->date_to,
-                'sort' => $sortColumn,
-                'direction' => $sortDirection,
+                'search' => $search,
             ],
         ]);
     }
 
-    /**
-     * Display the specified customer.
-     *
-     * @param  \App\Models\User  $customer
-     * @return \Inertia\Response
-     */
-    public function show(User $customer)
+    public function show(string $customer)
     {
-        // Check if the user is a customer
-        if ($customer->role === 'admin') {
-            return redirect()->route('customer.index')
-                ->with('error', 'Administrators cannot be viewed in the customer panel.');
-        }
+        $customerKey = rawurldecode($customer);
 
-        // Load customer with order count and latest orders
-        $customer->loadCount('orders');
+        $ordersQuery = Order::query()
+            ->where('billing_email', $customerKey)
+            ->latest();
 
-        // Get latest orders
-        $orders = Order::where('user_id', $customer->id)
-            ->with('items.product')
-            ->orderBy('created_at', 'desc')
-            ->limit(5)
-            ->get();
+        $orders = $ordersQuery->paginate(10);
 
-        // Calculate total spent
-        $totalSpent = Order::where('user_id', $customer->id)
-            ->where('payment_status', 'paid')
-            ->sum('total');
+        $latestOrder = Order::query()
+            ->where('billing_email', $customerKey)
+            ->latest()
+            ->first();
 
-        // Get frequently purchased products
-        $frequentProducts = $this->getFrequentlyPurchasedProducts($customer->id);
+        $customerProfile = [
+            'id' => rawurlencode($customerKey),
+            'name' => $latestOrder?->billing_name,
+            'email' => $latestOrder?->billing_email ?: $customerKey,
+            'phone' => $latestOrder?->billing_phone,
+            'address' => $latestOrder?->billing_address,
+            'created_at' => optional(Order::query()->where('billing_email', $customerKey)->oldest()->first())->created_at,
+        ];
 
         return Inertia::render('tenant/customers/Show', [
-            'customer' => $customer,
+            'customer' => $customerProfile,
             'orders' => $orders,
-            'totalSpent' => $totalSpent,
-            'frequentProducts' => $frequentProducts,
+            'stats' => [
+                'order_count' => Order::where('billing_email', $customerKey)->count(),
+                'paid_order_count' => Order::where('billing_email', $customerKey)->where('payment_status', 'paid')->count(),
+                'total_spent' => (float) Order::where('billing_email', $customerKey)->where('payment_status', 'paid')->sum('total'),
+                'latest_order_at' => optional(Order::where('billing_email', $customerKey)->latest()->first())->created_at,
+            ],
         ]);
     }
 
-    /**
-     * Get frequently purchased products by a customer.
-     *
-     * @param  int  $customerId
-     * @return \Illuminate\Support\Collection
-     */
-    private function getFrequentlyPurchasedProducts($customerId)
+    private function buildCustomersFromOrders(Collection $orders): Collection
     {
-        return DB::table('order_items')
-            ->join('orders', 'order_items.order_id', '=', 'orders.id')
-            ->join('products', 'order_items.product_id', '=', 'products.id')
-            ->select(
-                'products.id',
-                'products.name',
-                'products.price',
-                'products.slug',
-                DB::raw('SUM(order_items.quantity) as total_quantity')
-            )
-            ->where('orders.user_id', $customerId)
-            ->groupBy('products.id', 'products.name', 'products.price', 'products.slug')
-            ->orderBy('total_quantity', 'desc')
-            ->limit(3)
-            ->get();
+        return $orders
+            ->filter(fn ($order) => filled($order->billing_email))
+            ->groupBy(fn ($order) => strtolower((string) $order->billing_email))
+            ->map(function (Collection $customerOrders, string $email) {
+                $latestOrder = $customerOrders->sortByDesc('created_at')->first();
+                $oldestOrder = $customerOrders->sortBy('created_at')->first();
+
+                return [
+                    'id' => rawurlencode($email),
+                    'name' => $latestOrder?->billing_name,
+                    'email' => $latestOrder?->billing_email,
+                    'phone' => $latestOrder?->billing_phone,
+                    'address' => $latestOrder?->billing_address,
+                    'created_at' => $oldestOrder?->created_at,
+                    'order_count' => $customerOrders->count(),
+                    'total_spent' => (float) $customerOrders
+                        ->filter(fn ($order) => $order->payment_status === 'paid')
+                        ->sum('total'),
+                    'latest_order_at' => $latestOrder?->created_at,
+                ];
+            })
+            ->values();
+    }
+
+    private function paginateCollection(Collection $items, int $perPage, int $page, string $path, array $query = []): LengthAwarePaginator
+    {
+        $page = max($page, 1);
+
+        return new LengthAwarePaginator(
+            $items->forPage($page, $perPage)->values(),
+            $items->count(),
+            $perPage,
+            $page,
+            [
+                'path' => $path,
+                'query' => $query,
+            ]
+        );
     }
 }

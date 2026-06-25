@@ -1,0 +1,175 @@
+{
+    "summary": {
+        "PASS": 18,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 11:25:59",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "tenant_id": "awrah",
+            "name": "cart add route exists",
+            "status": "PASS",
+            "message": "Cart add route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "order store route exists",
+            "status": "PASS",
+            "message": "Order store route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "cart blocks quantity above stock",
+            "status": "PASS",
+            "message": "Cart did not add quantity above available stock.",
+            "data": {
+                "stock": 2,
+                "cart_quantity": 0
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "cart allows quantity within stock",
+            "status": "PASS",
+            "message": "Cart allowed quantity within stock.",
+            "data": {
+                "stock": 2,
+                "cart_quantity": "2",
+                "cart_id": 138,
+                "user_id": 95
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "checkout deducts stock after order",
+            "status": "PASS",
+            "message": "Checkout deducted ordered quantity from stock.",
+            "data": {
+                "remaining_stock": 0
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "checkout clears ordered cart item",
+            "status": "PASS",
+            "message": "Checkout cleared ordered cart item.",
+            "data": {
+                "cart_remaining": 0
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "cart add route exists",
+            "status": "PASS",
+            "message": "Cart add route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "order store route exists",
+            "status": "PASS",
+            "message": "Order store route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "cart blocks quantity above stock",
+            "status": "PASS",
+            "message": "Cart did not add quantity above available stock.",
+            "data": {
+                "stock": 2,
+                "cart_quantity": 0
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "cart allows quantity within stock",
+            "status": "PASS",
+            "message": "Cart allowed quantity within stock.",
+            "data": {
+                "stock": 2,
+                "cart_quantity": "2",
+                "cart_id": 235,
+                "user_id": 98
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "checkout deducts stock after order",
+            "status": "PASS",
+            "message": "Checkout deducted ordered quantity from stock.",
+            "data": {
+                "remaining_stock": 0
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "checkout clears ordered cart item",
+            "status": "PASS",
+            "message": "Checkout cleared ordered cart item.",
+            "data": {
+                "cart_remaining": 0
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "cart add route exists",
+            "status": "PASS",
+            "message": "Cart add route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "order store route exists",
+            "status": "PASS",
+            "message": "Order store route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "cart blocks quantity above stock",
+            "status": "PASS",
+            "message": "Cart did not add quantity above available stock.",
+            "data": {
+                "stock": 2,
+                "cart_quantity": 0
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "cart allows quantity within stock",
+            "status": "PASS",
+            "message": "Cart allowed quantity within stock.",
+            "data": {
+                "stock": 2,
+                "cart_quantity": "2",
+                "cart_id": 136,
+                "user_id": 96
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "checkout deducts stock after order",
+            "status": "PASS",
+            "message": "Checkout deducted ordered quantity from stock.",
+            "data": {
+                "remaining_stock": 0
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "checkout clears ordered cart item",
+            "status": "PASS",
+            "message": "Checkout cleared ordered cart item.",
+            "data": {
+                "cart_remaining": 0
+            }
+        }
+    ]
+}

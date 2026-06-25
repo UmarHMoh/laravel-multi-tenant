@@ -1,0 +1,103 @@
+{
+    "summary": {
+        "PASS": 10,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 10:52:40",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "name": "auth controller does not restrict login by You do not have access to this store",
+            "status": "PASS",
+            "message": "AuthenticatedSessionController does not contain You do not have access to this store.",
+            "data": []
+        },
+        {
+            "name": "auth controller does not restrict login by tenant('email')",
+            "status": "PASS",
+            "message": "AuthenticatedSessionController does not contain tenant('email').",
+            "data": []
+        },
+        {
+            "name": "auth controller does not restrict login by tenant()->email",
+            "status": "PASS",
+            "message": "AuthenticatedSessionController does not contain tenant()->email.",
+            "data": []
+        },
+        {
+            "name": "auth controller does not restrict login by store_email",
+            "status": "PASS",
+            "message": "AuthenticatedSessionController does not contain store_email.",
+            "data": []
+        },
+        {
+            "name": "awrah: profile login email authenticates",
+            "status": "PASS",
+            "message": "Tenant user profile email/password authenticates successfully.",
+            "data": {
+                "tenant_id": "awrah",
+                "tenant_db": "tenant_awrah",
+                "login_email": "profile-login-audit@example.com",
+                "store_email": "support@awrah.com",
+                "same_as_store_email": false
+            }
+        },
+        {
+            "name": "awrah: store email is separate from login identity",
+            "status": "PASS",
+            "message": "Store contact email is not required to be the login email.",
+            "data": {
+                "tenant_id": "awrah",
+                "login_email": "profile-login-audit@example.com",
+                "store_email": "support@awrah.com"
+            }
+        },
+        {
+            "name": "tenant1: profile login email authenticates",
+            "status": "PASS",
+            "message": "Tenant user profile email/password authenticates successfully.",
+            "data": {
+                "tenant_id": "tenant1",
+                "tenant_db": "tenant_tenant1",
+                "login_email": "profile-login-audit@example.com",
+                "store_email": "aromaniac@gmail.com",
+                "same_as_store_email": false
+            }
+        },
+        {
+            "name": "tenant1: store email is separate from login identity",
+            "status": "PASS",
+            "message": "Store contact email is not required to be the login email.",
+            "data": {
+                "tenant_id": "tenant1",
+                "login_email": "profile-login-audit@example.com",
+                "store_email": "aromaniac@gmail.com"
+            }
+        },
+        {
+            "name": "tenant2: profile login email authenticates",
+            "status": "PASS",
+            "message": "Tenant user profile email/password authenticates successfully.",
+            "data": {
+                "tenant_id": "tenant2",
+                "tenant_db": "tenant_tenant2",
+                "login_email": "profile-login-audit@example.com",
+                "store_email": "admin@tenant2.com",
+                "same_as_store_email": false
+            }
+        },
+        {
+            "name": "tenant2: store email is separate from login identity",
+            "status": "PASS",
+            "message": "Store contact email is not required to be the login email.",
+            "data": {
+                "tenant_id": "tenant2",
+                "login_email": "profile-login-audit@example.com",
+                "store_email": "admin@tenant2.com"
+            }
+        }
+    ]
+}

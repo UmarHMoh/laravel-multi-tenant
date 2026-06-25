@@ -1,0 +1,665 @@
+{
+    "summary": {
+        "PASS": 25,
+        "FAIL": 0,
+        "WARN": 4,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 03:27:17",
+    "controller_render_count": 29,
+    "failures": [],
+    "warnings": [
+        {
+            "section": "inertia_props",
+            "status": "WARN",
+            "message": "Controller sends top-level props not declared by Vue. Usually safe, but review.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Auth/AuthenticatedSessionController.php",
+                "page": "auth/Login",
+                "vue_file": "resources/js/pages/auth/Login.vue",
+                "controller_props": [
+                    "canResetPassword",
+                    "status",
+                    "tenant"
+                ],
+                "vue_props": [
+                    "status",
+                    "canResetPassword"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": [
+                    "tenant"
+                ]
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "WARN",
+            "message": "Controller sends props but Vue does not declare defineProps. Manual review needed.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Auth/NewPasswordController.php",
+                "page": "auth/ResetPassword",
+                "vue_file": "resources/js/pages/auth/ResetPassword.vue",
+                "controller_props": [
+                    "email",
+                    "token"
+                ],
+                "vue_props": [],
+                "extra_from_controller": [
+                    "email",
+                    "token"
+                ]
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "WARN",
+            "message": "Controller sends props but Vue does not declare defineProps. Manual review needed.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Settings/PasswordController.php",
+                "page": "settings/Password",
+                "vue_file": "resources/js/pages/settings/Password.vue",
+                "controller_props": [
+                    "mustVerifyEmail",
+                    "status"
+                ],
+                "vue_props": [],
+                "extra_from_controller": [
+                    "mustVerifyEmail",
+                    "status"
+                ]
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "WARN",
+            "message": "Controller sends props but Vue does not declare defineProps. Manual review needed.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Settings/ProfileController.php",
+                "page": "settings/Profile",
+                "vue_file": "resources/js/pages/settings/Profile.vue",
+                "controller_props": [
+                    "mustVerifyEmail",
+                    "status"
+                ],
+                "vue_props": [],
+                "extra_from_controller": [
+                    "mustVerifyEmail",
+                    "status"
+                ]
+            }
+        }
+    ],
+    "all_findings": [
+        {
+            "section": "inertia_props",
+            "status": "WARN",
+            "message": "Controller sends top-level props not declared by Vue. Usually safe, but review.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Auth/AuthenticatedSessionController.php",
+                "page": "auth/Login",
+                "vue_file": "resources/js/pages/auth/Login.vue",
+                "controller_props": [
+                    "canResetPassword",
+                    "status",
+                    "tenant"
+                ],
+                "vue_props": [
+                    "status",
+                    "canResetPassword"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": [
+                    "tenant"
+                ]
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Auth/ConfirmablePasswordController.php",
+                "page": "auth/ConfirmPassword",
+                "vue_file": "resources/js/pages/auth/ConfirmPassword.vue",
+                "controller_props": [],
+                "vue_props": [],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Auth/EmailVerificationPromptController.php",
+                "page": "auth/VerifyEmail",
+                "vue_file": "resources/js/pages/auth/VerifyEmail.vue",
+                "controller_props": [
+                    "status"
+                ],
+                "vue_props": [
+                    "status"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "WARN",
+            "message": "Controller sends props but Vue does not declare defineProps. Manual review needed.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Auth/NewPasswordController.php",
+                "page": "auth/ResetPassword",
+                "vue_file": "resources/js/pages/auth/ResetPassword.vue",
+                "controller_props": [
+                    "email",
+                    "token"
+                ],
+                "vue_props": [],
+                "extra_from_controller": [
+                    "email",
+                    "token"
+                ]
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Auth/PasswordResetLinkController.php",
+                "page": "auth/ForgotPassword",
+                "vue_file": "resources/js/pages/auth/ForgotPassword.vue",
+                "controller_props": [
+                    "status"
+                ],
+                "vue_props": [
+                    "status"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Auth/RegisteredUserController.php",
+                "page": "auth/Register",
+                "vue_file": "resources/js/pages/auth/Register.vue",
+                "controller_props": [],
+                "vue_props": [],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Central/DashboardController.php",
+                "page": "central/Dashboard",
+                "vue_file": "resources/js/pages/central/Dashboard.vue",
+                "controller_props": [
+                    "stats",
+                    "recentTenants"
+                ],
+                "vue_props": [
+                    "stats",
+                    "recentTenants"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Central/PaymentSettingController.php",
+                "page": "central/payment-settings/Edit",
+                "vue_file": "resources/js/pages/central/payment-settings/Edit.vue",
+                "controller_props": [
+                    "setting"
+                ],
+                "vue_props": [
+                    "setting"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Central/PayoutBankOptionController.php",
+                "page": "central/bank-options/Index",
+                "vue_file": "resources/js/pages/central/bank-options/Index.vue",
+                "controller_props": [
+                    "banks"
+                ],
+                "vue_props": [
+                    "banks"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Central/PayoutController.php",
+                "page": "central/payouts/Index",
+                "vue_file": "resources/js/pages/central/payouts/Index.vue",
+                "controller_props": [
+                    "tenants",
+                    "summary"
+                ],
+                "vue_props": [
+                    "tenants",
+                    "summary"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Central/PayoutController.php",
+                "page": "central/payouts/Show",
+                "vue_file": "resources/js/pages/central/payouts/Show.vue",
+                "controller_props": [
+                    "tenant",
+                    "payoutAccounts",
+                    "latestPayoutAccount",
+                    "pendingTransactions",
+                    "payouts",
+                    "summary"
+                ],
+                "vue_props": [
+                    "tenant",
+                    "payoutAccounts",
+                    "latestPayoutAccount",
+                    "pendingTransactions",
+                    "payouts",
+                    "summary"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Central/PayoutController.php",
+                "page": "central/payouts/BatchShow",
+                "vue_file": "resources/js/pages/central/payouts/BatchShow.vue",
+                "controller_props": [
+                    "payout"
+                ],
+                "vue_props": [
+                    "payout"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Central/PlanController.php",
+                "page": "central/plans/Index",
+                "vue_file": "resources/js/pages/central/plans/Index.vue",
+                "controller_props": [
+                    "plans"
+                ],
+                "vue_props": [
+                    "plans"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Central/PlanController.php",
+                "page": "central/plans/Create",
+                "vue_file": "resources/js/pages/central/plans/Create.vue",
+                "controller_props": [],
+                "vue_props": [],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Central/PlanController.php",
+                "page": "central/plans/Edit",
+                "vue_file": "resources/js/pages/central/plans/Edit.vue",
+                "controller_props": [
+                    "plan"
+                ],
+                "vue_props": [
+                    "plan"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Central/PlatformSettingController.php",
+                "page": "central/settings/Edit",
+                "vue_file": "resources/js/pages/central/settings/Edit.vue",
+                "controller_props": [
+                    "settings"
+                ],
+                "vue_props": [
+                    "settings"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Central/PlatformTransactionController.php",
+                "page": "central/transactions/Index",
+                "vue_file": "resources/js/pages/central/transactions/Index.vue",
+                "controller_props": [
+                    "transactions",
+                    "summary"
+                ],
+                "vue_props": [
+                    "transactions",
+                    "summary"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Central/PlatformTransactionController.php",
+                "page": "central/transactions/Show",
+                "vue_file": "resources/js/pages/central/transactions/Show.vue",
+                "controller_props": [
+                    "transaction"
+                ],
+                "vue_props": [
+                    "transaction"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Central/PlatformTransactionController.php",
+                "page": "central/transactions/Create",
+                "vue_file": "resources/js/pages/central/transactions/Create.vue",
+                "controller_props": [
+                    "tenants"
+                ],
+                "vue_props": [
+                    "tenants"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Central/TenantController.php",
+                "page": "central/tenants/Index",
+                "vue_file": "resources/js/pages/central/tenants/Index.vue",
+                "controller_props": [
+                    "tenants"
+                ],
+                "vue_props": [
+                    "tenants"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Central/TenantController.php",
+                "page": "central/tenants/Show",
+                "vue_file": "resources/js/pages/central/tenants/Show.vue",
+                "controller_props": [
+                    "tenant",
+                    "databaseName",
+                    "plans",
+                    "storeSettings",
+                    "subscriptionPayments",
+                    "latestSubscriptionPayment"
+                ],
+                "vue_props": [
+                    "tenant",
+                    "databaseName",
+                    "plans",
+                    "storeSettings",
+                    "subscriptionPayments",
+                    "latestSubscriptionPayment"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Central/TenantController.php",
+                "page": "central/tenants/Create",
+                "vue_file": "resources/js/pages/central/tenants/Create.vue",
+                "controller_props": [],
+                "vue_props": [],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "WARN",
+            "message": "Controller sends props but Vue does not declare defineProps. Manual review needed.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Settings/PasswordController.php",
+                "page": "settings/Password",
+                "vue_file": "resources/js/pages/settings/Password.vue",
+                "controller_props": [
+                    "mustVerifyEmail",
+                    "status"
+                ],
+                "vue_props": [],
+                "extra_from_controller": [
+                    "mustVerifyEmail",
+                    "status"
+                ]
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "WARN",
+            "message": "Controller sends props but Vue does not declare defineProps. Manual review needed.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Settings/ProfileController.php",
+                "page": "settings/Profile",
+                "vue_file": "resources/js/pages/settings/Profile.vue",
+                "controller_props": [
+                    "mustVerifyEmail",
+                    "status"
+                ],
+                "vue_props": [],
+                "extra_from_controller": [
+                    "mustVerifyEmail",
+                    "status"
+                ]
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Tenant/CartController.php",
+                "page": "tenant/ShoppingCartList",
+                "vue_file": "resources/js/pages/tenant/ShoppingCartList.vue",
+                "controller_props": [
+                    "cart",
+                    "cartItems"
+                ],
+                "vue_props": [
+                    "cart",
+                    "cartItems"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Tenant/HomepageController.php",
+                "page": "tenant/Homepage",
+                "vue_file": "resources/js/pages/tenant/Homepage.vue",
+                "controller_props": [
+                    "store",
+                    "categories",
+                    "products",
+                    "cartItemCount",
+                    "cartId",
+                    "featuredProducts",
+                    "filters"
+                ],
+                "vue_props": [
+                    "store",
+                    "categories",
+                    "products",
+                    "cartItemCount",
+                    "cartId",
+                    "featuredProducts",
+                    "filters"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Tenant/OrderController.php",
+                "page": "tenant/Payment",
+                "vue_file": "resources/js/pages/tenant/Payment.vue",
+                "controller_props": [
+                    "cart",
+                    "cartItems",
+                    "user",
+                    "store"
+                ],
+                "vue_props": [
+                    "cart",
+                    "cartItems",
+                    "user",
+                    "store"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Tenant/OrderController.php",
+                "page": "tenant/OrderConfirmation",
+                "vue_file": "resources/js/pages/tenant/OrderConfirmation.vue",
+                "controller_props": [
+                    "order",
+                    "orderItems",
+                    "store",
+                    "platformTransaction"
+                ],
+                "vue_props": [
+                    "order",
+                    "orderItems",
+                    "store",
+                    "platformTransaction"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        },
+        {
+            "section": "inertia_props",
+            "status": "PASS",
+            "message": "Controller props match Vue defineProps.",
+            "data": {
+                "controller_file": "app/Http/Controllers/Tenant/ProductController.php",
+                "page": "tenant/ProductDetail",
+                "vue_file": "resources/js/pages/tenant/ProductDetail.vue",
+                "controller_props": [
+                    "product",
+                    "relatedProducts",
+                    "cartItemCount"
+                ],
+                "vue_props": [
+                    "product",
+                    "cartItemCount",
+                    "relatedProducts"
+                ],
+                "missing_from_controller": [],
+                "extra_from_controller": []
+            }
+        }
+    ]
+}

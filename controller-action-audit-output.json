@@ -1,0 +1,152 @@
+{
+    "summary": {
+        "PASS": 9,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 04:51:36",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "tenant_actions",
+            "name": "tenant billing test payment",
+            "status": "PASS",
+            "message": "Tenant billing test payment creates payment and extends renewal.",
+            "data": {
+                "before_payment_count": 3,
+                "after_payment_count": 4,
+                "latest_payment_source": "tenant_portal_test",
+                "latest_payment_status": "paid",
+                "before_renewal": "2026-10-23 17:45:48",
+                "after_renewal": "2026-11-23 17:45:48"
+            }
+        },
+        {
+            "section": "tenant_actions",
+            "name": "tenant payout account save",
+            "status": "PASS",
+            "message": "Tenant payout account saves expected fields and resets status to pending.",
+            "data": {
+                "account_id": 1,
+                "account_holder_name": "Audit Account Holder",
+                "bank_name": "Republic Bank",
+                "branch_transit_number": "00123",
+                "raw_branch_transit_number": "eyJpdiI6IjhhTEJLeUVHTGpHRHBTWWordmNScHc9PSIsInZhbHVlIjoiT01MbWFQdUYyVyt4ZVdyL1M3NWZLdz09IiwibWFjIjoiMzM4ZDNhZDVlZmM0ZmZlYTA2YmE1ZTRiNmYzNTgyYjU2OWQ1ZDEyZjdiZmY4YzA5NmI4NWI4ZTdjY2YzZDM2MiIsInRhZyI6IiJ9",
+                "status": "pending"
+            }
+        },
+        {
+            "section": "tenant_actions",
+            "name": "tenant store settings save",
+            "status": "PASS",
+            "message": "Tenant store settings save expected JSON data.",
+            "data": {
+                "saved_data": {
+                    "created_at": "2026-06-23 15:35:00",
+                    "store_name": "Audit Store Name",
+                    "tiktok_url": "https://tiktok.com/@audit",
+                    "updated_at": "2026-06-23 15:35:00",
+                    "store_email": "audit-store@example.com",
+                    "store_phone": "8681234567",
+                    "delivery_fee": 25,
+                    "facebook_url": "https://facebook.com/audit",
+                    "instagram_url": "https://instagram.com/audit",
+                    "store_currency": "TTD",
+                    "tenancy_db_name": "tenant_tenant1",
+                    "whatsapp_number": "8681234567",
+                    "business_address": "Audit Business Address",
+                    "store_description": "Audit description",
+                    "cash_on_delivery_enabled": true
+                }
+            }
+        },
+        {
+            "section": "central_actions",
+            "name": "central manual subscription payment",
+            "status": "PASS",
+            "message": "Central manual payment creates payment and extends renewal.",
+            "data": {
+                "before_payment_count": 3,
+                "after_payment_count": 4,
+                "latest_reference": "AUDIT-MANUAL-PAYMENT",
+                "latest_payer_name": "Audit Payer",
+                "latest_payer_email": "audit-payer@example.com",
+                "before_renewal": "2026-10-23 17:45:48",
+                "after_renewal": "2026-11-23 17:45:48"
+            }
+        },
+        {
+            "section": "central_actions",
+            "name": "central payout account approve",
+            "status": "PASS",
+            "message": "Central payout account review action updates status correctly.",
+            "data": {
+                "account_id": 1,
+                "expected_status": "verified",
+                "actual_status": "verified",
+                "reviewed_at": "2026-06-24 04:51:36",
+                "review_notes": "Audit review note for approve"
+            }
+        },
+        {
+            "section": "central_actions",
+            "name": "central payout account reject",
+            "status": "PASS",
+            "message": "Central payout account review action updates status correctly.",
+            "data": {
+                "account_id": 1,
+                "expected_status": "rejected",
+                "actual_status": "rejected",
+                "reviewed_at": "2026-06-24 04:51:36",
+                "review_notes": "Audit review note for reject"
+            }
+        },
+        {
+            "section": "central_actions",
+            "name": "central payout account pending",
+            "status": "PASS",
+            "message": "Central payout account review action updates status correctly.",
+            "data": {
+                "account_id": 1,
+                "expected_status": "pending",
+                "actual_status": "pending",
+                "reviewed_at": "2026-06-24 04:51:36",
+                "review_notes": "Audit review note for pending"
+            }
+        },
+        {
+            "section": "central_actions",
+            "name": "central platform settings update",
+            "status": "PASS",
+            "message": "Central platform settings update saves expected fields.",
+            "data": {
+                "platform_name": "Audit Platform",
+                "owner_email": "audit-owner@example.com",
+                "subscription_currency": "TTD",
+                "renewal_grace_days": 7
+            }
+        },
+        {
+            "section": "central_actions",
+            "name": "central payment settings update",
+            "status": "PASS",
+            "message": "Central payment settings update saves expected universal payment configuration fields.",
+            "data": {
+                "id": 4,
+                "name": "Audit WiPay Configuration",
+                "config_type": "saved",
+                "provider": "wipay",
+                "auth_type": "api_key",
+                "environment": "sandbox",
+                "country_code": "TT",
+                "currency": "TTD",
+                "account_number": "AUDIT123",
+                "processor_fee_percent": "3.0000",
+                "processor_fee_fixed": "1.00",
+                "is_active": true
+            }
+        }
+    ]
+}

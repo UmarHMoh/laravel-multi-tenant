@@ -1,0 +1,187 @@
+{
+    "summary": {
+        "PASS": 15,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 10:34:42",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "tenant_id": "awrah",
+            "name": "order index route exists",
+            "status": "PASS",
+            "message": "Tenant order index route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "order show route exists",
+            "status": "PASS",
+            "message": "Tenant order show route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "order index returns management props",
+            "status": "PASS",
+            "message": "Order index returns orders, stats, filters, and status options.",
+            "data": {
+                "props": [
+                    "orders",
+                    "stats",
+                    "filters",
+                    "statusOptions",
+                    "paymentStatusOptions"
+                ],
+                "filters": {
+                    "status": "pending",
+                    "payment_status": "pending",
+                    "search": "Audit Customer"
+                }
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "order show returns detail props",
+            "status": "PASS",
+            "message": "Order show returns detail, status options, and payment status options.",
+            "data": {
+                "props": [
+                    "order",
+                    "statusOptions",
+                    "paymentStatusOptions"
+                ],
+                "order_id": 152
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "order status updates work",
+            "status": "PASS",
+            "message": "Order status and payment status update actions work.",
+            "data": {
+                "status": "processing",
+                "payment_status": "failed"
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "order index route exists",
+            "status": "PASS",
+            "message": "Tenant order index route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "order show route exists",
+            "status": "PASS",
+            "message": "Tenant order show route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "order index returns management props",
+            "status": "PASS",
+            "message": "Order index returns orders, stats, filters, and status options.",
+            "data": {
+                "props": [
+                    "orders",
+                    "stats",
+                    "filters",
+                    "statusOptions",
+                    "paymentStatusOptions"
+                ],
+                "filters": {
+                    "status": "pending",
+                    "payment_status": "pending",
+                    "search": "Audit Customer"
+                }
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "order show returns detail props",
+            "status": "PASS",
+            "message": "Order show returns detail, status options, and payment status options.",
+            "data": {
+                "props": [
+                    "order",
+                    "statusOptions",
+                    "paymentStatusOptions"
+                ],
+                "order_id": 177
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "order status updates work",
+            "status": "PASS",
+            "message": "Order status and payment status update actions work.",
+            "data": {
+                "status": "processing",
+                "payment_status": "failed"
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "order index route exists",
+            "status": "PASS",
+            "message": "Tenant order index route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "order show route exists",
+            "status": "PASS",
+            "message": "Tenant order show route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "order index returns management props",
+            "status": "PASS",
+            "message": "Order index returns orders, stats, filters, and status options.",
+            "data": {
+                "props": [
+                    "orders",
+                    "stats",
+                    "filters",
+                    "statusOptions",
+                    "paymentStatusOptions"
+                ],
+                "filters": {
+                    "status": "pending",
+                    "payment_status": "pending",
+                    "search": "Audit Customer"
+                }
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "order show returns detail props",
+            "status": "PASS",
+            "message": "Order show returns detail, status options, and payment status options.",
+            "data": {
+                "props": [
+                    "order",
+                    "statusOptions",
+                    "paymentStatusOptions"
+                ],
+                "order_id": 152
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "order status updates work",
+            "status": "PASS",
+            "message": "Order status and payment status update actions work.",
+            "data": {
+                "status": "processing",
+                "payment_status": "failed"
+            }
+        }
+    ]
+}

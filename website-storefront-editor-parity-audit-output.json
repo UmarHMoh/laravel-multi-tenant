@@ -1,0 +1,63 @@
+{
+    "summary": {
+        "PASS": 7,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 23:43:08",
+    "homepage_path": "resources/js/pages/tenant/Homepage.vue",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "website_storefront_editor_parity",
+            "name": "stage marker exists on storefront",
+            "status": "PASS",
+            "message": "S58 storefront marker found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_editor_parity",
+            "name": "stage marker exists on editor",
+            "status": "PASS",
+            "message": "S58 editor marker found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_editor_parity",
+            "name": "storefront builder homepage marker exists",
+            "status": "PASS",
+            "message": "storefront builder homepage marker found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_editor_parity",
+            "name": "storefront preview parity label exists",
+            "status": "PASS",
+            "message": "storefront preview parity label found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_editor_parity",
+            "name": "product card link parity exists",
+            "status": "PASS",
+            "message": "product link parity found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_editor_parity",
+            "name": "homepage still renders template",
+            "status": "PASS",
+            "message": "Homepage Vue template found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_editor_parity",
+            "name": "editor still renders template",
+            "status": "PASS",
+            "message": "Editor Vue template found.",
+            "data": []
+        }
+    ]
+}

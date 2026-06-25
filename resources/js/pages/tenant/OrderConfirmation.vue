@@ -1,188 +1,166 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
-import { CheckCircle, ArrowLeft, FileText, MapPin, CreditCard } from 'lucide-vue-next';
+import StorefrontHeader from '@/components/tenant/StorefrontHeader.vue'
+import { Head } from '@inertiajs/vue3'
 
 const props = defineProps({
-    order: Object,
-    orderItems: Array
-});
+  order: { type: Object, required: true },
+  orderItems: { type: Array, default: () => [] },
+  store: { type: Object, default: () => ({}) },
+  platformTransaction: { type: Object, default: null },
+})
 
-// Calculate order totals
-const subtotal = props.orderItems.reduce((sum, item) => sum + item.subtotal, 0);
-const tax = props.order.total - subtotal - 10; // Assuming shipping is $10
+const currency = props.store?.currency || props.order?.payment_metadata?.currency || 'USD'
+
+const money = (value) => {
+  const number = Number(value || 0)
+  return `${currency} ${number.toFixed(2)}`
+}
+
+const statusClass = (status) => {
+  const value = String(status || '').toLowerCase()
+
+  if (['paid', 'completed', 'processing', 'delivered'].includes(value)) {
+    return 'bg-green-100 text-green-800'
+  }
+
+  if (['pending', 'requested'].includes(value)) {
+    return 'bg-yellow-100 text-yellow-800'
+  }
+
+  if (['failed', 'cancelled', 'canceled'].includes(value)) {
+    return 'bg-red-100 text-red-800'
+  }
+
+  return 'bg-gray-100 text-gray-800'
+}
 </script>
 
 <template>
-    <Head title="Order Confirmation" />
+  <Head :title="`Order ${order.order_number || order.id}`" />
 
-    <div>
-        <div class="container mx-auto px-4 py-8">
-            <div class="max-w-4xl mx-auto">
-                <!-- Success Banner -->
-                <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-8 flex items-center">
-                    <CheckCircle class="h-8 w-8 text-green-500 mr-4 shrink-0" />
-                    <div>
-                        <h1 class="text-2xl font-bold text-green-800">Thank you for your order!</h1>
-                        <p class="text-green-700 mt-1">
-                            Your order has been received and is now being processed. The order details have been sent to {{ order.billing_email }}.
-                        </p>
-                    </div>
-                </div>
+  <main class="min-h-screen bg-gray-50">
+    <StorefrontHeader :store="$page.props.store || {}" :cart-items="$page.props.cartItems || $page.props.orderItems || []" />
+    <div class="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+      <div class="mb-6 rounded-2xl border border-green-200 bg-green-50 p-6">
+        <p class="text-sm font-semibold uppercase tracking-wide text-green-700">Order placed</p>
+        <h1 class="mt-2 text-3xl font-bold text-gray-900">
+          Thank you for your order.
+        </h1>
+        <p class="mt-2 text-gray-700">
+          Your order
+          <span class="font-semibold">#{{ order.order_number || order.id }}</span>
+          was received by {{ store.name || 'the store' }}.
+        </p>
+      </div>
 
-                <!-- Order Summary -->
-                <div class="bg-white rounded-lg shadow overflow-hidden mb-8">
-                    <div class="p-6 border-b">
-                        <div class="flex justify-between items-center">
-                            <h2 class="text-lg font-medium">Order Summary</h2>
-                            <span class="text-sm text-gray-500">
-                                Order Date: {{ new Date(order.created_at).toLocaleDateString() }}
-                            </span>
-                        </div>
-                    </div>
+      <div class="grid gap-6 lg:grid-cols-3">
+        <div class="space-y-6 lg:col-span-2">
+          <section class="rounded-2xl border bg-white p-6 shadow-sm">
+            <div class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 class="text-xl font-semibold text-gray-900">Order items</h2>
+                <p class="text-sm text-gray-500">{{ orderItems.length }} item(s)</p>
+              </div>
 
-                    <div class="p-6">
-                        <div class="flex flex-col md:flex-row md:justify-between mb-6 gap-4">
-                            <div class="md:w-1/2">
-                                <h3 class="font-medium text-gray-700 mb-2 flex items-center">
-                                    <FileText class="h-4 w-4 mr-2 text-gray-500" />
-                                    Order Details
-                                </h3>
-                                <div class="bg-gray-50 p-4 rounded-md space-y-1 text-sm">
-                                    <p><strong>Order Number:</strong> {{ order.order_number }}</p>
-                                    <p><strong>Order Status:</strong> <span class="capitalize">{{ order.status }}</span></p>
-                                    <p><strong>Payment Method:</strong>
-                                        <span class="capitalize"> {{ order.payment_method.replace('_', ' ') }}</span>
-                                    </p>
-                                    <p><strong>Payment Status:</strong> <span class="capitalize">{{ order.payment_status }}</span></p>
-                                </div>
-                            </div>
-
-                            <div class="md:w-1/2">
-                                <h3 class="font-medium text-gray-700 mb-2 flex items-center">
-                                    <MapPin class="h-4 w-4 mr-2 text-gray-500" />
-                                    Shipping Address
-                                </h3>
-                                <div class="bg-gray-50 p-4 rounded-md text-sm">
-                                    <p>{{ order.shipping_name }}</p>
-                                    <p>{{ order.shipping_address }}</p>
-                                    <p>{{ order.shipping_city }}, {{ order.shipping_state }} {{ order.shipping_zipcode }}</p>
-                                    <p>{{ order.shipping_country }}</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Order Items -->
-                        <div class="mt-8">
-                            <h3 class="font-medium text-gray-700 mb-4">Order Items</h3>
-
-                            <div class="overflow-x-auto">
-                                <table class="min-w-full divide-y divide-gray-200">
-                                    <thead class="bg-gray-50">
-                                        <tr>
-                                            <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                Product
-                                            </th>
-                                            <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                Price
-                                            </th>
-                                            <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                Quantity
-                                            </th>
-                                            <th scope="col" class="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                Subtotal
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="bg-white divide-y divide-gray-200">
-                                        <tr v-for="item in orderItems" :key="item.id">
-                                            <td class="px-4 py-4 whitespace-nowrap">
-                                                <div class="flex items-center">
-                                                    <div class="text-sm font-medium text-gray-900">
-                                                        {{ item.product_name }}
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-4 whitespace-nowrap">
-                                                <div class="text-sm text-gray-900">${{ Number(item.price).toFixed(2) }}</div>
-                                            </td>
-                                            <td class="px-4 py-4 whitespace-nowrap">
-                                                <div class="text-sm text-gray-900">{{ item.quantity }}</div>
-                                            </td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-right">
-                                                <div class="text-sm font-medium text-gray-900">
-                                                    ${{ Number(item.subtotal).toFixed(2) }}
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <!-- Order Totals -->
-                            <div class="mt-6 border-t pt-6">
-                                <div class="flex justify-end">
-                                    <div class="w-full md:w-64 space-y-3">
-                                        <div class="flex justify-between">
-                                            <span class="text-gray-600">Subtotal:</span>
-                                            <span class="font-medium">${{ Number(subtotal).toFixed(2) }}</span>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <span class="text-gray-600">Shipping:</span>
-                                            <span class="font-medium">$10.00</span>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <span class="text-gray-600">Tax:</span>
-                                            <span class="font-medium">${{ Number(tax).toFixed(2) }}</span>
-                                        </div>
-                                        <div class="border-t pt-3 flex justify-between">
-                                            <span class="font-bold">Total:</span>
-                                            <span class="font-bold">${{ Number(order.total).toFixed(2) }}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Payment Instructions -->
-                        <div v-if="order.payment_method === 'Bank Transfer' && order.payment_status === 'pending'" class="mt-8 border-t pt-6">
-                            <h3 class="font-medium text-gray-700 mb-2 flex items-center">
-                                <CreditCard class="h-4 w-4 mr-2 text-gray-500" />
-                                Payment Instructions
-                            </h3>
-
-                            <div class="bg-yellow-50 border border-yellow-200 rounded-md p-4 text-sm">
-                                <p class="font-medium text-yellow-800 mb-2">
-                                    Please complete your payment by transferring the total amount to the following account:
-                                </p>
-                                <div class="space-y-1 text-yellow-700">
-                                    <p><strong>Bank Name:</strong> Example Bank</p>
-                                    <p><strong>Account Name:</strong> Example Store</p>
-                                    <p><strong>Account Number:</strong> 1234567890</p>
-                                    <p><strong>Routing Number:</strong> 987654321</p>
-                                    <p><strong>Reference:</strong> {{ order.order_number }}</p>
-                                    <p class="mt-3"><strong>Amount:</strong> ${{ Number(order.total).toFixed(2) }}</p>
-                                </div>
-                                <p class="mt-3 text-yellow-700">
-                                    Your order will be processed once payment is confirmed.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="flex justify-between">
-                    <Link
-                        :href="route('home')"
-                        class="inline-flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 px-6 py-3 rounded-md hover:bg-gray-50 transition"
-                    >
-                        <ArrowLeft class="h-5 w-5" />
-                        Continue Shopping
-                    </Link>
-
-                    <!-- Add a print button or other actions as needed -->
-                </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded-full px-3 py-1 text-xs font-semibold" :class="statusClass(order.status)">
+                  Order: {{ order.status || 'pending' }}
+                </span>
+                <span class="rounded-full px-3 py-1 text-xs font-semibold" :class="statusClass(order.payment_status)">
+                  Payment: {{ order.payment_status || 'pending' }}
+                </span>
+              </div>
             </div>
+
+            <div class="divide-y">
+              <div v-for="item in orderItems" :key="item.id" class="flex items-start justify-between gap-4 py-4">
+                <div>
+                  <p class="font-medium text-gray-900">
+                    {{ item.product_name || item.product?.name || 'Product' }}
+                  </p>
+                  <p class="text-sm text-gray-500">Qty {{ item.quantity }} × {{ money(item.price) }}</p>
+                </div>
+                <p class="font-semibold text-gray-900">{{ money(item.subtotal) }}</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="rounded-2xl border bg-white p-6 shadow-sm">
+            <h2 class="mb-4 text-xl font-semibold text-gray-900">Delivery details</h2>
+
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-sm font-semibold text-gray-700">Billing</p>
+                <div class="mt-2 text-sm text-gray-600">
+                  <p>{{ order.billing_name }}</p>
+                  <p>{{ order.billing_email }}</p>
+                  <p>{{ order.billing_phone }}</p>
+                  <p>{{ order.billing_address }}</p>
+                  <p>{{ order.billing_city }}, {{ order.billing_state }}</p>
+                  <p>{{ order.billing_country }} {{ order.billing_zipcode }}</p>
+                </div>
+              </div>
+
+              <div>
+                <p class="text-sm font-semibold text-gray-700">Shipping</p>
+                <div class="mt-2 text-sm text-gray-600">
+                  <p>{{ order.shipping_name || order.billing_name }}</p>
+                  <p>{{ order.shipping_address }}</p>
+                  <p>{{ order.shipping_city }}, {{ order.shipping_state }}</p>
+                  <p>{{ order.shipping_country }} {{ order.shipping_zipcode }}</p>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
+
+        <aside class="space-y-6">
+          <section class="rounded-2xl border bg-white p-6 shadow-sm">
+            <h2 class="mb-4 text-xl font-semibold text-gray-900">Summary</h2>
+
+            <div class="space-y-3 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-500">Subtotal</span>
+                <span class="font-medium">{{ money(order.subtotal) }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">Shipping</span>
+                <span class="font-medium">{{ money(order.shipping_cost) }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">Tax</span>
+                <span class="font-medium">{{ money(order.tax_amount) }}</span>
+              </div>
+              <div class="flex justify-between border-t pt-3 text-base">
+                <span class="font-semibold text-gray-900">Total</span>
+                <span class="font-bold text-gray-900">{{ money(order.total) }}</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="rounded-2xl border bg-white p-6 shadow-sm">
+            <h2 class="mb-4 text-xl font-semibold text-gray-900">Payment</h2>
+
+            <div class="space-y-2 text-sm text-gray-600">
+              <p><span class="font-medium text-gray-800">Method:</span> {{ order.payment_method || 'N/A' }}</p>
+              <p><span class="font-medium text-gray-800">Status:</span> {{ order.payment_status || 'pending' }}</p>
+              <p v-if="platformTransaction">
+                <span class="font-medium text-gray-800">Reference:</span>
+                {{ platformTransaction.provider_transaction_id || platformTransaction.reference || platformTransaction.id }}
+              </p>
+            </div>
+          </section>
+
+          <div class="flex flex-col gap-3">
+            <a href="/" class="rounded-xl bg-gray-900 px-5 py-3 text-center text-sm font-semibold text-white hover:bg-gray-800">
+              Continue shopping
+            </a>
+            <a href="/orders" class="rounded-xl border bg-white px-5 py-3 text-center text-sm font-semibold text-gray-800 hover:bg-gray-50">
+              View my orders
+            </a>
+          </div>
+        </aside>
+      </div>
     </div>
+  </main>
 </template>

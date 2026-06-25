@@ -1,0 +1,76 @@
+{
+    "summary": {
+        "PASS": 9,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 23:51:07",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "website_storefront_product_card_polish",
+            "name": "stage marker exists on storefront",
+            "status": "PASS",
+            "message": "S60 storefront marker found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_card_polish",
+            "name": "stage marker exists on editor",
+            "status": "PASS",
+            "message": "S60 editor marker found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_card_polish",
+            "name": "product polish stylesheet exists",
+            "status": "PASS",
+            "message": "S60 stylesheet found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_card_polish",
+            "name": "visible product polish card exists",
+            "status": "PASS",
+            "message": "visible polish card found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_card_polish",
+            "name": "product image placeholder style exists",
+            "status": "PASS",
+            "message": "product image placeholder style found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_card_polish",
+            "name": "product linked card style exists",
+            "status": "PASS",
+            "message": "linked product card style found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_card_polish",
+            "name": "product category style exists",
+            "status": "PASS",
+            "message": "product category style found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_card_polish",
+            "name": "product price style exists",
+            "status": "PASS",
+            "message": "product price style found.",
+            "data": []
+        },
+        {
+            "section": "website_storefront_product_card_polish",
+            "name": "homepage still renders template",
+            "status": "PASS",
+            "message": "Homepage Vue template found.",
+            "data": []
+        }
+    ]
+}

@@ -1,0 +1,136 @@
+{
+    "summary": {
+        "PASS": 15,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 11:46:34",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "tenant_id": "awrah",
+            "name": "customer order history route exists",
+            "status": "PASS",
+            "message": "Customer order history route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "order confirmation route exists",
+            "status": "PASS",
+            "message": "Order confirmation route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "customer order history loads",
+            "status": "PASS",
+            "message": "Customer order history rendered.",
+            "data": {
+                "component": "tenant/orders/CustomerIndex",
+                "response_class": "Inertia\\Response"
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "order confirmation loads",
+            "status": "PASS",
+            "message": "Order confirmation rendered.",
+            "data": {
+                "component": "tenant/OrderConfirmation",
+                "response_class": "Inertia\\Response"
+            }
+        },
+        {
+            "tenant_id": "awrah",
+            "name": "other customer cannot view order",
+            "status": "PASS",
+            "message": "Other customer was blocked from viewing this order.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "customer order history route exists",
+            "status": "PASS",
+            "message": "Customer order history route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "order confirmation route exists",
+            "status": "PASS",
+            "message": "Order confirmation route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "customer order history loads",
+            "status": "PASS",
+            "message": "Customer order history rendered.",
+            "data": {
+                "component": "tenant/orders/CustomerIndex",
+                "response_class": "Inertia\\Response"
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "order confirmation loads",
+            "status": "PASS",
+            "message": "Order confirmation rendered.",
+            "data": {
+                "component": "tenant/OrderConfirmation",
+                "response_class": "Inertia\\Response"
+            }
+        },
+        {
+            "tenant_id": "tenant1",
+            "name": "other customer cannot view order",
+            "status": "PASS",
+            "message": "Other customer was blocked from viewing this order.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "customer order history route exists",
+            "status": "PASS",
+            "message": "Customer order history route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "order confirmation route exists",
+            "status": "PASS",
+            "message": "Order confirmation route exists.",
+            "data": []
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "customer order history loads",
+            "status": "PASS",
+            "message": "Customer order history rendered.",
+            "data": {
+                "component": "tenant/orders/CustomerIndex",
+                "response_class": "Inertia\\Response"
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "order confirmation loads",
+            "status": "PASS",
+            "message": "Order confirmation rendered.",
+            "data": {
+                "component": "tenant/OrderConfirmation",
+                "response_class": "Inertia\\Response"
+            }
+        },
+        {
+            "tenant_id": "tenant2",
+            "name": "other customer cannot view order",
+            "status": "PASS",
+            "message": "Other customer was blocked from viewing this order.",
+            "data": []
+        }
+    ]
+}

@@ -1,0 +1,97 @@
+{
+    "summary": {
+        "PASS": 12,
+        "FAIL": 0,
+        "WARN": 0,
+        "INFO": 0
+    },
+    "generated_at": "2026-06-24 22:10:28",
+    "failures": [],
+    "warnings": [],
+    "all_findings": [
+        {
+            "section": "website_editor_rendering_parity",
+            "name": "controller imports product model",
+            "status": "PASS",
+            "message": "controller imports product model found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_rendering_parity",
+            "name": "controller preview products helper exists",
+            "status": "PASS",
+            "message": "controller preview products helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_rendering_parity",
+            "name": "controller passes preview products prop",
+            "status": "PASS",
+            "message": "controller passes preview products prop found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_rendering_parity",
+            "name": "editor preview products prop exists",
+            "status": "PASS",
+            "message": "editor preview products prop exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_rendering_parity",
+            "name": "editor preview products computed exists",
+            "status": "PASS",
+            "message": "editor preview products computed exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_rendering_parity",
+            "name": "product card url helper exists",
+            "status": "PASS",
+            "message": "product card url helper exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_rendering_parity",
+            "name": "product price formatter exists",
+            "status": "PASS",
+            "message": "product price formatter exists found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_rendering_parity",
+            "name": "product card uses product URL",
+            "status": "PASS",
+            "message": "product card uses product URL found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_rendering_parity",
+            "name": "product card formats real product price",
+            "status": "PASS",
+            "message": "product card formats real product price found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_rendering_parity",
+            "name": "product card image uses image url",
+            "status": "PASS",
+            "message": "product card image uses image url found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_rendering_parity",
+            "name": "blank space reduced",
+            "status": "PASS",
+            "message": "blank space reduced found.",
+            "data": []
+        },
+        {
+            "section": "website_editor_rendering_parity",
+            "name": "stage marker exists",
+            "status": "PASS",
+            "message": "stage marker exists found.",
+            "data": []
+        }
+    ]
+}
