@@ -11,6 +11,10 @@ $app->make(Kernel::class)->bootstrap();
 
 $report = [];
 
+$intentionalPublicWriteRoutes = [
+    'contact.store',
+];
+
 function add_security_result(string $section, string $name, string $status, string $message, array $data = []): void
 {
     global $report;
@@ -84,10 +88,11 @@ foreach ($routes as $route) {
 
     $hasAuth = in_array('auth', $middleware, true);
     $hasCentralAuth = in_array('central.auth', $middleware, true) || in_array('central', $middleware, true);
+    $hasThrottle = collect($middleware)->contains(fn ($m) => str_starts_with((string) $m, 'throttle:'));
     $hasTenantMiddleware = collect($middleware)->contains(fn ($m) =>
-        str_contains($m, 'tenant')
-        || str_contains($m, 'InitializeTenancy')
-        || str_contains($m, 'PreventAccessFromCentralDomains')
+        str_contains((string) $m, 'tenant')
+        || str_contains((string) $m, 'InitializeTenancy')
+        || str_contains((string) $m, 'PreventAccessFromCentralDomains')
     );
 
     /*
@@ -138,7 +143,14 @@ foreach ($routes as $route) {
             }
         }
 
-        $protected = $hasAuth || $hasCentralAuth || ($isCentral && $hasGlobalCentralProtection);
+        $isIntentionalPublicWrite = in_array($name, $intentionalPublicWriteRoutes, true)
+            && $hasTenantMiddleware
+            && $hasThrottle;
+
+        $protected = $hasAuth
+            || $hasCentralAuth
+            || ($isCentral && $hasGlobalCentralProtection)
+            || $isIntentionalPublicWrite;
 
         if (! $protected && ! $isPublicAllowed) {
             add_security_result('dangerous_routes', $uri, 'FAIL', 'POST/PUT/PATCH/DELETE route may be unprotected.', $route);

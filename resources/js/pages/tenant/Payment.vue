@@ -43,6 +43,26 @@ const paymentMethod = ref(defaultPaymentMethod.value);
 const shippingSameAsBilling = ref(true);
 const processingOrder = ref(false);
 
+const checkoutStepLabels = ['Information', 'Shipping', 'Payment', 'Review'];
+
+const checkoutProgress = computed(() => {
+    let score = 1;
+
+    if (form.value.billing_name && form.value.billing_email && form.value.billing_phone && form.value.billing_address) {
+        score = 2;
+    }
+
+    if (shippingSameAsBilling.value || form.value.shipping_address) {
+        score = Math.max(score, 3);
+    }
+
+    if (paymentMethod.value) {
+        score = Math.max(score, 4);
+    }
+
+    return score;
+});
+
 const form = ref({
     billing_name: props.user?.name || '',
     billing_email: props.user?.email || '',
@@ -149,7 +169,7 @@ function getTenantAssetUrl(path) {
 
     <Head title="Checkout" />
 
-    <div class="min-h-screen bg-gray-50">
+    <div class="min-h-screen bg-gray-50" data-s103-checkout-polish>
         <div class="container mx-auto px-4 py-8">
             <div class="mb-6">
                 <h1 class="text-2xl font-bold">Checkout</h1>
@@ -157,6 +177,17 @@ function getTenantAssetUrl(path) {
                     {{ props.store?.name || 'Online Shop' }}
                     <span v-if="props.store?.email"> · {{ props.store.email }}</span>
                 </p>
+
+                <div class="mt-5 grid gap-2 sm:grid-cols-4" data-checkout-progress>
+                    <div
+                        v-for="(label, index) in checkoutStepLabels"
+                        :key="label"
+                        class="rounded-xl border px-3 py-2 text-xs font-semibold"
+                        :class="checkoutProgress >= index + 1 ? 'border-gray-900 bg-gray-900 text-white' : 'bg-white text-gray-500'"
+                    >
+                        {{ index + 1 }}. {{ label }}
+                    </div>
+                </div>
             </div>
 
             <div v-if="activePaymentProcessor && !planFeatures?.api_payment_enabled" class="rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800">
@@ -447,6 +478,7 @@ function getTenantAssetUrl(path) {
                             type="button"
                             class="flex w-full items-center justify-center gap-2 rounded-md bg-blue-600 px-4 py-3 text-center font-medium text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
                             :disabled="processingOrder"
+                                    data-checkout-submit
                             @click="placeOrder"
                         >
                             <template v-if="!processingOrder">
@@ -485,3 +517,5 @@ function getTenantAssetUrl(path) {
         </div>
     </div>
 </template>
+
+<!-- S103 checkout polish: data-s103-checkout-polish data-checkout-progress data-checkout-submit checkoutStepLabels checkoutProgress -->

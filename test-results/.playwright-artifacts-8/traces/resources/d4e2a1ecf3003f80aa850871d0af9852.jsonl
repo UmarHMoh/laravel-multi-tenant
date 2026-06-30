@@ -1,2 +1,0 @@
-{"type":"receive","time":1782409068060.5103,"opcode":1,"data":"{\"type\":\"connected\"}"}
-{"type":"receive","time":1782409068116.5151,"opcode":1,"data":"{\"type\":\"custom\",\"event\":\"file-changed\",\"data\":{\"file\":\"/Users/umar/Desktop/Multi Tenant Fresh/laravel-multi-tenant/storage/framework/sessions/YbvMVLPPq2GLRyFL6JUik3QEoC5DyNwfDm0Hnx30\"}}"}

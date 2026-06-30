@@ -53,6 +53,10 @@ Route::middleware([
     });
 
 
+    // Contact page and contact form submit
+    Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+    Route::post('/contact', [PageController::class, 'storeContact'])->middleware('throttle:contact-form')->name('contact.store');
+
     Route::get('tenant-asset/{path}', TenantAssetController::class)
         ->where('path', '.*')
         ->name('tenant.asset');
@@ -126,5 +130,4 @@ Route::middleware([
     });
 });
 
-Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/pages/{handle}', [PageController::class, 'show'])->where('handle', '[A-Za-z0-9\-]+')->name('pages.show');

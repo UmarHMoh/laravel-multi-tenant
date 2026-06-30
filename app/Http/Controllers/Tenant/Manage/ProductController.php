@@ -46,7 +46,11 @@ class ProductController extends Controller
         }
 
         return Inertia::render('tenant/products/Index', [
-            'products' => $productsQuery->paginate(15)->withQueryString(),
+            'products' => $productsQuery->paginate(15)->through(fn ($product) => [
+                ...$product->toArray(),
+                'product_page_editor_url' => "/manage/website/products/{$product->id}/editor",
+                'storefront_url' => "/products/{$product->id}",
+            ])->withQueryString(),
             'stats' => [
                 'total_products' => \App\Models\Product::count(),
                 'active_products' => \App\Models\Product::where('is_active', true)->count(),
@@ -163,7 +167,10 @@ class ProductController extends Controller
         $product->load(['category', 'images']);
 
         return Inertia::render('tenant/products/Show', [
-            'product' => $product,
+            'product' => array_merge($product->toArray(), [
+                'product_page_editor_url' => "/manage/website/products/{$product->id}/editor",
+                'storefront_url' => "/products/{$product->id}",
+            ]),
         ]);
     }
 
@@ -179,7 +186,10 @@ class ProductController extends Controller
         $categories = Category::where('is_active', true)->get();
 
         return Inertia::render('tenant/products/Edit', [
-            'product' => $product,
+            'product' => array_merge($product->toArray(), [
+                'product_page_editor_url' => "/manage/website/products/{$product->id}/editor",
+                'storefront_url' => "/products/{$product->id}",
+            ]),
             'categories' => $categories,
         ]);
     }

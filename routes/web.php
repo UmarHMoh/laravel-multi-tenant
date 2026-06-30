@@ -175,6 +175,58 @@ Route::domain('{tenant}.localhost')
     ->get('/orders', [\App\Http\Controllers\Tenant\OrderController::class, 'index'])
     ->name('orders.customer.index');
 
+
+Route::domain('{tenant}.localhost')
+    ->middleware([
+        'web',
+        InitializeTenancyByDomain::class,
+        PreventAccessFromCentralDomains::class,
+        'auth',
+    ])
+    ->get('/manage/contact-messages', [\App\Http\Controllers\Tenant\Manage\ContactMessageController::class, 'index'])
+    ->name('tenant.contact-messages.index');
+
+Route::domain('{tenant}.localhost')
+    ->middleware([
+        'web',
+        InitializeTenancyByDomain::class,
+        PreventAccessFromCentralDomains::class,
+        'auth',
+    ])
+    ->post('/manage/contact-messages/{contactMessage}/read', [\App\Http\Controllers\Tenant\Manage\ContactMessageController::class, 'markRead'])
+    ->name('tenant.contact-messages.read');
+
+Route::domain('{tenant}.localhost')
+    ->middleware([
+        'web',
+        InitializeTenancyByDomain::class,
+        PreventAccessFromCentralDomains::class,
+        'auth',
+    ])
+    ->delete('/manage/contact-messages/{contactMessage}', [\App\Http\Controllers\Tenant\Manage\ContactMessageController::class, 'destroy'])
+    ->name('tenant.contact-messages.destroy');
+
+Route::domain('{tenant}.localhost')
+    ->middleware([
+        'web',
+        InitializeTenancyByDomain::class,
+        PreventAccessFromCentralDomains::class,
+        'auth',
+    ])
+    ->put('/manage/website/pages/{themePage}/meta', [\App\Http\Controllers\Tenant\Manage\WebsiteBuilderController::class, 'updatePageMeta'])
+    ->name('tenant.website.pages.meta');
+
+Route::domain('{tenant}.localhost')
+    ->middleware([
+        'web',
+        InitializeTenancyByDomain::class,
+        PreventAccessFromCentralDomains::class,
+        'auth',
+    ])
+    ->delete('/manage/website/pages/{themePage}', [\App\Http\Controllers\Tenant\Manage\WebsiteBuilderController::class, 'destroyPage'])
+    ->name('tenant.website.pages.destroy');
+
+
 Route::domain('{tenant}.localhost')
     ->middleware([
         'web',
@@ -208,12 +260,34 @@ Route::domain('{tenant}.localhost')
 
 Route::domain('{tenant}.localhost')
     ->middleware([
+        'web',
+        InitializeTenancyByDomain::class,
+        PreventAccessFromCentralDomains::class,
+        'auth',
+    ])
+    ->get('/manage/website/media', [\App\Http\Controllers\Tenant\Manage\WebsiteBuilderController::class, 'listMedia'])
+    ->name('tenant.website.media.index');
+
+Route::domain('{tenant}.localhost')
+    ->middleware([
+        'web',
         InitializeTenancyByDomain::class,
         PreventAccessFromCentralDomains::class,
         'auth',
     ])
     ->post('/manage/website/media', [\App\Http\Controllers\Tenant\Manage\WebsiteBuilderController::class, 'uploadMedia'])
     ->name('tenant.website.media.upload');
+
+
+Route::domain('{tenant}.localhost')
+    ->middleware([
+        'web',
+        InitializeTenancyByDomain::class,
+        PreventAccessFromCentralDomains::class,
+        'auth',
+    ])
+    ->get('/manage/website/products/{product}/editor', [\App\Http\Controllers\Tenant\Manage\WebsiteBuilderController::class, 'productEditor'])
+    ->name('tenant.website.products.editor');
 
 Route::domain('{tenant}.localhost')
     ->middleware([
@@ -273,4 +347,3 @@ Route::domain('{tenant}.localhost')
 Route::domain('{tenant}.localhost')->middleware(['web', 'auth', InitializeTenancyByDomain::class, PreventAccessFromCentralDomains::class])
     ->post('/manage/website/homepage/reset', [\App\Http\Controllers\Tenant\Manage\WebsiteBuilderController::class, 'resetHomepageDraft'])
     ->name('tenant.website.homepage.reset');
-

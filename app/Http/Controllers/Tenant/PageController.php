@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\QueryException;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\ContactMessage;
 use App\Models\Product;
 use App\Models\Theme;
 use App\Models\ThemePage;
@@ -91,6 +92,33 @@ class PageController extends Controller
             'themeSettings' => $theme?->settings ?: [],
             'isContactPage' => true,
         ]);
+    }
+
+
+    public function storeContact(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:120'],
+            'email' => ['required', 'email', 'max:180'],
+            'phone' => ['nullable', 'string', 'max:60'],
+            'subject' => ['nullable', 'string', 'max:160'],
+            'message' => ['required', 'string', 'max:5000'],
+            'source_page' => ['nullable', 'string', 'max:160'],
+        ]);
+
+        if (! Schema::hasTable('contact_messages')) {
+            return back()->with('error', 'Contact messages are not ready yet. Please run tenant migrations.');
+        }
+
+        ContactMessage::create([
+            ...$validated,
+            'source_page' => $validated['source_page'] ?? 'contact',
+            'ip_address' => $request->ip(),
+            'user_agent' => substr((string) $request->userAgent(), 0, 1000),
+            'is_read' => false,
+        ]);
+
+        return back()->with('success', 'Message sent successfully.');
     }
 
     private function safeTenantProducts(int $limit)

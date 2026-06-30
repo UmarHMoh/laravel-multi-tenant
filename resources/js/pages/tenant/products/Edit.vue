@@ -2,7 +2,16 @@
     <AppLayout>
         <template #header>
             <h2 class="text-xl font-semibold leading-tight text-gray-800">Edit Product: {{ product.name }}</h2>
-        </template>
+        
+                <a
+                    v-if="product.product_page_editor_url"
+                    :href="product.product_page_editor_url"
+                    data-product-page-editor-link
+                    class="inline-flex items-center rounded-lg border border-indigo-200 px-4 py-2 text-sm font-bold text-indigo-700 hover:bg-indigo-50"
+                >
+                    Edit product page
+                </a>
+</template>
 
         <div class="py-12">
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">

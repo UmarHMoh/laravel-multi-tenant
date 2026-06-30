@@ -28,7 +28,7 @@ $editor = file_get_contents(__DIR__ . '/../resources/js/pages/tenant/website/Edi
 
 s57_check('website_editor_media_upload', 'controller upload method exists', str_contains($controller, 'public function uploadMedia(Request $request)'), 'uploadMedia controller method found.');
 s57_check('website_editor_media_upload', 'controller validates image upload', str_contains($controller, "'image' =>") && str_contains($controller, "'mimes:jpg,jpeg,png,webp,gif'"), 'image validation found.');
-s57_check('website_editor_media_upload', 'controller stores image on public disk', str_contains($controller, "store('tenant-website', 'public')"), 'public disk storage found.');
+s57_check('website_editor_media_upload', 'controller stores image on public disk', (str_contains($controller, "store('tenant-website', 'public')") || str_contains($controller, "storeAs('tenant-website'")), 'public disk storage found.');
 s57_check('website_editor_media_upload', 'controller returns storage url', str_contains($controller, 'Storage::url($path)'), 'Storage::url return found.');
 s57_check('website_editor_media_upload', 'media upload route exists', str_contains($routes, "uploadMedia") && str_contains($routes, "tenant.website.media.upload"), 'media upload route found.');
 s57_check('website_editor_media_upload', 'editor upload helper exists', str_contains($editor, 'function uploadEditorImage(event, applyUrl)'), 'uploadEditorImage helper found.');

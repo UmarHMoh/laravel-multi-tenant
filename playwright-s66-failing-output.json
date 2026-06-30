@@ -1,0 +1,286 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.3.1/bin/node",
+      "/Users/umar/Desktop/Multi Tenant Fresh/laravel-multi-tenant/node_modules/.bin/playwright",
+      "test",
+      "tests/browser-audits/website-builder-section-settings.spec.js",
+      "tests/browser-audits/website-editor-image-picker.spec.js",
+      "tests/browser-audits/website-editor-link-picker.spec.js",
+      "tests/browser-audits/website-editor-media-upload.spec.js",
+      "tests/browser-audits/website-editor-section-presets.spec.js",
+      "--reporter=json"
+    ],
+    "configFile": "/Users/umar/Desktop/Multi Tenant Fresh/laravel-multi-tenant/playwright.config.js",
+    "rootDir": "/Users/umar/Desktop/Multi Tenant Fresh/laravel-multi-tenant/tests/browser-audits",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/umar/Desktop/Multi Tenant Fresh/laravel-multi-tenant/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/umar/Desktop/Multi Tenant Fresh/laravel-multi-tenant/tests/browser-audits",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.61.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "website-builder-section-settings.spec.js",
+      "file": "website-builder-section-settings.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "tenant website builder can edit selected section settings and save draft",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1603,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-25T18:35:21.037Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "993dc8866a355f32ba41-44d290bae78df1ca4461",
+          "file": "website-builder-section-settings.spec.js",
+          "line": 19,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "website-editor-image-picker.spec.js",
+      "file": "website-editor-image-picker.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "tenant website editor exposes hero image picker foundation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1767,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-25T18:35:22.861Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1c99edd03fa13cc7dc2f-b9bb01efb812d243a068",
+          "file": "website-editor-image-picker.spec.js",
+          "line": 13,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "website-editor-link-picker.spec.js",
+      "file": "website-editor-link-picker.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "tenant website editor exposes link picker for URL settings",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1782,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-25T18:35:24.636Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6706e78eb22a659cffb5-a8272ed74b311d5e934a",
+          "file": "website-editor-link-picker.spec.js",
+          "line": 13,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "website-editor-media-upload.spec.js",
+      "file": "website-editor-media-upload.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "tenant website editor exposes real device image upload input",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1591,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-25T18:35:26.426Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f0e0be5e5f449489dd14-bca83503add5c2b9cc18",
+          "file": "website-editor-media-upload.spec.js",
+          "line": 13,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "website-editor-section-presets.spec.js",
+      "file": "website-editor-section-presets.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "tenant website editor can add ready-made section presets",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1029,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-25T18:35:28.026Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c42a550326d1d91bdc8d-29065c2945136508f822",
+          "file": "website-editor-section-presets.spec.js",
+          "line": 16,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-06-25T18:35:20.757Z",
+    "duration": 8337.654,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

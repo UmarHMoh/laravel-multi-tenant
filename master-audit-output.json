@@ -1,12 +1,188 @@
 {
-    "generated_at": "2026-06-25 17:33:09",
+    "generated_at": "2026-06-30 18:34:03",
     "summary": {
-        "PASS": 953,
-        "FAIL": 6,
-        "WARN": 26,
-        "INFO": 42
+        "PASS": 1311,
+        "FAIL": 0,
+        "WARN": 27,
+        "INFO": 44
     },
     "scripts": [
+        {
+            "name": 0,
+            "script": "tools/website_section_availability_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 12,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
+        },
+        {
+            "name": 1,
+            "script": "tools/website_product_page_singleton_sections_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 14,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
+        },
+        {
+            "name": 2,
+            "script": "tools/website_product_details_required_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 10,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
+        },
+        {
+            "name": 3,
+            "script": "tools/website_product_page_ui_polish_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 16,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
+        },
+        {
+            "name": 4,
+            "script": "tools/website_product_page_controls_batch_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 44,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
+        },
+        {
+            "name": 5,
+            "script": "tools/website_product_display_batch_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 34,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
+        },
+        {
+            "name": 6,
+            "script": "tools/website_pages_contact_batch_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 39,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
+        },
+        {
+            "name": 7,
+            "script": "tools/website_hero_media_batch_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 38,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
+        },
+        {
+            "name": 8,
+            "script": "tools/customer_experience_batch_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 32,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
+        },
+        {
+            "name": 9,
+            "script": "tools/tenant_hardening_batch_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 23,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 0
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
+        },
+        {
+            "name": 10,
+            "script": "tools/final_production_readiness_audit.php",
+            "status": "PASS",
+            "summary": {
+                "PASS": 75,
+                "FAIL": 0,
+                "WARN": 0,
+                "INFO": 1
+            },
+            "failures": [],
+            "warnings": [],
+            "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
+            "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
+        },
         {
             "name": "System Audit",
             "script": "tools/system_audit.php",
@@ -21,7 +197,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "UI Route Audit",
@@ -37,7 +213,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Inertia Prop Audit",
@@ -242,7 +418,7 @@
             ],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Form Validation Model Audit",
@@ -251,8 +427,8 @@
             "summary": {
                 "PASS": 22,
                 "FAIL": 0,
-                "WARN": 18,
-                "INFO": 16
+                "WARN": 19,
+                "INFO": 17
             },
             "failures": [],
             "warnings": [
@@ -609,6 +785,35 @@
                     }
                 },
                 {
+                    "section": "controllers",
+                    "status": "WARN",
+                    "message": "Controller validates fields that do not appear directly in create/update arrays. May be intentional if saved into JSON/metadata or handled manually.",
+                    "data": {
+                        "file": "app/Http/Controllers/Tenant/PageController.php",
+                        "validated_but_not_directly_written": [
+                            "name",
+                            "email",
+                            "phone",
+                            "subject",
+                            "message"
+                        ],
+                        "validation_fields": [
+                            "name",
+                            "email",
+                            "phone",
+                            "subject",
+                            "message",
+                            "source_page"
+                        ],
+                        "write_fields": [
+                            "source_page",
+                            "ip_address",
+                            "user_agent",
+                            "is_read"
+                        ]
+                    }
+                },
+                {
                     "section": "models",
                     "status": "WARN",
                     "message": "Mapped database table does not exist on current connection.",
@@ -749,7 +954,7 @@
             ],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Tenant Database Audit",
@@ -765,7 +970,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Tenant Feature Action Audit",
@@ -781,7 +986,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Full Persona Data Audit",
@@ -797,7 +1002,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Full Controller Persona Audit",
@@ -813,7 +1018,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Page Render Audit",
@@ -829,7 +1034,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Controller Action Audit",
@@ -845,7 +1050,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Dropdown Validation Audit",
@@ -861,7 +1066,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Runtime Security Audit",
@@ -875,14 +1080,14 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Security Middleware Audit",
             "script": "tools/security_middleware_audit.php",
             "status": "PASS",
             "summary": {
-                "PASS": 180,
+                "PASS": 192,
                 "FAIL": 0,
                 "WARN": 0,
                 "INFO": 0
@@ -891,7 +1096,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Payout Ledger Audit",
@@ -907,7 +1112,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Payout Request Audit",
@@ -923,7 +1128,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Payout Batch Audit",
@@ -939,7 +1144,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Accounting Export Audit",
@@ -955,7 +1160,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Subscription Feature Gate Audit",
@@ -971,57 +1176,23 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Storefront Filter Audit",
             "script": "tools/storefront_filter_audit.php",
-            "status": "FAIL",
+            "status": "PASS",
             "summary": {
-                "PASS": 6,
-                "FAIL": 3,
+                "PASS": 12,
+                "FAIL": 0,
                 "WARN": 0,
                 "INFO": 0
             },
-            "failures": [
-                {
-                    "tenant_id": "awrah",
-                    "name": "storefront filter exception",
-                    "status": "FAIL",
-                    "message": "Undefined array key \"name\"",
-                    "data": {
-                        "exception": "ErrorException",
-                        "file": "/Users/umar/Desktop/Multi Tenant Fresh/laravel-multi-tenant/app/Services/Themes/ThemePageRenderer.php",
-                        "line": 26
-                    }
-                },
-                {
-                    "tenant_id": "tenant1",
-                    "name": "storefront filter exception",
-                    "status": "FAIL",
-                    "message": "Undefined array key \"name\"",
-                    "data": {
-                        "exception": "ErrorException",
-                        "file": "/Users/umar/Desktop/Multi Tenant Fresh/laravel-multi-tenant/app/Services/Themes/ThemePageRenderer.php",
-                        "line": 26
-                    }
-                },
-                {
-                    "tenant_id": "tenant2",
-                    "name": "storefront filter exception",
-                    "status": "FAIL",
-                    "message": "Undefined array key \"name\"",
-                    "data": {
-                        "exception": "ErrorException",
-                        "file": "/Users/umar/Desktop/Multi Tenant Fresh/laravel-multi-tenant/app/Services/Themes/ThemePageRenderer.php",
-                        "line": 26
-                    }
-                }
-            ],
+            "failures": [],
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Order Management Audit",
@@ -1037,7 +1208,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Tenant Login Identity Audit",
@@ -1053,7 +1224,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Customer Management Audit",
@@ -1069,7 +1240,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Product Inventory Audit",
@@ -1085,7 +1256,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Cart Checkout Stock Audit",
@@ -1101,7 +1272,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Test Payment Transaction Audit",
@@ -1117,7 +1288,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Customer Order Experience Audit",
@@ -1133,7 +1304,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Storefront Navigation Audit",
@@ -1149,7 +1320,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Builder Foundation Audit",
@@ -1165,7 +1336,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Theme Section Renderer Audit",
@@ -1181,7 +1352,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Builder Plan Limits Audit",
@@ -1197,117 +1368,23 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Builder Section Actions Audit",
             "script": "tools/website_builder_section_actions_audit.php",
-            "status": "FAIL",
+            "status": "PASS",
             "summary": {
-                "PASS": 18,
-                "FAIL": 3,
+                "PASS": 21,
+                "FAIL": 0,
                 "WARN": 0,
                 "INFO": 0
             },
-            "failures": [
-                {
-                    "name": "tenant awrah homepage draft update works",
-                    "status": "FAIL",
-                    "message": "Homepage draft did not save expected structure.",
-                    "data": {
-                        "sections": [
-                            {
-                                "id": "audit_s38_hero",
-                                "type": "hero",
-                                "blocks": [],
-                                "hidden": false,
-                                "settings": {
-                                    "heading": "S38 Audit Hero"
-                                },
-                                "sort_order": 0
-                            },
-                            {
-                                "id": "audit_s38_rich_text",
-                                "type": "rich_text",
-                                "blocks": [],
-                                "hidden": true,
-                                "settings": {
-                                    "text": "Share information about your brand, products, or mission.",
-                                    "width": "normal",
-                                    "heading": "S38 Audit Rich Text"
-                                },
-                                "sort_order": 1
-                            }
-                        ]
-                    }
-                },
-                {
-                    "name": "tenant tenant1 homepage draft update works",
-                    "status": "FAIL",
-                    "message": "Homepage draft did not save expected structure.",
-                    "data": {
-                        "sections": [
-                            {
-                                "id": "audit_s38_hero",
-                                "type": "hero",
-                                "blocks": [],
-                                "hidden": false,
-                                "settings": {
-                                    "heading": "S38 Audit Hero"
-                                },
-                                "sort_order": 0
-                            },
-                            {
-                                "id": "audit_s38_rich_text",
-                                "type": "rich_text",
-                                "blocks": [],
-                                "hidden": true,
-                                "settings": {
-                                    "text": "Share information about your brand, products, or mission.",
-                                    "width": "normal",
-                                    "heading": "S38 Audit Rich Text"
-                                },
-                                "sort_order": 1
-                            }
-                        ]
-                    }
-                },
-                {
-                    "name": "tenant tenant2 homepage draft update works",
-                    "status": "FAIL",
-                    "message": "Homepage draft did not save expected structure.",
-                    "data": {
-                        "sections": [
-                            {
-                                "id": "audit_s38_hero",
-                                "type": "hero",
-                                "blocks": [],
-                                "hidden": false,
-                                "settings": {
-                                    "heading": "S38 Audit Hero"
-                                },
-                                "sort_order": 0
-                            },
-                            {
-                                "id": "audit_s38_rich_text",
-                                "type": "rich_text",
-                                "blocks": [],
-                                "hidden": true,
-                                "settings": {
-                                    "text": "Share information about your brand, products, or mission.",
-                                    "width": "normal",
-                                    "heading": "S38 Audit Rich Text"
-                                },
-                                "sort_order": 1
-                            }
-                        ]
-                    }
-                }
-            ],
+            "failures": [],
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Builder Section Settings Audit",
@@ -1323,7 +1400,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Builder Blocks Audit",
@@ -1339,7 +1416,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Builder Publish Audit",
@@ -1355,7 +1432,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Pages Dashboard Audit",
@@ -1371,7 +1448,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Editor Shell Audit",
@@ -1387,7 +1464,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Editor Selection Audit",
@@ -1403,7 +1480,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Editor Preview Rendering Audit",
@@ -1419,7 +1496,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Editor Link Picker Audit",
@@ -1435,7 +1512,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Editor Image Picker Audit",
@@ -1451,7 +1528,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Editor Reset Audit",
@@ -1467,7 +1544,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Editor Dirty State Audit",
@@ -1483,7 +1560,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Editor Remove Safety Audit",
@@ -1499,7 +1576,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Editor Duplicate Audit",
@@ -1515,7 +1592,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Editor Section Search Audit",
@@ -1531,7 +1608,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Editor Section Categories Audit",
@@ -1547,7 +1624,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Editor Section Favorites Audit",
@@ -1563,7 +1640,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Editor Section Presets Audit",
@@ -1579,7 +1656,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Editor Rendering Parity Audit",
@@ -1595,7 +1672,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Editor Media Upload Audit",
@@ -1611,7 +1688,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Storefront Editor Parity Audit",
@@ -1627,7 +1704,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Storefront Visual Parity Audit",
@@ -1643,7 +1720,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Storefront Product Card Polish Audit",
@@ -1659,7 +1736,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         },
         {
             "name": "Website Storefront Product Image Data Audit",
@@ -1675,7 +1752,7 @@
             "warnings": [],
             "Website Builder Architecture Cleanup Audit": "tools/website_builder_architecture_cleanup_audit.php",
             "Website Header Footer Builder Audit": "tools/website_header_footer_builder_audit.php",
-            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php"
+            "Website Blank Contact Page Audit": "tools/website_blank_contact_page_audit.php\nwebsite_hero_v2_audit.php\nwebsite_featured_products_manual_audit.php\nwebsite_product_grid_v2_audit.php\nwebsite_product_pages_editable_audit.php\nwebsite_product_page_sections_rendering_audit.php\nwebsite_product_page_editor_route_audit.php\nwebsite_product_page_editor_preview_parity_audit.php\nwebsite_product_page_editor_flow_audit.php\nwebsite_product_page_defaults_audit.php\nwebsite_product_page_live_parity_audit.php\nwebsite_editor_visible_cleanup_audit.php\nwebsite_product_page_setting_persistence_audit.php\nwebsite_reviews_comments_placeholder_audit.php\nwebsite_editor_cleanup_audit.php\nwebsite_real_section_settings_audit.php"
         }
     ]
 }

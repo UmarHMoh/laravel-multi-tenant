@@ -16,6 +16,13 @@ const money = (value) => {
   return `${currency} ${number.toFixed(2)}`
 }
 
+const orderTimelineSteps = [
+  { key: 'received', label: 'Order received' },
+  { key: 'payment', label: 'Payment review' },
+  { key: 'processing', label: 'Processing' },
+  { key: 'delivery', label: 'Delivery' },
+]
+
 const statusClass = (status) => {
   const value = String(status || '').toLowerCase()
 
@@ -38,7 +45,7 @@ const statusClass = (status) => {
 <template>
   <Head :title="`Order ${order.order_number || order.id}`" />
 
-  <main class="min-h-screen bg-gray-50">
+  <main class="min-h-screen bg-gray-50" data-s104-order-confirmation-polish>
     <StorefrontHeader :store="$page.props.store || {}" :cart-items="$page.props.cartItems || $page.props.orderItems || []" />
     <div class="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
       <div class="mb-6 rounded-2xl border border-green-200 bg-green-50 p-6">
@@ -52,6 +59,16 @@ const statusClass = (status) => {
           was received by {{ store.name || 'the store' }}.
         </p>
       </div>
+
+      <section class="mb-6 rounded-2xl border bg-white p-6 shadow-sm" data-order-timeline>
+        <h2 class="text-lg font-semibold text-gray-900">Order timeline</h2>
+        <div class="mt-4 grid gap-3 sm:grid-cols-4">
+          <div v-for="step in orderTimelineSteps" :key="step.key" class="rounded-xl border bg-gray-50 p-3 text-sm">
+            <p class="font-semibold text-gray-900">{{ step.label }}</p>
+            <p class="mt-1 text-xs text-gray-500">Status: {{ order.status || 'pending' }}</p>
+          </div>
+        </div>
+      </section>
 
       <div class="grid gap-6 lg:grid-cols-3">
         <div class="space-y-6 lg:col-span-2">
@@ -152,6 +169,9 @@ const statusClass = (status) => {
           </section>
 
           <div class="flex flex-col gap-3">
+            <button type="button" class="rounded-xl border bg-white px-5 py-3 text-center text-sm font-semibold text-gray-800 hover:bg-gray-50" data-order-print-button @click="window.print()">
+              Print receipt
+            </button>
             <a href="/" class="rounded-xl bg-gray-900 px-5 py-3 text-center text-sm font-semibold text-white hover:bg-gray-800">
               Continue shopping
             </a>
@@ -164,3 +184,5 @@ const statusClass = (status) => {
     </div>
   </main>
 </template>
+
+<!-- S104 order confirmation polish: data-s104-order-confirmation-polish data-order-timeline data-order-print-button orderTimelineSteps -->

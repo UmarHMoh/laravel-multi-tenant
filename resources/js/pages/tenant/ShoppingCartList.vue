@@ -21,6 +21,12 @@ const totalItems = computed(() => {
     return props.cartItems.reduce((sum, item) => sum + item.quantity, 0);
 });
 
+const cartHasLowStock = computed(() => {
+    return (props.cartItems || []).some((item) => Number(item.quantity || 0) >= Number(item.product?.stock || 0));
+});
+
+const estimatedDeliveryText = computed(() => 'Delivery and taxes are confirmed at checkout.');
+
 function updateQuantity(cartItemId, quantity) {
     if (quantity < 1) return;
 
@@ -86,9 +92,13 @@ function getTenantAssetUrl(path) {
 
     <Head title="Shopping Cart" />
 
-    <div>
+    <div data-s102-cart-page-polish>
         <div class="container mx-auto px-4 py-8">
             <h1 class="mb-6 text-2xl font-bold">Your Shopping Cart</h1>
+
+            <div v-if="cartItems && cartItems.length > 0 && cartHasLowStock" class="mb-4 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800" data-cart-stock-warning>
+                Some cart quantities are at the current stock limit.
+            </div>
 
             <div v-if="cartItems && cartItems.length > 0" class="flex flex-col gap-8 lg:flex-row">
                 <!-- Cart Items (Left Side) -->
@@ -166,7 +176,7 @@ function getTenantAssetUrl(path) {
                                     </div>
 
                                     <div class="text-right">
-                                        <span class="font-bold"> ${{ Number(item.price * item.quantity).toFixed(2) }} </span>
+                                        <span class="font-bold" data-cart-line-subtotal> ${{ Number(item.price * item.quantity).toFixed(2) }} </span>
                                     </div>
                                 </div>
                             </div>
@@ -192,6 +202,9 @@ function getTenantAssetUrl(path) {
                                 <span class="text-gray-600">Tax</span>
                                 <span class="font-medium">Calculated at checkout</span>
                             </div>
+                            <div class="rounded-lg bg-gray-50 p-3 text-xs text-gray-600" data-cart-estimated-delivery>
+                                {{ estimatedDeliveryText }}
+                            </div>
                             <div class="mt-3 border-t pt-3">
                                 <div class="flex justify-between">
                                     <span class="font-bold">Estimated Total</span>
@@ -203,6 +216,7 @@ function getTenantAssetUrl(path) {
                         <Link
                             :href="route('checkout')"
                             class="flex w-full items-center justify-center gap-2 rounded-md bg-blue-600 px-4 py-3 text-center font-medium text-white transition hover:bg-blue-700"
+                            data-cart-checkout-button
                         >
                             Proceed to Checkout
                         </Link>

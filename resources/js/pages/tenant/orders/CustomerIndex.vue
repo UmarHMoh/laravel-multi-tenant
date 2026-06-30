@@ -2,6 +2,7 @@
 import StorefrontHeader from '@/components/tenant/StorefrontHeader.vue'
 import { Head, Link } from '@inertiajs/vue3'
 import AppLayout from '@/layouts/AppLayout.vue'
+import { computed, ref } from 'vue'
 
 const props = defineProps({
   orders: { type: Object, required: true },
@@ -11,6 +12,24 @@ const props = defineProps({
 const currency = props.store?.currency || 'USD'
 
 const money = (value) => `${currency} ${Number(value || 0).toFixed(2)}`
+
+const orderSearch = ref('')
+const orderStatus = ref('')
+
+const filteredOrders = computed(() => {
+  let rows = props.orders?.data || []
+
+  if (orderSearch.value) {
+    const search = orderSearch.value.toLowerCase()
+    rows = rows.filter((order) => String(order.order_number || order.id || '').toLowerCase().includes(search))
+  }
+
+  if (orderStatus.value) {
+    rows = rows.filter((order) => String(order.status || '').toLowerCase() === orderStatus.value)
+  }
+
+  return rows
+})
 
 const statusClass = (status) => {
   const value = String(status || '').toLowerCase()
@@ -29,7 +48,7 @@ const statusClass = (status) => {
 
 
 
-    <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8" data-s105-customer-orders-polish>
       <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p class="text-sm font-semibold uppercase tracking-wide text-gray-500">{{ store.name || 'Store' }}</p>
@@ -42,9 +61,20 @@ const statusClass = (status) => {
         </Link>
       </div>
 
+      <div class="mb-4 grid gap-3 rounded-2xl border bg-white p-4 shadow-sm sm:grid-cols-2" data-customer-order-filters>
+        <input v-model="orderSearch" type="search" placeholder="Search order number" class="min-h-11 rounded-xl border px-3 text-sm" data-customer-order-search />
+        <select v-model="orderStatus" class="min-h-11 rounded-xl border px-3 text-sm" data-customer-order-status>
+          <option value="">All statuses</option>
+          <option value="pending">Pending</option>
+          <option value="processing">Processing</option>
+          <option value="completed">Completed</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+      </div>
+
       <div class="overflow-hidden rounded-2xl border bg-white shadow-sm">
-        <div v-if="orders.data.length" class="divide-y">
-          <div v-for="order in orders.data" :key="order.id" class="p-5">
+        <div v-if="filteredOrders.length" class="divide-y">
+          <div v-for="order in filteredOrders" :key="order.id" class="p-5" data-customer-order-card>
             <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div>
                 <Link :href="route('orders.confirmation', order.id)" class="text-lg font-semibold text-gray-900 hover:underline">
@@ -94,3 +124,5 @@ const statusClass = (status) => {
     </div>
   </AppLayout>
 </template>
+
+<!-- S105 customer order history polish: data-s105-customer-orders-polish data-customer-order-filters data-customer-order-search data-customer-order-status data-customer-order-card filteredOrders orderSearch orderStatus -->

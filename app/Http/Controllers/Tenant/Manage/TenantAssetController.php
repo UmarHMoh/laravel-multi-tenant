@@ -3,32 +3,55 @@
 namespace App\Http\Controllers\Tenant\Manage;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class TenantAssetController extends Controller
 {
     /**
-     * Serve a tenant-specific asset.
-     *
-     * @param  string  $path
-     * @return \Symfony\Component\HttpFoundation\StreamedResponse
+     * Serve a tenant-specific public asset safely.
      */
     public function __invoke($path)
     {
-        // Check if the file exists in the tenant's public storage
-        if (!Storage::disk('public')->exists($path)) {
-            abort(404);
-        }
+        $path = $this->safeTenantAssetPath((string) $path);
 
-        // Get file mime type
-        $mimeType = mime_content_type(Storage::disk('public')->path($path));
+        abort_unless($path !== null, 404);
+        abort_unless(Storage::disk('public')->exists($path), 404);
 
-        // Return file as a streamed response
-        return response()->file(Storage::disk('public')->path($path), [
+        $absolutePath = Storage::disk('public')->path($path);
+        $mimeType = mime_content_type($absolutePath) ?: 'application/octet-stream';
+
+        abort_unless(str_starts_with((string) $mimeType, 'image/'), 404);
+
+        return response()->file($absolutePath, [
             'Content-Type' => $mimeType,
             'Cache-Control' => 'public, max-age=86400',
+            'X-Content-Type-Options' => 'nosniff',
         ]);
+    }
+
+    private function safeTenantAssetPath(string $path): ?string
+    {
+        $path = ltrim(str_replace('\\', '/', $path), '/');
+
+        if ($path === '' || str_contains($path, '..') || str_contains($path, "\0")) {
+            return null;
+        }
+
+        if (! preg_match('/\.(jpg|jpeg|png|webp|gif)$/i', $path)) {
+            return null;
+        }
+
+        $allowedPrefixes = [
+            'products/',
+            'tenant-website/',
+        ];
+
+        foreach ($allowedPrefixes as $prefix) {
+            if (str_starts_with($path, $prefix)) {
+                return $path;
+            }
+        }
+
+        return null;
     }
 }

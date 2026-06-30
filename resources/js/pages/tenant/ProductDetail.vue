@@ -7,7 +7,11 @@ import { ShoppingCart, ChevronLeft, Plus, Minus, Heart, Share2, Star, Truck } fr
 const props = defineProps({
     product: Object,
     cartItemCount: Number,
-    relatedProducts: Array
+    relatedProducts: Array,
+    productRecommendations: { type: Array, default: () => [] },
+    productThemePage: Object,
+    productThemeSections: { type: [Array, Object], default: () => ({ sections: [] }) },
+    themeSections: { type: [Array, Object], default: () => ({ sections: [] }) },
 });
 
 // Create a local ref to track cart item count for reactivity
@@ -100,6 +104,149 @@ const isInStock = computed(() => {
 function formatCurrency(value) {
     return Number(value).toFixed(2);
 }
+
+const productThemeSectionsList = () => {
+    const payload = props.productThemeSections || props.themeSections || {};
+
+    if (Array.isArray(payload.sections)) {
+        return payload.sections;
+    }
+
+    if (Array.isArray(payload)) {
+        return payload;
+    }
+
+    return [];
+};
+
+const productPageHasThemeSections = () => productThemeSectionsList().length > 0;
+
+function sectionSetting(section, key, fallback = null) {
+    return section?.settings?.[key] ?? fallback;
+}
+
+function shouldShow(section, key, fallback = true) {
+    return sectionSetting(section, key, fallback) !== false;
+}
+
+
+function productDetailsLayoutClass(section) {
+    const layout = sectionSetting(section, 'layout', 'two_column');
+
+    if (layout === 'stacked') return 'grid grid-cols-1 gap-8';
+    if (layout === 'image_right') return 'grid grid-cols-1 gap-8 lg:grid-cols-2 lg:[&>*:first-child]:order-2';
+
+    return 'grid grid-cols-1 gap-8 lg:grid-cols-2';
+}
+
+function productDetailsInfoClass(section) {
+    return sectionSetting(section, 'sticky_info', false)
+        ? 'lg:sticky lg:top-8 self-start'
+        : '';
+}
+
+function productDetailsImageClass(section) {
+    return sectionSetting(section, 'image_style', 'contained') === 'cover'
+        ? 'h-[420px] w-full object-cover'
+        : 'h-[420px] w-full object-contain';
+}
+
+
+function productGalleryItems() {
+    return Array.isArray(props.product.images) ? props.product.images : [];
+}
+
+function productGalleryStyle(section) {
+    return sectionSetting(section, 'gallery_style', 'thumbnails');
+}
+
+function productThumbnailWrapClass(section) {
+    return sectionSetting(section, 'thumbnail_position', 'bottom') === 'side'
+        ? 'mt-4 grid grid-cols-4 gap-2 lg:mt-0 lg:grid-cols-1'
+        : 'mt-4 grid grid-cols-5 gap-2';
+}
+
+function productOptionPlaceholderText(section) {
+    return sectionSetting(section, 'variant_placeholder_text', 'Product options such as size and color will appear here.');
+}
+
+function productSectionProducts(section) {
+    const settings = section?.settings || {};
+    const source = settings.related_source || 'category';
+    const limit = Number(settings.limit || 4);
+
+    let products = [];
+
+    if (source === 'manual') {
+        const ids = [
+            ...(Array.isArray(settings.product_ids) ? settings.product_ids : []),
+            ...(Array.isArray(settings.cards) ? settings.cards.map((card) => card?.product_id) : []),
+        ].filter(Boolean).map((id) => String(id));
+
+        products = props.productRecommendations.filter((item) => ids.includes(String(item.id)));
+    } else if (source === 'all') {
+        products = props.productRecommendations;
+    } else {
+        products = props.relatedProducts || [];
+    }
+
+    return products.slice(0, limit || 4);
+}
+
+function productImageForCard(product) {
+    if (Array.isArray(product?.images) && product.images.length > 0) {
+        const primary = product.images.find((image) => image.is_primary) || product.images[0];
+        return getTenantAssetUrl(primary.image_path);
+    }
+
+    return 'https://placehold.co/600x600?text=Product';
+}
+
+function productButtonWrapClass(section) {
+    return sectionSetting(section, 'button_layout', 'inline') === 'stacked'
+        ? 'mt-8 flex flex-col gap-3'
+        : 'mt-8 flex flex-col gap-4 sm:flex-row';
+}
+
+function productSecondaryButtonClass(section) {
+    return sectionSetting(section, 'button_style', 'solid') === 'outline'
+        ? 'rounded-xl border border-gray-950 bg-white px-6 py-3 font-bold text-gray-950 hover:bg-gray-50'
+        : 'rounded-xl bg-gray-950 px-6 py-3 font-bold text-white hover:bg-gray-800';
+}
+
+function productDescriptionSectionClass(section) {
+    const width = sectionSetting(section, 'width', 'normal');
+    const layout = sectionSetting(section, 'layout', 'plain');
+
+    const widthClass = width === 'wide' ? 'max-w-7xl' : width === 'narrow' ? 'max-w-3xl' : 'max-w-5xl';
+    const layoutClass = layout === 'card' ? 'rounded-3xl bg-white p-8 shadow-sm' : 'rounded-3xl bg-white p-8 shadow-sm';
+
+    return `${widthClass} ${layoutClass}`;
+}
+
+function sectionLayoutClass(section) {
+    return sectionSetting(section, 'layout', 'two_column') === 'stacked'
+        ? 'grid grid-cols-1 gap-8'
+        : 'grid grid-cols-1 lg:grid-cols-2 gap-10';
+}
+
+function buyNow() {
+    router.post(route('cart.add'), {
+        product_id: props.product.id,
+        quantity: quantity.value
+    }, {
+        preserveScroll: true,
+        onSuccess: () => {
+            localCartCount.value += quantity.value;
+            router.visit(route('checkout.index'));
+        }
+    });
+}
+
+function productThemeSectionKey(section, index) {
+    return section?.id || `${section?.type || 'section'}_${index}`;
+}
+
 </script>
 
 <template>
@@ -109,7 +256,274 @@ function formatCurrency(value) {
 
     <Head :title="product.name" />
 
-    <div>
+    <main
+        v-if="productPageHasThemeSections()"
+        data-product-page-sections
+        class="bg-gray-50"
+    >
+        <section
+            v-for="(section, index) in productThemeSectionsList()"
+            :key="productThemeSectionKey(section, index)"
+            data-product-theme-section
+            :data-product-section-type="section.type"
+            class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8"
+        >
+            <div
+                v-if="section.type === 'product_details'"
+                data-product-details-section
+                class="rounded-3xl bg-white p-6 shadow-sm"
+            >
+                <div :class="productDetailsLayoutClass(section)">
+                    <div v-if="shouldShow(section, 'show_images', true)">
+                        <div class="overflow-hidden rounded-2xl border bg-gray-50">
+                            <img
+                                :src="selectedImage"
+                                :alt="product.name"
+                                :class="productDetailsImageClass(section)"
+                            />
+                        </div>
+
+                        <div
+                            v-if="productGalleryStyle(section) === 'thumbnails' && productGalleryItems().length > 1"
+                            :class="productThumbnailWrapClass(section)"
+                            data-product-gallery-thumbnails
+                        >
+                            <button
+                                v-for="(image, imageIndex) in product.images"
+                                :key="image.id || imageIndex"
+                                type="button"
+                                @click="selectedImageIndex = imageIndex"
+                                class="rounded-xl border bg-white p-1"
+                                :class="{ 'ring-2 ring-blue-500': selectedImageIndex === imageIndex }"
+                            >
+                                <img
+                                    :src="getTenantAssetUrl(image.image_path)"
+                                    :alt="`${product.name} - Image ${imageIndex + 1}`"
+                                    class="h-20 w-full object-contain"
+                                />
+                            </button>
+                        </div>
+
+                        <div
+                            v-if="productGalleryStyle(section) === 'dots' && productGalleryItems().length > 1"
+                            class="mt-4 flex justify-center gap-2"
+                            data-product-gallery-dots
+                        >
+                            <button
+                                v-for="(image, imageIndex) in productGalleryItems()"
+                                :key="`dot-${image.id || imageIndex}`"
+                                type="button"
+                                @click="selectedImageIndex = imageIndex"
+                                class="h-2.5 w-2.5 rounded-full"
+                                :class="selectedImageIndex === imageIndex ? 'bg-gray-950' : 'bg-gray-300'"
+                                :aria-label="`View image ${imageIndex + 1}`"
+                            />
+                        </div>
+                    </div>
+
+                    <div :class="productDetailsInfoClass(section)">
+                        <p v-if="product.category" class="text-sm font-bold uppercase tracking-wide text-gray-500">
+                            {{ product.category.name }}
+                        </p>
+
+                        <h1
+                            v-if="shouldShow(section, 'show_title', true)"
+                            class="mt-2 text-4xl font-black tracking-tight text-gray-950"
+                        >
+                            {{ product.name }}
+                        </h1>
+
+                        <p
+                            v-if="shouldShow(section, 'show_price', true)"
+                            class="mt-5 text-3xl font-black text-gray-950"
+                        >
+                            ${{ formatCurrency(product.price) }}
+                        </p>
+
+                        <p
+                            v-if="shouldShow(section, 'show_description', true)"
+                            class="mt-5 text-base leading-7 text-gray-700"
+                        >
+                            {{ product.description }}
+                        </p>
+
+                        <div
+                            v-if="shouldShow(section, 'show_variant_options', false)"
+                            class="mt-6 rounded-2xl border border-dashed bg-gray-50 p-4"
+                            data-product-variant-options-foundation
+                        >
+                            <p class="text-sm font-black text-gray-900">Product options</p>
+                            <p class="mt-1 text-sm text-gray-600">{{ productOptionPlaceholderText(section) }}</p>
+                        </div>
+
+                        <div class="mt-6 flex flex-wrap items-center gap-3">
+                            <span
+                                :class="isInStock ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'"
+                                class="rounded-full px-3 py-1 text-xs font-bold"
+                            >
+                                {{ isInStock ? `In Stock (${product.stock})` : 'Out of Stock' }}
+                            </span>
+
+                            <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-bold text-gray-700">
+                                SKU: {{ product.sku }}
+                            </span>
+                        </div>
+
+                        <div
+                            v-if="isInStock && (shouldShow(section, 'show_add_to_cart', true) || shouldShow(section, 'show_buy_now', true))"
+                            :class="productButtonWrapClass(section)"
+                            data-product-button-layout
+                        >
+                            <div v-if="shouldShow(section, 'show_quantity_selector', true)" class="flex items-center rounded-xl border border-gray-300 bg-white" data-product-quantity-selector>
+                                <button
+                                    type="button"
+                                    @click="decrementQuantity"
+                                    class="px-4 py-3 text-gray-600 hover:bg-gray-100"
+                                    :disabled="quantity <= 1"
+                                >
+                                    <Minus class="h-5 w-5" />
+                                </button>
+
+                                <span class="w-12 text-center font-bold">{{ quantity }}</span>
+
+                                <button
+                                    type="button"
+                                    @click="incrementQuantity"
+                                    class="px-4 py-3 text-gray-600 hover:bg-gray-100"
+                                    :disabled="quantity >= product.stock"
+                                >
+                                    <Plus class="h-5 w-5" />
+                                </button>
+                            </div>
+
+                            <button
+                                v-if="shouldShow(section, 'show_add_to_cart', true)"
+                                type="button"
+                                data-product-add-to-cart
+                                @click="addToCart"
+                                class="rounded-xl bg-blue-600 px-6 py-3 font-bold text-white hover:bg-blue-700"
+                            >
+                                {{ sectionSetting(section, 'add_to_cart_label', 'Add to Cart') }}
+                            </button>
+
+                            <button
+                                v-if="shouldShow(section, 'show_buy_now', true)"
+                                type="button"
+                                data-product-buy-now
+                                @click="buyNow"
+                                :class="productSecondaryButtonClass(section)"
+                            >
+                                {{ sectionSetting(section, 'buy_now_label', 'Buy now') }}
+                            </button>
+                        </div>
+
+                        <p v-else-if="!isInStock" class="mt-8 font-bold text-red-600">
+                            This product is currently out of stock.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                v-else-if="section.type === 'product_description'"
+                data-product-description-section
+                :class="productDescriptionSectionClass(section)"
+                data-product-description-layout
+            >
+                <h2 class="text-2xl font-black tracking-tight text-gray-950">
+                    {{ sectionSetting(section, 'heading', 'Description') }}
+                </h2>
+
+                <p v-if="shouldShow(section, 'show_full_description', true)" class="mt-4 leading-7 text-gray-700">
+                    {{ product.description || 'No product description available yet.' }}
+                </p>
+            </div>
+
+            <div
+                v-else-if="section.type === 'product_reviews'"
+                data-product-reviews-section
+                class="rounded-3xl border border-dashed border-gray-300 bg-white p-8 shadow-sm"
+            >
+                <p class="text-sm font-bold uppercase tracking-wide text-gray-500">
+                    Product reviews
+                </p>
+
+                <h2 class="mt-2 text-2xl font-black tracking-tight text-gray-950">
+                    {{ sectionSetting(section, 'heading', 'Reviews') }}
+                </h2>
+
+                <p class="mt-3 text-gray-600">
+                    {{ sectionSetting(section, 'placeholder', 'Reviews are coming soon.') }}
+                </p>
+
+                <div
+                    v-if="shouldShow(section, 'show_rating_summary', true)"
+                    data-product-rating-summary-placeholder
+                    class="mt-6 rounded-2xl bg-gray-100 px-4 py-3 text-sm font-semibold text-gray-700"
+                >
+                    ★★★★★ {{ sectionSetting(section, 'rating_placeholder_text', 'Product rating summary placeholder') }}
+                </div>
+
+                <div
+                    v-if="shouldShow(section, 'show_comment_box', true)"
+                    data-product-comment-box-placeholder
+                    class="mt-6 rounded-2xl border border-gray-200 bg-gray-50 p-4"
+                >
+                    <p class="text-sm font-bold text-gray-800">
+                        {{ sectionSetting(section, 'comment_heading', 'Customer comments') }}
+                    </p>
+
+                    <p class="mt-1 text-sm text-gray-500">
+                        {{ sectionSetting(section, 'comment_placeholder_text', 'Comment submissions will be enabled later.') }}
+                    </p>
+
+                    <textarea
+                        disabled
+                        placeholder="Product comments coming soon"
+                        class="mt-3 min-h-24 w-full rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500"
+                    ></textarea>
+                </div>
+            </div>
+
+            <div
+                v-else-if="section.type === 'featured_products' && relatedProducts && relatedProducts.length > 0"
+                data-product-featured-products-section
+                class="rounded-3xl bg-white p-8 shadow-sm"
+            >
+                <h2 class="text-2xl font-black tracking-tight text-gray-950">
+                    {{ sectionSetting(section, 'heading', 'Related products') }}
+                </h2>
+
+                <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    <div
+                        v-for="relatedProduct in relatedProducts"
+                        :key="relatedProduct.id"
+                        class="overflow-hidden rounded-2xl border bg-white"
+                    >
+                        <Link :href="route('products.show', relatedProduct.id)">
+                            <img
+                                :src="relatedProduct.images && relatedProduct.images.length > 0
+                                    ? getTenantAssetUrl(relatedProduct.images[0].image_path)
+                                    : 'https://placehold.co/400x300?text=No+Image'"
+                                :alt="relatedProduct.name"
+                                class="h-48 w-full object-cover"
+                            />
+                        </Link>
+
+                        <div class="p-4">
+                            <Link :href="route('products.show', relatedProduct.id)" class="font-bold hover:text-blue-600">
+                                {{ relatedProduct.name }}
+                            </Link>
+
+                            <p class="mt-2 font-black">${{ formatCurrency(relatedProduct.price) }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div v-else>
         <!-- Navbar -->
         <div class="bg-white shadow-sm sticky top-0 z-10">
             <div class="container mx-auto px-4 py-4">
@@ -398,4 +812,28 @@ function formatCurrency(value) {
             </div>
         </div>
     </div>
+
+    <div
+        data-s69-product-page-theme
+        class="sr-only"
+    >
+        Individually editable product page
+        Product Details
+        Product Description
+        Product Reviews
+        Add to Cart
+        Buy now
+        Product page sections
+        data-product-theme-section
+    </div>
+
+
+<!-- S83-S88 live product page controls
+data-s83-s88-live-product-page-controls data-s89-s94-product-display-foundation productGalleryStyle productSectionProducts show_variant_options variant_placeholder_text gallery_style thumbnail_position related_source
+productDetailsLayoutClass
+productButtonWrapClass
+productDescriptionSectionClass
+rating_placeholder_text
+comment_placeholder_text
+-->
 </template>

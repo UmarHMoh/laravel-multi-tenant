@@ -17,6 +17,12 @@ use Inertia\Inertia;
 
 class WebsiteBuilderController extends Controller
 {
+    private const MAX_BUILDER_SECTIONS = 60;
+    private const MAX_BUILDER_BLOCKS = 80;
+    private const MAX_SETTING_STRING_LENGTH = 5000;
+    private const MAX_SETTING_ARRAY_ITEMS = 80;
+    private const MAX_SETTING_DEPTH = 4;
+
     public function index(ThemeBootstrapper $bootstrapper, PlanFeatureGate $features)
     {
         $theme = $bootstrapper->ensureDefaultTheme();
@@ -39,6 +45,12 @@ class WebsiteBuilderController extends Controller
                 'editor_url' => $page->type === 'home'
                     ? '/manage/website/homepage/editor'
                     : "/manage/website/pages/{$page->id}/editor",
+                'live_url' => $page->type === 'home'
+                    ? '/'
+                    : ($page->type === 'product' && $page->product_id
+                        ? "/products/{$page->product_id}"
+                        : "/pages/{$page->handle}"),
+                'can_delete' => in_array($page->type, ['static', 'contact'], true),
             ])
             ->values();
 
@@ -61,6 +73,8 @@ class WebsiteBuilderController extends Controller
                 'can_create_page' => $canCreatePage,
                 'message' => $features->builderPageLimitMessage(),
             ],
+            'linkOptions' => $this->linkOptionsForTheme($theme),
+            'themeSettings' => $theme->settings ?: [],
         ]);
     }
 
@@ -144,9 +158,10 @@ class WebsiteBuilderController extends Controller
         ]);
     }
 
-    public function pageEditor(ThemePage $themePage, ThemeBootstrapper $bootstrapper, SectionRegistry $sections, PlanFeatureGate $features)
+    public function pageEditor($tenant, $themePage, ThemeBootstrapper $bootstrapper, SectionRegistry $sections, PlanFeatureGate $features)
     {
         $theme = $bootstrapper->ensureDefaultTheme();
+        $themePage = ThemePage::query()->findOrFail($themePage);
 
         abort_unless((int) $themePage->theme_id === (int) $theme->id, 404);
 
@@ -157,6 +172,31 @@ class WebsiteBuilderController extends Controller
             'sectionSchemas' => array_values($sections->all()),
             'previewProducts' => $this->websiteEditorPreviewProducts(),
             'pageConfig' => $themePage->draft_config ?: ['sections' => []],
+            'linkOptions' => $this->linkOptionsForTheme($theme),
+            'themeSettings' => $theme->settings ?: [],
+            'builderLimits' => [
+                'allow_multiple_builder_pages' => $features->allowsMultipleBuilderPages(),
+                'max_builder_pages' => $features->maxBuilderPages(),
+                'message' => $features->builderPageLimitMessage(),
+            ],
+        ]);
+    }
+
+
+    public function productEditor($tenant, Product $product, ThemeBootstrapper $bootstrapper, SectionRegistry $sections, PlanFeatureGate $features)
+    {
+        $theme = $bootstrapper->ensureDefaultTheme();
+        $product->load(['category', 'images']);
+        $productPage = $bootstrapper->ensureProductPage($theme, $product);
+
+        return Inertia::render('tenant/website/Editor', [
+            'theme' => $theme,
+            'homepage' => $theme->homepage()->first(),
+            'page' => $productPage,
+            'product' => $product,
+            'sectionSchemas' => array_values($sections->all()),
+            'previewProducts' => $this->websiteEditorPreviewProducts(),
+            'pageConfig' => $productPage->draft_config ?: ['sections' => []],
             'linkOptions' => $this->linkOptionsForTheme($theme),
             'themeSettings' => $theme->settings ?: [],
             'builderLimits' => [
@@ -183,6 +223,58 @@ class WebsiteBuilderController extends Controller
             ->all();
     }
 
+
+    public function updatePageMeta(Request $request, $tenant, $themePage, ThemeBootstrapper $bootstrapper)
+    {
+        $theme = $bootstrapper->ensureDefaultTheme();
+        $themePage = ThemePage::query()->findOrFail($themePage);
+
+        abort_unless((int) $themePage->theme_id === (int) $theme->id, 404);
+        abort_unless(in_array($themePage->type, ['static', 'contact'], true), 403);
+
+        $validated = $request->validate([
+            'title' => ['required', 'string', 'max:120'],
+            'handle' => ['required', 'string', 'max:140'],
+        ]);
+
+        $handle = trim(Str::slug($validated['handle']), '-');
+
+        if (! $handle) {
+            $handle = Str::slug($validated['title']) ?: 'page-' . Str::random(6);
+        }
+
+        $baseHandle = $handle;
+        $counter = 2;
+
+        while ($theme->pages()
+            ->where('id', '!=', $themePage->id)
+            ->where('handle', $handle)
+            ->exists()) {
+            $handle = "{$baseHandle}-{$counter}";
+            $counter++;
+        }
+
+        $themePage->update([
+            'title' => $validated['title'],
+            'handle' => $handle,
+        ]);
+
+        return back()->with('success', 'Page details updated.');
+    }
+
+    public function destroyPage($tenant, $themePage, ThemeBootstrapper $bootstrapper)
+    {
+        $theme = $bootstrapper->ensureDefaultTheme();
+        $themePage = ThemePage::query()->findOrFail($themePage);
+
+        abort_unless((int) $themePage->theme_id === (int) $theme->id, 404);
+        abort_unless(in_array($themePage->type, ['static', 'contact'], true), 403);
+
+        $themePage->delete();
+
+        return redirect('/manage/website')->with('success', 'Page deleted.');
+    }
+
     public function updateHomepage(Request $request, ThemeBootstrapper $bootstrapper, SectionRegistry $sectionRegistry)
     {
         $theme = $bootstrapper->ensureDefaultTheme();
@@ -191,9 +283,10 @@ class WebsiteBuilderController extends Controller
         return $this->updatePageConfig($request, $homepage, $sectionRegistry, 'Homepage draft saved.');
     }
 
-    public function updatePage(Request $request, ThemePage $themePage, ThemeBootstrapper $bootstrapper, SectionRegistry $sectionRegistry)
+    public function updatePage(Request $request, $tenant, $themePage, ThemeBootstrapper $bootstrapper, SectionRegistry $sectionRegistry)
     {
         $theme = $bootstrapper->ensureDefaultTheme();
+        $themePage = ThemePage::query()->findOrFail($themePage);
 
         abort_unless((int) $themePage->theme_id === (int) $theme->id, 404);
 
@@ -223,9 +316,10 @@ class WebsiteBuilderController extends Controller
             ->with('success', 'Homepage draft reset to a blank page.');
     }
 
-    public function resetPageDraft(ThemePage $themePage, ThemeBootstrapper $bootstrapper)
+    public function resetPageDraft($tenant, $themePage, ThemeBootstrapper $bootstrapper)
     {
         $theme = $bootstrapper->ensureDefaultTheme();
+        $themePage = ThemePage::query()->findOrFail($themePage);
 
         abort_unless((int) $themePage->theme_id === (int) $theme->id, 404);
 
@@ -234,13 +328,21 @@ class WebsiteBuilderController extends Controller
                 ->with('error', 'Use the homepage reset action for the homepage.');
         }
 
+        $sections = $themePage->type === 'product'
+            ? $bootstrapper->defaultProductPageSections($themePage->product_id)
+            : $this->defaultStaticPageSections($themePage);
+
         $themePage->update([
             'draft_config' => [
-                'sections' => $this->defaultStaticPageSections($themePage),
+                'sections' => $sections,
             ],
         ]);
 
-        return redirect("/manage/website/pages/{$themePage->id}/editor")
+        $redirectUrl = $themePage->type === 'product' && $themePage->product_id
+            ? "/manage/website/products/{$themePage->product_id}/editor"
+            : "/manage/website/pages/{$themePage->id}/editor";
+
+        return redirect($redirectUrl)
             ->with('success', 'Page draft reset to default sections.');
     }
 
@@ -261,9 +363,10 @@ class WebsiteBuilderController extends Controller
         ];
     }
 
-    public function publishPage(ThemePage $themePage, ThemeBootstrapper $bootstrapper, SectionRegistry $sectionRegistry)
+    public function publishPage($tenant, $themePage, ThemeBootstrapper $bootstrapper, SectionRegistry $sectionRegistry)
     {
         $theme = $bootstrapper->ensureDefaultTheme();
+        $themePage = ThemePage::query()->findOrFail($themePage);
 
         abort_unless((int) $themePage->theme_id === (int) $theme->id, 404);
 
@@ -274,22 +377,30 @@ class WebsiteBuilderController extends Controller
     {
         $this->persistThemeSettingsFromRequest($request, $page);
         $validated = $request->validate([
-            'sections' => ['required', 'array'],
+            'sections' => ['required', 'array', 'max:' . self::MAX_BUILDER_SECTIONS],
             'sections.*.id' => ['nullable', 'string', 'max:120'],
             'sections.*.type' => ['required', 'string', 'max:80'],
             'sections.*.hidden' => ['boolean'],
             'sections.*.settings' => ['nullable', 'array'],
-            'sections.*.blocks' => ['nullable', 'array'],
+            'sections.*.settings.*' => ['nullable'],
+            'sections.*.blocks' => ['nullable', 'array', 'max:' . self::MAX_BUILDER_BLOCKS],
             'sections.*.blocks.*.id' => ['nullable', 'string', 'max:120'],
             'sections.*.blocks.*.type' => ['required_with:sections.*.blocks', 'string', 'max:80'],
             'sections.*.blocks.*.hidden' => ['boolean'],
             'sections.*.blocks.*.settings' => ['nullable', 'array'],
+            'sections.*.blocks.*.settings.*' => ['nullable'],
         ]);
 
-        $registeredTypes = array_keys($sectionRegistry->all());
+        $registeredTypes = array_values(array_filter(array_map(
+            fn ($section) => $section['type'] ?? null,
+            $sectionRegistry->editorSections()
+        )));
 
-        $sections = collect($validated['sections'])
-            ->filter(fn ($section) => in_array($section['type'], $registeredTypes, true))
+        $submittedSections = $request->input('sections', []);
+
+        $sections = collect($submittedSections)
+            ->take(self::MAX_BUILDER_SECTIONS)
+            ->filter(fn ($section) => isset($section['type']) && in_array($section['type'], $registeredTypes, true))
             ->values()
             ->map(function ($section, $index) use ($sectionRegistry) {
                 $schema = $sectionRegistry->get($section['type']);
@@ -303,14 +414,23 @@ class WebsiteBuilderController extends Controller
                     'sort_order' => $index,
                 ];
             })
-            ->values()
-            ->all();
+            ->values();
 
-        $page->update([
-            'draft_config' => [
-                'sections' => $sections,
-            ],
-        ]);
+
+        $normalizedSections = $sections->values()->all();
+
+        if ($page->type === 'product') {
+            $normalizedSections = $this->ensureRequiredProductPageSections($normalizedSections, $sectionRegistry);
+        }
+
+        $draftConfig = [
+            'sections' => $normalizedSections,
+        ];
+
+        $page->draft_config = $draftConfig;
+        $page->save();
+
+        $page->refresh();
 
         return back()->with('success', $message);
     }
@@ -349,7 +469,7 @@ class WebsiteBuilderController extends Controller
 
         return collect($section['blocks'] ?? [])
             ->filter(fn ($block) => isset($block['type']) && $allowedBlocks->has($block['type']))
-            ->take($maxBlocks)
+            ->take(min($maxBlocks, self::MAX_BUILDER_BLOCKS))
             ->values()
             ->map(function ($block, $index) use ($allowedBlocks) {
                 $blockSchema = $allowedBlocks->get($block['type']);
@@ -362,25 +482,153 @@ class WebsiteBuilderController extends Controller
                     'sort_order' => $index,
                 ];
             })
-            ->values()
-            ->all();
+            ->values();
     }
 
     private function settingsWithDefaults(array $settingSchema, array $settings): array
     {
-        foreach ($settingSchema as $setting) {
-            $id = $setting['id'] ?? null;
+        $normalized = [];
+
+        foreach ($settingSchema as $key => $setting) {
+            $id = $setting['id'] ?? (is_string($key) ? $key : null);
 
             if (! $id) {
                 continue;
             }
 
-            if (! array_key_exists($id, $settings)) {
-                $settings[$id] = $setting['default'] ?? null;
+            $value = array_key_exists($id, $settings)
+                ? $settings[$id]
+                : ($setting['default'] ?? null);
+
+            if (($setting['type'] ?? null) === 'checkbox') {
+                $value = $this->normalizeCheckboxValue($value);
             }
+
+            $normalized[$id] = $this->sanitizeBuilderSettingValue($value);
         }
 
-        return $settings;
+        return $normalized;
+    }
+
+    private function sanitizeBuilderSettingValue($value, int $depth = 0)
+    {
+        if ($depth > self::MAX_SETTING_DEPTH) {
+            return null;
+        }
+
+        if (is_string($value)) {
+            return mb_substr(trim($value), 0, self::MAX_SETTING_STRING_LENGTH);
+        }
+
+        if (is_bool($value) || is_int($value) || is_float($value) || $value === null) {
+            return $value;
+        }
+
+        if (is_array($value)) {
+            return collect($value)
+                ->take(self::MAX_SETTING_ARRAY_ITEMS)
+                ->mapWithKeys(function ($item, $key) use ($depth) {
+                    $safeKey = is_string($key)
+                        ? mb_substr(preg_replace('/[^a-zA-Z0-9_.-]/', '', $key), 0, 80)
+                        : $key;
+
+                    return [$safeKey => $this->sanitizeBuilderSettingValue($item, $depth + 1)];
+                })
+                ->all();
+        }
+
+        return null;
+    }
+
+    private function ensureRequiredProductPageSections(array $sections, SectionRegistry $sectionRegistry): array
+    {
+        $hasProductDetails = collect($sections)->contains(fn ($section) => ($section['type'] ?? null) === 'product_details');
+
+        if ($hasProductDetails) {
+            return collect($sections)
+                ->values()
+                ->map(function ($section, $index) {
+                    $section['sort_order'] = $index;
+
+                    if (($section['type'] ?? null) === 'product_details') {
+                        $section['hidden'] = false;
+                    }
+
+                    return $section;
+                })
+                ->all();
+        }
+
+        $schema = $sectionRegistry->get('product_details');
+
+        array_unshift($sections, [
+            'id' => 'product_details_required_' . Str::uuid()->toString(),
+            'type' => 'product_details',
+            'hidden' => false,
+            'settings' => $this->settingsWithDefaults($schema['settings'] ?? [], []),
+            'blocks' => [],
+            'sort_order' => 0,
+        ]);
+
+        return collect($sections)
+            ->values()
+            ->map(function ($section, $index) {
+                $section['sort_order'] = $index;
+
+                if (($section['type'] ?? null) === 'product_details') {
+                    $section['hidden'] = false;
+                }
+
+                return $section;
+            })
+            ->all();
+    }
+
+    private function normalizeCheckboxValue($value): bool
+    {
+        if (is_bool($value)) {
+            return $value;
+        }
+
+        if (is_numeric($value)) {
+            return ((int) $value) === 1;
+        }
+
+        if (is_string($value)) {
+            return in_array(strtolower($value), ['1', 'true', 'on', 'yes'], true);
+        }
+
+        return (bool) $value;
+    }
+
+
+    private function isSafeWebsiteMediaPath(string $path): bool
+    {
+        $path = ltrim(str_replace('\\', '/', $path), '/');
+
+        return $path !== ''
+            && ! str_contains($path, '..')
+            && ! str_contains($path, "\0")
+            && str_starts_with($path, 'tenant-website/')
+            && preg_match('/\.(jpg|jpeg|png|webp|gif)$/i', $path) === 1;
+    }
+
+    public function listMedia()
+    {
+        $files = collect(Storage::disk('public')->files('tenant-website'))
+            ->filter(fn ($path) => $this->isSafeWebsiteMediaPath($path))
+            ->map(fn ($path) => [
+                'path' => $path,
+                'url' => Storage::url($path),
+                'name' => basename($path),
+                'type' => 'image',
+                'uploaded_at' => date('Y-m-d H:i:s', Storage::disk('public')->lastModified($path)),
+            ])
+            ->values();
+
+        return response()->json([
+            'media' => $files,
+        ]);
     }
 
     public function uploadMedia(Request $request)
@@ -389,11 +637,24 @@ class WebsiteBuilderController extends Controller
             'image' => ['required', 'image', 'mimes:jpg,jpeg,png,webp,gif', 'max:5120'],
         ]);
 
-        $path = $validated['image']->store('tenant-website', 'public');
+        $file = $validated['image'];
+        $extension = strtolower($file->getClientOriginalExtension() ?: $file->extension() ?: 'jpg');
+        $safeName = Str::uuid()->toString() . '.' . $extension;
+
+        $path = $file->storeAs('tenant-website', $safeName, 'public');
+
+        abort_unless($this->isSafeWebsiteMediaPath($path), 422);
 
         return response()->json([
             'url' => Storage::url($path),
             'path' => $path,
+            'media' => [
+                'path' => $path,
+                'url' => Storage::url($path),
+                'name' => basename($path),
+                'type' => 'image',
+                'uploaded_at' => now()->toDateTimeString(),
+            ],
         ]);
     }
 
@@ -470,8 +731,7 @@ class WebsiteBuilderController extends Controller
                 'category' => $product->category?->name,
                 'url' => '/products/' . ($product->slug ?? $product->id),
             ])
-            ->values()
-            ->all();
+            ->values()->all();
     }
 
 }

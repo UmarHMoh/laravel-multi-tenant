@@ -1,6 +1,17 @@
 <?php
 
 $scripts = [
+    'tools/website_section_availability_audit.php',
+    'tools/website_product_page_singleton_sections_audit.php',
+    'tools/website_product_details_required_audit.php',
+    'tools/website_product_page_ui_polish_audit.php',
+    'tools/website_product_page_controls_batch_audit.php',
+    'tools/website_product_display_batch_audit.php',
+    'tools/website_pages_contact_batch_audit.php',
+    'tools/website_hero_media_batch_audit.php',
+    'tools/customer_experience_batch_audit.php',
+    'tools/tenant_hardening_batch_audit.php',
+    'tools/final_production_readiness_audit.php',
     'System Audit' => 'tools/system_audit.php',
     'UI Route Audit' => 'tools/ui_route_audit.php',
     'Inertia Prop Audit' => 'tools/inertia_prop_audit.php',
@@ -121,7 +132,21 @@ foreach ($scripts as $name => $script) {
         'Website Builder Architecture Cleanup Audit' => 'tools/website_builder_architecture_cleanup_audit.php',
     'Website Header Footer Builder Audit' => 'tools/website_header_footer_builder_audit.php',
     'Website Blank Contact Page Audit' => 'tools/website_blank_contact_page_audit.php
-website_hero_v2_audit.php',
+website_hero_v2_audit.php
+website_featured_products_manual_audit.php
+website_product_grid_v2_audit.php
+website_product_pages_editable_audit.php
+website_product_page_sections_rendering_audit.php
+website_product_page_editor_route_audit.php
+website_product_page_editor_preview_parity_audit.php
+website_product_page_editor_flow_audit.php
+website_product_page_defaults_audit.php
+website_product_page_live_parity_audit.php
+website_editor_visible_cleanup_audit.php
+website_product_page_setting_persistence_audit.php
+website_reviews_comments_placeholder_audit.php
+website_editor_cleanup_audit.php
+website_real_section_settings_audit.php',
 ];
 }
 

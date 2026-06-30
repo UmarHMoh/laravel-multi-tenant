@@ -8,6 +8,8 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use App\Services\Themes\ThemeBootstrapper;
+use App\Services\Themes\ThemePageRenderer;
 
 class ProductController extends Controller
 {
@@ -24,8 +26,17 @@ class ProductController extends Controller
         $relatedProducts = Product::where('category_id', $product->category_id)
             ->where('id', '!=', $product->id)
             ->where('is_active', true)
-            ->with('images')
-            ->limit(4)
+            ->with(['category', 'images'])
+            ->limit(8)
+            ->get();
+
+        // S89: broader product recommendations support manual/all product-page sections.
+        $productRecommendations = Product::query()
+            ->where('id', '!=', $product->id)
+            ->where('is_active', true)
+            ->with(['category', 'images'])
+            ->latest()
+            ->limit(24)
             ->get();
 
         // Get user's cart if authenticated
@@ -66,9 +77,24 @@ class ProductController extends Controller
             ]);
         }
 
+        $productThemePage = null;
+        $productThemeSections = ['sections' => []];
+
+        try {
+            $theme = app(ThemeBootstrapper::class)->ensureDefaultTheme();
+            $productThemePage = app(ThemeBootstrapper::class)->ensureProductPage($theme, $product);
+            $productThemeSections = app(ThemePageRenderer::class)->renderProductPage($productThemePage, $product, true);
+        } catch (\Throwable $e) {
+            $productThemePage = null;
+            $productThemeSections = ['sections' => []];
+        }
+
         return Inertia::render('tenant/ProductDetail', [
+            'productThemePage' => $productThemePage,
+            'productThemeSections' => $productThemeSections,
             'product' => $product,
             'relatedProducts' => $relatedProducts,
+            'productRecommendations' => $productRecommendations,
             'cartItemCount' => $cartItemCount
         ]);
     }

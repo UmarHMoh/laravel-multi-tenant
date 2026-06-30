@@ -40,9 +40,12 @@ test('tenant website builder can add hide move and save homepage sections', asyn
   await hideButtons.first().click();
   await expect(page.locator('body')).toContainText('Hidden');
 
-  const moveDownButtons = page.getByRole('button', { name: 'Move down' });
-  if (await moveDownButtons.count()) {
-    await moveDownButtons.first().click();
+  const enabledMoveDownButtons = page
+    .getByRole('button', { name: 'Move down' })
+    .locator(':enabled');
+
+  if (await enabledMoveDownButtons.count()) {
+    await enabledMoveDownButtons.first().click();
   }
 
   await page.getByRole('button', { name: /Save draft/i }).click();

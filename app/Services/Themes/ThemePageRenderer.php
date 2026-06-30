@@ -23,7 +23,7 @@ class ThemePageRenderer
                 return [
                     'id' => $section['id'] ?? ('section_' . uniqid()),
                     'type' => $section['type'],
-                    'name' => $schema['name'],
+                    'name' => (($schema['name'] ?? $schema['label'] ?? 'Section') ?? $schema['label'] ?? $section['type'] ?? 'Section'),
                     'settings' => $this->settingsWithDefaults($schema, $section['settings'] ?? []),
                     'blocks' => $this->visibleBlocks($section['blocks'] ?? []),
                 ];
@@ -94,6 +94,19 @@ class ThemePageRenderer
 
         return [
             'sections' => $sections,
+        ];
+    }
+
+
+    public function renderProductPage($page, $product, bool $published = true): array
+    {
+        $rendered = $this->render($page, $published);
+
+        return [
+            ...$rendered,
+            'product' => $product,
+            'page_type' => 'product',
+            'product_id' => $product->id ?? null,
         ];
     }
 

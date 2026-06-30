@@ -18,6 +18,7 @@ class ThemePage extends Model
         'draft_config',
         'published_config',
         'published_at',
+        'product_id',
     ];
 
     protected $casts = [

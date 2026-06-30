@@ -187,9 +187,20 @@ function clearFilters() {
                                     </span>
                                 </td>
                                 <td class="px-4 py-3">
-                                    <Link :href="`/manage/product/${product.id}/edit`" class="rounded-lg border px-3 py-1.5 text-sm">
-                                        Edit
-                                    </Link>
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <Link :href="`/manage/product/${product.id}/edit`" class="rounded-lg border px-3 py-1.5 text-sm">
+                                            Edit
+                                        </Link>
+
+                                        <a
+                                            v-if="product.product_page_editor_url"
+                                            :href="product.product_page_editor_url"
+                                            data-product-page-editor-link
+                                            class="inline-flex items-center rounded-md border border-indigo-200 px-3 py-1.5 text-xs font-bold text-indigo-700 hover:bg-indigo-50"
+                                        >
+                                            Edit product page
+                                        </a>
+                                    </div>
                                 </td>
                             </tr>
 
@@ -218,4 +229,5 @@ function clearFilters() {
             </div>
         </div>
     </AppLayout>
+
 </template>

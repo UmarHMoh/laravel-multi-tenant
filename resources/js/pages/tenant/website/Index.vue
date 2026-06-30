@@ -1,5 +1,5 @@
 <script setup>
-import { Head, useForm, Link } from '@inertiajs/vue3'
+import { Head, useForm, Link, router } from '@inertiajs/vue3'
 import AppLayout from '@/layouts/AppLayout.vue'
 import { computed } from 'vue'
 
@@ -9,6 +9,8 @@ const props = defineProps({
   pages: { type: Array, default: () => [] },
   pageStats: { type: Object, default: () => ({}) },
   builderLimits: { type: Object, default: () => ({}) },
+  linkOptions: { type: Array, default: () => [] },
+  themeSettings: { type: Object, default: () => ({}) },
 })
 
 const form = useForm({
@@ -24,13 +26,22 @@ function createPage() {
     onSuccess: () => form.reset(),
   })
 }
+
+function deletePage(page) {
+  if (!page?.can_delete) return
+  if (!confirm(`Delete ${page.title}? This removes the page draft and published version.`)) return
+
+  router.delete(`/manage/website/pages/${page.id}`, {
+    preserveScroll: true,
+  })
+}
 </script>
 
 <template>
   <Head title="Website Pages" />
 
   <AppLayout>
-    <div class="space-y-6 p-4 sm:p-6">
+    <div class="space-y-6 p-4 sm:p-6" data-s95-s98-page-contact-manager-foundation>
       <div class="rounded-2xl border bg-white p-5 shadow-sm sm:p-6">
         <p class="text-sm font-semibold uppercase tracking-wide text-gray-500">Website Builder</p>
 
@@ -42,12 +53,22 @@ function createPage() {
             </p>
           </div>
 
-          <Link
-            href="/manage/website/homepage/editor"
-            class="inline-flex min-h-11 items-center justify-center rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-800"
-          >
-            Open homepage editor
-          </Link>
+          <div class="flex flex-col gap-2 sm:flex-row">
+            <Link
+              href="/manage/contact-messages"
+              class="inline-flex min-h-11 items-center justify-center rounded-lg border px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50"
+              data-contact-messages-admin-link
+            >
+              Contact messages
+            </Link>
+
+            <Link
+              href="/manage/website/homepage/editor"
+              class="inline-flex min-h-11 items-center justify-center rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-800"
+            >
+              Open homepage editor
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -130,12 +151,22 @@ function createPage() {
                   </Link>
 
                   <a
-                    :href="page.type === 'home' ? '/' : `/pages/${page.handle}`"
+                    :href="page.live_url || (page.type === 'home' ? '/' : `/pages/${page.handle}`)"
                     target="_blank"
                     class="inline-flex min-h-10 items-center justify-center rounded-lg border px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-white"
                   >
                     View
                   </a>
+
+                  <button
+                    v-if="page.can_delete"
+                    type="button"
+                    class="inline-flex min-h-10 items-center justify-center rounded-lg border border-red-200 px-4 py-2 text-sm font-semibold text-red-700 hover:bg-red-50"
+                    data-delete-builder-page
+                    @click="deletePage(page)"
+                  >
+                    Delete
+                  </button>
                 </div>
               </div>
             </article>
@@ -189,6 +220,28 @@ function createPage() {
                 {{ builderLimits.message }}
               </p>
             </form>
+          </section>
+
+
+          <section class="rounded-2xl border bg-white p-5 shadow-sm sm:p-6" data-s96-navigation-manager-foundation>
+            <h2 class="text-lg font-semibold text-gray-900">Navigation manager</h2>
+            <p class="mt-1 text-sm text-gray-500">Use these internal page links inside header/footer link settings in the editor.</p>
+
+            <div class="mt-4 space-y-2">
+              <div
+                v-for="option in linkOptions"
+                :key="`${option.type}-${option.value}`"
+                class="flex items-center justify-between rounded-xl border px-3 py-2 text-sm"
+                data-navigation-link-option
+              >
+                <span class="font-semibold text-gray-800">{{ option.label }}</span>
+                <span class="text-xs text-gray-500">{{ option.value }}</span>
+              </div>
+            </div>
+
+            <p class="mt-4 rounded-xl bg-gray-50 p-3 text-xs text-gray-500">
+              Header links: {{ themeSettings?.header?.links?.length || 0 }} · Footer links: {{ themeSettings?.footer?.links?.length || 0 }}
+            </p>
           </section>
 
           <section class="rounded-2xl border bg-slate-50 p-5 text-sm text-slate-700 sm:p-6">

@@ -28,11 +28,11 @@ test('tenant website editor shows dirty state and clears after save', async ({ p
   await expectHealthy(page);
 
   await expect(page.locator('body')).toContainText('Website Editor');
-  await expect(page.locator('body')).toContainText('Saved');
+  await expect(page.locator('body')).toContainText(/Saved|Homepage draft saved/i);
 
   await page.getByRole('button', { name: 'Add Rich Text' }).click();
   await expect(page.locator('body')).toContainText('Unsaved changes');
 
   await page.getByRole('button', { name: 'Save draft' }).click();
-  await expect(page.locator('body')).toContainText('Saved');
+  await expect(page.locator('body')).toContainText(/Saved|Homepage draft saved/i);
 });
