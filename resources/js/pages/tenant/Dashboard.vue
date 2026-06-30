@@ -31,20 +31,20 @@ function formatDate(date) {
     if (!date) return '—';
     return new Date(date).toLocaleDateString();
 }
+
+function transactionFeeLabel() {
+    const plan = props.currentPlan || {};
+    const percent = Number(plan.public_transaction_fee_percent ?? plan.transaction_fee_percent ?? plan.commission_rate ?? 0);
+    const fixed = Number(plan.public_transaction_fee_fixed ?? plan.transaction_fee_fixed ?? 0);
+    const currency = plan.currency || props.store?.currency || 'TTD';
+
+    return fixed > 0
+        ? `${percent.toFixed(2)}% + ${currency} ${fixed.toFixed(2)}`
+        : `${percent.toFixed(2)}%`;
+}
 </script>
 
 <template>
-
-            <div class="rounded-xl border bg-white p-6 shadow-sm">
-                <p class="text-sm font-medium text-slate-500">Available Payout Balance</p>
-                <p class="mt-2 text-3xl font-bold text-slate-900">
-                    {{ new Intl.NumberFormat('en-US', { style: 'currency', currency: payoutBalance?.currency || 'TTD' }).format(Number(payoutBalance?.available_balance || 0)) }}
-                </p>
-                <p class="mt-2 text-sm text-slate-500">
-                    Pending: {{ new Intl.NumberFormat('en-US', { style: 'currency', currency: payoutBalance?.currency || 'TTD' }).format(Number(payoutBalance?.pending_balance || 0)) }}
-                </p>
-            </div>
-
     <Head title="Dashboard" />
 
     <AppLayout>
@@ -96,16 +96,16 @@ function formatDate(date) {
 
                     <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
                         <div class="flex items-center justify-between">
-                            <p class="text-sm text-slate-500">Commission Rate</p>
+                            <p class="text-sm text-slate-500">Transaction Fee</p>
                             <Store class="h-5 w-5 text-slate-400" />
                         </div>
 
                         <p class="mt-3 text-2xl font-bold">
-                            {{ currentPlan ? Number(currentPlan.commission_rate).toFixed(2) + '%' : '0.00%' }}
+                            {{ transactionFeeLabel() }}
                         </p>
 
                         <p class="mt-1 text-sm text-slate-500">
-                            Calculated after processor fees.
+                            Applied to online payments.
                         </p>
                     </div>
 
@@ -209,8 +209,8 @@ function formatDate(date) {
                                 </p>
 
                                 <p class="mt-2">
-                                    <span class="text-slate-500">Commission:</span>
-                                    <span class="font-semibold">{{ Number(currentPlan.commission_rate).toFixed(2) }}%</span>
+                                    <span class="text-slate-500">Transaction Fee:</span>
+                                    <span class="font-semibold">{{ transactionFeeLabel() }}</span>
                                 </p>
 
                                 <p class="mt-2">

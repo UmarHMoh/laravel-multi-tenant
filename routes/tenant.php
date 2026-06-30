@@ -65,7 +65,7 @@ Route::middleware([
     require __DIR__.'/tenant/auth.php';
 
     // Tenant dashboard and other protected routes
-    Route::middleware('auth')->group(function () {
+    Route::middleware(['auth', 'tenant.admin'])->group(function () {
         Route::get('/dashboard', function () {
             $tenantId = tenant('id');
 
@@ -125,9 +125,12 @@ Route::middleware([
                     'pending_transactions' => $pendingTransactions,
                 ],
             ]);
-        })->name('dashboard');
+        })->middleware('tenant.admin')->name('dashboard');
         require __DIR__.'/tenant/admin.php';
     });
 });
 
 Route::get('/pages/{handle}', [PageController::class, 'show'])->where('handle', '[A-Za-z0-9\-]+')->name('pages.show');
+
+
+

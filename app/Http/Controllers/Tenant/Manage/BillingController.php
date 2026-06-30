@@ -31,12 +31,28 @@ class BillingController extends Controller
 
             $paymentSetting = PaymentSetting::active() ?? PaymentSetting::latest()->first();
 
+            $processorFeePercent = (float) ($paymentSetting?->processor_fee_percent ?? 0);
+            $processorFeeFixed = (float) ($paymentSetting?->processor_fee_fixed ?? 0);
+
+            $planFeePercent = (float) ($subscription?->plan?->transaction_fee_percent ?? $subscription?->plan?->commission_rate ?? 0);
+            $planFeeFixed = (float) ($subscription?->plan?->transaction_fee_fixed ?? 0);
+
+            $publicFeePercent = $processorFeePercent + $planFeePercent;
+            $publicFeeFixed = $processorFeeFixed + $planFeeFixed;
+            $publicCurrency = $subscription?->plan?->currency ?? $paymentSetting?->currency ?? 'TTD';
+
             return [
+                'transactionFee' => [
+                    'label' => number_format($publicFeePercent, 2) . '% + ' . $publicCurrency . ' ' . number_format($publicFeeFixed, 2),
+                    'percent' => $publicFeePercent,
+                    'fixed' => $publicFeeFixed,
+                    'currency' => $publicCurrency,
+                    'description' => 'Applied to online payments.',
+                ],
                 'paymentProcessor' => [
-                    'provider' => $paymentSetting?->provider ?? 'wipay',
-                    'currency' => $paymentSetting?->currency ?? 'TTD',
-                    'processor_fee_percent' => (float) ($paymentSetting?->processor_fee_percent ?? 0),
-                    'processor_fee_fixed' => (float) ($paymentSetting?->processor_fee_fixed ?? 0),
+                    'currency' => $publicCurrency,
+                    'transaction_fee_percent' => $publicFeePercent,
+                    'transaction_fee_fixed' => $publicFeeFixed,
                 ],
                 'tenant' => [
                     'id' => $tenant->id,

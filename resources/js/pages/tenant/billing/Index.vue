@@ -23,10 +23,10 @@ const processing = ref(false);
 
 const plan = computed(() => props.subscription?.plan || null);
 
-const processorFeePercent = computed(() => Number(props.paymentProcessor?.processor_fee_percent || 0));
-const processorFeeFixed = computed(() => Number(props.paymentProcessor?.processor_fee_fixed || 0));
-const platformFeePercent = computed(() => Number(plan.value?.platform_fee_percent || 0));
-const platformFeeFixed = computed(() => Number(plan.value?.platform_fee_fixed || 0));
+const processorFeePercent = computed(() => Number(props.transactionFee?.percent ?? props.paymentProcessor?.transaction_fee_percent ?? 0));
+const processorFeeFixed = computed(() => Number(props.transactionFee?.fixed ?? props.paymentProcessor?.transaction_fee_fixed ?? 0));
+const platformFeePercent = computed(() => 0);
+const platformFeeFixed = computed(() => 0);
 
 const totalTenantFeePercent = computed(() => processorFeePercent.value + platformFeePercent.value);
 const totalTenantFeeFixed = computed(() => processorFeeFixed.value + platformFeeFixed.value);
@@ -113,8 +113,8 @@ function sourceLabel(source) {
     const labels = {
         manual_admin: 'Manual Admin Payment',
         tenant_portal_test: 'Tenant Test Payment',
-        tenant_portal_wipay: 'Tenant WiPay Payment',
-        wipay: 'WiPay',
+        tenant_portal_online_payment: 'Tenant Portal Payment',
+        online_payment: 'Online Payment',
     };
 
     return labels[source] || source || '—';
@@ -127,7 +127,7 @@ function methodLabel(method) {
         bank_transfer: 'Bank Transfer',
         cash: 'Cash',
         card: 'Card',
-        wipay: 'WiPay',
+        online_payment: 'Online Payment',
     };
 
     return labels[method] || method || '—';
@@ -266,21 +266,21 @@ function payTestSubscription() {
                             </div>
 
                             <div>
-                                <dt class="text-sm text-slate-500">Payment Processor Fee</dt>
+                                <dt class="text-sm text-slate-500">Processing Fee</dt>
                                 <dd class="mt-1 font-medium">
                                     {{ formatPercent(processorFeePercent) }} + {{ formatMoney(processorFeeFixed, paymentProcessor?.currency || 'TTD') }}
                                 </dd>
                             </div>
 
                             <div>
-                                <dt class="text-sm text-slate-500">Platform Commission Added</dt>
+                                <dt class="text-sm text-slate-500">Transaction Fee</dt>
                                 <dd class="mt-1 font-medium">
                                     {{ formatPercent(platformFeePercent) }} + {{ formatMoney(platformFeeFixed, paymentProcessor?.currency || 'TTD') }}
                                 </dd>
                             </div>
 
                             <div>
-                                <dt class="text-sm text-slate-500">Total Transaction Fee Charged</dt>
+                                <dt class="text-sm text-slate-500">Processing Fee</dt>
                                 <dd class="mt-1 font-medium">
                                     {{ formatPercent(totalTenantFeePercent) }} + {{ formatMoney(totalTenantFeeFixed, paymentProcessor?.currency || 'TTD') }}
                                 </dd>
@@ -309,16 +309,16 @@ function payTestSubscription() {
                     </div>
 
                     <div class="rounded-xl border border-blue-200 bg-blue-50 p-6 shadow-sm">
-                        <h2 class="text-lg font-semibold text-blue-900">Payment Mode</h2>
+                        <h2 class="text-lg font-semibold text-blue-900">Payment</h2>
 
                         <p class="mt-3 text-sm leading-6 text-blue-800">
                             This page is currently using test subscription payments. Clicking the payment button records a successful test payment and extends the renewal date by one month.
                         </p>
 
                         <p class="mt-4 text-sm leading-6 text-blue-800">
-                            Active payment processor:
+                            Payment method:
                             <strong>{{ paymentProcessor?.provider || 'Not configured' }}</strong>.
-                            Processor fee:
+                            Processing fee:
                             <strong>{{ formatPercent(processorFeePercent) }} + {{ formatMoney(processorFeeFixed, paymentProcessor?.currency || 'TTD') }}</strong>.
                         </p>
                     </div>
@@ -397,3 +397,5 @@ function payTestSubscription() {
         </div>
     </AppLayout>
 </template>
+
+<!-- Phase 1 privacy: tenant billing only exposes public processing fee. data-tenant-public-transaction-fee -->

@@ -470,9 +470,19 @@ function saveDraft() {
 }
 
 function publishDraft() {
-  router.post(publishUrl.value, {}, {
+  const payload = editorPayload()
+
+  router.put(saveUrl.value, payload, {
     preserveScroll: true,
-    onSuccess: () => markEditorClean(),
+    preserveState: true,
+    onSuccess: () => {
+      markEditorClean()
+
+      router.post(publishUrl.value, {}, {
+        preserveScroll: false,
+        preserveState: false,
+      })
+    },
   })
 }
 
@@ -500,6 +510,12 @@ function formatPreviewPrice(product) {
 
 function editorCsrfToken() {
   return document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || ''
+}
+
+async function uploadHeaderLogo(event) {
+  await uploadEditorImage(event, (url) => {
+    headerSettings.logo_image_url = url
+  })
 }
 
 async function uploadEditorImage(event, applyUrl) {
@@ -2013,8 +2029,33 @@ already added
             </label>
 
             <label class="block">
-              <span class="mb-1 block text-xs font-bold uppercase tracking-wide text-gray-500">Logo image URL</span>
-              <input v-model="headerSettings.logo_image_url" type="text" class="min-h-10 w-full rounded-lg border px-3 py-2 text-sm" placeholder="Paste logo image URL" />
+              <span class="mb-1 block text-xs font-bold uppercase tracking-wide text-gray-500">Logo image</span>
+              <input v-model="headerSettings.logo_image_url" type="text" class="min-h-10 w-full rounded-lg border px-3 py-2 text-sm" placeholder="Paste logo image URL or upload below" data-header-logo-url-input />
+
+              <div class="mt-2 flex flex-wrap items-center gap-2">
+                <label class="inline-flex min-h-10 cursor-pointer items-center justify-center rounded-lg border px-3 text-sm font-semibold hover:bg-gray-50" data-header-logo-upload-button>
+                  Upload logo
+                  <input type="file" accept="image/*" class="sr-only" data-header-logo-upload-input @change="uploadHeaderLogo" />
+                </label>
+
+                <button
+                  v-if="headerSettings.logo_image_url"
+                  type="button"
+                  class="inline-flex min-h-10 items-center justify-center rounded-lg border px-3 text-sm font-semibold text-red-600 hover:bg-red-50"
+                  data-header-logo-clear-button
+                  @click="headerSettings.logo_image_url = ''"
+                >
+                  Remove logo
+                </button>
+              </div>
+
+              <img
+                v-if="headerSettings.logo_image_url"
+                :src="headerSettings.logo_image_url"
+                alt="Logo preview"
+                class="mt-3 h-12 max-w-40 rounded-lg border object-contain p-1"
+                data-header-logo-preview
+              />
             </label>
 
             <label class="block">
@@ -2218,3 +2259,5 @@ already added
 <!-- S66 Hero v2 editor support: section.type === 'hero', desktop_image_url, tablet_image_url, mobile_image_url, overlay_opacity, text_position, cta_url, slides, data-hero-v2-editor -->
 
 <!-- S99 hero slides full editor: data-s99-hero-slides-editor addHeroSlide duplicateHeroSlide removeHeroSlide updateHeroSlideSetting activeHeroSlide heroPreviewImage -->
+
+<!-- S113 header logo upload: data-header-logo-upload-input data-header-logo-preview data-s113-header-logo-upload -->

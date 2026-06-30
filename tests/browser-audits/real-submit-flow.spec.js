@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { execSync } from 'node:child_process';
+import { execSync, execFileSync } from 'node:child_process';
+import { writeFileSync, unlinkSync } from 'node:fs';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -215,3 +216,61 @@ test.describe('Real browser submit flow', () => {
     }
   });
 });
+
+
+function cleanupPlaywrightTenantData() {
+  const cleanupFile = 'storage/app/playwright-tenant-cleanup.php'
+
+  const php = String.raw`<?php
+require __DIR__ . '/../../vendor/autoload.php';
+
+$app = require __DIR__ . '/../../bootstrap/app.php';
+$app->make(\Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+
+tenancy()->initialize('tenant1');
+
+$products = \App\Models\Product::query()
+    ->where('name', 'like', 'Playwright Product PW-%')
+    ->get();
+
+foreach ($products as $product) {
+    \App\Models\ThemePage::query()
+        ->where('product_id', $product->id)
+        ->orWhere('title', 'like', 'Playwright Product PW-%')
+        ->delete();
+
+    if (method_exists($product, 'images')) {
+        $product->images()->delete();
+    }
+
+    $product->delete();
+}
+
+\App\Models\Category::query()
+    ->where(function ($query) {
+        $query->where('name', 'like', 'Playwright Category PW-%')
+            ->orWhere('name', 'like', 'Audit Category PW-%');
+    })
+    ->whereDoesntHave('products')
+    ->delete();
+
+echo "Playwright tenant cleanup complete\n";
+`
+
+  writeFileSync(cleanupFile, php)
+
+  try {
+    execFileSync('php', [cleanupFile], { stdio: 'inherit' })
+  } finally {
+    try {
+      unlinkSync(cleanupFile)
+    } catch {
+      // ignore cleanup file deletion errors
+    }
+  }
+}
+
+test.afterEach(() => {
+  cleanupPlaywrightTenantData()
+})
+

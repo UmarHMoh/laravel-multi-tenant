@@ -78,6 +78,41 @@ Route::domain('{tenant}.localhost')
         Route::get('/', [TenantHomepageController::class, 'index'])->name('tenant.local.home');
     });
 
+
+Route::domain('127.0.0.1')->middleware(['web'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('central.local-ip.home');
+
+    Route::prefix('central')->name('central.local-ip.')->group(function () {
+        Route::get('/login', function () {
+            return \Inertia\Inertia::render('central/Login');
+        })->name('login');
+
+        Route::post('/login', function (\Illuminate\Http\Request $request) {
+            $validated = $request->validate([
+                'email' => ['required', 'email'],
+                'password' => ['required', 'string'],
+            ]);
+
+            $expectedEmail = env('CENTRAL_ADMIN_EMAIL', 'umarhmohammed04@gmail.com');
+            $expectedPassword = env('CENTRAL_ADMIN_PASSWORD', 'password123');
+
+            if (
+                $validated['email'] !== $expectedEmail
+                || ! hash_equals($expectedPassword, $validated['password'])
+            ) {
+                return back()->withErrors([
+                    'email' => 'The central admin login details are incorrect.',
+                ])->onlyInput('email');
+            }
+
+            $request->session()->put('central_admin_authenticated', true);
+            $request->session()->put('central_admin_email', $validated['email']);
+
+            return redirect('/central')->with('success', 'Logged in successfully.');
+        })->name('login.store');
+    });
+});
+
 Route::domain('localhost')->middleware(['web'])->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('central.home');
 
@@ -144,8 +179,8 @@ Route::put('/central/bank-options/{bank}', [\App\Http\Controllers\Central\Payout
 
 
 
-        Route::get('/manage/payouts', [TenantPayoutRequestController::class, 'index'])->middleware('auth')->name('tenant.payouts.index');
-        Route::post('/manage/payouts', [TenantPayoutRequestController::class, 'store'])->middleware('auth')->name('tenant.payouts.store');
+        Route::get('/manage/payouts', [TenantPayoutRequestController::class, 'index'])->middleware([\Stancl\Tenancy\Middleware\InitializeTenancyByDomain::class, \Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains::class, 'auth', 'tenant.admin'])->name('tenant.payouts.index');
+        Route::post('/manage/payouts', [TenantPayoutRequestController::class, 'store'])->middleware([\Stancl\Tenancy\Middleware\InitializeTenancyByDomain::class, \Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains::class, 'auth', 'tenant.admin'])->name('tenant.payouts.store');
 
 
 

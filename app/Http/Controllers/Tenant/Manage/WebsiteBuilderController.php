@@ -482,7 +482,8 @@ class WebsiteBuilderController extends Controller
                     'sort_order' => $index,
                 ];
             })
-            ->values();
+            ->values()
+            ->all();
     }
 
     private function settingsWithDefaults(array $settingSchema, array $settings): array
