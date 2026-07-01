@@ -293,12 +293,16 @@ class WebsiteBuilderController extends Controller
         return $this->updatePageConfig($request, $themePage, $sectionRegistry, 'Page draft saved.');
     }
 
-    public function publishHomepage(ThemeBootstrapper $bootstrapper, SectionRegistry $sectionRegistry)
+    public function publishHomepage(Request $request, ThemeBootstrapper $bootstrapper, SectionRegistry $sectionRegistry)
     {
         $theme = $bootstrapper->ensureDefaultTheme();
         $homepage = $theme->homepage()->firstOrFail();
 
-        return $this->publishPageConfig($homepage, $theme, $sectionRegistry, 'Homepage published.');
+        if ($request->has('sections')) {
+            $this->persistDraftConfigFromRequest($request, $homepage, $sectionRegistry);
+        }
+
+        return $this->publishPageConfig($homepage->fresh(), $theme, $sectionRegistry, 'Homepage published.');
     }
 
     public function resetHomepageDraft(ThemeBootstrapper $bootstrapper, SectionRegistry $sectionRegistry)
@@ -363,20 +367,32 @@ class WebsiteBuilderController extends Controller
         ];
     }
 
-    public function publishPage($tenant, $themePage, ThemeBootstrapper $bootstrapper, SectionRegistry $sectionRegistry)
+    public function publishPage(Request $request, $tenant, $themePage, ThemeBootstrapper $bootstrapper, SectionRegistry $sectionRegistry)
     {
         $theme = $bootstrapper->ensureDefaultTheme();
         $themePage = ThemePage::query()->findOrFail($themePage);
 
         abort_unless((int) $themePage->theme_id === (int) $theme->id, 404);
 
-        return $this->publishPageConfig($themePage, $theme, $sectionRegistry, 'Page published.');
+        if ($request->has('sections')) {
+            $this->persistDraftConfigFromRequest($request, $themePage, $sectionRegistry);
+        }
+
+        return $this->publishPageConfig($themePage->fresh(), $theme, $sectionRegistry, 'Page published.');
     }
 
     private function updatePageConfig(Request $request, ThemePage $page, SectionRegistry $sectionRegistry, string $message)
     {
+        $this->persistDraftConfigFromRequest($request, $page, $sectionRegistry);
+
+        return back()->with('success', $message);
+    }
+
+    private function persistDraftConfigFromRequest(Request $request, ThemePage $page, SectionRegistry $sectionRegistry): void
+    {
         $this->persistThemeSettingsFromRequest($request, $page);
-        $validated = $request->validate([
+
+        $request->validate([
             'sections' => ['required', 'array', 'max:' . self::MAX_BUILDER_SECTIONS],
             'sections.*.id' => ['nullable', 'string', 'max:120'],
             'sections.*.type' => ['required', 'string', 'max:80'],
@@ -416,23 +432,17 @@ class WebsiteBuilderController extends Controller
             })
             ->values();
 
-
         $normalizedSections = $sections->values()->all();
 
         if ($page->type === 'product') {
             $normalizedSections = $this->ensureRequiredProductPageSections($normalizedSections, $sectionRegistry);
         }
 
-        $draftConfig = [
+        $page->draft_config = [
             'sections' => $normalizedSections,
         ];
 
-        $page->draft_config = $draftConfig;
         $page->save();
-
-        $page->refresh();
-
-        return back()->with('success', $message);
     }
 
     private function publishPageConfig(ThemePage $page, $theme, SectionRegistry $sectionRegistry, string $message)

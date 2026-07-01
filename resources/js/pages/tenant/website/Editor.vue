@@ -470,19 +470,10 @@ function saveDraft() {
 }
 
 function publishDraft() {
-  const payload = editorPayload()
-
-  router.put(saveUrl.value, payload, {
-    preserveScroll: true,
-    preserveState: true,
-    onSuccess: () => {
-      markEditorClean()
-
-      router.post(publishUrl.value, {}, {
-        preserveScroll: false,
-        preserveState: false,
-      })
-    },
+  router.post(publishUrl.value, editorPayload(), {
+    preserveScroll: false,
+    preserveState: false,
+    onSuccess: () => markEditorClean(),
   })
 }
 
